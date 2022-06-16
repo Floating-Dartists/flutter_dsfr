@@ -48,6 +48,8 @@ class MyApp extends StatelessWidget {
 DSFRPrimaryButton(onPressed: () {}, child: Text('Label bouton'));
 ```
 
+![](https://raw.githubusercontent.com/TesteurManiak/flutter_dsfr/main/screenshots/primary_button.png)
+
 * FranceConnect
 
 ```dart
