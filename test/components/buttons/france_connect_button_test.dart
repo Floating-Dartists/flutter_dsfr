@@ -27,8 +27,10 @@ void main() {
             name: 'rounded',
             child: FranceConnectButton(
               onPressed: () {},
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
+              style: DSFRButtonStyle(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
               ),
             ),
           ),

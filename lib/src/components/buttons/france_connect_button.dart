@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../flutter_dsfr.dart';
 import '../../consts/endpoints.dart';
-import '../../theme_extensions/dsfr_colors.dart';
-import '../../theme_extensions/dsfr_sizes.dart';
-import '../../theme_extensions/dsfr_text_styles.dart';
 
 /// Create a button to connect using FranceConnect services.
 ///
@@ -21,13 +19,13 @@ class FranceConnectButton extends StatelessWidget {
   final bool variant;
 
   /// The shape of the button.
-  final ShapeBorder shape;
+  final DSFRButtonStyle? style;
 
   const FranceConnectButton({
     Key? key,
     required this.onPressed,
     this.variant = false,
-    this.shape = const RoundedRectangleBorder(),
+    this.style,
   }) : super(key: key);
 
   @override
@@ -38,7 +36,7 @@ class FranceConnectButton extends StatelessWidget {
         FranceConnectBase(
           variant: variant,
           onPressed: onPressed,
-          shape: shape,
+          style: style,
         ),
         InfoLinkButton(variant: variant),
       ],
@@ -49,27 +47,39 @@ class FranceConnectButton extends StatelessWidget {
 class FranceConnectBase extends StatelessWidget {
   final bool variant;
   final VoidCallback onPressed;
-  final ShapeBorder shape;
+  final DSFRButtonStyle? style;
 
   const FranceConnectBase({
     Key? key,
     required this.onPressed,
     required this.variant,
-    required this.shape,
+    required this.style,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
     final dsfrColors = theme.extension<DSFRColors>()!;
     final dsfrTextStyles = theme.extension<DSFRTextStyles>()!;
     final dsfrSpacings = theme.extension<DSFRSizes>()!;
+
+    final defaultStyle = DSFRButtonStyle(
+      backgroundColor: dsfrColors.frConnectBackground,
+      shape: const RoundedRectangleBorder(),
+      elevation: 0,
+    );
+    final btnStyle = defaultStyle.copyWith(
+      elevation: style?.elevation,
+      shape: style?.shape,
+    ) as DSFRButtonStyle;
+
     return Padding(
       padding: EdgeInsets.only(
         bottom: dsfrSpacings.v3,
       ),
       child: MaterialButton(
-        elevation: 0,
+        elevation: btnStyle.elevation,
         hoverElevation: 0,
         focusElevation: 0,
         disabledElevation: 0,
@@ -80,8 +90,8 @@ class FranceConnectBase extends StatelessWidget {
           left: dsfrSpacings.v3,
           right: dsfrSpacings.w3,
         ),
-        shape: shape,
-        color: dsfrColors.frConnectBackground,
+        shape: btnStyle.shape,
+        color: btnStyle.backgroundColor,
         hoverColor: dsfrColors.frConnectHover,
         onPressed: onPressed,
         child: Row(

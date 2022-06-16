@@ -87,6 +87,8 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
     );
   }
 
+  /// Returns a new button style that is a combination of this style and the
+  /// given [other] style.
   DSFRButtonStyle merge(DSFRButtonStyle? other) {
     if (other == null) {
       return this;
