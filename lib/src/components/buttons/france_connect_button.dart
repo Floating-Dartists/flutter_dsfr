@@ -14,14 +14,7 @@ import '../../theme_extensions/dsfr_text_styles.dart';
 ///
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/967868417/Bouton+FranceConnect
 class FranceConnectButton extends StatelessWidget {
-  /// The callback that is called when the button is tapped or otherwise
-  /// activated.
-  ///
-  /// If this callback is null, then the button will be disabled.
-  ///
-  /// See also:
-  ///
-  ///  * [enabled], which is true if the button is enabled.
+  /// {@macro components.buttons.primary.onPressed}
   final VoidCallback onPressed;
 
   /// If `true` the button displayed will be FranceConnect+.
