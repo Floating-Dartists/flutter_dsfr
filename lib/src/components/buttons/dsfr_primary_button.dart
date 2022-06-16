@@ -31,6 +31,7 @@ class DSFRPrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final dsfrSpacings = theme.extension<DSFRSizes>()!;
     final defaultBtnStyle = theme.extension<DSFRButtonStyle>()!;
     final btnStyle = defaultBtnStyle.merge(style);
 
@@ -40,6 +41,11 @@ class DSFRPrimaryButton extends StatelessWidget {
       hoverColor: btnStyle.hoverColor,
       splashColor: btnStyle.activeColor,
       shape: btnStyle.shape ?? const RoundedRectangleBorder(),
+      padding: EdgeInsets.symmetric(
+        vertical: dsfrSpacings.w1,
+        horizontal: dsfrSpacings.w3,
+      ),
+      textStyle: btnStyle.textStyle,
       onPressed: onPressed,
       child: child,
     );

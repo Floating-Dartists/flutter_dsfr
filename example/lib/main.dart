@@ -35,6 +35,12 @@ class _MyHomePageState extends State<MyHomePage> {
   final _widgets = <Widget>[
     FranceConnectButton(onPressed: () {}),
     FranceConnectButton(onPressed: () {}, variant: true),
+    UnconstrainedBox(
+      child: DSFRPrimaryButton(
+        onPressed: () {},
+        child: const Text('Label bouton'),
+      ),
+    ),
   ];
 
   @override

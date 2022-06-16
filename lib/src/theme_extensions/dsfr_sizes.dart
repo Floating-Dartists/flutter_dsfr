@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222396724/Espacement+-+Spacing
 @immutable
-class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
+class DSFRSizes extends ThemeExtension<DSFRSizes> {
   /// Space in rem: 0.125
   final double v0_5;
 
@@ -12,7 +12,7 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
   /// Space in rem: 0.375
   final double v1_5;
 
-  /// Space in rem: 0.50
+  /// Space in rem: 0.5
   final double w1;
 
   /// Space in rem: 0.75
@@ -51,7 +51,7 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
   /// Space in rem: 7.5
   final double w15;
 
-  const DSFRSpacings._({
+  const DSFRSizes._({
     required this.v0_5,
     required this.v1,
     required this.v1_5,
@@ -70,7 +70,7 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
     required this.w15,
   });
 
-  const DSFRSpacings.base()
+  const DSFRSizes.base()
       : this._(
           v0_5: 2,
           v1: 4,
@@ -91,7 +91,7 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
         );
 
   @override
-  ThemeExtension<DSFRSpacings> copyWith({
+  ThemeExtension<DSFRSizes> copyWith({
     double? v0_5,
     double? v1,
     double? v1_5,
@@ -109,7 +109,7 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
     double? w12,
     double? w15,
   }) {
-    return DSFRSpacings._(
+    return DSFRSizes._(
       v0_5: v0_5 ?? this.v0_5,
       v1: v1 ?? this.v1,
       v1_5: v1_5 ?? this.v1_5,
@@ -130,8 +130,8 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
   }
 
   @override
-  ThemeExtension<DSFRSpacings> lerp(
-    ThemeExtension<DSFRSpacings>? other,
+  ThemeExtension<DSFRSizes> lerp(
+    ThemeExtension<DSFRSizes>? other,
     double t,
   ) {
     return this;

@@ -4,7 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../consts/endpoints.dart';
 import '../../theme_extensions/dsfr_colors.dart';
-import '../../theme_extensions/dsfr_spacings.dart';
+import '../../theme_extensions/dsfr_sizes.dart';
 import '../../theme_extensions/dsfr_text_styles.dart';
 
 /// Create a button to connect using FranceConnect services.
@@ -63,7 +63,7 @@ class FranceConnectBase extends StatelessWidget {
     final theme = Theme.of(context);
     final dsfrColors = theme.extension<DSFRColors>()!;
     final dsfrTextStyles = theme.extension<DSFRTextStyles>()!;
-    final dsfrSpacings = theme.extension<DSFRSpacings>()!;
+    final dsfrSpacings = theme.extension<DSFRSizes>()!;
     return Padding(
       padding: EdgeInsets.only(
         bottom: dsfrSpacings.v3,
@@ -146,7 +146,7 @@ class _InfoLinkButtonState extends State<InfoLinkButton> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final baseStyle = theme.extension<DSFRTextStyles>()!.frConnectGroup;
-    final dsfrSpacings = theme.extension<DSFRSpacings>()!;
+    final dsfrSpacings = theme.extension<DSFRSizes>()!;
     final style = baseStyle?.merge(
       TextStyle(
         decoration: _isHovered ? TextDecoration.underline : null,
