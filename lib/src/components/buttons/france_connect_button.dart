@@ -22,7 +22,7 @@ class FranceConnectButton extends StatelessWidget {
   /// See also:
   ///
   ///  * [enabled], which is true if the button is enabled.
-  final VoidCallback? onPressed;
+  final VoidCallback onPressed;
 
   /// If `true` the button displayed will be FranceConnect+.
   final bool variant;
@@ -55,7 +55,7 @@ class FranceConnectButton extends StatelessWidget {
 
 class FranceConnectBase extends StatelessWidget {
   final bool variant;
-  final VoidCallback? onPressed;
+  final VoidCallback onPressed;
   final ShapeBorder shape;
 
   const FranceConnectBase({
