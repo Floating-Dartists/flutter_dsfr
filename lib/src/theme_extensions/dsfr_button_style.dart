@@ -73,4 +73,17 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
       elevation: elevation,
     );
   }
+
+  DSFRButtonStyle merge(DSFRButtonStyle? other) {
+    if (other == null) {
+      return this;
+    }
+    return copyWith(
+      backgroundColor: other.backgroundColor,
+      hoverColor: other.hoverColor,
+      activeColor: other.activeColor,
+      shape: other.shape,
+      elevation: other.elevation,
+    ) as DSFRButtonStyle;
+  }
 }

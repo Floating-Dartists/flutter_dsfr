@@ -19,22 +19,27 @@ class DSFRPrimaryButton extends StatelessWidget {
   /// Typically the button's label.
   final Widget child;
 
+  final DSFRButtonStyle? style;
+
   const DSFRPrimaryButton({
     Key? key,
     required this.onPressed,
     required this.child,
+    this.style,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final defaultBtnStyle = theme.extension<DSFRButtonStyle>()!;
+    final btnStyle = defaultBtnStyle.merge(style);
+
     return RawMaterialButton(
-      elevation: defaultBtnStyle.elevation ?? 0.0,
-      fillColor: defaultBtnStyle.backgroundColor,
-      hoverColor: defaultBtnStyle.hoverColor,
-      splashColor: defaultBtnStyle.activeColor,
-      shape: defaultBtnStyle.shape ?? const RoundedRectangleBorder(),
+      elevation: btnStyle.elevation ?? 0.0,
+      fillColor: btnStyle.backgroundColor,
+      hoverColor: btnStyle.hoverColor,
+      splashColor: btnStyle.activeColor,
+      shape: btnStyle.shape ?? const RoundedRectangleBorder(),
       onPressed: onPressed,
       child: child,
     );
