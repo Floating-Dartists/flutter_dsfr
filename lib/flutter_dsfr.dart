@@ -1,7 +1,7 @@
 library flutter_dsfr;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/components/buttons/france_connect_button.dart'
+    hide InfoLinkButton, FranceConnectBase;
+export 'src/theme_extensions/dsfr_colors.dart';
+export 'src/theme_extensions/dsfr_spacings.dart';
+export 'src/theme_extensions/dsfr_text_styles.dart';
