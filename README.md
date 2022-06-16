@@ -6,8 +6,6 @@ The full design specifications is available here: https://gouvfr.atlassian.net/w
 
 **This project is not affiliated with the french government.**
 
-## Features
-
 ## Components
 
 ### Buttons
