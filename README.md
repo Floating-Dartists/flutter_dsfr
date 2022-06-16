@@ -16,8 +16,12 @@ The full design specifications is available here: https://gouvfr.atlassian.net/w
 FranceConnectButton(onPressed: () {});
 ```
 
+![](https://raw.githubusercontent.com/TesteurManiak/flutter_dsfr/main/screenshots/france_connect.png)
+
 * FranceConnectPlus
 
 ```dart
 FranceConnectButton(onPressed: () {}, variant: true);
 ```
+
+![](https://raw.githubusercontent.com/TesteurManiak/flutter_dsfr/main/screenshots/france_connect_plus.png)
