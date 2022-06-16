@@ -6,9 +6,47 @@ The full design specifications is available here: https://gouvfr.atlassian.net/w
 
 **This project is not affiliated with the french government.**
 
+## Getting Started
+
+* Add the package to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+    flutter_dsfr: any
+```
+
+* Add the required extensions to your theme:
+
+```dart
+import 'package:flutter_dsfr/flutter_dsfr.dart';
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        theme: ThemeData.light().copyWith(
+          extensions: dsfrExtensionsLight,
+        ),
+        darkTheme: ThemeData.dark().copyWith(
+          extensions: dsfrExtensionsDark,
+        ),
+        home: const MyHomePage(),
+    );
+  }
+}
+```
+
 ## Components
 
 ### Buttons
+
+* Primary
+
+```dart
+DSFRPrimaryButton(onPressed: () {}, child: Text('Label bouton'));
+```
 
 * FranceConnect
 

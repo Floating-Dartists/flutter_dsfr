@@ -15,6 +15,8 @@ export 'src/theme_extensions/dsfr_colors.dart';
 export 'src/theme_extensions/dsfr_sizes.dart';
 export 'src/theme_extensions/dsfr_text_styles.dart';
 
+/// Provides the default [ThemeExtension] for the flutter_dsfr theme in light
+/// mode.
 final dsfrExtensionsLight = <ThemeExtension>[
   const DSFRColors.light(),
   DSFRTextStyles.light(),
@@ -22,6 +24,8 @@ final dsfrExtensionsLight = <ThemeExtension>[
   DSFRButtonStyle.light(),
 ];
 
+/// Provides the default [ThemeExtension] for the flutter_dsfr theme in dark
+/// mode.
 final dsfrExtensionsDark = <ThemeExtension>[
   const DSFRColors.dark(),
   DSFRTextStyles.dark(),
