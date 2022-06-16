@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../base/color_palette.dart';
-import '../base/marianne_text_style.dart';
 
 @immutable
 class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
+  @visibleForTesting
+  static String? packageName = 'flutter_dsfr';
+
   final TextStyle? frConnectLogin;
   final TextStyle? frConnectBrand;
   final TextStyle? frConnectGroup;
@@ -15,34 +17,46 @@ class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
     required this.frConnectGroup,
   });
 
-  const DSFRTextStyles.light()
+  DSFRTextStyles.light()
       : this._(
-          frConnectLogin: const MarianneTextStyle(
+          frConnectLogin: TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
             fontSize: 17,
             color: ColorPalette.blueFrance975,
           ),
-          frConnectBrand: const MarianneTextStyle(
+          frConnectBrand: TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
             fontSize: 18,
             fontWeight: FontWeight.w700,
             color: ColorPalette.blueFrance975,
           ),
-          frConnectGroup: const MarianneTextStyle(
+          frConnectGroup: TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
             color: ColorPalette.blueFranceSun113,
           ),
         );
 
-  const DSFRTextStyles.dark()
+  DSFRTextStyles.dark()
       : this._(
-          frConnectLogin: const MarianneTextStyle(
+          frConnectLogin: TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
             fontSize: 17,
             color: ColorPalette.blueFranceSun113,
           ),
-          frConnectBrand: const MarianneTextStyle(
+          frConnectBrand: TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
             fontSize: 18,
             fontWeight: FontWeight.w700,
             color: ColorPalette.blueFranceSun113,
           ),
-          frConnectGroup: const MarianneTextStyle(
+          frConnectGroup: TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
             color: ColorPalette.blueFrance625,
           ),
         );

@@ -64,3 +64,8 @@ flutter:
         - asset: assets/fonts/Spectral/Spectral-LightItalic.ttf
           weight: 300
           style: italic
+        - asset: assets/fonts/Spectral/Spectral-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Spectral/Spectral-Italic.ttf
+          weight: 400
+          style: italic

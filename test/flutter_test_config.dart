@@ -7,13 +7,17 @@ import 'package:flutter_dsfr/flutter_dsfr.dart';
 Future<void> testExecutable(FutureOr<void> Function() testMain) async {
   const isRunningInCi = bool.fromEnvironment('CI', defaultValue: false);
 
+  DSFRTextStyles.packageName = null;
+
   return AlchemistConfig.runWithConfig(
     config: AlchemistConfig(
-      theme: ThemeData.light().copyWith(
-        extensions: const [
+      theme: ThemeData(
+        fontFamily: 'Marianne',
+        brightness: Brightness.light,
+        extensions: [
           DSFRTextStyles.light(),
-          DSFRColors.light(),
-          DSFRSpacings.base(),
+          const DSFRColors.light(),
+          const DSFRSpacings.base(),
         ],
       ),
       platformGoldensConfig: const PlatformGoldensConfig(

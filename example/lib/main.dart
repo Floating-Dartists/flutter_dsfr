@@ -13,18 +13,10 @@ class MyApp extends StatelessWidget {
       return MaterialApp(
         themeMode: themeMode,
         theme: ThemeData.light().copyWith(
-          extensions: const [
-            DSFRColors.light(),
-            DSFRTextStyles.light(),
-            DSFRSpacings.base(),
-          ],
+          extensions: dsfrExtensionsLight,
         ),
         darkTheme: ThemeData.dark().copyWith(
-          extensions: const [
-            DSFRColors.dark(),
-            DSFRTextStyles.dark(),
-            DSFRSpacings.base(),
-          ],
+          extensions: dsfrExtensionsDark,
         ),
         home: const MyHomePage(),
       );

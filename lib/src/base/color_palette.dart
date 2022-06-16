@@ -54,4 +54,50 @@ abstract class ColorPalette {
   static const redMarianne425 = Color(0xFFc9191e);
   static const redMarianne425Hover = Color(0xFFf93f42);
   static const redMarianne425Active = Color(0xFFf95a5c);
+
+  static const redMarianne975 = Color(0xFFfef4f4);
+  static const redMarianne975Hover = Color(0xFFfcd7d7);
+  static const redMarianne975Active = Color(0xFFfac4c4);
+
+  static const redMarianne950 = Color(0xFFfee9e9);
+  static const redMarianne950Hover = Color(0xFFfdc5c5);
+  static const redMarianne950Active = Color(0xFFfcafaf);
+
+  static const redMarianne925 = Color(0xFFfddede);
+  static const redMarianne925Hover = Color(0xFFfbb6b6);
+  static const redMarianne925Active = Color(0xFFfa9e9e);
+
+  static const redMarianne850 = Color(0xFFfcbfbf);
+  static const redMarianne850Hover = Color(0xFFfb8f8f);
+  static const redMarianne850Active = Color(0xFFfa7474);
+
+  static const redMariane472 = Color(0xFFe1000f);
+  static const redMariane472Hover = Color(0xFFff292f);
+  static const redMariane472Active = Color(0xFFff4347);
+
+  static const redMariane625 = Color(0xFFf95c5e);
+  static const redMariane625Hover = Color(0xFFfa9293);
+  static const redMariane625Active = Color(0xFFfbabac);
+
+  static const redMarianne200 = Color(0xFF5e2a2b);
+  static const redMarianne200Hover = Color(0xFF9c4a4c);
+  static const redMarianne200Active = Color(0xFFbe5c5e);
+
+  static const redMarianne125 = Color(0xFF3b2424);
+  static const redMarianne125Hover = Color(0xFF6b4545);
+  static const redMarianne125Active = Color(0xFF865757);
+
+  static const redMarianne100 = Color(0xFF331f1f);
+  static const redMarianne100Hover = Color(0xFF613f3f);
+  static const redMarianne100Active = Color(0xFF7b5151);
+
+  static const redMarianne75 = Color(0xFF2b1919);
+  static const redMarianne75Hover = Color(0xFF573737);
+  static const redMarianne75Active = Color(0xFF704848);
+
+  static const greyMain525 = Color(0xFF7b7b7b);
+  static const greyMain525Hover = Color(0xFFa6a6a6);
+  static const greyMain525Active = Color(0xFFbababa);
+
+  static const grey425 = Color(0xFF666666);
 }
