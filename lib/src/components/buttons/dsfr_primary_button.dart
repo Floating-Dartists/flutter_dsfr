@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../theme_extensions/dsfr_colors.dart';
+import '../../../flutter_dsfr.dart';
 
-class PrimaryButton extends StatelessWidget {
+/// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons#Bouton-primaire
+class DSFRPrimaryButton extends StatelessWidget {
   /// {@template components.buttons.primary.onPressed}
   /// The callback that is called when the button is tapped or otherwise
   /// activated.
@@ -14,9 +15,11 @@ class PrimaryButton extends StatelessWidget {
   ///  * [enabled], which is true if the button is enabled.
   /// {@endtemplate}
   final VoidCallback? onPressed;
+
+  /// Typically the button's label.
   final Widget child;
 
-  const PrimaryButton({
+  const DSFRPrimaryButton({
     Key? key,
     required this.onPressed,
     required this.child,
@@ -25,9 +28,15 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final dsfrColors = theme.extension<DSFRColors>()!;
-    return MaterialButton(
+    final defaultBtnStyle = theme.extension<DSFRButtonStyle>()!;
+    return RawMaterialButton(
+      elevation: defaultBtnStyle.elevation ?? 0.0,
+      fillColor: defaultBtnStyle.backgroundColor,
+      hoverColor: defaultBtnStyle.hoverColor,
+      splashColor: defaultBtnStyle.activeColor,
+      shape: defaultBtnStyle.shape ?? const RoundedRectangleBorder(),
       onPressed: onPressed,
+      child: child,
     );
   }
 }
