@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../base/color_palette.dart';
+import '../base/marianne_text_style.dart';
 
 @immutable
 class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
@@ -16,44 +17,32 @@ class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
 
   const DSFRTextStyles.light()
       : this._(
-          frConnectLogin: const TextStyle(
+          frConnectLogin: const MarianneTextStyle(
             fontSize: 17,
-            fontFamily: 'Marianne',
-            package: 'flutter_dsfr',
             color: ColorPalette.blueFrance975,
           ),
-          frConnectBrand: const TextStyle(
+          frConnectBrand: const MarianneTextStyle(
             fontSize: 18,
-            fontFamily: 'Marianne',
-            package: 'flutter_dsfr',
             fontWeight: FontWeight.w700,
             color: ColorPalette.blueFrance975,
           ),
-          frConnectGroup: const TextStyle(
-            fontFamily: 'Marianne',
-            package: 'flutter_dsfr',
+          frConnectGroup: const MarianneTextStyle(
             color: ColorPalette.blueFranceSun113,
           ),
         );
 
   const DSFRTextStyles.dark()
       : this._(
-          frConnectLogin: const TextStyle(
+          frConnectLogin: const MarianneTextStyle(
             fontSize: 17,
-            fontFamily: 'Marianne',
-            package: 'flutter_dsfr',
             color: ColorPalette.blueFranceSun113,
           ),
-          frConnectBrand: const TextStyle(
+          frConnectBrand: const MarianneTextStyle(
             fontSize: 18,
-            fontFamily: 'Marianne',
-            package: 'flutter_dsfr',
             fontWeight: FontWeight.w700,
             color: ColorPalette.blueFranceSun113,
           ),
-          frConnectGroup: const TextStyle(
-            fontFamily: 'Marianne',
-            package: 'flutter_dsfr',
+          frConnectGroup: const MarianneTextStyle(
             color: ColorPalette.blueFrance625,
           ),
         );
