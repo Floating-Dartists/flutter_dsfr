@@ -1,4 +1,4 @@
-# Flutter DSFR :fr:
+# Flutter DSFR
 
 Flutter implementation of the french government design system.
 
