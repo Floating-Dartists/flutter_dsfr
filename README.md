@@ -1,4 +1,4 @@
-# flutter_dsfr
+# Flutter DSFR
 
 Flutter implementation of the french government design system.
 
@@ -8,5 +8,18 @@ The full design specifications is available here: https://gouvfr.atlassian.net/w
 
 ## Features
 
-* Color Palette (ongoing): [Specs](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217186370/Couleurs+-+palette+-+Color#Couleurs-primaires)
-* Spacings: [Specs](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222396724/Espacement+-+Spacing)
+## Components
+
+### Buttons
+
+* FranceConnect
+
+```dart
+FranceConnectButton(onPressed: () {});
+```
+
+* FranceConnectPlus
+
+```dart
+FranceConnectButton(onPressed: () {}, variant: true);
+```

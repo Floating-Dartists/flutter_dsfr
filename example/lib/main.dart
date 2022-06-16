@@ -1,3 +1,4 @@
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dsfr/flutter_dsfr.dart';
 
@@ -8,16 +9,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        extensions: const [
-          DSFRColors.light(),
-          DSFRTextStyles.light(),
-          DSFRSpacings.base(),
-        ],
-      ),
-      home: const MyHomePage(),
-    );
+    return DynamicTheme(themedWidgetBuilder: (_, themeMode, __) {
+      return MaterialApp(
+        themeMode: themeMode,
+        theme: ThemeData.light().copyWith(
+          extensions: const [
+            DSFRColors.light(),
+            DSFRTextStyles.light(),
+            DSFRSpacings.base(),
+          ],
+        ),
+        darkTheme: ThemeData.dark().copyWith(
+          extensions: const [
+            DSFRColors.dark(),
+            DSFRTextStyles.light(),
+            DSFRSpacings.base(),
+          ],
+        ),
+        home: const MyHomePage(),
+      );
+    });
   }
 }
 
@@ -36,7 +47,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          Switch(
+            value: isDark,
+            onChanged: (_) {
+              DynamicTheme.of(context).setThemeMode(
+                isDark ? ThemeMode.dark : ThemeMode.light,
+              );
+            },
+          ),
+        ],
+      ),
       body: ListView.separated(
         padding: const EdgeInsets.all(16),
         itemCount: _widgets.length,

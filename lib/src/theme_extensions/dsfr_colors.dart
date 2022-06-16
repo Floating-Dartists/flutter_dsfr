@@ -21,6 +21,13 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           frConnectBackground: const Color(0xFF000091),
         );
 
+  const DSFRColors.dark()
+      : this._(
+          frConnectHover: ColorPalette.blueFrance625Hover,
+          frConnectActive: ColorPalette.blueFrance625Active,
+          frConnectBackground: ColorPalette.blueFrance625,
+        );
+
   @override
   ThemeExtension<DSFRColors> copyWith() {
     return DSFRColors._(
