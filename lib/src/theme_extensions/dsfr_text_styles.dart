@@ -18,14 +18,17 @@ class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
       : this._(
           frConnectLogin: const TextStyle(
             fontSize: 17,
+            fontFamily: 'Marianne',
             color: ColorPalette.blueFrance975,
           ),
           frConnectBrand: const TextStyle(
             fontSize: 18,
+            fontFamily: 'Marianne',
             fontWeight: FontWeight.w700,
             color: ColorPalette.blueFrance975,
           ),
           frConnectGroup: const TextStyle(
+            fontFamily: 'Marianne',
             color: ColorPalette.blueFranceSun113,
           ),
         );
@@ -34,14 +37,17 @@ class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
       : this._(
           frConnectLogin: const TextStyle(
             fontSize: 17,
+            fontFamily: 'Marianne',
             color: ColorPalette.blueFranceSun113,
           ),
           frConnectBrand: const TextStyle(
             fontSize: 18,
+            fontFamily: 'Marianne',
             fontWeight: FontWeight.w700,
             color: ColorPalette.blueFranceSun113,
           ),
           frConnectGroup: const TextStyle(
+            fontFamily: 'Marianne',
             color: ColorPalette.blueFrance625,
           ),
         );
