@@ -28,8 +28,10 @@ migrate_working_dir/
 .dart_tool/
 .packages
 build/
+.flutter-plugins
 
 # Ignore non-CI golden files and failures
 test/**/goldens/**/*.*
 test/**/failures/**/*.*
 !test/**/goldens/ci/*.*
+.flutter-plugins-dependencies
