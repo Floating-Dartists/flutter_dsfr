@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         darkTheme: ThemeData.dark().copyWith(
           extensions: const [
             DSFRColors.dark(),
-            DSFRTextStyles.light(),
+            DSFRTextStyles.dark(),
             DSFRSpacings.base(),
           ],
         ),
@@ -51,13 +51,18 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          Switch(
-            value: isDark,
-            onChanged: (_) {
-              DynamicTheme.of(context).setThemeMode(
-                isDark ? ThemeMode.dark : ThemeMode.light,
-              );
-            },
+          Row(
+            children: [
+              const Icon(Icons.dark_mode),
+              Switch(
+                value: isDark,
+                onChanged: (_) {
+                  DynamicTheme.of(context).setThemeMode(
+                    isDark ? ThemeMode.light : ThemeMode.dark,
+                  );
+                },
+              ),
+            ],
           ),
         ],
       ),

@@ -30,6 +30,22 @@ class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
           ),
         );
 
+  const DSFRTextStyles.dark()
+      : this._(
+          frConnectLogin: const TextStyle(
+            fontSize: 17,
+            color: ColorPalette.blueFranceSun113,
+          ),
+          frConnectBrand: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w700,
+            color: ColorPalette.blueFranceSun113,
+          ),
+          frConnectGroup: const TextStyle(
+            color: ColorPalette.blueFrance625,
+          ),
+        );
+
   @override
   ThemeExtension<DSFRTextStyles> copyWith({
     TextStyle? frConnectLogin,
