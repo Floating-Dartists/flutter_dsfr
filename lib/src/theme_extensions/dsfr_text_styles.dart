@@ -19,16 +19,19 @@ class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
           frConnectLogin: const TextStyle(
             fontSize: 17,
             fontFamily: 'Marianne',
+            package: 'flutter_dsfr',
             color: ColorPalette.blueFrance975,
           ),
           frConnectBrand: const TextStyle(
             fontSize: 18,
             fontFamily: 'Marianne',
+            package: 'flutter_dsfr',
             fontWeight: FontWeight.w700,
             color: ColorPalette.blueFrance975,
           ),
           frConnectGroup: const TextStyle(
             fontFamily: 'Marianne',
+            package: 'flutter_dsfr',
             color: ColorPalette.blueFranceSun113,
           ),
         );
@@ -38,16 +41,19 @@ class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
           frConnectLogin: const TextStyle(
             fontSize: 17,
             fontFamily: 'Marianne',
+            package: 'flutter_dsfr',
             color: ColorPalette.blueFranceSun113,
           ),
           frConnectBrand: const TextStyle(
             fontSize: 18,
             fontFamily: 'Marianne',
+            package: 'flutter_dsfr',
             fontWeight: FontWeight.w700,
             color: ColorPalette.blueFranceSun113,
           ),
           frConnectGroup: const TextStyle(
             fontFamily: 'Marianne',
+            package: 'flutter_dsfr',
             color: ColorPalette.blueFrance625,
           ),
         );
