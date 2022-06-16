@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../base/color_palette.dart';
+
 @immutable
 class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color? frConnectHover;
@@ -14,8 +16,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
 
   const DSFRColors.light()
       : this._(
-          frConnectHover: const Color(0xFF1212ff),
-          frConnectActive: const Color(0xFF2323ff),
+          frConnectHover: ColorPalette.blueFranceSun113Hover,
+          frConnectActive: ColorPalette.blueFranceSun113Active,
           frConnectBackground: const Color(0xFF000091),
         );
 

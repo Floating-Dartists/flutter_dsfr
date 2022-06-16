@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+
+@immutable
 abstract class Endpoints {
   static const franceConnect = 'https://franceconnect.gouv.fr/';
   static const franceConnectPlus =

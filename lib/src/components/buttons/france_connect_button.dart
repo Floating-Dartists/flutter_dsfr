@@ -27,10 +27,14 @@ class FranceConnectButton extends StatelessWidget {
   /// If `true` the button displayed will be FranceConnect+.
   final bool variant;
 
+  /// The shape of the button.
+  final ShapeBorder shape;
+
   const FranceConnectButton({
     Key? key,
     required this.onPressed,
     this.variant = false,
+    this.shape = const RoundedRectangleBorder(),
   }) : super(key: key);
 
   @override
@@ -41,6 +45,7 @@ class FranceConnectButton extends StatelessWidget {
         FranceConnectBase(
           variant: variant,
           onPressed: onPressed,
+          shape: shape,
         ),
         InfoLinkButton(variant: variant),
       ],
@@ -51,11 +56,13 @@ class FranceConnectButton extends StatelessWidget {
 class FranceConnectBase extends StatelessWidget {
   final bool variant;
   final VoidCallback? onPressed;
+  final ShapeBorder shape;
 
   const FranceConnectBase({
     Key? key,
     required this.onPressed,
     required this.variant,
+    required this.shape,
   }) : super(key: key);
 
   @override
@@ -80,7 +87,7 @@ class FranceConnectBase extends StatelessWidget {
           left: dsfrSpacings.v3,
           right: dsfrSpacings.w3,
         ),
-        shape: const RoundedRectangleBorder(),
+        shape: shape,
         color: dsfrColors.frConnectBackground,
         hoverColor: dsfrColors.frConnectHover,
         onPressed: onPressed,
@@ -112,7 +119,14 @@ class FranceConnectBase extends StatelessWidget {
               ),
             ),
             if (variant)
-              Icon(Icons.add, color: dsfrTextStyles.frConnectBrand?.color),
+              Padding(
+                padding: EdgeInsets.only(left: dsfrSpacings.v1),
+                child: Icon(
+                  Icons.add,
+                  size: dsfrSpacings.w5,
+                  color: dsfrTextStyles.frConnectBrand?.color,
+                ),
+              ),
           ],
         ),
       ),

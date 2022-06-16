@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../base/color_palette.dart';
+
 @immutable
 class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
   final TextStyle? frConnectLogin;
@@ -16,15 +18,15 @@ class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
       : this._(
           frConnectLogin: const TextStyle(
             fontSize: 17,
-            color: Color(0xFFf5f5fe),
+            color: ColorPalette.blueFrance975,
           ),
           frConnectBrand: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w700,
-            color: Color(0xFFf5f5fe),
+            color: ColorPalette.blueFrance975,
           ),
           frConnectGroup: const TextStyle(
-            color: Color(0xFF000091),
+            color: ColorPalette.blueFranceSun113,
           ),
         );
 

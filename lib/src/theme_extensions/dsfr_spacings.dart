@@ -36,6 +36,21 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
   /// Space in rem: 3
   final double w6;
 
+  /// Space in rem: 3.5
+  final double w7;
+
+  /// Space in rem: 4
+  final double w8;
+
+  /// Space in rem: 4.5
+  final double w9;
+
+  /// Space in rem: 6
+  final double w12;
+
+  /// Space in rem: 7.5
+  final double w15;
+
   const DSFRSpacings._({
     required this.v0_5,
     required this.v1,
@@ -48,6 +63,11 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
     required this.w4,
     required this.w5,
     required this.w6,
+    required this.w7,
+    required this.w8,
+    required this.w9,
+    required this.w12,
+    required this.w15,
   });
 
   const DSFRSpacings.base()
@@ -63,6 +83,11 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
           w4: 32,
           w5: 40,
           w6: 48,
+          w7: 56,
+          w8: 64,
+          w9: 72,
+          w12: 96,
+          w15: 120,
         );
 
   @override
@@ -78,6 +103,11 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
     double? w4,
     double? w5,
     double? w6,
+    double? w7,
+    double? w8,
+    double? w9,
+    double? w12,
+    double? w15,
   }) {
     return DSFRSpacings._(
       v0_5: v0_5 ?? this.v0_5,
@@ -91,6 +121,11 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
       w4: w4 ?? this.w4,
       w5: w5 ?? this.w5,
       w6: w6 ?? this.w6,
+      w7: w7 ?? this.w7,
+      w8: w8 ?? this.w8,
+      w9: w9 ?? this.w9,
+      w12: w12 ?? this.w12,
+      w15: w15 ?? this.w15,
     );
   }
 
