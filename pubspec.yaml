@@ -57,3 +57,10 @@ flutter:
         - asset: assets/fonts/Marianne/Marianne-ExtraBoldItalic.otf
           weight: 800
           style: italic
+    - family: Spectral
+      fonts:
+        - asset: assets/fonts/Spectral/Spectral-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Spectral/Spectral-LightItalic.ttf
+          weight: 300
+          style: italic
