@@ -1,7 +1,7 @@
 name: flutter_dsfr
 description: Flutter implementation of the french government design system.
 version: 0.0.1
-homepage:
+homepage: https://github.com/TesteurManiak/flutter_dsfr
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
