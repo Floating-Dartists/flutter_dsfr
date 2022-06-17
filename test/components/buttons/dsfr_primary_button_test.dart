@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('DSFRPrimaryButton', () {
-    final widgets = GoldenTestGroup(
+    final widget = GoldenTestGroup(
       children: [
         GoldenTestScenario(
           name: 'default',
@@ -40,7 +40,7 @@ void main() {
     goldenTest(
       'renders light mode',
       fileName: 'dsfr_primary_button',
-      builder: () => widgets,
+      builder: () => widget,
     );
 
     goldenTest(
@@ -57,7 +57,7 @@ void main() {
             DSFRButtonStyle.dark(),
           ],
         ),
-        child: widgets,
+        child: widget,
       ),
     );
   });
