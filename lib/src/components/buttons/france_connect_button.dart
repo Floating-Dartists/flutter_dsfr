@@ -61,7 +61,7 @@ class FranceConnectBase extends StatelessWidget {
     final theme = Theme.of(context);
 
     final dsfrColors = theme.extension<DSFRColors>()!;
-    final dsfrTextStyles = theme.extension<DSFRTextStyles>()!;
+    final dsfrTextStyles = theme.extension<DSFRTypography>()!;
     final dsfrSpacings = theme.extension<DSFRSizes>()!;
 
     final defaultStyle = DSFRButtonStyle(
@@ -157,7 +157,7 @@ class _InfoLinkButtonState extends State<InfoLinkButton> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final baseStyle = theme.extension<DSFRTextStyles>()!.frConnectGroup;
+    final baseStyle = theme.extension<DSFRTypography>()!.frConnectGroup;
     final style = baseStyle?.merge(
       TextStyle(decoration: _isHovered ? TextDecoration.underline : null),
     );

@@ -7,7 +7,7 @@ import 'package:flutter_dsfr/flutter_dsfr.dart';
 Future<void> testExecutable(FutureOr<void> Function() testMain) async {
   const isRunningInCi = bool.fromEnvironment('CI', defaultValue: false);
 
-  DSFRTextStyles.packageName = null;
+  DSFRTypography.packageName = null;
 
   return AlchemistConfig.runWithConfig(
     config: AlchemistConfig(
@@ -15,7 +15,7 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
         fontFamily: 'Marianne',
         brightness: Brightness.light,
         extensions: [
-          DSFRTextStyles.light(),
+          DSFRTypography.light(),
           const DSFRColors.light(),
           const DSFRSizes.base(),
           DSFRButtonStyle.light(),

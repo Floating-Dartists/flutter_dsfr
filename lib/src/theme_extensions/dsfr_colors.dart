@@ -28,6 +28,9 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           frConnectBackground: ColorPalette.blueFrance625,
         );
 
+  static DSFRColors of(BuildContext context) =>
+      Theme.of(context).extension<DSFRColors>()!;
+
   @override
   ThemeExtension<DSFRColors> copyWith() {
     return DSFRColors._(

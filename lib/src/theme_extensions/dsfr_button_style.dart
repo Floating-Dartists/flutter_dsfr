@@ -2,8 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../../flutter_dsfr.dart';
 import '../base/color_palette.dart';
-import 'dsfr_text_styles.dart';
+import 'dsfr_typography.dart';
 
 @immutable
 class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
@@ -28,7 +29,7 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
 
   /// Provides a default style for buttons in light theme.
   factory DSFRButtonStyle.light() {
-    final textStyles = DSFRTextStyles.light();
+    final textStyles = DSFRTypography.light();
     return DSFRButtonStyle(
       backgroundColor: ColorPalette.blueFranceSun113,
       hoverColor: ColorPalette.blueFranceSun113Hover,
@@ -41,7 +42,7 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
 
   /// Provides a default style for buttons in dark theme.
   factory DSFRButtonStyle.dark() {
-    final textStyles = DSFRTextStyles.dark();
+    final textStyles = DSFRTypography.dark();
     return DSFRButtonStyle(
       backgroundColor: ColorPalette.blueFrance625,
       hoverColor: ColorPalette.blueFrance625Hover,
@@ -51,6 +52,9 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
       textStyle: textStyles.primaryBtnLabel,
     );
   }
+
+  static DSFRButtonStyle of(BuildContext context) =>
+      Theme.of(context).extension<DSFRButtonStyle>()!;
 
   @override
   ThemeExtension<DSFRButtonStyle> copyWith({

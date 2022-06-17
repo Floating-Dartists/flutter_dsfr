@@ -4,7 +4,7 @@ import '../base/color_palette.dart';
 import 'dsfr_sizes.dart';
 
 @immutable
-class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
+class DSFRTypography extends ThemeExtension<DSFRTypography> {
   @visibleForTesting
   static String? packageName = 'flutter_dsfr';
 
@@ -13,21 +13,22 @@ class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
   final TextStyle? frConnectGroup;
   final TextStyle? primaryBtnLabel;
 
-  const DSFRTextStyles._({
+  const DSFRTypography._({
     required this.frConnectLogin,
     required this.frConnectBrand,
     required this.frConnectGroup,
     required this.primaryBtnLabel,
   });
 
-  factory DSFRTextStyles.light() {
+  factory DSFRTypography.light() {
     const dsfrSizes = DSFRSizes.base();
-    return DSFRTextStyles._(
+    return DSFRTypography._(
       frConnectLogin: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
         fontSize: 17,
         color: ColorPalette.blueFrance975,
+        decoration: TextDecoration.none,
       ),
       frConnectBrand: TextStyle(
         fontFamily: 'Marianne',
@@ -35,12 +36,14 @@ class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
         fontSize: 18,
         fontWeight: FontWeight.w700,
         color: ColorPalette.blueFrance975,
+        decoration: TextDecoration.none,
       ),
       frConnectGroup: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
         fontSize: dsfrSizes.v3,
         color: ColorPalette.blueFranceSun113,
+        decoration: TextDecoration.none,
       ),
       primaryBtnLabel: TextStyle(
         fontFamily: 'Marianne',
@@ -48,17 +51,19 @@ class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
         fontWeight: FontWeight.w500,
         fontSize: dsfrSizes.w2,
         color: ColorPalette.blueFrance975,
+        decoration: TextDecoration.none,
       ),
     );
   }
 
-  DSFRTextStyles.dark()
+  DSFRTypography.dark()
       : this._(
           frConnectLogin: TextStyle(
             fontFamily: 'Marianne',
             package: packageName,
             fontSize: 17,
             color: ColorPalette.blueFranceSun113,
+            decoration: TextDecoration.none,
           ),
           frConnectBrand: TextStyle(
             fontFamily: 'Marianne',
@@ -66,44 +71,47 @@ class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
             fontSize: 18,
             fontWeight: FontWeight.w700,
             color: ColorPalette.blueFranceSun113,
+            decoration: TextDecoration.none,
           ),
           frConnectGroup: TextStyle(
             fontFamily: 'Marianne',
             package: packageName,
             color: ColorPalette.blueFrance625,
+            decoration: TextDecoration.none,
           ),
           primaryBtnLabel: TextStyle(
             fontFamily: 'Marianne',
             package: packageName,
             fontWeight: FontWeight.w500,
             color: ColorPalette.blueFranceSun113,
+            decoration: TextDecoration.none,
           ),
         );
 
+  static DSFRTypography of(BuildContext context) =>
+      Theme.of(context).extension<DSFRTypography>()!;
+
   @override
-  ThemeExtension<DSFRTextStyles> copyWith({
-    TextStyle? frConnectLogin,
-    TextStyle? frConnectBrand,
-    TextStyle? frConnectGroup,
+  ThemeExtension<DSFRTypography> copyWith({
     TextStyle? primaryBtnLabel,
   }) {
-    return DSFRTextStyles._(
-      frConnectLogin: frConnectLogin ?? this.frConnectLogin,
-      frConnectBrand: frConnectBrand ?? this.frConnectBrand,
-      frConnectGroup: frConnectGroup ?? this.frConnectGroup,
+    return DSFRTypography._(
+      frConnectLogin: frConnectLogin,
+      frConnectBrand: frConnectBrand,
+      frConnectGroup: frConnectGroup,
       primaryBtnLabel: primaryBtnLabel ?? this.primaryBtnLabel,
     );
   }
 
   @override
-  ThemeExtension<DSFRTextStyles> lerp(
-    ThemeExtension<DSFRTextStyles>? other,
+  ThemeExtension<DSFRTypography> lerp(
+    ThemeExtension<DSFRTypography>? other,
     double t,
   ) {
-    if (other is! DSFRTextStyles) {
+    if (other is! DSFRTypography) {
       return this;
     }
-    return DSFRTextStyles._(
+    return DSFRTypography._(
       frConnectLogin: TextStyle.lerp(frConnectLogin, other.frConnectLogin, t),
       frConnectBrand: TextStyle.lerp(frConnectBrand, other.frConnectBrand, t),
       frConnectGroup: TextStyle.lerp(frConnectGroup, other.frConnectGroup, t),

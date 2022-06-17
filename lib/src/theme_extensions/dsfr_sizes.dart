@@ -90,6 +90,9 @@ class DSFRSizes extends ThemeExtension<DSFRSizes> {
           w15: 120,
         );
 
+  static DSFRSizes of(BuildContext context) =>
+      Theme.of(context).extension<DSFRSizes>() ?? const DSFRSizes.base();
+
   @override
   ThemeExtension<DSFRSizes> copyWith({
     double? v0_5,
