@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
 * Primary
 
 ```dart
-DSFRPrimaryButton(onPressed: () {}, child: Text('Label bouton'));
+DSFRPrimaryButton(onPressed: () {}, label: 'Label bouton');
 ```
 
 ![](https://raw.githubusercontent.com/TesteurManiak/flutter_dsfr/main/screenshots/primary_button.png)
