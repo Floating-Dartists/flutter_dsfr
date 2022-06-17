@@ -39,6 +39,7 @@ class DSFRTextStyles extends ThemeExtension<DSFRTextStyles> {
       frConnectGroup: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
+        fontSize: dsfrSizes.v3,
         color: ColorPalette.blueFranceSun113,
       ),
       primaryBtnLabel: TextStyle(

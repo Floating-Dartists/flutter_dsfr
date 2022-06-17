@@ -66,6 +66,8 @@ class FranceConnectBase extends StatelessWidget {
 
     final defaultStyle = DSFRButtonStyle(
       backgroundColor: dsfrColors.frConnectBackground,
+      hoverColor: dsfrColors.frConnectHover,
+      activeColor: dsfrColors.frConnectActive,
       shape: const RoundedRectangleBorder(),
       elevation: 0,
     );
@@ -78,8 +80,8 @@ class FranceConnectBase extends StatelessWidget {
       padding: EdgeInsets.only(
         bottom: dsfrSpacings.v3,
       ),
-      child: MaterialButton(
-        elevation: btnStyle.elevation,
+      child: RawMaterialButton(
+        elevation: btnStyle.elevation ?? 0,
         hoverElevation: 0,
         focusElevation: 0,
         disabledElevation: 0,
@@ -90,9 +92,9 @@ class FranceConnectBase extends StatelessWidget {
           left: dsfrSpacings.v3,
           right: dsfrSpacings.w3,
         ),
-        shape: btnStyle.shape,
-        color: btnStyle.backgroundColor,
-        hoverColor: dsfrColors.frConnectHover,
+        shape: btnStyle.shape ?? const RoundedRectangleBorder(),
+        fillColor: btnStyle.backgroundColor,
+        hoverColor: btnStyle.hoverColor,
         onPressed: onPressed,
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -156,12 +158,8 @@ class _InfoLinkButtonState extends State<InfoLinkButton> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final baseStyle = theme.extension<DSFRTextStyles>()!.frConnectGroup;
-    final dsfrSpacings = theme.extension<DSFRSizes>()!;
     final style = baseStyle?.merge(
-      TextStyle(
-        decoration: _isHovered ? TextDecoration.underline : null,
-        fontSize: dsfrSpacings.v3,
-      ),
+      TextStyle(decoration: _isHovered ? TextDecoration.underline : null),
     );
     return InkWell(
       hoverColor: Colors.transparent,
@@ -172,9 +170,7 @@ class _InfoLinkButtonState extends State<InfoLinkButton> {
               : Endpoints.franceConnect,
         ),
       ),
-      onHover: (isHovered) {
-        setState(() => _isHovered = isHovered);
-      },
+      onHover: (isHovered) => setState(() => _isHovered = isHovered),
       child: Text(
         widget.variant ? _kFranceConnectTextVariant : _kFranceConnectText,
         style: style,
