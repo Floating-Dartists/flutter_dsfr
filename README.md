@@ -50,6 +50,14 @@ DSFRPrimaryButton(onPressed: () {}, label: 'Label bouton');
 
 ![](https://raw.githubusercontent.com/TesteurManiak/flutter_dsfr/main/screenshots/primary_button.png)
 
+* Secondary
+
+```dart
+DSFRSecondaryButton(onPressed: () {}, label: 'Label bouton');
+```
+
+![](https://raw.githubusercontent.com/TesteurManiak/flutter_dsfr/main/screenshots/secondary_button.png)
+
 * FranceConnect
 
 ```dart
