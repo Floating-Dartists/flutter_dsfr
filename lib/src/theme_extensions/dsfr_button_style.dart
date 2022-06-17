@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../base/color_palette.dart';
@@ -82,7 +84,7 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
       hoverColor: Color.lerp(hoverColor, other.hoverColor, t),
       activeColor: Color.lerp(activeColor, other.activeColor, t),
       shape: ShapeBorder.lerp(shape, other.shape, t),
-      elevation: elevation,
+      elevation: lerpDouble(elevation, other.elevation, t),
       textStyle: TextStyle.lerp(textStyle, other.textStyle, t),
     );
   }

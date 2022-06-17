@@ -12,13 +12,13 @@ import '../../consts/endpoints.dart';
 ///
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/967868417/Bouton+FranceConnect
 class FranceConnectButton extends StatelessWidget {
-  /// {@macro components.buttons.primary.onPressed}
+  /// {@macro base.dsfrButtonStyleButton.onPressed}
   final VoidCallback onPressed;
 
   /// If `true` the button displayed will be FranceConnect+.
   final bool variant;
 
-  /// The shape of the button.
+  /// {@macor base.dsfrButtonStyleButton.style}
   final DSFRButtonStyle? style;
 
   const FranceConnectButton({
