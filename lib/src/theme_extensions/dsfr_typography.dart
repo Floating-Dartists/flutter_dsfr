@@ -12,12 +12,14 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle? frConnectBrand;
   final TextStyle? frConnectGroup;
   final TextStyle? primaryBtnLabel;
+  final TextStyle? secondaryBtnLabel;
 
   const DSFRTypography._({
     required this.frConnectLogin,
     required this.frConnectBrand,
     required this.frConnectGroup,
     required this.primaryBtnLabel,
+    required this.secondaryBtnLabel,
   });
 
   factory DSFRTypography.light() {
@@ -53,40 +55,53 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         color: ColorPalette.blueFrance975,
         decoration: TextDecoration.none,
       ),
+      secondaryBtnLabel: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        color: const Color(0xFF9a9aff),
+        decoration: TextDecoration.none,
+      ),
     );
   }
 
-  DSFRTypography.dark()
-      : this._(
-          frConnectLogin: TextStyle(
-            fontFamily: 'Marianne',
-            package: packageName,
-            fontSize: 17,
-            color: ColorPalette.blueFranceSun113,
-            decoration: TextDecoration.none,
-          ),
-          frConnectBrand: TextStyle(
-            fontFamily: 'Marianne',
-            package: packageName,
-            fontSize: 18,
-            fontWeight: FontWeight.w700,
-            color: ColorPalette.blueFranceSun113,
-            decoration: TextDecoration.none,
-          ),
-          frConnectGroup: TextStyle(
-            fontFamily: 'Marianne',
-            package: packageName,
-            color: ColorPalette.blueFrance625,
-            decoration: TextDecoration.none,
-          ),
-          primaryBtnLabel: TextStyle(
-            fontFamily: 'Marianne',
-            package: packageName,
-            fontWeight: FontWeight.w500,
-            color: ColorPalette.blueFranceSun113,
-            decoration: TextDecoration.none,
-          ),
-        );
+  factory DSFRTypography.dark() {
+    return DSFRTypography._(
+      frConnectLogin: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontSize: 17,
+        color: ColorPalette.blueFranceSun113,
+        decoration: TextDecoration.none,
+      ),
+      frConnectBrand: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontSize: 18,
+        fontWeight: FontWeight.w700,
+        color: ColorPalette.blueFranceSun113,
+        decoration: TextDecoration.none,
+      ),
+      frConnectGroup: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        color: ColorPalette.blueFrance625,
+        decoration: TextDecoration.none,
+      ),
+      primaryBtnLabel: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontWeight: FontWeight.w500,
+        color: ColorPalette.blueFranceSun113,
+        decoration: TextDecoration.none,
+      ),
+      secondaryBtnLabel: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        color: const Color(0xFF9a9aff),
+        decoration: TextDecoration.none,
+      ),
+    );
+  }
 
   static DSFRTypography of(BuildContext context) =>
       Theme.of(context).extension<DSFRTypography>()!;
@@ -94,12 +109,14 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   @override
   ThemeExtension<DSFRTypography> copyWith({
     TextStyle? primaryBtnLabel,
+    TextStyle? secondaryBtnLabel,
   }) {
     return DSFRTypography._(
       frConnectLogin: frConnectLogin,
       frConnectBrand: frConnectBrand,
       frConnectGroup: frConnectGroup,
       primaryBtnLabel: primaryBtnLabel ?? this.primaryBtnLabel,
+      secondaryBtnLabel: secondaryBtnLabel ?? this.secondaryBtnLabel,
     );
   }
 
@@ -117,6 +134,8 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       frConnectGroup: TextStyle.lerp(frConnectGroup, other.frConnectGroup, t),
       primaryBtnLabel:
           TextStyle.lerp(primaryBtnLabel, other.primaryBtnLabel, t),
+      secondaryBtnLabel:
+          TextStyle.lerp(secondaryBtnLabel, other.secondaryBtnLabel, t),
     );
   }
 }

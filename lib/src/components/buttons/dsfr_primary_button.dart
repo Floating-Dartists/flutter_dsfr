@@ -19,7 +19,7 @@ class DSFRPrimaryButton extends DSFRButtonStyleButton {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final dsfrSpacings = theme.extension<DSFRSizes>()!;
+    final dsfrSpacings = DSFRSizes.of(context);
     final defaultBtnStyle = theme.extension<DSFRButtonStyle>()!;
     final btnStyle = defaultBtnStyle.merge(style);
 

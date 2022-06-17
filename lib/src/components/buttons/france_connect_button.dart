@@ -62,7 +62,7 @@ class FranceConnectBase extends StatelessWidget {
 
     final dsfrColors = theme.extension<DSFRColors>()!;
     final dsfrTextStyles = theme.extension<DSFRTypography>()!;
-    final dsfrSpacings = theme.extension<DSFRSizes>()!;
+    final dsfrSpacings = DSFRSizes.of(context);
 
     final defaultStyle = DSFRButtonStyle(
       backgroundColor: dsfrColors.frConnectBackground,
