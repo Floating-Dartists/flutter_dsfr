@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
     UnconstrainedBox(
       child: DSFRPrimaryButton(
         onPressed: () {},
-        child: const Text('Label bouton'),
+        label: 'Label bouton',
       ),
     ),
   ];

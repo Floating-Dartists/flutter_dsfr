@@ -1,32 +1,20 @@
+import 'dart:math' as math;
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../../../flutter_dsfr.dart';
+import '../../base/dsfr_button_style_button.dart';
 
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons#Bouton-primaire
-class DSFRPrimaryButton extends StatelessWidget {
-  /// {@template components.buttons.primary.onPressed}
-  /// The callback that is called when the button is tapped or otherwise
-  /// activated.
-  ///
-  /// If this callback is null, then the button will be disabled.
-  ///
-  /// See also:
-  ///
-  ///  * [enabled], which is true if the button is enabled.
-  /// {@endtemplate}
-  final VoidCallback? onPressed;
-
-  /// Typically the button's label.
-  final Widget child;
-
-  final DSFRButtonStyle? style;
-
+class DSFRPrimaryButton extends DSFRButtonStyleButton {
   const DSFRPrimaryButton({
-    Key? key,
-    required this.onPressed,
-    required this.child,
-    this.style,
-  }) : super(key: key);
+    super.key,
+    required super.onPressed,
+    required super.label,
+    super.icon,
+    super.style,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +22,12 @@ class DSFRPrimaryButton extends StatelessWidget {
     final dsfrSpacings = theme.extension<DSFRSizes>()!;
     final defaultBtnStyle = theme.extension<DSFRButtonStyle>()!;
     final btnStyle = defaultBtnStyle.merge(style);
+
+    final scale = MediaQuery.maybeOf(context)?.textScaleFactor ?? 1;
+    final double gap =
+        scale <= 1 ? 8 : lerpDouble(8, 4, math.min(scale - 1, 1))!;
+
+    final btnIcon = icon;
 
     return RawMaterialButton(
       elevation: btnStyle.elevation ?? 0.0,
@@ -47,7 +41,13 @@ class DSFRPrimaryButton extends StatelessWidget {
       ),
       textStyle: btnStyle.textStyle,
       onPressed: onPressed,
-      child: child,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (btnIcon != null) ...[btnIcon, SizedBox(width: gap)],
+          Flexible(child: Text(label)),
+        ],
+      ),
     );
   }
 }
