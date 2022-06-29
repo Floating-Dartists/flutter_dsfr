@@ -32,7 +32,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       Theme.of(context).extension<DSFRColors>()!;
 
   @override
-  ThemeExtension<DSFRColors> copyWith() {
+  DSFRColors copyWith() {
     return DSFRColors._(
       frConnectHover: frConnectHover,
       frConnectActive: frConnectActive,
@@ -41,7 +41,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   }
 
   @override
-  ThemeExtension<DSFRColors> lerp(ThemeExtension<DSFRColors>? other, double t) {
+  DSFRColors lerp(ThemeExtension<DSFRColors>? other, double t) {
     if (other is! DSFRColors) {
       return this;
     }
