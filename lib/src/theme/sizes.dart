@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222396724/Espacement+-+Spacing
@@ -70,7 +72,7 @@ class DSFRSizes extends ThemeExtension<DSFRSizes> {
     required this.w15,
   });
 
-  const DSFRSizes.base()
+  const DSFRSizes.regular()
       : this._(
           v0_5: 2,
           v1: 4,
@@ -94,7 +96,7 @@ class DSFRSizes extends ThemeExtension<DSFRSizes> {
       Theme.of(context).extension<DSFRSizes>()!;
 
   @override
-  ThemeExtension<DSFRSizes> copyWith({
+  DSFRSizes copyWith({
     double? v0_5,
     double? v1,
     double? v1_5,
@@ -133,10 +135,27 @@ class DSFRSizes extends ThemeExtension<DSFRSizes> {
   }
 
   @override
-  ThemeExtension<DSFRSizes> lerp(
-    ThemeExtension<DSFRSizes>? other,
-    double t,
-  ) {
-    return this;
+  DSFRSizes lerp(ThemeExtension<DSFRSizes>? other, double t) {
+    if (other is! DSFRSizes) {
+      return this;
+    }
+    return DSFRSizes._(
+      v0_5: lerpDouble(v0_5, other.v0_5, t)!,
+      v1: lerpDouble(v1, other.v1, t)!,
+      v1_5: lerpDouble(v1_5, other.v1_5, t)!,
+      w1: lerpDouble(w1, other.w1, t)!,
+      v3: lerpDouble(v3, other.v3, t)!,
+      w2: lerpDouble(w2, other.w2, t)!,
+      v5: lerpDouble(v5, other.v5, t)!,
+      w3: lerpDouble(w3, other.w3, t)!,
+      w4: lerpDouble(w4, other.w4, t)!,
+      w5: lerpDouble(w5, other.w5, t)!,
+      w6: lerpDouble(w6, other.w6, t)!,
+      w7: lerpDouble(w7, other.w7, t)!,
+      w8: lerpDouble(w8, other.w8, t)!,
+      w9: lerpDouble(w9, other.w9, t)!,
+      w12: lerpDouble(w12, other.w12, t)!,
+      w15: lerpDouble(w15, other.w15, t)!,
+    );
   }
 }

@@ -50,8 +50,7 @@ void main() {
           extensions: [
             DSFRTypography.dark(),
             const DSFRColors.dark(),
-            const DSFRSizes.base(),
-            DSFRButtonStyle.dark(),
+            const DSFRSizes.regular(),
           ],
         ),
         child: widget,

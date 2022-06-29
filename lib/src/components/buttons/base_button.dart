@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../theme_extensions/dsfr_button_style.dart';
-
-abstract class DSFRButtonStyleButton extends StatelessWidget {
-  const DSFRButtonStyleButton({
+abstract class DSFRBaseButton extends StatelessWidget {
+  const DSFRBaseButton({
     Key? key,
     required this.onPressed,
-    required this.style,
     required this.label,
     required this.icon,
   }) : super(key: key);
@@ -21,11 +18,6 @@ abstract class DSFRButtonStyleButton extends StatelessWidget {
   ///  * [enabled], which is true if the button is enabled.
   /// {@endtemplate}
   final VoidCallback? onPressed;
-
-  /// {@template base.dsfrButtonStyleButton.style}
-  /// Customizes this button's appearance.
-  /// {@endtemplate}
-  final DSFRButtonStyle? style;
 
   /// {@template base.dsfrButtonStyleButton.label}
   /// The button's label.

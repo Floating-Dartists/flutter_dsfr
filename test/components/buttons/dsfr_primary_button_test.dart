@@ -15,18 +15,6 @@ void main() {
           ),
         ),
         GoldenTestScenario(
-          name: 'rounded',
-          child: DSFRPrimaryButton(
-            style: DSFRButtonStyle(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-            ),
-            onPressed: () {},
-            label: 'Label bouton',
-          ),
-        ),
-        GoldenTestScenario(
           name: 'with icon',
           child: DSFRPrimaryButton(
             onPressed: () {},
@@ -53,8 +41,7 @@ void main() {
           extensions: [
             DSFRTypography.dark(),
             const DSFRColors.dark(),
-            const DSFRSizes.base(),
-            DSFRButtonStyle.dark(),
+            const DSFRSizes.regular(),
           ],
         ),
         child: widget,

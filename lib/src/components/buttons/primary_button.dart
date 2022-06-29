@@ -4,49 +4,42 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import '../../../flutter_dsfr.dart';
-import '../../base/dsfr_button_style_button.dart';
+import 'base_button.dart';
 
-class DSFRSecondaryButton extends DSFRButtonStyleButton {
-  const DSFRSecondaryButton({
+/// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons#Bouton-primaire
+class DSFRPrimaryButton extends DSFRBaseButton {
+  const DSFRPrimaryButton({
     super.key,
     required super.onPressed,
     required super.label,
     super.icon,
-    super.style,
   });
 
   @override
   Widget build(BuildContext context) {
     final dsfrSpacings = DSFRSizes.of(context);
+    final dsfrColors = DSFRColors.of(context);
     final dsfrTypography = DSFRTypography.of(context);
-    final defaultBtnStyle = DSFRButtonStyle.of(context).copyWith(
-      labelStyle: dsfrTypography.secondaryBtnLabel,
-    ) as DSFRButtonStyle;
-    final btnStyle = defaultBtnStyle.merge(style);
 
     final scale = MediaQuery.maybeOf(context)?.textScaleFactor ?? 1;
     final double gap =
         scale <= 1 ? 8 : lerpDouble(8, 4, math.min(scale - 1, 1))!;
 
     final btnIcon = icon;
-    final shape = RoundedRectangleBorder(
-      side: BorderSide(
-        color: btnStyle.textStyle?.color ?? const Color(0xFF9a9aff),
-      ),
-    );
 
     return RawMaterialButton(
-      onPressed: onPressed,
-      elevation: btnStyle.elevation ?? 0.0,
-      fillColor: Colors.transparent,
-      hoverColor: btnStyle.hoverColor,
-      splashColor: btnStyle.activeColor,
-      shape: shape,
+      elevation: 0.0,
+      fillColor: dsfrColors.backgroundActionHighBlueFrance,
+      hoverColor: dsfrColors.backgroundActionHighBlueFranceHover,
+      splashColor: dsfrColors.backgroundActionHighBlueFranceActive,
+      shape: const RoundedRectangleBorder(),
       padding: EdgeInsets.symmetric(
         vertical: dsfrSpacings.w1,
         horizontal: dsfrSpacings.w3,
       ),
-      textStyle: btnStyle.textStyle,
+      textStyle: dsfrTypography.primaryBtnLabel
+          .copyWith(color: dsfrColors.textInvertedBlueFrance),
+      onPressed: onPressed,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [

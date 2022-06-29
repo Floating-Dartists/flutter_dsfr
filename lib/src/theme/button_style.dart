@@ -1,13 +1,11 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 import '../../flutter_dsfr.dart';
-import '../base/color_palette.dart';
-import 'dsfr_typography.dart';
+import 'palette.dart';
+import 'typography.dart';
 
 @immutable
-class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
+class DSFRButtonStyle {
   final Color? backgroundColor;
   final Color? hoverColor;
   final Color? activeColor;
@@ -53,11 +51,7 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
     );
   }
 
-  static DSFRButtonStyle of(BuildContext context) =>
-      Theme.of(context).extension<DSFRButtonStyle>()!;
-
-  @override
-  ThemeExtension<DSFRButtonStyle> copyWith({
+  DSFRButtonStyle copyWith({
     Color? backgroundColor,
     Color? hoverColor,
     Color? activeColor,
@@ -75,24 +69,6 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
     );
   }
 
-  @override
-  ThemeExtension<DSFRButtonStyle> lerp(
-    ThemeExtension<DSFRButtonStyle>? other,
-    double t,
-  ) {
-    if (other is! DSFRButtonStyle) {
-      return this;
-    }
-    return DSFRButtonStyle(
-      backgroundColor: Color.lerp(backgroundColor, other.backgroundColor, t),
-      hoverColor: Color.lerp(hoverColor, other.hoverColor, t),
-      activeColor: Color.lerp(activeColor, other.activeColor, t),
-      shape: ShapeBorder.lerp(shape, other.shape, t),
-      elevation: lerpDouble(elevation, other.elevation, t),
-      textStyle: TextStyle.lerp(textStyle, other.textStyle, t),
-    );
-  }
-
   /// Returns a new button style that is a combination of this style and the
   /// given [other] style.
   DSFRButtonStyle merge(DSFRButtonStyle? other) {
@@ -106,6 +82,6 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
       shape: other.shape,
       elevation: other.elevation,
       labelStyle: other.textStyle,
-    ) as DSFRButtonStyle;
+    );
   }
 }
