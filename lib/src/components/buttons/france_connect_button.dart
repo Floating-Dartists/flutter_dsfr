@@ -62,16 +62,9 @@ class FranceConnectBase extends StatelessWidget {
     final dsfrTextStyles = DSFRTypography.of(context);
     final dsfrSpacings = DSFRSizes.of(context);
 
-    final defaultStyle = DSFRButtonStyle(
-      backgroundColor: dsfrColors.frConnectBackground,
-      hoverColor: dsfrColors.frConnectHover,
-      activeColor: dsfrColors.frConnectActive,
-      shape: const RoundedRectangleBorder(),
-      elevation: 0,
-    );
-    final btnStyle = defaultStyle.copyWith(
-      elevation: style?.elevation,
-      shape: style?.shape,
+    final btnStyle = DSFRButtonStyle(
+      shape: style?.shape ?? const RoundedRectangleBorder(),
+      elevation: style?.elevation ?? 0,
     );
 
     return Padding(
@@ -91,8 +84,9 @@ class FranceConnectBase extends StatelessWidget {
           right: dsfrSpacings.w3,
         ),
         shape: btnStyle.shape ?? const RoundedRectangleBorder(),
-        fillColor: btnStyle.backgroundColor,
-        hoverColor: btnStyle.hoverColor,
+        fillColor: dsfrColors.frConnectBackground,
+        hoverColor: dsfrColors.frConnectHover,
+        splashColor: dsfrColors.frConnectActive,
         onPressed: onPressed,
         child: Row(
           mainAxisSize: MainAxisSize.min,
