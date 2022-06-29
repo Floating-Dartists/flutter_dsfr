@@ -74,7 +74,7 @@ class FranceConnectBase extends StatelessWidget {
     final btnStyle = defaultStyle.copyWith(
       elevation: style?.elevation,
       shape: style?.shape,
-    ) as DSFRButtonStyle;
+    );
 
     return Padding(
       padding: EdgeInsets.only(
@@ -129,7 +129,7 @@ class FranceConnectBase extends StatelessWidget {
                 child: Icon(
                   Icons.add,
                   size: dsfrSpacings.w5,
-                  color: dsfrTextStyles.frConnectBrand?.color,
+                  color: dsfrTextStyles.frConnectBrand.color,
                 ),
               ),
           ],
@@ -158,7 +158,7 @@ class _InfoLinkButtonState extends State<InfoLinkButton> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final baseStyle = theme.extension<DSFRTypography>()!.frConnectGroup;
-    final style = baseStyle?.merge(
+    final style = baseStyle.merge(
       TextStyle(decoration: _isHovered ? TextDecoration.underline : null),
     );
     return InkWell(

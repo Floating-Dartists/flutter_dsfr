@@ -4,9 +4,9 @@ import '../base/color_palette.dart';
 
 @immutable
 class DSFRColors extends ThemeExtension<DSFRColors> {
-  final Color? frConnectHover;
-  final Color? frConnectActive;
-  final Color? frConnectBackground;
+  final Color frConnectHover;
+  final Color frConnectActive;
+  final Color frConnectBackground;
 
   const DSFRColors._({
     required this.frConnectHover,
@@ -46,10 +46,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       return this;
     }
     return DSFRColors._(
-      frConnectHover: Color.lerp(frConnectHover, other.frConnectHover, t),
-      frConnectActive: Color.lerp(frConnectActive, other.frConnectActive, t),
+      frConnectHover: Color.lerp(frConnectHover, other.frConnectHover, t)!,
+      frConnectActive: Color.lerp(frConnectActive, other.frConnectActive, t)!,
       frConnectBackground:
-          Color.lerp(frConnectBackground, other.frConnectBackground, t),
+          Color.lerp(frConnectBackground, other.frConnectBackground, t)!,
     );
   }
 }

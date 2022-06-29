@@ -53,7 +53,7 @@ void main() {
           extensions: [
             DSFRTypography.dark(),
             const DSFRColors.dark(),
-            const DSFRSizes.base(),
+            const DSFRSizes.regular(),
             DSFRButtonStyle.dark(),
           ],
         ),

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../flutter_dsfr.dart';
 import '../base/color_palette.dart';
-import 'dsfr_typography.dart';
+import '../theme/typography.dart';
 
 @immutable
 class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
@@ -57,7 +57,7 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
       Theme.of(context).extension<DSFRButtonStyle>()!;
 
   @override
-  ThemeExtension<DSFRButtonStyle> copyWith({
+  DSFRButtonStyle copyWith({
     Color? backgroundColor,
     Color? hoverColor,
     Color? activeColor,
@@ -76,10 +76,7 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
   }
 
   @override
-  ThemeExtension<DSFRButtonStyle> lerp(
-    ThemeExtension<DSFRButtonStyle>? other,
-    double t,
-  ) {
+  DSFRButtonStyle lerp(ThemeExtension<DSFRButtonStyle>? other, double t) {
     if (other is! DSFRButtonStyle) {
       return this;
     }
@@ -106,6 +103,6 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
       shape: other.shape,
       elevation: other.elevation,
       labelStyle: other.textStyle,
-    ) as DSFRButtonStyle;
+    );
   }
 }

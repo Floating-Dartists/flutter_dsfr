@@ -11,13 +11,13 @@ class DSFRIcons extends ThemeExtension<DSFRIcons> {
       Theme.of(context).extension<DSFRIcons>()!;
 
   @override
-  ThemeExtension<DSFRIcons> copyWith() {
+  DSFRIcons copyWith() {
     // TODO: implement copyWith
     throw UnimplementedError();
   }
 
   @override
-  ThemeExtension<DSFRIcons> lerp(ThemeExtension<DSFRIcons>? other, double t) {
+  DSFRIcons lerp(ThemeExtension<DSFRIcons>? other, double t) {
     return this;
   }
 }

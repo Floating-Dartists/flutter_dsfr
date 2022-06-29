@@ -21,7 +21,7 @@ class DSFRSecondaryButton extends DSFRButtonStyleButton {
     final dsfrTypography = DSFRTypography.of(context);
     final defaultBtnStyle = DSFRButtonStyle.of(context).copyWith(
       labelStyle: dsfrTypography.secondaryBtnLabel,
-    ) as DSFRButtonStyle;
+    );
     final btnStyle = defaultBtnStyle.merge(style);
 
     final scale = MediaQuery.maybeOf(context)?.textScaleFactor ?? 1;

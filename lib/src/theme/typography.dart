@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 import '../base/color_palette.dart';
-import 'dsfr_sizes.dart';
+import 'sizes.dart';
 
 @immutable
 class DSFRTypography extends ThemeExtension<DSFRTypography> {
   @visibleForTesting
   static String? packageName = 'flutter_dsfr';
 
-  final TextStyle? frConnectLogin;
-  final TextStyle? frConnectBrand;
-  final TextStyle? frConnectGroup;
-  final TextStyle? primaryBtnLabel;
-  final TextStyle? secondaryBtnLabel;
+  final TextStyle frConnectLogin;
+  final TextStyle frConnectBrand;
+  final TextStyle frConnectGroup;
+  final TextStyle primaryBtnLabel;
+  final TextStyle secondaryBtnLabel;
 
   const DSFRTypography._({
     required this.frConnectLogin,
@@ -23,7 +23,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   });
 
   factory DSFRTypography.light() {
-    const dsfrSizes = DSFRSizes.base();
+    const dsfrSizes = DSFRSizes.regular();
     return DSFRTypography._(
       frConnectLogin: TextStyle(
         fontFamily: 'Marianne',
@@ -107,7 +107,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       Theme.of(context).extension<DSFRTypography>()!;
 
   @override
-  ThemeExtension<DSFRTypography> copyWith({
+  DSFRTypography copyWith({
     TextStyle? primaryBtnLabel,
     TextStyle? secondaryBtnLabel,
   }) {
@@ -121,21 +121,18 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   }
 
   @override
-  ThemeExtension<DSFRTypography> lerp(
-    ThemeExtension<DSFRTypography>? other,
-    double t,
-  ) {
+  DSFRTypography lerp(ThemeExtension<DSFRTypography>? other, double t) {
     if (other is! DSFRTypography) {
       return this;
     }
     return DSFRTypography._(
-      frConnectLogin: TextStyle.lerp(frConnectLogin, other.frConnectLogin, t),
-      frConnectBrand: TextStyle.lerp(frConnectBrand, other.frConnectBrand, t),
-      frConnectGroup: TextStyle.lerp(frConnectGroup, other.frConnectGroup, t),
+      frConnectLogin: TextStyle.lerp(frConnectLogin, other.frConnectLogin, t)!,
+      frConnectBrand: TextStyle.lerp(frConnectBrand, other.frConnectBrand, t)!,
+      frConnectGroup: TextStyle.lerp(frConnectGroup, other.frConnectGroup, t)!,
       primaryBtnLabel:
-          TextStyle.lerp(primaryBtnLabel, other.primaryBtnLabel, t),
+          TextStyle.lerp(primaryBtnLabel, other.primaryBtnLabel, t)!,
       secondaryBtnLabel:
-          TextStyle.lerp(secondaryBtnLabel, other.secondaryBtnLabel, t),
+          TextStyle.lerp(secondaryBtnLabel, other.secondaryBtnLabel, t)!,
     );
   }
 }

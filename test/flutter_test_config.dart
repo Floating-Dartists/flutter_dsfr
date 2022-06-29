@@ -17,7 +17,7 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
         extensions: [
           DSFRTypography.light(),
           const DSFRColors.light(),
-          const DSFRSizes.base(),
+          const DSFRSizes.regular(),
           DSFRButtonStyle.light(),
         ],
       ),
