@@ -5,8 +5,11 @@ import 'sizes.dart';
 
 @immutable
 class DSFRTypography extends ThemeExtension<DSFRTypography> {
+  static String? _packageName = 'flutter_dsfr';
+  static String? get packageName => _packageName;
+
   @visibleForTesting
-  static String? packageName = 'flutter_dsfr';
+  static set packageName(String? value) => _packageName = value;
 
   final TextStyle frConnectLogin;
   final TextStyle frConnectBrand;
