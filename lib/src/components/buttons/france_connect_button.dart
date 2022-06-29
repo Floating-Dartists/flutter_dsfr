@@ -18,7 +18,6 @@ class FranceConnectButton extends StatelessWidget {
   /// If `true` the button displayed will be FranceConnect+.
   final bool variant;
 
-  /// {@macor base.dsfrButtonStyleButton.style}
   final DSFRButtonStyle? style;
 
   const FranceConnectButton({
