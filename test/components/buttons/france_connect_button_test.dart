@@ -51,7 +51,6 @@ void main() {
             DSFRTypography.dark(),
             const DSFRColors.dark(),
             const DSFRSizes.regular(),
-            DSFRButtonStyle.dark(),
           ],
         ),
         child: widget,

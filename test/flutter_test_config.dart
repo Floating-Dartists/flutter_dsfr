@@ -18,7 +18,6 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
           DSFRTypography.light(),
           const DSFRColors.light(),
           const DSFRSizes.regular(),
-          DSFRButtonStyle.light(),
         ],
       ),
       platformGoldensConfig: const PlatformGoldensConfig(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../base/color_palette.dart';
+import 'palette.dart';
 import 'sizes.dart';
 
 @immutable
@@ -55,13 +55,11 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         package: packageName,
         fontWeight: FontWeight.w500,
         fontSize: dsfrSizes.w2,
-        color: ColorPalette.blueFrance975,
         decoration: TextDecoration.none,
       ),
       secondaryBtnLabel: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
-        color: const Color(0xFF9a9aff),
         decoration: TextDecoration.none,
       ),
     );

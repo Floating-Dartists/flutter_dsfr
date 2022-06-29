@@ -58,10 +58,8 @@ class FranceConnectBase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     final dsfrColors = DSFRColors.of(context);
-    final dsfrTextStyles = theme.extension<DSFRTypography>()!;
+    final dsfrTextStyles = DSFRTypography.of(context);
     final dsfrSpacings = DSFRSizes.of(context);
 
     final defaultStyle = DSFRButtonStyle(
