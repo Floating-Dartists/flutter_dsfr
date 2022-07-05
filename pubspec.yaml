@@ -10,7 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_remix: ^0.0.3
   flutter_svg: ^1.1.0
   url_launcher: ^6.1.3
 
