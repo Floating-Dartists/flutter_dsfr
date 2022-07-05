@@ -14,6 +14,11 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color borderActionHighBlueFrance;
   final Color blockColorHover;
   final Color blockColorActive;
+  final Color error;
+  final Color info;
+  final Color success;
+  final Color warning;
+  final Color alertsBackgroundColor;
 
   const DSFRColors._({
     required this.frConnectHover,
@@ -26,6 +31,11 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.borderActionHighBlueFrance,
     required this.blockColorHover,
     required this.blockColorActive,
+    required this.error,
+    required this.info,
+    required this.success,
+    required this.warning,
+    required this.alertsBackgroundColor,
   });
 
   const DSFRColors.light()
@@ -42,6 +52,11 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           borderActionHighBlueFrance: ColorPalette.blueFranceSun113,
           blockColorHover: const Color.fromRGBO(224, 224, 224, 0.5),
           blockColorActive: const Color.fromRGBO(194, 194, 194, 0.5),
+          error: ColorPalette.error,
+          success: ColorPalette.success,
+          info: ColorPalette.info,
+          warning: ColorPalette.warning,
+          alertsBackgroundColor: ColorPalette.grey1000,
         );
 
   const DSFRColors.dark()
@@ -57,6 +72,11 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           borderActionHighBlueFrance: const Color(0xFF9a9aff),
           blockColorHover: const Color.fromRGBO(65, 65, 65, 0.5),
           blockColorActive: const Color.fromRGBO(99, 99, 99, 0.5),
+          error: ColorPalette.errorDarkMode,
+          success: ColorPalette.successDarkMode,
+          info: ColorPalette.infoDarkMode,
+          warning: ColorPalette.warningDarkMode,
+          alertsBackgroundColor: ColorPalette.grey50,
         );
 
   static DSFRColors of(BuildContext context) =>
@@ -71,6 +91,11 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     Color? borderActionHighBlueFrance,
     Color? blockColorHover,
     Color? blockColorActive,
+    Color? error,
+    Color? success,
+    Color? info,
+    Color? warning,
+    Color? alertsBackgroundColor,
   }) {
     return DSFRColors._(
       frConnectHover: frConnectHover,
@@ -90,6 +115,12 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           borderActionHighBlueFrance ?? this.borderActionHighBlueFrance,
       blockColorHover: blockColorHover ?? this.blockColorHover,
       blockColorActive: blockColorActive ?? this.blockColorActive,
+      error: error ?? this.error,
+      success: success ?? this.success,
+      info: info ?? this.info,
+      warning: warning ?? this.warning,
+      alertsBackgroundColor:
+          alertsBackgroundColor ?? this.alertsBackgroundColor,
     );
   }
 
@@ -131,6 +162,12 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       blockColorHover: Color.lerp(blockColorHover, other.blockColorHover, t)!,
       blockColorActive:
           Color.lerp(blockColorActive, other.blockColorActive, t)!,
+      error: Color.lerp(error, other.error, t)!,
+      info: Color.lerp(info, other.info, t)!,
+      success: Color.lerp(success, other.success, t)!,
+      warning: Color.lerp(warning, other.warning, t)!,
+      alertsBackgroundColor:
+          Color.lerp(alertsBackgroundColor, other.alertsBackgroundColor, t)!,
     );
   }
 }

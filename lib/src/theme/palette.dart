@@ -100,4 +100,15 @@ abstract class ColorPalette {
   static const greyMain525Active = Color(0xFFbababa);
 
   static const grey425 = Color(0xFF666666);
+  static const grey1000 = Color(0xFFffffff);
+  static const grey50 = Color(0xFF161616);
+
+  static const error = Color(0xFFe10600);
+  static const success = Color(0xFF008941);
+  static const info = Color(0xFF0762C8);
+  static const warning = Color(0xFFB34000);
+  static const errorDarkMode = Color(0xFFFF3333);
+  static const successDarkMode = Color(0xFF00EB5E);
+  static const infoDarkMode = Color(0xFF2B8BF7);
+  static const warningDarkMode = Color(0xFFFC5D00);
 }

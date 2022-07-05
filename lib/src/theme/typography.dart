@@ -16,6 +16,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle frConnectGroup;
   final TextStyle primaryBtnLabel;
   final TextStyle secondaryBtnLabel;
+  final TextStyle alertsTitle;
 
   const DSFRTypography._({
     required this.frConnectLogin,
@@ -23,6 +24,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.frConnectGroup,
     required this.primaryBtnLabel,
     required this.secondaryBtnLabel,
+    required this.alertsTitle,
   });
 
   factory DSFRTypography.light() {
@@ -62,10 +64,18 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         package: packageName,
         decoration: TextDecoration.none,
       ),
+      alertsTitle: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        decoration: TextDecoration.none,
+        fontWeight: FontWeight.w500,
+        fontSize: dsfrSizes.w2,
+      ),
     );
   }
 
   factory DSFRTypography.dark() {
+    const dsfrSizes = DSFRSizes.regular();
     return DSFRTypography._(
       frConnectLogin: TextStyle(
         fontFamily: 'Marianne',
@@ -101,6 +111,13 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         color: const Color(0xFF9a9aff),
         decoration: TextDecoration.none,
       ),
+      alertsTitle: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        decoration: TextDecoration.none,
+        fontWeight: FontWeight.w500,
+        fontSize: dsfrSizes.w2,
+      ),
     );
   }
 
@@ -111,6 +128,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   DSFRTypography copyWith({
     TextStyle? primaryBtnLabel,
     TextStyle? secondaryBtnLabel,
+    TextStyle? alertsTitle,
   }) {
     return DSFRTypography._(
       frConnectLogin: frConnectLogin,
@@ -118,6 +136,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       frConnectGroup: frConnectGroup,
       primaryBtnLabel: primaryBtnLabel ?? this.primaryBtnLabel,
       secondaryBtnLabel: secondaryBtnLabel ?? this.secondaryBtnLabel,
+      alertsTitle: alertsTitle ?? this.alertsTitle,
     );
   }
 
@@ -134,6 +153,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
           TextStyle.lerp(primaryBtnLabel, other.primaryBtnLabel, t)!,
       secondaryBtnLabel:
           TextStyle.lerp(secondaryBtnLabel, other.secondaryBtnLabel, t)!,
+      alertsTitle: TextStyle.lerp(alertsTitle, other.alertsTitle, t)!,
     );
   }
 }

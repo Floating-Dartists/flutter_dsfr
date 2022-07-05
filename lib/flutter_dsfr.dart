@@ -6,6 +6,7 @@ import 'src/theme/colors.dart';
 import 'src/theme/sizes.dart';
 import 'src/theme/typography.dart';
 
+export 'src/components/alerts/alerts.dart';
 export 'src/components/buttons/france_connect_button.dart'
     hide InfoLinkButton, FranceConnectBase;
 export 'src/components/buttons/primary_button.dart';

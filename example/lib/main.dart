@@ -41,6 +41,28 @@ class _MyHomePageState extends State<MyHomePage> {
         label: 'Label bouton',
       ),
     ),
+    DSFRAlerts(
+      type: DSFRAlertsType.error,
+      title: "Error Alert - MD",
+      description: "une alerte de type error avec un titre et une description",
+    ),
+    DSFRAlerts(
+      type: DSFRAlertsType.success,
+      title: "Success Alert - MD",
+      description:
+          "une alerte de type success avec un titre et une description",
+    ),
+    DSFRAlerts(
+      type: DSFRAlertsType.info,
+      title: "Info Alert - MD",
+      description: "une alerte de type info avec un titre et une description",
+    ),
+    DSFRAlerts(
+      type: DSFRAlertsType.warning,
+      title: "Warning Alert - MD",
+      description:
+          "une alerte de type warning avec un titre et une description",
+    ),
   ];
 
   @override
