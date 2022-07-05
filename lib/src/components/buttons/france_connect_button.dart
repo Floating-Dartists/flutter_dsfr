@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../flutter_dsfr.dart';
 import '../../consts/endpoints.dart';
+import '../../theme/button_style.dart';
+import '../../theme/colors.dart';
+import '../../theme/sizes.dart';
+import '../../theme/typography.dart';
 
 /// Create a button to connect using FranceConnect services.
 ///
@@ -148,10 +151,13 @@ class _InfoLinkButtonState extends State<InfoLinkButton> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final baseStyle = theme.extension<DSFRTypography>()!.frConnectGroup;
+    final dsfrColors = DSFRColors.of(context);
+    final baseStyle = DSFRTypography.of(context).frConnectGroup;
     final style = baseStyle.merge(
-      TextStyle(decoration: _isHovered ? TextDecoration.underline : null),
+      TextStyle(
+        decoration: _isHovered ? TextDecoration.underline : null,
+        color: dsfrColors.frConnectBackground,
+      ),
     );
     return InkWell(
       hoverColor: Colors.transparent,

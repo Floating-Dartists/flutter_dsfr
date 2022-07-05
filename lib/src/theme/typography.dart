@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../utils/named_property.dart';
-import 'palette.dart';
 import 'sizes.dart';
 
 @immutable
@@ -26,7 +25,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.secondaryBtnLabel,
   });
 
-  factory DSFRTypography.light() {
+  factory DSFRTypography.regular() {
     const dsfrSizes = DSFRSizes.regular();
     return DSFRTypography._(
       frConnectLogin: TextStyle(
@@ -46,7 +45,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         fontFamily: 'Marianne',
         package: packageName,
         fontSize: dsfrSizes.v3,
-        color: ColorPalette.blueFranceSun113,
         decoration: TextDecoration.none,
       ),
       primaryBtnLabel: TextStyle(
@@ -54,41 +52,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         package: packageName,
         fontWeight: FontWeight.w500,
         fontSize: dsfrSizes.w2,
-        decoration: TextDecoration.none,
-      ),
-      secondaryBtnLabel: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        decoration: TextDecoration.none,
-      ),
-    );
-  }
-
-  factory DSFRTypography.dark() {
-    return DSFRTypography._(
-      frConnectLogin: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 17,
-        decoration: TextDecoration.none,
-      ),
-      frConnectBrand: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 18,
-        fontWeight: FontWeight.w700,
-        decoration: TextDecoration.none,
-      ),
-      frConnectGroup: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        color: ColorPalette.blueFrance625,
-        decoration: TextDecoration.none,
-      ),
-      primaryBtnLabel: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontWeight: FontWeight.w500,
         decoration: TextDecoration.none,
       ),
       secondaryBtnLabel: TextStyle(
@@ -132,5 +95,11 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     );
   }
 
-  List<NamedProperty<TextStyle>> get props => [];
+  List<NamedProperty<TextStyle>> get props => [
+        NamedProperty('frConnectLogin', frConnectLogin),
+        NamedProperty('frConnectBrand', frConnectBrand),
+        NamedProperty('frConnectGroup', frConnectGroup),
+        NamedProperty('primaryBtnLabel', primaryBtnLabel),
+        NamedProperty('secondaryBtnLabel', secondaryBtnLabel),
+      ];
 }
