@@ -48,7 +48,7 @@ void main() {
           fontFamily: 'Marianne',
           brightness: Brightness.dark,
           extensions: [
-            DSFRTypography.dark(),
+            DSFRTypography.regular(),
             const DSFRColors.dark(),
             const DSFRSizes.regular(),
           ],

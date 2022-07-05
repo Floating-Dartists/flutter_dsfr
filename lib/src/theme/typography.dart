@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'palette.dart';
+import '../utils/named_property.dart';
 import 'sizes.dart';
 
 @immutable
@@ -25,14 +25,13 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.secondaryBtnLabel,
   });
 
-  factory DSFRTypography.light() {
+  factory DSFRTypography.regular() {
     const dsfrSizes = DSFRSizes.regular();
     return DSFRTypography._(
       frConnectLogin: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
         fontSize: 17,
-        color: ColorPalette.blueFrance975,
         decoration: TextDecoration.none,
       ),
       frConnectBrand: TextStyle(
@@ -40,14 +39,12 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         package: packageName,
         fontSize: 18,
         fontWeight: FontWeight.w700,
-        color: ColorPalette.blueFrance975,
         decoration: TextDecoration.none,
       ),
       frConnectGroup: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
         fontSize: dsfrSizes.v3,
-        color: ColorPalette.blueFranceSun113,
         decoration: TextDecoration.none,
       ),
       primaryBtnLabel: TextStyle(
@@ -60,45 +57,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       secondaryBtnLabel: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
-        decoration: TextDecoration.none,
-      ),
-    );
-  }
-
-  factory DSFRTypography.dark() {
-    return DSFRTypography._(
-      frConnectLogin: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 17,
-        color: ColorPalette.blueFranceSun113,
-        decoration: TextDecoration.none,
-      ),
-      frConnectBrand: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 18,
-        fontWeight: FontWeight.w700,
-        color: ColorPalette.blueFranceSun113,
-        decoration: TextDecoration.none,
-      ),
-      frConnectGroup: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        color: ColorPalette.blueFrance625,
-        decoration: TextDecoration.none,
-      ),
-      primaryBtnLabel: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontWeight: FontWeight.w500,
-        color: ColorPalette.blueFranceSun113,
-        decoration: TextDecoration.none,
-      ),
-      secondaryBtnLabel: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        color: const Color(0xFF9a9aff),
         decoration: TextDecoration.none,
       ),
     );
@@ -136,4 +94,13 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
           TextStyle.lerp(secondaryBtnLabel, other.secondaryBtnLabel, t)!,
     );
   }
+
+  @visibleForTesting
+  List<NamedProperty<TextStyle>> get props => [
+        NamedProperty('frConnectLogin', frConnectLogin),
+        NamedProperty('frConnectBrand', frConnectBrand),
+        NamedProperty('frConnectGroup', frConnectGroup),
+        NamedProperty('primaryBtnLabel', primaryBtnLabel),
+        NamedProperty('secondaryBtnLabel', secondaryBtnLabel),
+      ];
 }

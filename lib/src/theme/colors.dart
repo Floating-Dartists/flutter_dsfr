@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../utils/named_property.dart';
 import 'palette.dart';
 
 @immutable
@@ -141,4 +142,28 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           Color.lerp(defaultBorderGrey, other.defaultBorderGrey, t)!,
     );
   }
+
+  @visibleForTesting
+  List<NamedProperty<Color>> get props => [
+        NamedProperty('frConnectHover', frConnectHover),
+        NamedProperty('frConnectActive', frConnectActive),
+        NamedProperty('frConnectBackground', frConnectBackground),
+        NamedProperty(
+          'backgroundActionHighBlueFrance',
+          backgroundActionHighBlueFrance,
+        ),
+        NamedProperty(
+          'backgroundActionHighBlueFranceHover',
+          backgroundActionHighBlueFranceHover,
+        ),
+        NamedProperty(
+          'backgroundActionHighBlueFranceActive',
+          backgroundActionHighBlueFranceActive,
+        ),
+        NamedProperty('textInvertedBlueFrance', textInvertedBlueFrance),
+        NamedProperty('borderActionHighBlueFrance', borderActionHighBlueFrance),
+        NamedProperty('blockColorHover', blockColorHover),
+        NamedProperty('blockColorActive', blockColorActive),
+        NamedProperty('defaultBorderGrey', defaultBorderGrey),
+      ];
 }
