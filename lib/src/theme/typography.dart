@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../utils/named_property.dart';
 import 'palette.dart';
 import 'sizes.dart';
 
@@ -32,7 +33,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         fontFamily: 'Marianne',
         package: packageName,
         fontSize: 17,
-        color: ColorPalette.blueFrance975,
         decoration: TextDecoration.none,
       ),
       frConnectBrand: TextStyle(
@@ -40,7 +40,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         package: packageName,
         fontSize: 18,
         fontWeight: FontWeight.w700,
-        color: ColorPalette.blueFrance975,
         decoration: TextDecoration.none,
       ),
       frConnectGroup: TextStyle(
@@ -71,7 +70,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         fontFamily: 'Marianne',
         package: packageName,
         fontSize: 17,
-        color: ColorPalette.blueFranceSun113,
         decoration: TextDecoration.none,
       ),
       frConnectBrand: TextStyle(
@@ -79,7 +77,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         package: packageName,
         fontSize: 18,
         fontWeight: FontWeight.w700,
-        color: ColorPalette.blueFranceSun113,
         decoration: TextDecoration.none,
       ),
       frConnectGroup: TextStyle(
@@ -136,4 +133,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
           TextStyle.lerp(secondaryBtnLabel, other.secondaryBtnLabel, t)!,
     );
   }
+
+  List<NamedProperty<TextStyle>> get props => [];
 }

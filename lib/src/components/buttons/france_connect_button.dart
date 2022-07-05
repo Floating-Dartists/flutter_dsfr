@@ -105,7 +105,8 @@ class FranceConnectBase extends StatelessWidget {
             Text.rich(
               TextSpan(
                 text: "S'identifier avec\n",
-                style: dsfrTextStyles.frConnectLogin,
+                style: dsfrTextStyles.frConnectLogin
+                    .copyWith(color: dsfrColors.textInvertedBlueFrance),
                 children: [
                   TextSpan(
                     text: "FranceConnect",
@@ -120,7 +121,7 @@ class FranceConnectBase extends StatelessWidget {
                 child: Icon(
                   Icons.add,
                   size: dsfrSpacings.w5,
-                  color: dsfrTextStyles.frConnectBrand.color,
+                  color: dsfrColors.textInvertedBlueFrance,
                 ),
               ),
           ],
