@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'palette.dart';
+import '../utils/named_property.dart';
 import 'sizes.dart';
 
 @immutable
@@ -27,14 +27,13 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.alertsTitle,
   });
 
-  factory DSFRTypography.light() {
+  factory DSFRTypography.regular() {
     const dsfrSizes = DSFRSizes.regular();
     return DSFRTypography._(
       frConnectLogin: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
         fontSize: 17,
-        color: ColorPalette.blueFrance975,
         decoration: TextDecoration.none,
       ),
       frConnectBrand: TextStyle(
@@ -42,14 +41,12 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         package: packageName,
         fontSize: 18,
         fontWeight: FontWeight.w700,
-        color: ColorPalette.blueFrance975,
         decoration: TextDecoration.none,
       ),
       frConnectGroup: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
         fontSize: dsfrSizes.v3,
-        color: ColorPalette.blueFranceSun113,
         decoration: TextDecoration.none,
       ),
       primaryBtnLabel: TextStyle(
@@ -156,4 +153,13 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       alertsTitle: TextStyle.lerp(alertsTitle, other.alertsTitle, t)!,
     );
   }
+
+  @visibleForTesting
+  List<NamedProperty<TextStyle>> get props => [
+        NamedProperty('frConnectLogin', frConnectLogin),
+        NamedProperty('frConnectBrand', frConnectBrand),
+        NamedProperty('frConnectGroup', frConnectGroup),
+        NamedProperty('primaryBtnLabel', primaryBtnLabel),
+        NamedProperty('secondaryBtnLabel', secondaryBtnLabel),
+      ];
 }

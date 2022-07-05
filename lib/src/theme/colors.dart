@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../utils/named_property.dart';
 import 'palette.dart';
 
 @immutable
@@ -14,6 +15,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color borderActionHighBlueFrance;
   final Color blockColorHover;
   final Color blockColorActive;
+  final Color defaultBorderGrey;
   final Color error;
   final Color info;
   final Color success;
@@ -31,6 +33,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.borderActionHighBlueFrance,
     required this.blockColorHover,
     required this.blockColorActive,
+    required this.defaultBorderGrey,
     required this.error,
     required this.info,
     required this.success,
@@ -52,6 +55,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           borderActionHighBlueFrance: ColorPalette.blueFranceSun113,
           blockColorHover: const Color.fromRGBO(224, 224, 224, 0.5),
           blockColorActive: const Color.fromRGBO(194, 194, 194, 0.5),
+          defaultBorderGrey: const Color(0xFFe5e5e5),
           error: ColorPalette.error,
           success: ColorPalette.success,
           info: ColorPalette.info,
@@ -72,6 +76,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           borderActionHighBlueFrance: const Color(0xFF9a9aff),
           blockColorHover: const Color.fromRGBO(65, 65, 65, 0.5),
           blockColorActive: const Color.fromRGBO(99, 99, 99, 0.5),
+          defaultBorderGrey: const Color(0xFF2a2a2a),
           error: ColorPalette.errorDarkMode,
           success: ColorPalette.successDarkMode,
           info: ColorPalette.infoDarkMode,
@@ -91,6 +96,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     Color? borderActionHighBlueFrance,
     Color? blockColorHover,
     Color? blockColorActive,
+    Color? defaultBorderGrey,
     Color? error,
     Color? success,
     Color? info,
@@ -115,6 +121,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           borderActionHighBlueFrance ?? this.borderActionHighBlueFrance,
       blockColorHover: blockColorHover ?? this.blockColorHover,
       blockColorActive: blockColorActive ?? this.blockColorActive,
+      defaultBorderGrey: defaultBorderGrey ?? this.defaultBorderGrey,
       error: error ?? this.error,
       success: success ?? this.success,
       info: info ?? this.info,
@@ -162,6 +169,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       blockColorHover: Color.lerp(blockColorHover, other.blockColorHover, t)!,
       blockColorActive:
           Color.lerp(blockColorActive, other.blockColorActive, t)!,
+      defaultBorderGrey:
+          Color.lerp(defaultBorderGrey, other.defaultBorderGrey, t)!,
       error: Color.lerp(error, other.error, t)!,
       info: Color.lerp(info, other.info, t)!,
       success: Color.lerp(success, other.success, t)!,
@@ -170,4 +179,28 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           Color.lerp(alertsBackgroundColor, other.alertsBackgroundColor, t)!,
     );
   }
+
+  @visibleForTesting
+  List<NamedProperty<Color>> get props => [
+        NamedProperty('frConnectHover', frConnectHover),
+        NamedProperty('frConnectActive', frConnectActive),
+        NamedProperty('frConnectBackground', frConnectBackground),
+        NamedProperty(
+          'backgroundActionHighBlueFrance',
+          backgroundActionHighBlueFrance,
+        ),
+        NamedProperty(
+          'backgroundActionHighBlueFranceHover',
+          backgroundActionHighBlueFranceHover,
+        ),
+        NamedProperty(
+          'backgroundActionHighBlueFranceActive',
+          backgroundActionHighBlueFranceActive,
+        ),
+        NamedProperty('textInvertedBlueFrance', textInvertedBlueFrance),
+        NamedProperty('borderActionHighBlueFrance', borderActionHighBlueFrance),
+        NamedProperty('blockColorHover', blockColorHover),
+        NamedProperty('blockColorActive', blockColorActive),
+        NamedProperty('defaultBorderGrey', defaultBorderGrey),
+      ];
 }

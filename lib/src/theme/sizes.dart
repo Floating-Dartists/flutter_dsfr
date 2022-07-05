@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../utils/named_property.dart';
+
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222396724/Espacement+-+Spacing
 @immutable
 class DSFRSizes extends ThemeExtension<DSFRSizes> {
@@ -158,4 +160,24 @@ class DSFRSizes extends ThemeExtension<DSFRSizes> {
       w15: lerpDouble(w15, other.w15, t)!,
     );
   }
+
+  @visibleForTesting
+  List<NamedProperty<double>> get props => [
+        NamedProperty('v0_5', v0_5),
+        NamedProperty('v1', v1),
+        NamedProperty('v1_5', v1_5),
+        NamedProperty('w1', w1),
+        NamedProperty('v3', v3),
+        NamedProperty('w2', w2),
+        NamedProperty('v5', v5),
+        NamedProperty('w3', w3),
+        NamedProperty('w4', w4),
+        NamedProperty('w5', w5),
+        NamedProperty('w6', w6),
+        NamedProperty('w7', w7),
+        NamedProperty('w8', w8),
+        NamedProperty('w9', w9),
+        NamedProperty('w12', w12),
+        NamedProperty('w15', w15),
+      ];
 }
