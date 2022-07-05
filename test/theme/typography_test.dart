@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dsfr/flutter_dsfr.dart';
 
 void main() {
+  const isRunningInCi = bool.fromEnvironment('CI', defaultValue: false);
+
   goldenTest(
     'DSFRTypography.regular',
     fileName: 'typography',
+    skip: isRunningInCi, // Test not needed in CI
     builder: () => GoldenTestGroup(
       children: DSFRTypography.regular()
           .props
