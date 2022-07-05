@@ -89,13 +89,11 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         fontFamily: 'Marianne',
         package: packageName,
         fontWeight: FontWeight.w500,
-        color: ColorPalette.blueFranceSun113,
         decoration: TextDecoration.none,
       ),
       secondaryBtnLabel: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
-        color: const Color(0xFF9a9aff),
         decoration: TextDecoration.none,
       ),
     );
