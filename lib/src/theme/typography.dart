@@ -95,6 +95,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     );
   }
 
+  @visibleForTesting
   List<NamedProperty<TextStyle>> get props => [
         NamedProperty('frConnectLogin', frConnectLogin),
         NamedProperty('frConnectBrand', frConnectBrand),
