@@ -27,6 +27,7 @@ class DSFRTertiaryButton extends DSFRBaseButton {
             : BorderSide.none,
       ),
       onPressed: onPressed,
+      child: Text(label),
     );
   }
 }
