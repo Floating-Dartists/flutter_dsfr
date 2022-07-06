@@ -42,7 +42,7 @@ class DSFRSecondaryButton extends DSFRBaseButton {
         vertical: dsfrSpacings.w1,
         horizontal: dsfrSpacings.w3,
       ),
-      textStyle: dsfrTypography.secondaryBtnLabel
+      textStyle: dsfrTypography.btnLabel
           .copyWith(color: dsfrColors.borderActionHighBlueFrance),
       child: Row(
         mainAxisSize: MainAxisSize.min,

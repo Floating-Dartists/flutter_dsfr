@@ -37,7 +37,7 @@ class DSFRPrimaryButton extends DSFRBaseButton {
         vertical: dsfrSpacings.w1,
         horizontal: dsfrSpacings.w3,
       ),
-      textStyle: dsfrTypography.primaryBtnLabel
+      textStyle: dsfrTypography.btnLabel
           .copyWith(color: dsfrColors.textInvertedBlueFrance),
       onPressed: onPressed,
       child: Row(

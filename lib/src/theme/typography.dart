@@ -14,15 +14,13 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle frConnectLogin;
   final TextStyle frConnectBrand;
   final TextStyle frConnectGroup;
-  final TextStyle primaryBtnLabel;
-  final TextStyle secondaryBtnLabel;
+  final TextStyle btnLabel;
 
   const DSFRTypography._({
     required this.frConnectLogin,
     required this.frConnectBrand,
     required this.frConnectGroup,
-    required this.primaryBtnLabel,
-    required this.secondaryBtnLabel,
+    required this.btnLabel,
   });
 
   factory DSFRTypography.regular() {
@@ -47,16 +45,11 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         fontSize: dsfrSizes.v3,
         decoration: TextDecoration.none,
       ),
-      primaryBtnLabel: TextStyle(
+      btnLabel: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
         fontWeight: FontWeight.w500,
         fontSize: dsfrSizes.w2,
-        decoration: TextDecoration.none,
-      ),
-      secondaryBtnLabel: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
         decoration: TextDecoration.none,
       ),
     );
@@ -67,15 +60,13 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
 
   @override
   DSFRTypography copyWith({
-    TextStyle? primaryBtnLabel,
-    TextStyle? secondaryBtnLabel,
+    TextStyle? btnLabel,
   }) {
     return DSFRTypography._(
       frConnectLogin: frConnectLogin,
       frConnectBrand: frConnectBrand,
       frConnectGroup: frConnectGroup,
-      primaryBtnLabel: primaryBtnLabel ?? this.primaryBtnLabel,
-      secondaryBtnLabel: secondaryBtnLabel ?? this.secondaryBtnLabel,
+      btnLabel: btnLabel ?? this.btnLabel,
     );
   }
 
@@ -88,10 +79,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       frConnectLogin: TextStyle.lerp(frConnectLogin, other.frConnectLogin, t)!,
       frConnectBrand: TextStyle.lerp(frConnectBrand, other.frConnectBrand, t)!,
       frConnectGroup: TextStyle.lerp(frConnectGroup, other.frConnectGroup, t)!,
-      primaryBtnLabel:
-          TextStyle.lerp(primaryBtnLabel, other.primaryBtnLabel, t)!,
-      secondaryBtnLabel:
-          TextStyle.lerp(secondaryBtnLabel, other.secondaryBtnLabel, t)!,
+      btnLabel: TextStyle.lerp(btnLabel, other.btnLabel, t)!,
     );
   }
 
@@ -100,7 +88,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('frConnectLogin', frConnectLogin),
         NamedProperty('frConnectBrand', frConnectBrand),
         NamedProperty('frConnectGroup', frConnectGroup),
-        NamedProperty('primaryBtnLabel', primaryBtnLabel),
-        NamedProperty('secondaryBtnLabel', secondaryBtnLabel),
+        NamedProperty('btnLabel', btnLabel),
       ];
 }
