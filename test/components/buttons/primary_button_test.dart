@@ -22,6 +22,21 @@ void main() {
             icon: const Icon(Icons.add),
           ),
         ),
+        GoldenTestScenario(
+          name: 'disabled',
+          child: const DSFRPrimaryButton(
+            onPressed: null,
+            label: 'Label bouton',
+          ),
+        ),
+        GoldenTestScenario(
+          name: 'disabled with icon',
+          child: const DSFRPrimaryButton(
+            onPressed: null,
+            label: 'Label bouton',
+            icon: Icon(Icons.add),
+          ),
+        ),
       ],
     );
 
