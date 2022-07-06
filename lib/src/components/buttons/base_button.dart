@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
+enum IconPosition { left, right }
+
 abstract class DSFRBaseButton extends StatelessWidget {
   const DSFRBaseButton({
     Key? key,
     required this.onPressed,
     required this.label,
     required this.icon,
+    this.iconPosition = IconPosition.left,
   }) : super(key: key);
 
   /// {@template base.dsfrButtonStyleButton.onPressed}
@@ -28,4 +31,6 @@ abstract class DSFRBaseButton extends StatelessWidget {
   /// The button's icon.
   /// {@endtemplate}
   final Widget? icon;
+
+  final IconPosition iconPosition;
 }

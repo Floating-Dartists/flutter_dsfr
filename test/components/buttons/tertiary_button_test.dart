@@ -24,6 +24,21 @@ void main() {
               noOutline: true,
             ),
           ),
+          GoldenTestScenario(
+            name: 'disabled',
+            child: const DSFRTertiaryButton(
+              label: 'Label bouton tertiaire',
+              onPressed: null,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'Label bouton tertiaire sans bordure',
+            child: const DSFRTertiaryButton(
+              label: 'Label bouton tertiaire sans bordure',
+              onPressed: null,
+              noOutline: true,
+            ),
+          ),
         ],
       ),
     );

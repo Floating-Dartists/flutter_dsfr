@@ -25,6 +25,13 @@ void main() {
               icon: const Icon(Icons.add),
             ),
           ),
+          GoldenTestScenario(
+            name: 'disabled',
+            child: const DSFRSecondaryButton(
+              onPressed: null,
+              label: 'Label bouton',
+            ),
+          ),
         ],
       ),
     );

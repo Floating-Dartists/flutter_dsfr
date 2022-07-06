@@ -17,6 +17,7 @@ class DSFRTertiaryButton extends DSFRBaseButton {
     required super.onPressed,
     required super.label,
     super.icon,
+    super.iconPosition,
     this.noOutline = false,
   });
 
@@ -30,22 +31,30 @@ class DSFRTertiaryButton extends DSFRBaseButton {
     final double gap =
         scale <= 1 ? 8 : lerpDouble(8, 4, math.min(scale - 1, 1))!;
 
+    final enabled = onPressed != null;
     final btnIcon = icon;
+    final foregroundColor = enabled
+        ? dsfrColors.borderActionHighBlueFrance
+        : dsfrColors.textDisabledGrey;
 
     return RawMaterialButton(
       elevation: 0.0,
+      disabledElevation: 0.0,
       fillColor: Colors.transparent,
       shape: RoundedRectangleBorder(
         side: !noOutline
-            ? BorderSide(color: dsfrColors.defaultBorderGrey)
+            ? BorderSide(
+                color: enabled
+                    ? dsfrColors.defaultBorderGrey
+                    : dsfrColors.textDisabledGrey,
+              )
             : BorderSide.none,
       ),
       padding: EdgeInsets.symmetric(
         vertical: dsfrSpacings.w1,
         horizontal: dsfrSpacings.w3,
       ),
-      textStyle: dsfrTypography.btnLabel
-          .copyWith(color: dsfrColors.borderActionHighBlueFrance),
+      textStyle: dsfrTypography.btnLabel.copyWith(color: foregroundColor),
       onPressed: onPressed,
       child: Row(
         mainAxisSize: MainAxisSize.min,

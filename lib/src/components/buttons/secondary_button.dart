@@ -12,6 +12,7 @@ class DSFRSecondaryButton extends DSFRBaseButton {
     required super.onPressed,
     required super.label,
     super.icon,
+    super.iconPosition,
   });
 
   @override
@@ -24,26 +25,27 @@ class DSFRSecondaryButton extends DSFRBaseButton {
     final double gap =
         scale <= 1 ? 8 : lerpDouble(8, 4, math.min(scale - 1, 1))!;
 
+    final enabled = onPressed != null;
     final btnIcon = icon;
+    final foregroundColor = enabled
+        ? dsfrColors.borderActionHighBlueFrance
+        : dsfrColors.textDisabledGrey;
 
     return RawMaterialButton(
       onPressed: onPressed,
       elevation: 0.0,
+      disabledElevation: 0.0,
       fillColor: Colors.transparent,
       hoverColor: dsfrColors.blockColorHover,
       splashColor: dsfrColors.blockColorActive,
       shape: RoundedRectangleBorder(
-        side: BorderSide(
-          color: dsfrColors.borderActionHighBlueFrance,
-          width: 1,
-        ),
+        side: BorderSide(color: foregroundColor, width: 1),
       ),
       padding: EdgeInsets.symmetric(
         vertical: dsfrSpacings.w1,
         horizontal: dsfrSpacings.w3,
       ),
-      textStyle: dsfrTypography.btnLabel
-          .copyWith(color: dsfrColors.borderActionHighBlueFrance),
+      textStyle: dsfrTypography.btnLabel.copyWith(color: foregroundColor),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
