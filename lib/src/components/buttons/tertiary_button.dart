@@ -56,13 +56,22 @@ class DSFRTertiaryButton extends DSFRBaseButton {
       ),
       textStyle: dsfrTypography.btnLabel.copyWith(color: foregroundColor),
       onPressed: onPressed,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (btnIcon != null) ...[btnIcon, SizedBox(width: gap)],
-          Flexible(child: Text(label)),
-        ],
-      ),
+      child: iconOnly
+          ? btnIcon
+          : Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (btnIcon != null && iconPosition == IconPosition.left) ...[
+                  btnIcon,
+                  SizedBox(width: gap)
+                ],
+                Flexible(child: Text(label!)),
+                if (btnIcon != null && iconPosition == IconPosition.right) ...[
+                  SizedBox(width: gap),
+                  btnIcon
+                ],
+              ],
+            ),
     );
   }
 }

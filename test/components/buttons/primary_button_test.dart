@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   group('DSFRPrimaryButton', () {
     final widget = GoldenTestGroup(
+      columns: 4,
       children: [
         GoldenTestScenario(
           name: 'default',
@@ -29,6 +30,13 @@ void main() {
             label: 'Label bouton',
             icon: const Icon(Icons.add),
             iconPosition: IconPosition.right,
+          ),
+        ),
+        GoldenTestScenario(
+          name: 'icon only',
+          child: DSFRPrimaryButton.icon(
+            onPressed: () {},
+            icon: const Icon(Icons.add),
           ),
         ),
         GoldenTestScenario(

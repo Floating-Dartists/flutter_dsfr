@@ -16,6 +16,12 @@ class DSFRPrimaryButton extends DSFRBaseButton {
     super.iconPosition,
   });
 
+  const DSFRPrimaryButton.icon({
+    super.key,
+    required super.icon,
+    required super.onPressed,
+  }) : super.icon();
+
   @override
   Widget build(BuildContext context) {
     final dsfrSpacings = DSFRSizes.of(context);
@@ -44,24 +50,27 @@ class DSFRPrimaryButton extends DSFRBaseButton {
       shape: const RoundedRectangleBorder(),
       padding: EdgeInsets.symmetric(
         vertical: dsfrSpacings.w1,
-        horizontal: dsfrSpacings.w3,
+        horizontal: iconOnly ? dsfrSpacings.w1 : dsfrSpacings.w3,
       ),
+      constraints: const BoxConstraints(),
       textStyle: dsfrTypography.btnLabel.copyWith(color: foregroundColor),
       onPressed: onPressed,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (btnIcon != null && iconPosition == IconPosition.left) ...[
-            btnIcon,
-            SizedBox(width: gap),
-          ],
-          Flexible(child: Text(label)),
-          if (btnIcon != null && iconPosition == IconPosition.right) ...[
-            SizedBox(width: gap),
-            btnIcon,
-          ],
-        ],
-      ),
+      child: iconOnly
+          ? btnIcon
+          : Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (btnIcon != null && iconPosition == IconPosition.left) ...[
+                  btnIcon,
+                  SizedBox(width: gap),
+                ],
+                Flexible(child: Text(label!)),
+                if (btnIcon != null && iconPosition == IconPosition.right) ...[
+                  SizedBox(width: gap),
+                  btnIcon,
+                ],
+              ],
+            ),
     );
   }
 }
