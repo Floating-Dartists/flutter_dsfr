@@ -24,11 +24,11 @@ class FranceConnectButton extends StatelessWidget {
   final DSFRButtonStyle? style;
 
   const FranceConnectButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     this.variant = false,
     this.style,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -52,11 +52,11 @@ class FranceConnectBase extends StatelessWidget {
   final DSFRButtonStyle? style;
 
   const FranceConnectBase({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.variant,
     required this.style,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -137,7 +137,7 @@ class FranceConnectBase extends StatelessWidget {
 class InfoLinkButton extends StatefulWidget {
   final bool variant;
 
-  const InfoLinkButton({Key? key, required this.variant}) : super(key: key);
+  const InfoLinkButton({super.key, required this.variant});
 
   @override
   State<InfoLinkButton> createState() => _InfoLinkButtonState();

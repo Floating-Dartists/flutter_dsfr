@@ -61,3 +61,4 @@ linter:
     - use_string_buffers
     - avoid_unnecessary_containers
     - use_build_context_synchronously
+    - use_super_parameters

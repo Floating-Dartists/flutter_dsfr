@@ -21,6 +21,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color success;
   final Color warning;
   final Color alertsBackgroundColor;
+  final Color backgroundDisabledGrey;
+  final Color textDisabledGrey;
 
   const DSFRColors._({
     required this.frConnectHover,
@@ -39,6 +41,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.success,
     required this.warning,
     required this.alertsBackgroundColor,
+    required this.backgroundDisabledGrey,
+    required this.textDisabledGrey,
   });
 
   const DSFRColors.light()
@@ -61,6 +65,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           info: ColorPalette.info,
           warning: ColorPalette.warning,
           alertsBackgroundColor: ColorPalette.grey1000,
+          backgroundDisabledGrey: const Color(0xFFe5e5e5),
+          textDisabledGrey: const Color(0xFF929292),
         );
 
   const DSFRColors.dark()
@@ -82,6 +88,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           info: ColorPalette.infoDarkMode,
           warning: ColorPalette.warningDarkMode,
           alertsBackgroundColor: ColorPalette.grey50,
+          backgroundDisabledGrey: const Color(0xFF2a2a2a),
+          textDisabledGrey: const Color.fromRGBO(102, 102, 102, 1),
         );
 
   static DSFRColors of(BuildContext context) =>
@@ -103,15 +111,13 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     Color? warning,
     Color? alertsBackgroundColor,
   }) {
+  DSFRColors copyWith() {
     return DSFRColors._(
       frConnectHover: frConnectHover,
       frConnectActive: frConnectActive,
       frConnectBackground: frConnectBackground,
-      backgroundActionHighBlueFrance:
-          backgroundActionHighBlueFrance ?? this.backgroundActionHighBlueFrance,
-      backgroundActionHighBlueFranceHover:
-          backgroundActionHighBlueFranceHover ??
-              this.backgroundActionHighBlueFranceHover,
+      backgroundActionHighBlueFrance: backgroundActionHighBlueFrance,
+      backgroundActionHighBlueFranceHover: backgroundActionHighBlueFranceHover,
       backgroundActionHighBlueFranceActive:
           backgroundActionHighBlueFranceActive ??
               this.backgroundActionHighBlueFranceActive,
@@ -128,6 +134,14 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       warning: warning ?? this.warning,
       alertsBackgroundColor:
           alertsBackgroundColor ?? this.alertsBackgroundColor,
+          backgroundActionHighBlueFranceActive,
+      textInvertedBlueFrance: textInvertedBlueFrance,
+      borderActionHighBlueFrance: borderActionHighBlueFrance,
+      blockColorHover: blockColorHover,
+      blockColorActive: blockColorActive,
+      defaultBorderGrey: defaultBorderGrey,
+      backgroundDisabledGrey: backgroundDisabledGrey,
+      textDisabledGrey: textDisabledGrey,
     );
   }
 
@@ -177,6 +191,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       warning: Color.lerp(warning, other.warning, t)!,
       alertsBackgroundColor:
           Color.lerp(alertsBackgroundColor, other.alertsBackgroundColor, t)!,
+      backgroundDisabledGrey:
+          Color.lerp(backgroundDisabledGrey, other.backgroundDisabledGrey, t)!,
+      textDisabledGrey:
+          Color.lerp(textDisabledGrey, other.textDisabledGrey, t)!,
     );
   }
 
@@ -202,5 +220,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('blockColorHover', blockColorHover),
         NamedProperty('blockColorActive', blockColorActive),
         NamedProperty('defaultBorderGrey', defaultBorderGrey),
+        NamedProperty('backgroundDisabledGrey', backgroundDisabledGrey),
+        NamedProperty('textDisabledGrey', textDisabledGrey),
       ];
 }
