@@ -76,40 +76,22 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       Theme.of(context).extension<DSFRColors>()!;
 
   @override
-  DSFRColors copyWith({
-    Color? backgroundActionHighBlueFrance,
-    Color? backgroundActionHighBlueFranceHover,
-    Color? backgroundActionHighBlueFranceActive,
-    Color? textInvertedBlueFrance,
-    Color? borderActionHighBlueFrance,
-    Color? blockColorHover,
-    Color? blockColorActive,
-    Color? defaultBorderGrey,
-    Color? backgroundDisabledGrey,
-    Color? textDisabledGrey,
-  }) {
+  DSFRColors copyWith() {
     return DSFRColors._(
       frConnectHover: frConnectHover,
       frConnectActive: frConnectActive,
       frConnectBackground: frConnectBackground,
-      backgroundActionHighBlueFrance:
-          backgroundActionHighBlueFrance ?? this.backgroundActionHighBlueFrance,
-      backgroundActionHighBlueFranceHover:
-          backgroundActionHighBlueFranceHover ??
-              this.backgroundActionHighBlueFranceHover,
+      backgroundActionHighBlueFrance: backgroundActionHighBlueFrance,
+      backgroundActionHighBlueFranceHover: backgroundActionHighBlueFranceHover,
       backgroundActionHighBlueFranceActive:
-          backgroundActionHighBlueFranceActive ??
-              this.backgroundActionHighBlueFranceActive,
-      textInvertedBlueFrance:
-          textInvertedBlueFrance ?? this.textInvertedBlueFrance,
-      borderActionHighBlueFrance:
-          borderActionHighBlueFrance ?? this.borderActionHighBlueFrance,
-      blockColorHover: blockColorHover ?? this.blockColorHover,
-      blockColorActive: blockColorActive ?? this.blockColorActive,
-      defaultBorderGrey: defaultBorderGrey ?? this.defaultBorderGrey,
-      backgroundDisabledGrey:
-          backgroundDisabledGrey ?? this.backgroundDisabledGrey,
-      textDisabledGrey: textDisabledGrey ?? this.textDisabledGrey,
+          backgroundActionHighBlueFranceActive,
+      textInvertedBlueFrance: textInvertedBlueFrance,
+      borderActionHighBlueFrance: borderActionHighBlueFrance,
+      blockColorHover: blockColorHover,
+      blockColorActive: blockColorActive,
+      defaultBorderGrey: defaultBorderGrey,
+      backgroundDisabledGrey: backgroundDisabledGrey,
+      textDisabledGrey: textDisabledGrey,
     );
   }
 
