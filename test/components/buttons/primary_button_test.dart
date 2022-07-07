@@ -15,11 +15,20 @@ void main() {
           ),
         ),
         GoldenTestScenario(
-          name: 'with icon',
+          name: 'with icon left',
           child: DSFRPrimaryButton(
             onPressed: () {},
             label: 'Label bouton',
             icon: const Icon(Icons.add),
+          ),
+        ),
+        GoldenTestScenario(
+          name: 'with icon right',
+          child: DSFRPrimaryButton(
+            onPressed: () {},
+            label: 'Label bouton',
+            icon: const Icon(Icons.add),
+            iconPosition: IconPosition.right,
           ),
         ),
         GoldenTestScenario(

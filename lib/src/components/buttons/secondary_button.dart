@@ -49,8 +49,15 @@ class DSFRSecondaryButton extends DSFRBaseButton {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (btnIcon != null) ...[btnIcon, SizedBox(width: gap)],
+          if (btnIcon != null && iconPosition == IconPosition.left) ...[
+            btnIcon,
+            SizedBox(width: gap)
+          ],
           Flexible(child: Text(label)),
+          if (btnIcon != null && iconPosition == IconPosition.right) ...[
+            SizedBox(width: gap),
+            btnIcon
+          ],
         ],
       ),
     );
