@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../flutter_dsfr.dart';
+import '../../theme/icons.dart';
 import 'alerts_icon.dart';
 
 enum DSFRAlertsType { error, success, info, warning }
@@ -66,7 +67,7 @@ class DSFRAlerts extends StatelessWidget {
   IconData _getIconData() {
     switch (type) {
       case DSFRAlertsType.error:
-        return Icons.error;
+        return DSFRIcons.error;
       case DSFRAlertsType.success:
         return Icons.check_circle;
       case DSFRAlertsType.info:

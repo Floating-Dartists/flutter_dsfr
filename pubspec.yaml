@@ -69,3 +69,6 @@ flutter:
         - asset: assets/fonts/Spectral/Spectral-Italic.ttf
           weight: 400
           style: italic
+    - family: Remix Icon
+      fonts:
+        - asset: assets/icons/remixicon.ttf

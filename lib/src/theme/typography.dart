@@ -71,53 +71,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     );
   }
 
-  factory DSFRTypography.dark() {
-    const dsfrSizes = DSFRSizes.regular();
-    return DSFRTypography._(
-      frConnectLogin: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 17,
-        color: ColorPalette.blueFranceSun113,
-        decoration: TextDecoration.none,
-      ),
-      frConnectBrand: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 18,
-        fontWeight: FontWeight.w700,
-        color: ColorPalette.blueFranceSun113,
-        decoration: TextDecoration.none,
-      ),
-      frConnectGroup: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        color: ColorPalette.blueFrance625,
-        decoration: TextDecoration.none,
-      ),
-      primaryBtnLabel: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontWeight: FontWeight.w500,
-        color: ColorPalette.blueFranceSun113,
-        decoration: TextDecoration.none,
-      ),
-      secondaryBtnLabel: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        color: const Color(0xFF9a9aff),
-        decoration: TextDecoration.none,
-      ),
-      alertsTitle: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        decoration: TextDecoration.none,
-        fontWeight: FontWeight.w500,
-        fontSize: dsfrSizes.w2,
-      ),
-    );
-  }
-
   static DSFRTypography of(BuildContext context) =>
       Theme.of(context).extension<DSFRTypography>()!;
 
