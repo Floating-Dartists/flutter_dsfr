@@ -21,6 +21,13 @@ class DSFRTertiaryButton extends DSFRBaseButton {
     this.noOutline = false,
   });
 
+  const DSFRTertiaryButton.icon({
+    super.key,
+    required super.icon,
+    required super.onPressed,
+    this.noOutline = false,
+  }) : super.icon();
+
   @override
   Widget build(BuildContext context) {
     final dsfrColors = DSFRColors.of(context);
@@ -52,8 +59,9 @@ class DSFRTertiaryButton extends DSFRBaseButton {
       ),
       padding: EdgeInsets.symmetric(
         vertical: dsfrSpacings.w1,
-        horizontal: dsfrSpacings.w3,
+        horizontal: iconOnly ? dsfrSpacings.w1 : dsfrSpacings.w3,
       ),
+      constraints: const BoxConstraints(),
       textStyle: dsfrTypography.btnLabel.copyWith(color: foregroundColor),
       onPressed: onPressed,
       child: iconOnly
