@@ -12,7 +12,14 @@ class DSFRSecondaryButton extends DSFRBaseButton {
     required super.onPressed,
     required super.label,
     super.icon,
+    super.iconPosition,
   });
+
+  const DSFRSecondaryButton.icon({
+    super.key,
+    required super.onPressed,
+    required super.icon,
+  }) : super.icon();
 
   @override
   Widget build(BuildContext context) {
@@ -24,33 +31,44 @@ class DSFRSecondaryButton extends DSFRBaseButton {
     final double gap =
         scale <= 1 ? 8 : lerpDouble(8, 4, math.min(scale - 1, 1))!;
 
+    final enabled = onPressed != null;
     final btnIcon = icon;
+    final foregroundColor = enabled
+        ? dsfrColors.borderActionHighBlueFrance
+        : dsfrColors.textDisabledGrey;
 
     return RawMaterialButton(
       onPressed: onPressed,
       elevation: 0.0,
+      disabledElevation: 0.0,
       fillColor: Colors.transparent,
       hoverColor: dsfrColors.blockColorHover,
       splashColor: dsfrColors.blockColorActive,
       shape: RoundedRectangleBorder(
-        side: BorderSide(
-          color: dsfrColors.borderActionHighBlueFrance,
-          width: 1,
-        ),
+        side: BorderSide(color: foregroundColor, width: 1),
       ),
       padding: EdgeInsets.symmetric(
         vertical: dsfrSpacings.w1,
-        horizontal: dsfrSpacings.w3,
+        horizontal: iconOnly ? dsfrSpacings.w1 : dsfrSpacings.w3,
       ),
-      textStyle: dsfrTypography.secondaryBtnLabel
-          .copyWith(color: dsfrColors.borderActionHighBlueFrance),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (btnIcon != null) ...[btnIcon, SizedBox(width: gap)],
-          Flexible(child: Text(label)),
-        ],
-      ),
+      constraints: const BoxConstraints(),
+      textStyle: dsfrTypography.btnLabel.copyWith(color: foregroundColor),
+      child: iconOnly
+          ? btnIcon
+          : Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (btnIcon != null && iconPosition == IconPosition.left) ...[
+                  btnIcon,
+                  SizedBox(width: gap)
+                ],
+                Flexible(child: Text(label!)),
+                if (btnIcon != null && iconPosition == IconPosition.right) ...[
+                  SizedBox(width: gap),
+                  btnIcon
+                ],
+              ],
+            ),
     );
   }
 }

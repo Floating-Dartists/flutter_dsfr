@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   group('DSFRPrimaryButton', () {
     final widget = GoldenTestGroup(
+      columns: 4,
       children: [
         GoldenTestScenario(
           name: 'default',
@@ -15,11 +16,58 @@ void main() {
           ),
         ),
         GoldenTestScenario(
-          name: 'with icon',
+          name: 'with icon left',
           child: DSFRPrimaryButton(
             onPressed: () {},
             label: 'Label bouton',
             icon: const Icon(Icons.add),
+          ),
+        ),
+        GoldenTestScenario(
+          name: 'with icon right',
+          child: DSFRPrimaryButton(
+            onPressed: () {},
+            label: 'Label bouton',
+            icon: const Icon(Icons.add),
+            iconPosition: IconPosition.right,
+          ),
+        ),
+        GoldenTestScenario(
+          name: 'icon only',
+          child: DSFRPrimaryButton.icon(
+            onPressed: () {},
+            icon: const Icon(Icons.add),
+          ),
+        ),
+        GoldenTestScenario(
+          name: 'disabled',
+          child: const DSFRPrimaryButton(
+            onPressed: null,
+            label: 'Label bouton',
+          ),
+        ),
+        GoldenTestScenario(
+          name: 'disabled with icon left',
+          child: const DSFRPrimaryButton(
+            onPressed: null,
+            label: 'Label bouton',
+            icon: Icon(Icons.add),
+          ),
+        ),
+        GoldenTestScenario(
+          name: 'disabled with icon right',
+          child: const DSFRPrimaryButton(
+            onPressed: null,
+            label: 'Label bouton',
+            icon: Icon(Icons.add),
+            iconPosition: IconPosition.right,
+          ),
+        ),
+        GoldenTestScenario(
+          name: 'disabled icon only',
+          child: const DSFRPrimaryButton.icon(
+            onPressed: null,
+            icon: Icon(Icons.add),
           ),
         ),
       ],
@@ -27,13 +75,13 @@ void main() {
 
     goldenTest(
       'renders light mode',
-      fileName: 'dsfr_primary_button',
+      fileName: 'primary_button_light',
       builder: () => widget,
     );
 
     goldenTest(
       'renders dark mode',
-      fileName: 'dsfr_primary_button_dark',
+      fileName: 'primary_button_dark',
       builder: () => Theme(
         data: ThemeData(
           fontFamily: 'Marianne',

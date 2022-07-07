@@ -1,12 +1,47 @@
 import 'package:flutter/material.dart';
 
+enum IconPosition { left, right }
+
 abstract class DSFRBaseButton extends StatelessWidget {
-  const DSFRBaseButton({
-    Key? key,
-    required this.onPressed,
+  const DSFRBaseButton._({
+    super.key,
     required this.label,
     required this.icon,
-  }) : super(key: key);
+    required this.iconPosition,
+    required this.iconOnly,
+    required this.onPressed,
+  }) : assert(
+          (iconOnly && label == null && icon != null) ||
+              (!iconOnly && label != null),
+        );
+
+  const DSFRBaseButton({
+    Key? key,
+    required String label,
+    required VoidCallback? onPressed,
+    Widget? icon,
+    IconPosition iconPosition = IconPosition.left,
+  }) : this._(
+          key: key,
+          label: label,
+          icon: icon,
+          iconPosition: iconPosition,
+          iconOnly: false,
+          onPressed: onPressed,
+        );
+
+  const DSFRBaseButton.icon({
+    Key? key,
+    required Widget icon,
+    required VoidCallback? onPressed,
+  }) : this._(
+          key: key,
+          label: null,
+          icon: icon,
+          iconPosition: IconPosition.left,
+          iconOnly: true,
+          onPressed: onPressed,
+        );
 
   /// {@template base.dsfrButtonStyleButton.onPressed}
   /// Called when the button is tapped or otherwise activated.
@@ -22,10 +57,14 @@ abstract class DSFRBaseButton extends StatelessWidget {
   /// {@template base.dsfrButtonStyleButton.label}
   /// The button's label.
   /// {@endtemplate}
-  final String label;
+  final String? label;
 
   /// {@template base.dsfrButtonStyleButton.icon}
   /// The button's icon.
   /// {@endtemplate}
   final Widget? icon;
+
+  final IconPosition iconPosition;
+
+  final bool iconOnly;
 }

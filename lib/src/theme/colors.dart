@@ -16,6 +16,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color blockColorHover;
   final Color blockColorActive;
   final Color defaultBorderGrey;
+  final Color backgroundDisabledGrey;
+  final Color textDisabledGrey;
 
   const DSFRColors._({
     required this.frConnectHover,
@@ -29,6 +31,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.blockColorHover,
     required this.blockColorActive,
     required this.defaultBorderGrey,
+    required this.backgroundDisabledGrey,
+    required this.textDisabledGrey,
   });
 
   const DSFRColors.light()
@@ -46,6 +50,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           blockColorHover: const Color.fromRGBO(224, 224, 224, 0.5),
           blockColorActive: const Color.fromRGBO(194, 194, 194, 0.5),
           defaultBorderGrey: const Color(0xFFe5e5e5),
+          backgroundDisabledGrey: const Color(0xFFe5e5e5),
+          textDisabledGrey: const Color(0xFF929292),
         );
 
   const DSFRColors.dark()
@@ -62,41 +68,30 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           blockColorHover: const Color.fromRGBO(65, 65, 65, 0.5),
           blockColorActive: const Color.fromRGBO(99, 99, 99, 0.5),
           defaultBorderGrey: const Color(0xFF2a2a2a),
+          backgroundDisabledGrey: const Color(0xFF2a2a2a),
+          textDisabledGrey: const Color.fromRGBO(102, 102, 102, 1),
         );
 
   static DSFRColors of(BuildContext context) =>
       Theme.of(context).extension<DSFRColors>()!;
 
   @override
-  DSFRColors copyWith({
-    Color? backgroundActionHighBlueFrance,
-    Color? backgroundActionHighBlueFranceHover,
-    Color? backgroundActionHighBlueFranceActive,
-    Color? textInvertedBlueFrance,
-    Color? borderActionHighBlueFrance,
-    Color? blockColorHover,
-    Color? blockColorActive,
-    Color? defaultBorderGrey,
-  }) {
+  DSFRColors copyWith() {
     return DSFRColors._(
       frConnectHover: frConnectHover,
       frConnectActive: frConnectActive,
       frConnectBackground: frConnectBackground,
-      backgroundActionHighBlueFrance:
-          backgroundActionHighBlueFrance ?? this.backgroundActionHighBlueFrance,
-      backgroundActionHighBlueFranceHover:
-          backgroundActionHighBlueFranceHover ??
-              this.backgroundActionHighBlueFranceHover,
+      backgroundActionHighBlueFrance: backgroundActionHighBlueFrance,
+      backgroundActionHighBlueFranceHover: backgroundActionHighBlueFranceHover,
       backgroundActionHighBlueFranceActive:
-          backgroundActionHighBlueFranceActive ??
-              this.backgroundActionHighBlueFranceActive,
-      textInvertedBlueFrance:
-          textInvertedBlueFrance ?? this.textInvertedBlueFrance,
-      borderActionHighBlueFrance:
-          borderActionHighBlueFrance ?? this.borderActionHighBlueFrance,
-      blockColorHover: blockColorHover ?? this.blockColorHover,
-      blockColorActive: blockColorActive ?? this.blockColorActive,
-      defaultBorderGrey: defaultBorderGrey ?? this.defaultBorderGrey,
+          backgroundActionHighBlueFranceActive,
+      textInvertedBlueFrance: textInvertedBlueFrance,
+      borderActionHighBlueFrance: borderActionHighBlueFrance,
+      blockColorHover: blockColorHover,
+      blockColorActive: blockColorActive,
+      defaultBorderGrey: defaultBorderGrey,
+      backgroundDisabledGrey: backgroundDisabledGrey,
+      textDisabledGrey: textDisabledGrey,
     );
   }
 
@@ -140,6 +135,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           Color.lerp(blockColorActive, other.blockColorActive, t)!,
       defaultBorderGrey:
           Color.lerp(defaultBorderGrey, other.defaultBorderGrey, t)!,
+      backgroundDisabledGrey:
+          Color.lerp(backgroundDisabledGrey, other.backgroundDisabledGrey, t)!,
+      textDisabledGrey:
+          Color.lerp(textDisabledGrey, other.textDisabledGrey, t)!,
     );
   }
 
@@ -165,5 +164,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('blockColorHover', blockColorHover),
         NamedProperty('blockColorActive', blockColorActive),
         NamedProperty('defaultBorderGrey', defaultBorderGrey),
+        NamedProperty('backgroundDisabledGrey', backgroundDisabledGrey),
+        NamedProperty('textDisabledGrey', textDisabledGrey),
       ];
 }
