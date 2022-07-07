@@ -47,10 +47,26 @@ void main() {
           ),
         ),
         GoldenTestScenario(
-          name: 'disabled with icon',
+          name: 'disabled with icon left',
           child: const DSFRPrimaryButton(
             onPressed: null,
             label: 'Label bouton',
+            icon: Icon(Icons.add),
+          ),
+        ),
+        GoldenTestScenario(
+          name: 'disabled with icon right',
+          child: const DSFRPrimaryButton(
+            onPressed: null,
+            label: 'Label bouton',
+            icon: Icon(Icons.add),
+            iconPosition: IconPosition.right,
+          ),
+        ),
+        GoldenTestScenario(
+          name: 'disabled icon only',
+          child: const DSFRPrimaryButton.icon(
+            onPressed: null,
             icon: Icon(Icons.add),
           ),
         ),
