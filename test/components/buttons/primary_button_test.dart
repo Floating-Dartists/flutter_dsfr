@@ -75,13 +75,13 @@ void main() {
 
     goldenTest(
       'renders light mode',
-      fileName: 'dsfr_primary_button',
+      fileName: 'primary_button_light',
       builder: () => widget,
     );
 
     goldenTest(
       'renders dark mode',
-      fileName: 'dsfr_primary_button_dark',
+      fileName: 'primary_button_dark',
       builder: () => Theme(
         data: ThemeData(
           fontFamily: 'Marianne',
