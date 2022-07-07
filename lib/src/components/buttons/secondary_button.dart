@@ -15,6 +15,12 @@ class DSFRSecondaryButton extends DSFRBaseButton {
     super.iconPosition,
   });
 
+  const DSFRSecondaryButton.icon({
+    super.key,
+    required super.onPressed,
+    required super.icon,
+  }) : super.icon();
+
   @override
   Widget build(BuildContext context) {
     final dsfrSpacings = DSFRSizes.of(context);
@@ -43,8 +49,9 @@ class DSFRSecondaryButton extends DSFRBaseButton {
       ),
       padding: EdgeInsets.symmetric(
         vertical: dsfrSpacings.w1,
-        horizontal: dsfrSpacings.w3,
+        horizontal: iconOnly ? dsfrSpacings.w1 : dsfrSpacings.w3,
       ),
+      constraints: const BoxConstraints(),
       textStyle: dsfrTypography.btnLabel.copyWith(color: foregroundColor),
       child: iconOnly
           ? btnIcon
