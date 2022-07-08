@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/named_property.dart';
+
 /// DSFRIcons, use the remix icon icon pack
 ///
 /// https://remixicon.com/
@@ -40,4 +42,13 @@ class DSFRIcons {
     fontFamily: _fontFamily,
     fontPackage: _packageName,
   );
+
+  @visibleForTesting
+  static List<NamedProperty<IconData>> get props => [
+        NamedProperty('error', error),
+        NamedProperty('success', success),
+        NamedProperty('info', info),
+        NamedProperty('warning', warning),
+        NamedProperty('closeFill', closeFill),
+      ];
 }
