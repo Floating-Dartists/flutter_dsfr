@@ -18,6 +18,16 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color defaultBorderGrey;
   final Color backgroundDisabledGrey;
   final Color textDisabledGrey;
+  final Color error;
+  final Color info;
+  final Color success;
+  final Color warning;
+  final Color alertsBackground;
+  final Color alertsCloseButtonIcon;
+  final Color alertsCloseButtonHover;
+  final Color alertsCloseButtonHighlight;
+  final Color alertsCloseButtonSplash;
+  final Color text;
 
   const DSFRColors._({
     required this.frConnectHover,
@@ -31,8 +41,18 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.blockColorHover,
     required this.blockColorActive,
     required this.defaultBorderGrey,
+    required this.error,
+    required this.info,
+    required this.success,
+    required this.warning,
+    required this.alertsBackground,
     required this.backgroundDisabledGrey,
     required this.textDisabledGrey,
+    required this.alertsCloseButtonIcon,
+    required this.alertsCloseButtonHover,
+    required this.alertsCloseButtonHighlight,
+    required this.alertsCloseButtonSplash,
+    required this.text,
   });
 
   const DSFRColors.light()
@@ -50,8 +70,18 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           blockColorHover: const Color.fromRGBO(224, 224, 224, 0.5),
           blockColorActive: const Color.fromRGBO(194, 194, 194, 0.5),
           defaultBorderGrey: const Color(0xFFe5e5e5),
+          error: ColorPalette.error,
+          success: ColorPalette.success,
+          info: ColorPalette.info,
+          warning: ColorPalette.warning,
+          alertsBackground: ColorPalette.grey1000,
           backgroundDisabledGrey: const Color(0xFFe5e5e5),
           textDisabledGrey: const Color(0xFF929292),
+          alertsCloseButtonIcon: ColorPalette.blueFranceSun113,
+          alertsCloseButtonHover: ColorPalette.grey950,
+          alertsCloseButtonHighlight: ColorPalette.grey975,
+          alertsCloseButtonSplash: ColorPalette.transparent,
+          text: ColorPalette.black,
         );
 
   const DSFRColors.dark()
@@ -68,8 +98,18 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           blockColorHover: const Color.fromRGBO(65, 65, 65, 0.5),
           blockColorActive: const Color.fromRGBO(99, 99, 99, 0.5),
           defaultBorderGrey: const Color(0xFF2a2a2a),
+          error: ColorPalette.errorDarkMode,
+          success: ColorPalette.successDarkMode,
+          info: ColorPalette.infoDarkMode,
+          warning: ColorPalette.warningDarkMode,
+          alertsBackground: ColorPalette.grey50,
           backgroundDisabledGrey: const Color(0xFF2a2a2a),
           textDisabledGrey: const Color.fromRGBO(102, 102, 102, 1),
+          alertsCloseButtonIcon: ColorPalette.blueFrance625,
+          alertsCloseButtonHover: ColorPalette.grey950,
+          alertsCloseButtonHighlight: ColorPalette.grey975,
+          alertsCloseButtonSplash: ColorPalette.transparent,
+          text: ColorPalette.white,
         );
 
   static DSFRColors of(BuildContext context) =>
@@ -92,6 +132,16 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       defaultBorderGrey: defaultBorderGrey,
       backgroundDisabledGrey: backgroundDisabledGrey,
       textDisabledGrey: textDisabledGrey,
+      error: error,
+      success: success,
+      info: info,
+      warning: warning,
+      alertsBackground: alertsBackground,
+      alertsCloseButtonIcon: alertsCloseButtonIcon,
+      alertsCloseButtonHover: alertsCloseButtonHover,
+      alertsCloseButtonHighlight: alertsCloseButtonHighlight,
+      alertsCloseButtonSplash: alertsCloseButtonSplash,
+      text: text,
     );
   }
 
@@ -139,6 +189,21 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           Color.lerp(backgroundDisabledGrey, other.backgroundDisabledGrey, t)!,
       textDisabledGrey:
           Color.lerp(textDisabledGrey, other.textDisabledGrey, t)!,
+      error: Color.lerp(error, other.error, t)!,
+      info: Color.lerp(info, other.info, t)!,
+      success: Color.lerp(success, other.success, t)!,
+      warning: Color.lerp(warning, other.warning, t)!,
+      alertsBackground:
+          Color.lerp(alertsBackground, other.alertsBackground, t)!,
+      alertsCloseButtonIcon:
+          Color.lerp(alertsCloseButtonIcon, other.alertsCloseButtonIcon, t)!,
+      alertsCloseButtonHover:
+          Color.lerp(alertsCloseButtonHover, other.textDisabledGrey, t)!,
+      alertsCloseButtonHighlight:
+          Color.lerp(alertsCloseButtonHighlight, other.textDisabledGrey, t)!,
+      alertsCloseButtonSplash:
+          Color.lerp(alertsCloseButtonSplash, other.textDisabledGrey, t)!,
+      text: Color.lerp(text, other.text, t)!,
     );
   }
 
@@ -166,5 +231,15 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('defaultBorderGrey', defaultBorderGrey),
         NamedProperty('backgroundDisabledGrey', backgroundDisabledGrey),
         NamedProperty('textDisabledGrey', textDisabledGrey),
+        NamedProperty('error', error),
+        NamedProperty('success', success),
+        NamedProperty('info', info),
+        NamedProperty('warning', warning),
+        NamedProperty('alertsBackground', alertsBackground),
+        NamedProperty('alertsCloseButtonIcon', alertsCloseButtonIcon),
+        NamedProperty('alertsCloseButtonHover', alertsCloseButtonHover),
+        NamedProperty('alertsCloseButtonHighlight', alertsCloseButtonHighlight),
+        NamedProperty('alertsCloseButtonSplash', alertsCloseButtonSplash),
+        NamedProperty('text', text),
       ];
 }

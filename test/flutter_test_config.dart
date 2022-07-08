@@ -8,6 +8,7 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
   const isRunningInCi = bool.fromEnvironment('CI', defaultValue: false);
 
   DSFRTypography.packageName = null;
+  DSFRIcons.packageName = null;
 
   return AlchemistConfig.runWithConfig(
     config: AlchemistConfig(

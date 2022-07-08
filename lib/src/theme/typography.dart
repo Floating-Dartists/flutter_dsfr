@@ -15,12 +15,16 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle frConnectBrand;
   final TextStyle frConnectGroup;
   final TextStyle btnLabel;
+  final TextStyle alertsTitle;
+  final TextStyle defaultText;
 
   const DSFRTypography._({
     required this.frConnectLogin,
     required this.frConnectBrand,
     required this.frConnectGroup,
     required this.btnLabel,
+    required this.alertsTitle,
+    required this.defaultText,
   });
 
   factory DSFRTypography.regular() {
@@ -52,6 +56,18 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         fontSize: dsfrSizes.w2,
         decoration: TextDecoration.none,
       ),
+      alertsTitle: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        decoration: TextDecoration.none,
+        fontWeight: FontWeight.w500,
+        fontSize: dsfrSizes.w2,
+      ),
+      defaultText: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        decoration: TextDecoration.none,
+      ),
     );
   }
 
@@ -61,12 +77,15 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   @override
   DSFRTypography copyWith({
     TextStyle? btnLabel,
+    TextStyle? alertsTitle,
   }) {
     return DSFRTypography._(
       frConnectLogin: frConnectLogin,
       frConnectBrand: frConnectBrand,
       frConnectGroup: frConnectGroup,
       btnLabel: btnLabel ?? this.btnLabel,
+      alertsTitle: alertsTitle ?? this.alertsTitle,
+      defaultText: defaultText,
     );
   }
 
@@ -80,6 +99,8 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       frConnectBrand: TextStyle.lerp(frConnectBrand, other.frConnectBrand, t)!,
       frConnectGroup: TextStyle.lerp(frConnectGroup, other.frConnectGroup, t)!,
       btnLabel: TextStyle.lerp(btnLabel, other.btnLabel, t)!,
+      alertsTitle: TextStyle.lerp(alertsTitle, other.alertsTitle, t)!,
+      defaultText: TextStyle.lerp(defaultText, other.defaultText, t)!,
     );
   }
 
@@ -89,5 +110,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('frConnectBrand', frConnectBrand),
         NamedProperty('frConnectGroup', frConnectGroup),
         NamedProperty('btnLabel', btnLabel),
+        NamedProperty('alertsTitle', alertsTitle),
+        NamedProperty('defaultText', defaultText),
       ];
 }

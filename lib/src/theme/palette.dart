@@ -99,5 +99,22 @@ abstract class ColorPalette {
   static const greyMain525Hover = Color(0xFFa6a6a6);
   static const greyMain525Active = Color(0xFFbababa);
 
+  static const grey50 = Color(0xFF161616);
   static const grey425 = Color(0xFF666666);
+  static const grey950 = Color(0xFFeeeeee);
+  static const grey975 = Color(0xFFdfdfdf);
+  static const grey1000 = Color(0xFFffffff);
+
+  static const error = Color(0xFFe10600);
+  static const success = Color(0xFF008941);
+  static const info = Color(0xFF0762c8);
+  static const warning = Color(0xFFb34000);
+  static const errorDarkMode = Color(0xFFFf3333);
+  static const successDarkMode = Color(0xFF00eb5e);
+  static const infoDarkMode = Color(0xFF2b8bf7);
+  static const warningDarkMode = Color(0xFFff5d00);
+
+  static const white = Color(0xFFffffff);
+  static const black = Color(0xFF000000);
+  static const transparent = Color(0x00000000);
 }

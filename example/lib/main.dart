@@ -41,6 +41,52 @@ class _MyHomePageState extends State<MyHomePage> {
         label: 'Label bouton',
       ),
     ),
+    DSFRAlert(
+      type: DSFRAlertType.error,
+      title: "Error Alert - MD",
+      description: "une alerte de type error avec un titre et une description",
+      onClose: () => debugPrint("close callback called"),
+    ),
+    DSFRAlert(
+      type: DSFRAlertType.success,
+      title: "Success Alert - MD",
+      description:
+          "une alerte de type success avec un titre et une description",
+      onClose: () {},
+    ),
+    DSFRAlert(
+      type: DSFRAlertType.info,
+      title: "Info Alert - MD",
+      description: "une alerte de type info avec un titre et une description",
+      onClose: () => debugPrint("close callback called"),
+    ),
+    DSFRAlert(
+      type: DSFRAlertType.warning,
+      title: "Warning Alert - MD",
+      description:
+          "une alerte de type warning avec un titre et une description",
+      onClose: () => debugPrint("close callback called"),
+    ),
+    DSFRSmallAlert(
+      type: DSFRAlertType.error,
+      description: "Error Alert - SM",
+      onClose: () => debugPrint("close callback called"),
+    ),
+    DSFRSmallAlert(
+      type: DSFRAlertType.success,
+      description: "Success Alert - SM",
+      onClose: () {},
+    ),
+    DSFRSmallAlert(
+      type: DSFRAlertType.info,
+      description: "Info Alert - SM",
+      onClose: () => debugPrint("close callback called"),
+    ),
+    DSFRSmallAlert(
+      type: DSFRAlertType.warning,
+      description: "Warning Alert - SM",
+      onClose: () => debugPrint("close callback called"),
+    ),
   ];
 
   @override
