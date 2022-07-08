@@ -113,13 +113,13 @@ Components we need to implement
 
 - [ ] Accordion
 - [ ] FileUpload
-- [*] Alerts
+- [X] Alerts
 - [ ] Badges
 - [ ] Banner
 - [ ] SearchBar
-- [*] Buttons
+- [X] Buttons
 - [ ] ButtonsGroup
-- [*] FranceConnectButton
+- [X] FranceConnectButton
 - [ ] Radio
 - [ ] RichRadio
 - [ ] Checkbox
