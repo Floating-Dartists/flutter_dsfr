@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 /// DSFRIcons, use the remix icon icon pack
 ///
 /// https://remixicon.com/
-abstract class DSFRIcons {
+@immutable
+class DSFRIcons {
+  const DSFRIcons._();
+
   static const String _fontFamily = 'Remix Icon';
   static String? get fontFamily => _packageName;
   static String? _packageName = 'flutter_dsfr';
