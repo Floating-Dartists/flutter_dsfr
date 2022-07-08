@@ -104,7 +104,6 @@ DSFRSmallAlert(
 
 ## Dependencies
 
-* [flutter_svg](https://pub.dev/packages/flutter_svg): Allows to use svg images. (used in the `FranceConnectButton` widget)
 * [url_launcher](https://pub.dev/packages/url_launcher): Allows to open links in the browser.(used in the `FranceConnectButton` widget)
 
 ## Roadmap

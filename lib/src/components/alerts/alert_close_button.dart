@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../flutter_dsfr.dart';
-import '../icon/icon.dart';
 
 class AlertCloseButton extends StatelessWidget {
   const AlertCloseButton({required this.onClose, super.key});

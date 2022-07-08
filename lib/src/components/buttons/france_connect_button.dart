@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../consts/endpoints.dart';
@@ -7,6 +6,7 @@ import '../../theme/button_style.dart';
 import '../../theme/colors.dart';
 import '../../theme/sizes.dart';
 import '../../theme/typography.dart';
+import '../logo/logo.dart';
 
 /// Create a button to connect using FranceConnect services.
 ///
@@ -98,12 +98,7 @@ class FranceConnectBase extends StatelessWidget {
                 vertical: dsfrSpacings.v1,
                 horizontal: dsfrSpacings.v3,
               ),
-              child: SvgPicture.asset(
-                'assets/svg/icon.svg',
-                package: 'flutter_dsfr',
-                width: dsfrSpacings.w5,
-                height: dsfrSpacings.w6,
-              ),
+              child: DSFRLogo(size: dsfrSpacings.w5),
             ),
             Text.rich(
               TextSpan(
