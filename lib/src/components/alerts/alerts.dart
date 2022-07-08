@@ -1,127 +1,77 @@
 import 'package:flutter/material.dart';
 
 import '../../../flutter_dsfr.dart';
-import '../../theme/icons.dart';
+import 'alerts_close_button.dart';
 import 'alerts_icon.dart';
-
-enum DSFRAlertsType { error, success, info, warning }
-
-enum DSFRAlertsSize { sm, md }
+import 'base_alerts.dart';
 
 /// Create an alert .
 ///
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/736362500/Alertes+-+Alerts
-class DSFRAlerts extends StatelessWidget {
+class DSFRAlerts extends BaseAlerts {
   const DSFRAlerts({
-    required this.type,
-    this.size = DSFRAlertsSize.md,
-    this.title,
+    required super.type,
+    required this.title,
     this.description,
-    Key? key,
-  })  : assert(
-          size == DSFRAlertsSize.sm ||
-              size == DSFRAlertsSize.md && title != null,
-          """
-          You must provide a title if you are using DSFRAlerts with size == DSFRAlertsSize.md
-          
-          please see https://gouvfr.atlassian.net/wiki/spaces/DB/pages/736362500/Alertes+-+Alerts#Structure
-          """,
-        ),
-        assert(
-          size == DSFRAlertsSize.md ||
-              size == DSFRAlertsSize.sm && description != null,
-          """
-          You must provide a description if you are using DSFRAlerts with size == DSFRAlertsSize.sm
+    super.onClose,
+    super.key,
+  });
 
-          please see https://gouvfr.atlassian.net/wiki/spaces/DB/pages/736362500/Alertes+-+Alerts#Structure
-          """,
-        ),
-        super(key: key);
-
-  final DSFRAlertsSize size;
-  final DSFRAlertsType type;
-  final String? title;
+  final String title;
   final String? description;
 
-  Color _getColor(DSFRColors dsfrColors) {
-    switch (type) {
-      case DSFRAlertsType.error:
-        return dsfrColors.error;
-      case DSFRAlertsType.success:
-        return dsfrColors.success;
-      case DSFRAlertsType.info:
-        return dsfrColors.info;
-      case DSFRAlertsType.warning:
-        return dsfrColors.warning;
-    }
-  }
-
   EdgeInsets _getIconPadding(DSFRSizes sizes) {
-    if (size == DSFRAlertsSize.md) {
-      return EdgeInsets.fromLTRB(sizes.w1, sizes.w2, sizes.w1, sizes.w2);
-    }
-
-    return EdgeInsets.all(sizes.w1);
-  }
-
-  IconData _getIconData() {
-    switch (type) {
-      case DSFRAlertsType.error:
-        return DSFRIcons.error;
-      case DSFRAlertsType.success:
-        return Icons.check_circle;
-      case DSFRAlertsType.info:
-        return Icons.info;
-      case DSFRAlertsType.warning:
-        return Icons.warning;
-    }
-  }
-
-  Widget _getIcon(DSFRColors dsfrColors) {
-    final iconData = _getIconData();
-
-    return Icon(
-      iconData,
-      color: dsfrColors.alertsBackgroundColor,
-    );
+    return EdgeInsets.fromLTRB(sizes.w1, sizes.w2, sizes.w1, sizes.w2);
   }
 
   @override
   Widget build(BuildContext context) {
     final dsfrColors = DSFRColors.of(context);
     final dsfrTextStyles = DSFRTypography.of(context);
-    final color = _getColor(dsfrColors);
+
+    final color = getColor(dsfrColors);
 
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: dsfrColors.alertsBackgroundColor,
+        color: dsfrColors.alertsBackground,
         border: Border.all(color: color),
       ),
       child: IntrinsicHeight(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
-              child: AlertsIcon(
-                color: color,
-                icon: _getIcon(dsfrColors),
-                padding: _getIconPadding(DSFRSizes.of(context)),
+            AlertsIcon(
+              color: color,
+              icon: getIconData(),
+              padding: _getIconPadding(DSFRSizes.of(context)),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: dsfrTextStyles.alertsTitle
+                          .copyWith(color: dsfrColors.text),
+                    ),
+                    if (description != null)
+                      Text(
+                        description!,
+                        style: DefaultTextStyle.of(context)
+                            .style
+                            .copyWith(color: dsfrColors.text),
+                      )
+                  ],
+                ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  if (title != null)
-                    Text(
-                      title!,
-                      style: dsfrTextStyles.alertsTitle,
-                    ),
-                  if (description != null) Text(description!)
-                ],
+            if (onClose != null)
+              Align(
+                alignment: Alignment.topRight,
+                child: AlertsCloseButton(onClose: onClose!),
               ),
-            )
           ],
         ),
       ),

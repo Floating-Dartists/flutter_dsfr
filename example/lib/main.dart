@@ -45,23 +45,47 @@ class _MyHomePageState extends State<MyHomePage> {
       type: DSFRAlertsType.error,
       title: "Error Alert - MD",
       description: "une alerte de type error avec un titre et une description",
+      onClose: () => debugPrint("close callback called"),
     ),
     DSFRAlerts(
       type: DSFRAlertsType.success,
       title: "Success Alert - MD",
       description:
           "une alerte de type success avec un titre et une description",
+      onClose: () => debugPrint("close callback called"),
     ),
     DSFRAlerts(
       type: DSFRAlertsType.info,
       title: "Info Alert - MD",
       description: "une alerte de type info avec un titre et une description",
+      onClose: () => debugPrint("close callback called"),
     ),
     DSFRAlerts(
       type: DSFRAlertsType.warning,
       title: "Warning Alert - MD",
       description:
           "une alerte de type warning avec un titre et une description",
+      onClose: () => debugPrint("close callback called"),
+    ),
+    DSFRSmallAlerts(
+      type: DSFRAlertsType.error,
+      description: "Error Alert - SM",
+      onClose: () => debugPrint("close callback called"),
+    ),
+    DSFRSmallAlerts(
+      type: DSFRAlertsType.success,
+      description: "Success Alert - SM",
+      onClose: () => debugPrint("close callback called"),
+    ),
+    DSFRSmallAlerts(
+      type: DSFRAlertsType.info,
+      description: "Info Alert - SM",
+      onClose: () => debugPrint("close callback called"),
+    ),
+    DSFRSmallAlerts(
+      type: DSFRAlertsType.warning,
+      description: "Warning Alert - SM",
+      onClose: () => debugPrint("close callback called"),
     ),
   ];
 

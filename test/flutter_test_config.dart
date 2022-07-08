@@ -3,11 +3,13 @@ import 'dart:async';
 import 'package:alchemist/alchemist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dsfr/flutter_dsfr.dart';
+import 'package:flutter_dsfr/src/theme/icons.dart';
 
 Future<void> testExecutable(FutureOr<void> Function() testMain) async {
   const isRunningInCi = bool.fromEnvironment('CI', defaultValue: false);
 
   DSFRTypography.packageName = null;
+  DSFRIcons.packageName = null;
 
   return AlchemistConfig.runWithConfig(
     config: AlchemistConfig(

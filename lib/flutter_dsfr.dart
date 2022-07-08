@@ -7,6 +7,8 @@ import 'src/theme/sizes.dart';
 import 'src/theme/typography.dart';
 
 export 'src/components/alerts/alerts.dart';
+export 'src/components/alerts/alerts_type.dart';
+export 'src/components/alerts/small_alerts.dart';
 export 'src/components/buttons/base_button.dart' hide DSFRBaseButton;
 export 'src/components/buttons/france_connect_button.dart'
     hide InfoLinkButton, FranceConnectBase;
