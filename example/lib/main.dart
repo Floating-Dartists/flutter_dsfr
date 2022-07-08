@@ -87,6 +87,14 @@ class _MyHomePageState extends State<MyHomePage> {
       description: "Warning Alert - SM",
       onClose: () => debugPrint("close callback called"),
     ),
+    const DSFRAccordion(
+      panels: [
+        DSFRAccordionData(
+            title: "Accordion1", content: Text("Im an awesome content")),
+        DSFRAccordionData(
+            title: "Accordion2", content: Text("Im also an awesome content")),
+      ],
+    ),
   ];
 
   @override

@@ -6,6 +6,8 @@ import 'src/theme/colors.dart';
 import 'src/theme/sizes.dart';
 import 'src/theme/typography.dart';
 
+export 'src/components/accordion/accordion.dart';
+export 'src/components/accordion/accordion_data.dart';
 export 'src/components/alerts/alert.dart';
 export 'src/components/alerts/alert_type.dart';
 export 'src/components/alerts/small_alert.dart';
