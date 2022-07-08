@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../flutter_dsfr.dart';
 import '../icon/icon.dart';
 
-class AlertsIcon extends StatelessWidget {
-  const AlertsIcon({
+class AlertIcon extends StatelessWidget {
+  const AlertIcon({
     required this.color,
     required this.icon,
     required this.padding,

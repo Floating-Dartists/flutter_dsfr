@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 import '../../../flutter_dsfr.dart';
-import 'alerts_close_button.dart';
-import 'alerts_icon.dart';
-import 'base_alerts.dart';
+import 'alert_close_button.dart';
+import 'alert_icon.dart';
+import 'base_alert.dart';
 
 /// Create an alert .
 ///
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/736362500/Alertes+-+Alerts
-class DSFRAlerts extends BaseAlerts {
-  const DSFRAlerts({
+class DSFRAlert extends BaseAlert {
+  const DSFRAlert({
     required super.type,
     required this.title,
     this.description,
@@ -40,7 +40,7 @@ class DSFRAlerts extends BaseAlerts {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            AlertsIcon(
+            AlertIcon(
               color: color,
               icon: getIconData(),
               padding: _getIconPadding(DSFRSizes.of(context)),
@@ -70,7 +70,7 @@ class DSFRAlerts extends BaseAlerts {
             if (onClose != null)
               Align(
                 alignment: Alignment.topRight,
-                child: AlertsCloseButton(onClose: onClose!),
+                child: AlertCloseButton(onClose: onClose!),
               ),
           ],
         ),

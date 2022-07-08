@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../../flutter_dsfr.dart';
-import '../../theme/icons.dart';
 import '../icon/icon.dart';
 
-class AlertsCloseButton extends StatelessWidget {
-  const AlertsCloseButton({required this.onClose, super.key});
+class AlertCloseButton extends StatelessWidget {
+  const AlertCloseButton({required this.onClose, super.key});
 
   final void Function() onClose;
   static const _elevation = 0.0;
@@ -33,7 +32,6 @@ class AlertsCloseButton extends StatelessWidget {
       ),
       splashColor: dsfrColors.alertsCloseButtonSplash,
       constraints: const BoxConstraints(),
-      // textStyle: dsfrTypography.btnLabel.copyWith(color: foregroundColor),
       onPressed: onClose,
       child: DSFRIcon(
         DSFRIcons.closeFill,

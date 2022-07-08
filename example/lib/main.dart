@@ -41,49 +41,49 @@ class _MyHomePageState extends State<MyHomePage> {
         label: 'Label bouton',
       ),
     ),
-    DSFRAlerts(
-      type: DSFRAlertsType.error,
+    DSFRAlert(
+      type: DSFRAlertType.error,
       title: "Error Alert - MD",
       description: "une alerte de type error avec un titre et une description",
       onClose: () => debugPrint("close callback called"),
     ),
-    DSFRAlerts(
-      type: DSFRAlertsType.success,
+    DSFRAlert(
+      type: DSFRAlertType.success,
       title: "Success Alert - MD",
       description:
           "une alerte de type success avec un titre et une description",
-      onClose: () => debugPrint("close callback called"),
+      onClose: () {},
     ),
-    DSFRAlerts(
-      type: DSFRAlertsType.info,
+    DSFRAlert(
+      type: DSFRAlertType.info,
       title: "Info Alert - MD",
       description: "une alerte de type info avec un titre et une description",
       onClose: () => debugPrint("close callback called"),
     ),
-    DSFRAlerts(
-      type: DSFRAlertsType.warning,
+    DSFRAlert(
+      type: DSFRAlertType.warning,
       title: "Warning Alert - MD",
       description:
           "une alerte de type warning avec un titre et une description",
       onClose: () => debugPrint("close callback called"),
     ),
-    DSFRSmallAlerts(
-      type: DSFRAlertsType.error,
+    DSFRSmallAlert(
+      type: DSFRAlertType.error,
       description: "Error Alert - SM",
       onClose: () => debugPrint("close callback called"),
     ),
-    DSFRSmallAlerts(
-      type: DSFRAlertsType.success,
+    DSFRSmallAlert(
+      type: DSFRAlertType.success,
       description: "Success Alert - SM",
-      onClose: () => debugPrint("close callback called"),
+      onClose: () {},
     ),
-    DSFRSmallAlerts(
-      type: DSFRAlertsType.info,
+    DSFRSmallAlert(
+      type: DSFRAlertType.info,
       description: "Info Alert - SM",
       onClose: () => debugPrint("close callback called"),
     ),
-    DSFRSmallAlerts(
-      type: DSFRAlertsType.warning,
+    DSFRSmallAlert(
+      type: DSFRAlertType.warning,
       description: "Warning Alert - SM",
       onClose: () => debugPrint("close callback called"),
     ),

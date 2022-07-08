@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../theme/colors.dart';
 import '../../theme/sizes.dart';
-import 'alerts_close_button.dart';
-import 'alerts_icon.dart';
-import 'base_alerts.dart';
+import 'alert_close_button.dart';
+import 'alert_icon.dart';
+import 'base_alert.dart';
 
-class DSFRSmallAlerts extends BaseAlerts {
-  const DSFRSmallAlerts({
+class DSFRSmallAlert extends BaseAlert {
+  const DSFRSmallAlert({
     required super.type,
     required this.description,
     super.onClose,
@@ -34,7 +34,7 @@ class DSFRSmallAlerts extends BaseAlerts {
       child: IntrinsicHeight(
         child: Row(
           children: [
-            AlertsIcon(
+            AlertIcon(
               color: color,
               icon: getIconData(),
               padding: _getIconPadding(dsfrSizes),
@@ -52,7 +52,7 @@ class DSFRSmallAlerts extends BaseAlerts {
               ),
             ),
             if (onClose != null)
-              SizedBox(child: AlertsCloseButton(onClose: onClose!)),
+              SizedBox(child: AlertCloseButton(onClose: onClose!)),
           ],
         ),
       ),

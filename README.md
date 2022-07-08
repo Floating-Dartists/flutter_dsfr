@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
 DSFRPrimaryButton(onPressed: () {}, label: 'Label bouton');
 ```
 
-![](https://raw.githubusercontent.com/TesteurManiak/flutter_dsfr/main/screenshots/primary_button.png)
+![primary_button.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/primary_button.png)
 
 * Secondary
 
@@ -56,7 +56,7 @@ DSFRPrimaryButton(onPressed: () {}, label: 'Label bouton');
 DSFRSecondaryButton(onPressed: () {}, label: 'Label bouton');
 ```
 
-![](https://raw.githubusercontent.com/TesteurManiak/flutter_dsfr/main/screenshots/secondary_button.png)
+![secondary_button.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/secondary_button.png)
 
 * FranceConnect
 
@@ -64,7 +64,7 @@ DSFRSecondaryButton(onPressed: () {}, label: 'Label bouton');
 FranceConnectButton(onPressed: () {});
 ```
 
-![](https://raw.githubusercontent.com/TesteurManiak/flutter_dsfr/main/screenshots/france_connect.png)
+![france_connect.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/france_connect.png)
 
 * FranceConnectPlus
 
@@ -72,9 +72,80 @@ FranceConnectButton(onPressed: () {});
 FranceConnectButton(onPressed: () {}, variant: true);
 ```
 
-![](https://raw.githubusercontent.com/TesteurManiak/flutter_dsfr/main/screenshots/france_connect_plus.png)
+![france_connect_plus.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/france_connect_plus.png)
+
+## Alerts
+
+* Alert
+
+```dart
+DSFRAlert(
+      type: DSFRAlertType.success,
+      title: "Success Alert",
+      description:
+          "this is a success alert",
+      onClose: () {},
+    )
+```
+
+![alert.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/alert.png)
+
+* SmallAlert
+
+```dart
+DSFRSmallAlert(
+      type: DSFRAlertType.success,
+      description: "this is a small alert",
+      onClose: () {},
+    )
+```
+
+![small_alert.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/small_alert.png)
 
 ## Dependencies
 
 * [flutter_svg](https://pub.dev/packages/flutter_svg): Allows to use svg images. (used in the `FranceConnectButton` widget)
 * [url_launcher](https://pub.dev/packages/url_launcher): Allows to open links in the browser.(used in the `FranceConnectButton` widget)
+
+## Roadmap
+
+Components we need to implement
+
+- [ ] Accordion
+- [ ] FileUpload
+- [*] Alerts
+- [ ] Badges
+- [ ] Banner
+- [ ] SearchBar
+- [*] Buttons
+- [ ] ButtonsGroup
+- [*] FranceConnectButton
+- [ ] Radio
+- [ ] RichRadio
+- [ ] Checkbox
+- [ ] Card
+- [ ] Input
+- [ ] Quote
+- [ ] Header
+- [ ] Breadcrumb
+- [ ] ConscentBanner
+- [ ] StepIndicateur
+- [ ] ToggleSwitch
+- [ ] Links
+- [ ] SkipLinks
+- [ ] Select
+- [ ] SideMenu
+- [ ] Callout
+- [ ] Highlight
+- [ ] Modal
+- [ ] MainNavigation
+- [ ] Tabs
+- [ ] Display
+- [ ] Share
+- [ ] Footer
+- [ ] Pagination
+- [ ] Summary
+- [ ] Table
+- [ ] Tag
+- [ ] DownloadFile
+- [ ] Tile

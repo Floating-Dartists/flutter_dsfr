@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 
 import '../../theme/colors.dart';
 import '../../theme/icons.dart';
-import 'alerts_type.dart';
+import 'alert_type.dart';
 
-abstract class BaseAlerts extends StatelessWidget {
-  const BaseAlerts({required this.type, this.onClose, super.key});
-  final DSFRAlertsType type;
+abstract class BaseAlert extends StatelessWidget {
+  const BaseAlert({required this.type, this.onClose, super.key});
+  final DSFRAlertType type;
   final void Function()? onClose;
 
   @protected
   Color getColor(DSFRColors dsfrColors) {
     switch (type) {
-      case DSFRAlertsType.error:
+      case DSFRAlertType.error:
         return dsfrColors.error;
-      case DSFRAlertsType.success:
+      case DSFRAlertType.success:
         return dsfrColors.success;
-      case DSFRAlertsType.info:
+      case DSFRAlertType.info:
         return dsfrColors.info;
-      case DSFRAlertsType.warning:
+      case DSFRAlertType.warning:
         return dsfrColors.warning;
     }
   }
@@ -26,13 +26,13 @@ abstract class BaseAlerts extends StatelessWidget {
   @protected
   IconData getIconData() {
     switch (type) {
-      case DSFRAlertsType.error:
+      case DSFRAlertType.error:
         return DSFRIcons.error;
-      case DSFRAlertsType.success:
+      case DSFRAlertType.success:
         return DSFRIcons.success;
-      case DSFRAlertsType.info:
+      case DSFRAlertType.info:
         return DSFRIcons.info;
-      case DSFRAlertsType.warning:
+      case DSFRAlertType.warning:
         return DSFRIcons.warning;
     }
   }

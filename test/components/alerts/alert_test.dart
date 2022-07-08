@@ -4,43 +4,51 @@ import 'package:flutter_dsfr/flutter_dsfr.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('DSFRAlerts', () {
+  group('DSFRAlert', () {
     final widget = GoldenTestGroup(
       children: [
         GoldenTestScenario(
           name: 'error',
-          child: const DSFRSmallAlerts(
-            description: "error alerts",
-            type: DSFRAlertsType.error,
+          child: const DSFRAlert(
+            title: "error alerts",
+            type: DSFRAlertType.error,
           ),
         ),
         GoldenTestScenario(
           name: 'success',
-          child: const DSFRSmallAlerts(
-            description: "success alerts",
-            type: DSFRAlertsType.success,
+          child: const DSFRAlert(
+            title: "success alerts",
+            type: DSFRAlertType.success,
           ),
         ),
         GoldenTestScenario(
           name: 'info',
-          child: const DSFRSmallAlerts(
-            description: "info alerts",
-            type: DSFRAlertsType.info,
+          child: const DSFRAlert(
+            title: "info alerts",
+            type: DSFRAlertType.info,
           ),
         ),
         GoldenTestScenario(
           name: 'warning',
-          child: const DSFRSmallAlerts(
-            description: "warning alerts",
-            type: DSFRAlertsType.warning,
+          child: const DSFRAlert(
+            title: "warning alerts",
+            type: DSFRAlertType.warning,
+          ),
+        ),
+        GoldenTestScenario(
+          name: 'description',
+          child: const DSFRAlert(
+            title: "alerts with description",
+            description: "awesome description",
+            type: DSFRAlertType.success,
           ),
         ),
         GoldenTestScenario(
           name: 'close button',
-          child: DSFRSmallAlerts(
-            description: "close button",
+          child: DSFRAlert(
+            title: "close button",
             onClose: () {},
-            type: DSFRAlertsType.success,
+            type: DSFRAlertType.success,
           ),
         ),
       ],
@@ -48,13 +56,13 @@ void main() {
 
     goldenTest(
       'renders light mode',
-      fileName: 'small_alerts_light',
+      fileName: 'alert_light',
       builder: () => widget,
     );
 
     goldenTest(
       'renders dark mode',
-      fileName: 'small_alerts_dark',
+      fileName: 'alert_dark',
       builder: () => Theme(
         data: ThemeData(
           fontFamily: 'Marianne',
