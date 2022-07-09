@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
           extensions: dsfrExtensionsLight,
         ),
         darkTheme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: const Color(0xFF161616),
           extensions: dsfrExtensionsDark,
         ),
         home: const MyHomePage(),

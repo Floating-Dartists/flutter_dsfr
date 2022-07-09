@@ -28,6 +28,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color active;
   final Color splash;
   final Color text;
+  final Color accordionBorder;
 
   const DSFRColors._({
     required this.frConnectHover,
@@ -53,6 +54,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.active,
     required this.splash,
     required this.text,
+    required this.accordionBorder,
   });
 
   const DSFRColors.light()
@@ -82,6 +84,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           active: ColorPalette.grey1000Active,
           splash: ColorPalette.transparent,
           text: ColorPalette.black,
+          accordionBorder: ColorPalette.grey925,
         );
 
   const DSFRColors.dark()
@@ -110,6 +113,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           active: ColorPalette.grey50Active,
           splash: ColorPalette.transparent,
           text: ColorPalette.grey1000,
+          accordionBorder: ColorPalette.grey125,
         );
 
   static DSFRColors of(BuildContext context) =>
@@ -142,6 +146,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       active: active,
       splash: splash,
       text: text,
+      accordionBorder: accordionBorder,
     );
   }
 
@@ -201,6 +206,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       active: Color.lerp(active, other.textDisabledGrey, t)!,
       splash: Color.lerp(splash, other.textDisabledGrey, t)!,
       text: Color.lerp(text, other.text, t)!,
+      accordionBorder: Color.lerp(accordionBorder, other.accordionBorder, t)!,
     );
   }
 
@@ -238,5 +244,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('active', active),
         NamedProperty('splash', splash),
         NamedProperty('text', text),
+        NamedProperty('accordionBorder', accordionBorder),
       ];
 }
