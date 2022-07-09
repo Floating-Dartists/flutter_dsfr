@@ -87,6 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
       description: "Warning Alert - SM",
       onClose: () => debugPrint("close callback called"),
     ),
+    // const DSFRBadge(type: DSFRBad),
   ];
 
   @override

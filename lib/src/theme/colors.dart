@@ -18,10 +18,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color defaultBorderGrey;
   final Color backgroundDisabledGrey;
   final Color textDisabledGrey;
-  final Color error;
-  final Color info;
-  final Color success;
-  final Color warning;
+  final Color alertError;
+  final Color alertInfo;
+  final Color alertSuccess;
+  final Color alertWarning;
   final Color alertsBackground;
   final Color alertsCloseButtonIcon;
   final Color alertsCloseButtonHover;
@@ -41,10 +41,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.blockColorHover,
     required this.blockColorActive,
     required this.defaultBorderGrey,
-    required this.error,
-    required this.info,
-    required this.success,
-    required this.warning,
+    required this.alertError,
+    required this.alertInfo,
+    required this.alertSuccess,
+    required this.alertWarning,
     required this.alertsBackground,
     required this.backgroundDisabledGrey,
     required this.textDisabledGrey,
@@ -70,10 +70,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           blockColorHover: const Color.fromRGBO(224, 224, 224, 0.5),
           blockColorActive: const Color.fromRGBO(194, 194, 194, 0.5),
           defaultBorderGrey: const Color(0xFFe5e5e5),
-          error: ColorPalette.error,
-          success: ColorPalette.success,
-          info: ColorPalette.info,
-          warning: ColorPalette.warning,
+          alertError: ColorPalette.error425,
+          alertSuccess: ColorPalette.success425,
+          alertInfo: ColorPalette.info425,
+          alertWarning: ColorPalette.warning425,
           alertsBackground: ColorPalette.grey1000,
           backgroundDisabledGrey: const Color(0xFFe5e5e5),
           textDisabledGrey: const Color(0xFF929292),
@@ -98,10 +98,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           blockColorHover: const Color.fromRGBO(65, 65, 65, 0.5),
           blockColorActive: const Color.fromRGBO(99, 99, 99, 0.5),
           defaultBorderGrey: const Color(0xFF2a2a2a),
-          error: ColorPalette.errorDarkMode,
-          success: ColorPalette.successDarkMode,
-          info: ColorPalette.infoDarkMode,
-          warning: ColorPalette.warningDarkMode,
+          alertError: ColorPalette.error625,
+          alertSuccess: ColorPalette.success625,
+          alertInfo: ColorPalette.info625,
+          alertWarning: ColorPalette.warning625,
           alertsBackground: ColorPalette.grey50,
           backgroundDisabledGrey: const Color(0xFF2a2a2a),
           textDisabledGrey: const Color.fromRGBO(102, 102, 102, 1),
@@ -132,10 +132,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       defaultBorderGrey: defaultBorderGrey,
       backgroundDisabledGrey: backgroundDisabledGrey,
       textDisabledGrey: textDisabledGrey,
-      error: error,
-      success: success,
-      info: info,
-      warning: warning,
+      alertError: alertError,
+      alertSuccess: alertSuccess,
+      alertInfo: alertInfo,
+      alertWarning: alertWarning,
       alertsBackground: alertsBackground,
       alertsCloseButtonIcon: alertsCloseButtonIcon,
       alertsCloseButtonHover: alertsCloseButtonHover,
@@ -189,10 +189,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           Color.lerp(backgroundDisabledGrey, other.backgroundDisabledGrey, t)!,
       textDisabledGrey:
           Color.lerp(textDisabledGrey, other.textDisabledGrey, t)!,
-      error: Color.lerp(error, other.error, t)!,
-      info: Color.lerp(info, other.info, t)!,
-      success: Color.lerp(success, other.success, t)!,
-      warning: Color.lerp(warning, other.warning, t)!,
+      alertError: Color.lerp(alertError, other.alertError, t)!,
+      alertInfo: Color.lerp(alertInfo, other.alertInfo, t)!,
+      alertSuccess: Color.lerp(alertSuccess, other.alertSuccess, t)!,
+      alertWarning: Color.lerp(alertWarning, other.alertWarning, t)!,
       alertsBackground:
           Color.lerp(alertsBackground, other.alertsBackground, t)!,
       alertsCloseButtonIcon:
@@ -231,10 +231,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('defaultBorderGrey', defaultBorderGrey),
         NamedProperty('backgroundDisabledGrey', backgroundDisabledGrey),
         NamedProperty('textDisabledGrey', textDisabledGrey),
-        NamedProperty('error', error),
-        NamedProperty('success', success),
-        NamedProperty('info', info),
-        NamedProperty('warning', warning),
+        NamedProperty('alertError', alertError),
+        NamedProperty('alertSuccess', alertSuccess),
+        NamedProperty('alertInfo', alertInfo),
+        NamedProperty('alertWarning', alertWarning),
         NamedProperty('alertsBackground', alertsBackground),
         NamedProperty('alertsCloseButtonIcon', alertsCloseButtonIcon),
         NamedProperty('alertsCloseButtonHover', alertsCloseButtonHover),
