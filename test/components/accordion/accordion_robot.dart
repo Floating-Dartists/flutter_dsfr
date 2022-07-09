@@ -13,19 +13,21 @@ class AccordionRobot {
   }) async {
     await tester.pumpWidget(
       MaterialApp(
-        home: Theme(
-          data: ThemeData(
-            fontFamily: 'Marianne',
-            brightness: Brightness.light,
-            extensions: [
-              DSFRTypography.regular(),
-              const DSFRColors.light(),
-              const DSFRSizes.regular(),
-            ],
-          ),
-          child: SingleChildScrollView(
-            child: DSFRAccordion(
-              panels: panels,
+        home: Material(
+          child: Theme(
+            data: ThemeData(
+              fontFamily: 'Marianne',
+              brightness: Brightness.light,
+              extensions: [
+                DSFRTypography.regular(),
+                const DSFRColors.light(),
+                const DSFRSizes.regular(),
+              ],
+            ),
+            child: SingleChildScrollView(
+              child: DSFRAccordion(
+                panels: panels,
+              ),
             ),
           ),
         ),
