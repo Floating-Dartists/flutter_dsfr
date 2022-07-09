@@ -191,9 +191,7 @@ class _ExpansionTileState extends State<ProgrammableExpansionTile>
               onTap: _callExpansionChanged,
               contentPadding:
                   widget.tilePadding ?? expansionTileTheme.tilePadding,
-              leading: widget.leading ?? _buildLeadingIcon(context),
               title: widget.title,
-              subtitle: widget.subtitle,
               trailing: widget.trailing ?? _buildTrailingIcon(context),
             ),
           ),
@@ -269,12 +267,10 @@ class _ExpansionTileState extends State<ProgrammableExpansionTile>
 
     // * we put a Material widget wrapper here because ProgrammableExpansionTile
     // * use a ListTile and it must have a Material parent
-    return Material(
-      child: AnimatedBuilder(
-        animation: _controller.view,
-        builder: _buildChildren,
-        child: shouldRemoveChildren ? null : result,
-      ),
+    return AnimatedBuilder(
+      animation: _controller.view,
+      builder: _buildChildren,
+      child: shouldRemoveChildren ? null : result,
     );
   }
 }

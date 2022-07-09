@@ -4,6 +4,10 @@ import '../../../flutter_dsfr.dart';
 import 'accordion_border.dart';
 import 'accordion_panel.dart';
 
+/// Create an Accordion .
+/// Must be render inside a Scrollable widget
+///
+/// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/312082509/Accord+on+-+Accordion
 class DSFRAccordion extends StatefulWidget {
   const DSFRAccordion({required this.panels, super.key});
 
