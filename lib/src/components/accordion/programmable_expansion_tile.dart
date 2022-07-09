@@ -156,14 +156,6 @@ class _ExpansionTileState extends State<ProgrammableExpansionTile>
     );
   }
 
-  Widget? _buildLeadingIcon(BuildContext context) {
-    if (_effectiveAffinity(widget.controlAffinity) !=
-        ListTileControlAffinity.leading) {
-      return null;
-    }
-    return _buildIcon(context);
-  }
-
   Widget? _buildTrailingIcon(BuildContext context) {
     if (_effectiveAffinity(widget.controlAffinity) !=
         ListTileControlAffinity.trailing) {
