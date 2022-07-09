@@ -17,6 +17,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle btnLabel;
   final TextStyle alertsTitle;
   final TextStyle defaultText;
+  final TextStyle accordionOpen;
 
   const DSFRTypography._({
     required this.frConnectLogin,
@@ -25,6 +26,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.btnLabel,
     required this.alertsTitle,
     required this.defaultText,
+    required this.accordionOpen,
   });
 
   factory DSFRTypography.regular() {
@@ -60,13 +62,20 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         fontFamily: 'Marianne',
         package: packageName,
         decoration: TextDecoration.none,
-        fontWeight: FontWeight.w500,
-        fontSize: dsfrSizes.w2,
+        fontWeight: FontWeight.w700,
+        fontSize: dsfrSizes.v5,
       ),
       defaultText: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
         decoration: TextDecoration.none,
+      ),
+      accordionOpen: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        decoration: TextDecoration.none,
+        fontWeight: FontWeight.w700,
+        fontSize: dsfrSizes.w2,
       ),
     );
   }
@@ -86,6 +95,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       btnLabel: btnLabel ?? this.btnLabel,
       alertsTitle: alertsTitle ?? this.alertsTitle,
       defaultText: defaultText,
+      accordionOpen: accordionOpen,
     );
   }
 
@@ -101,6 +111,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       btnLabel: TextStyle.lerp(btnLabel, other.btnLabel, t)!,
       alertsTitle: TextStyle.lerp(alertsTitle, other.alertsTitle, t)!,
       defaultText: TextStyle.lerp(defaultText, other.defaultText, t)!,
+      accordionOpen: TextStyle.lerp(accordionOpen, other.accordionOpen, t)!,
     );
   }
 
@@ -112,5 +123,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('btnLabel', btnLabel),
         NamedProperty('alertsTitle', alertsTitle),
         NamedProperty('defaultText', defaultText),
+        NamedProperty('accordionOpen', accordionOpen),
       ];
 }

@@ -17,8 +17,34 @@ class DSFRAccordionPanel extends StatelessWidget {
   final UniqueKey? accordionValue;
   final UniqueKey itemValue;
 
+  bool get _isExpanded => itemValue == accordionValue;
+
+  Widget _getTitle(
+    BuildContext context, {
+    required DSFRTypography dsfrTypography,
+    required DSFRColors dsfrColors,
+  }) {
+    if (_isExpanded) {
+      return Text(
+        data.title,
+        style: dsfrTypography.accordionOpen.copyWith(
+          color: dsfrColors.text,
+        ),
+      );
+    }
+
+    return Text(
+      data.title,
+      style:
+          DefaultTextStyle.of(context).style.copyWith(color: dsfrColors.text),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final dsfrTypography = DSFRTypography.of(context);
+    final dsfrColors = DSFRColors.of(context);
+
     return ProgrammableExpansionTile(
       key: Key(data.title),
       onExpansionChanged: (shouldBeExpanded) {
@@ -28,8 +54,12 @@ class DSFRAccordionPanel extends StatelessWidget {
           onExpandedChange(null);
         }
       },
-      isExpanded: itemValue == accordionValue,
-      title: Text(data.title),
+      isExpanded: _isExpanded,
+      title: _getTitle(
+        context,
+        dsfrTypography: dsfrTypography,
+        dsfrColors: dsfrColors,
+      ),
       trailing: const Icon(Icons.add),
       children: [data.content],
     );
