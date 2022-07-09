@@ -16,26 +16,41 @@ class DSFRAccordion extends StatefulWidget {
 class _DSFRAccordionState extends State<DSFRAccordion> {
   UniqueKey? accordionValue;
   late final itemsValues = <UniqueKey>[];
+  late final panels = widget.panels;
 
   @override
   void initState() {
     super.initState();
+    _initItemsValues();
+    _setDefaultAccordionValue();
+  }
 
-    var i = 0;
-    while (i < widget.panels.length) {
+  // ! this should only be called once in initState
+  void _initItemsValues() {
+    for (var i = 0; i < panels.length; i++) {
       final uniqueKey = UniqueKey();
       itemsValues.add(uniqueKey);
-      i++;
+    }
+  }
+
+  // ! this should only be called once in initState
+  // ! itemsValues must be initialized before calling this
+  void _setDefaultAccordionValue() {
+    final lastInitialyExpandedIndex =
+        panels.lastIndexWhere((panelData) => panelData.isInitialyExpanded);
+
+    if (lastInitialyExpandedIndex != -1 &&
+        itemsValues.length == panels.length) {
+      accordionValue = itemsValues[lastInitialyExpandedIndex];
     }
   }
 
   List<Widget> _renderPanels() {
     final children = <Widget>[];
 
-    var i = 0;
-    while (i < widget.panels.length) {
-      final isLastInGroup = i == widget.panels.length - 1;
-      final panelData = widget.panels[i];
+    for (var i = 0; i < panels.length; i++) {
+      final isLastInGroup = i == panels.length - 1;
+      final panelData = panels[i];
 
       final child = DSFRAccordionBorder(
         isLastInGroup: isLastInGroup,
@@ -52,8 +67,6 @@ class _DSFRAccordionState extends State<DSFRAccordion> {
       );
 
       children.add(child);
-
-      i++;
     }
 
     return children;

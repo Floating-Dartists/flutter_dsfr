@@ -91,9 +91,19 @@ class _MyHomePageState extends State<MyHomePage> {
     const DSFRAccordion(
       panels: [
         DSFRAccordionData(
-            title: "Accordion1", content: Text("Im an awesome content")),
+            title: "Accordion1",
+            content: Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("Im an awesome content, expanded by default"),
+            ),
+            isInitialyExpanded: true),
         DSFRAccordionData(
-            title: "Accordion2", content: Text("Im also an awesome content")),
+          title: "Accordion2",
+          content: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text("Im also an awesome content"),
+          ),
+        ),
       ],
     ),
   ];
