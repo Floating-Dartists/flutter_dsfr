@@ -265,8 +265,6 @@ class _ExpansionTileState extends State<ProgrammableExpansionTile>
       ),
     );
 
-    // * we put a Material widget wrapper here because ProgrammableExpansionTile
-    // * use a ListTile and it must have a Material parent
     return AnimatedBuilder(
       animation: _controller.view,
       builder: _buildChildren,
