@@ -24,9 +24,9 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color warning;
   final Color alertsBackground;
   final Color alertsCloseButtonIcon;
-  final Color alertsCloseButtonHover;
-  final Color alertsCloseButtonHighlight;
-  final Color alertsCloseButtonSplash;
+  final Color hover;
+  final Color active;
+  final Color splash;
   final Color text;
 
   const DSFRColors._({
@@ -49,9 +49,9 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.backgroundDisabledGrey,
     required this.textDisabledGrey,
     required this.alertsCloseButtonIcon,
-    required this.alertsCloseButtonHover,
-    required this.alertsCloseButtonHighlight,
-    required this.alertsCloseButtonSplash,
+    required this.hover,
+    required this.active,
+    required this.splash,
     required this.text,
   });
 
@@ -78,9 +78,9 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           backgroundDisabledGrey: const Color(0xFFe5e5e5),
           textDisabledGrey: const Color(0xFF929292),
           alertsCloseButtonIcon: ColorPalette.blueFranceSun113,
-          alertsCloseButtonHover: ColorPalette.grey950,
-          alertsCloseButtonHighlight: ColorPalette.grey975,
-          alertsCloseButtonSplash: ColorPalette.transparent,
+          hover: ColorPalette.grey1000Hover,
+          active: ColorPalette.grey1000Active,
+          splash: ColorPalette.transparent,
           text: ColorPalette.black,
         );
 
@@ -106,10 +106,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           backgroundDisabledGrey: const Color(0xFF2a2a2a),
           textDisabledGrey: const Color.fromRGBO(102, 102, 102, 1),
           alertsCloseButtonIcon: ColorPalette.blueFrance625,
-          alertsCloseButtonHover: ColorPalette.grey950,
-          alertsCloseButtonHighlight: ColorPalette.grey975,
-          alertsCloseButtonSplash: ColorPalette.transparent,
-          text: ColorPalette.white,
+          hover: ColorPalette.grey50Hover,
+          active: ColorPalette.grey50Active,
+          splash: ColorPalette.transparent,
+          text: ColorPalette.grey1000,
         );
 
   static DSFRColors of(BuildContext context) =>
@@ -138,9 +138,9 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       warning: warning,
       alertsBackground: alertsBackground,
       alertsCloseButtonIcon: alertsCloseButtonIcon,
-      alertsCloseButtonHover: alertsCloseButtonHover,
-      alertsCloseButtonHighlight: alertsCloseButtonHighlight,
-      alertsCloseButtonSplash: alertsCloseButtonSplash,
+      hover: hover,
+      active: active,
+      splash: splash,
       text: text,
     );
   }
@@ -197,12 +197,9 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           Color.lerp(alertsBackground, other.alertsBackground, t)!,
       alertsCloseButtonIcon:
           Color.lerp(alertsCloseButtonIcon, other.alertsCloseButtonIcon, t)!,
-      alertsCloseButtonHover:
-          Color.lerp(alertsCloseButtonHover, other.textDisabledGrey, t)!,
-      alertsCloseButtonHighlight:
-          Color.lerp(alertsCloseButtonHighlight, other.textDisabledGrey, t)!,
-      alertsCloseButtonSplash:
-          Color.lerp(alertsCloseButtonSplash, other.textDisabledGrey, t)!,
+      hover: Color.lerp(hover, other.textDisabledGrey, t)!,
+      active: Color.lerp(active, other.textDisabledGrey, t)!,
+      splash: Color.lerp(splash, other.textDisabledGrey, t)!,
       text: Color.lerp(text, other.text, t)!,
     );
   }
@@ -237,9 +234,9 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('warning', warning),
         NamedProperty('alertsBackground', alertsBackground),
         NamedProperty('alertsCloseButtonIcon', alertsCloseButtonIcon),
-        NamedProperty('alertsCloseButtonHover', alertsCloseButtonHover),
-        NamedProperty('alertsCloseButtonHighlight', alertsCloseButtonHighlight),
-        NamedProperty('alertsCloseButtonSplash', alertsCloseButtonSplash),
+        NamedProperty('hover', hover),
+        NamedProperty('active', active),
+        NamedProperty('splash', splash),
         NamedProperty('text', text),
       ];
 }

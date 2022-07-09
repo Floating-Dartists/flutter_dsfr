@@ -40,28 +40,51 @@ class DSFRAccordionPanel extends StatelessWidget {
     );
   }
 
+  Widget _getTrailingIcon({
+    required DSFRColors dsfrColors,
+    required DSFRSizes dsfrSizes,
+  }) {
+    final iconData = _isExpanded ? DSFRIcons.substract : DSFRIcons.add;
+
+    return DSFRIcon(
+      iconData,
+      color: dsfrColors.text,
+      size: dsfrSizes.w2,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final dsfrTypography = DSFRTypography.of(context);
     final dsfrColors = DSFRColors.of(context);
+    final dsfrSizes = DSFRSizes.of(context);
 
-    return ProgrammableExpansionTile(
-      key: Key(data.title),
-      onExpansionChanged: (shouldBeExpanded) {
-        if (shouldBeExpanded) {
-          onExpandedChange(itemValue);
-        } else {
-          onExpandedChange(null);
-        }
-      },
-      isExpanded: _isExpanded,
-      title: _getTitle(
-        context,
-        dsfrTypography: dsfrTypography,
-        dsfrColors: dsfrColors,
+    return Theme(
+      data: Theme.of(context).copyWith(
+        splashColor: dsfrColors.splash,
+        hoverColor: dsfrColors.hover,
+        highlightColor: dsfrColors.active,
+        focusColor: dsfrColors.hover,
       ),
-      trailing: const Icon(Icons.add),
-      children: [data.content],
+      child: ProgrammableExpansionTile(
+        key: Key(data.title),
+        onExpansionChanged: (shouldBeExpanded) {
+          if (shouldBeExpanded) {
+            onExpandedChange(itemValue);
+          } else {
+            onExpandedChange(null);
+          }
+        },
+        isExpanded: _isExpanded,
+        title: _getTitle(
+          context,
+          dsfrTypography: dsfrTypography,
+          dsfrColors: dsfrColors,
+        ),
+        trailing:
+            _getTrailingIcon(dsfrColors: dsfrColors, dsfrSizes: dsfrSizes),
+        children: [data.content],
+      ),
     );
   }
 }

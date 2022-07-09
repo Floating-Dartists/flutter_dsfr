@@ -20,16 +20,16 @@ class AlertCloseButton extends StatelessWidget {
       shape: const CircleBorder(
         side: BorderSide.none,
       ),
-      hoverColor: dsfrColors.alertsCloseButtonHover,
-      highlightColor: dsfrColors.alertsCloseButtonHighlight,
+      hoverColor: dsfrColors.hover,
+      highlightColor: dsfrColors.active,
       hoverElevation: _elevation,
       focusElevation: _elevation,
       highlightElevation: _elevation,
-      focusColor: dsfrColors.alertsCloseButtonHover,
+      focusColor: dsfrColors.hover,
       padding: EdgeInsets.all(
         dsfrSizes.w1,
       ),
-      splashColor: dsfrColors.alertsCloseButtonSplash,
+      splashColor: dsfrColors.splash,
       constraints: const BoxConstraints(),
       onPressed: onClose,
       child: DSFRIcon(
