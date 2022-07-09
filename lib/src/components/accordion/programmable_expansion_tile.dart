@@ -13,7 +13,7 @@ class ProgrammableExpansionTile extends StatefulWidget {
     required this.title,
     this.subtitle,
     this.onExpansionChanged,
-    this.children = const <Widget>[],
+    required this.child,
     this.trailing,
     this.isExpanded = false,
     this.maintainState = false,
@@ -28,11 +28,7 @@ class ProgrammableExpansionTile extends StatefulWidget {
     this.iconColor,
     this.collapsedIconColor,
     this.controlAffinity,
-  }) : assert(
-          expandedCrossAxisAlignment != CrossAxisAlignment.baseline,
-          'CrossAxisAlignment.baseline is not supported since the expanded children '
-          'are aligned in a column, not a row. Try to use another constant.',
-        );
+  });
 
   final Widget? leading;
 
@@ -42,7 +38,7 @@ class ProgrammableExpansionTile extends StatefulWidget {
 
   final ValueChanged<bool>? onExpansionChanged;
 
-  final List<Widget> children;
+  final Widget child;
 
   final Color? backgroundColor;
 
@@ -93,8 +89,7 @@ class _ExpansionTileState extends State<ProgrammableExpansionTile>
   late AnimationController _controller;
   late Animation<double> _iconTurns;
   late Animation<double> _heightFactor;
-  late Animation<Color?> _headerColor;
-  late Animation<Color?> _iconColor;
+
   late Animation<Color?> _backgroundColor;
 
   bool _isExpanded = false;
@@ -105,8 +100,6 @@ class _ExpansionTileState extends State<ProgrammableExpansionTile>
     _controller = AnimationController(duration: _kExpand, vsync: this);
     _heightFactor = _controller.drive(_easeInTween);
     _iconTurns = _controller.drive(_halfTween.chain(_easeInTween));
-    _headerColor = _controller.drive(_headerColorTween.chain(_easeInTween));
-    _iconColor = _controller.drive(_iconColorTween.chain(_easeInTween));
     _backgroundColor =
         _controller.drive(_backgroundColorTween.chain(_easeOutTween));
 
@@ -192,9 +185,8 @@ class _ExpansionTileState extends State<ProgrammableExpansionTile>
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          ListTileTheme.merge(
-            iconColor: _iconColor.value ?? expansionTileTheme.iconColor,
-            textColor: _headerColor.value,
+          Directionality(
+            textDirection: TextDirection.ltr,
             child: ListTile(
               onTap: _callExpansionChanged,
               contentPadding:
@@ -270,19 +262,19 @@ class _ExpansionTileState extends State<ProgrammableExpansionTile>
           padding: widget.childrenPadding ??
               expansionTileTheme.childrenPadding ??
               EdgeInsets.zero,
-          child: Column(
-            crossAxisAlignment:
-                widget.expandedCrossAxisAlignment ?? CrossAxisAlignment.center,
-            children: widget.children,
-          ),
+          child: widget.child,
         ),
       ),
     );
 
-    return AnimatedBuilder(
-      animation: _controller.view,
-      builder: _buildChildren,
-      child: shouldRemoveChildren ? null : result,
+    // * we put a Material widget wrapper here because ProgrammableExpansionTile
+    // * use a ListTile and it must have a Material parent
+    return Material(
+      child: AnimatedBuilder(
+        animation: _controller.view,
+        builder: _buildChildren,
+        child: shouldRemoveChildren ? null : result,
+      ),
     );
   }
 }

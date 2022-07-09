@@ -83,7 +83,7 @@ class DSFRAccordionPanel extends StatelessWidget {
         ),
         trailing:
             _getTrailingIcon(dsfrColors: dsfrColors, dsfrSizes: dsfrSizes),
-        children: [data.content],
+        child: data.content,
       ),
     );
   }
