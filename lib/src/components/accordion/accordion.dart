@@ -13,27 +13,52 @@ class DSFRAccordion extends StatefulWidget {
 }
 
 class _DSFRAccordionState extends State<DSFRAccordion> {
-  Object? accordionValue;
+  UniqueKey? accordionValue;
+  late final itemsValues = <UniqueKey>[];
+
+  @override
+  void initState() {
+    super.initState();
+
+    var i = 0;
+    while (i < widget.panels.length) {
+      final uniqueKey = UniqueKey();
+      itemsValues.add(uniqueKey);
+      i++;
+    }
+  }
+
+  List<Widget> _renderPanels() {
+    final children = <Widget>[];
+
+    var i = 0;
+    while (i < widget.panels.length) {
+      final panelData = widget.panels[i];
+      final child = DSFRAccordionPanel(
+        data: panelData,
+        accordionValue: accordionValue,
+        itemValue: itemsValues[i],
+        onExpandedChange: (newValue) {
+          setState(() {
+            accordionValue = newValue;
+          });
+        },
+      );
+
+      children.add(child);
+
+      i++;
+    }
+
+    return children;
+  }
 
   @override
   Widget build(BuildContext context) {
     final dsfrTypography = DSFRTypography.of(context);
 
     return Column(
-      children: widget.panels
-          .map(
-            (panel) => DSFRAccordionPanel(
-              data: panel,
-              accordionValue: accordionValue,
-              itemValue: panel.title,
-              onExpandedChange: (newValue) {
-                setState(() {
-                  accordionValue = newValue;
-                });
-              },
-            ),
-          )
-          .toList(),
+      children: _renderPanels(),
     );
   }
 }

@@ -13,9 +13,9 @@ class DSFRAccordionPanel extends StatelessWidget {
   });
 
   final DSFRAccordionData data;
-  final void Function(Object?) onExpandedChange;
-  final Object? accordionValue;
-  final Object itemValue;
+  final void Function(UniqueKey?) onExpandedChange;
+  final UniqueKey? accordionValue;
+  final UniqueKey itemValue;
 
   @override
   Widget build(BuildContext context) {
