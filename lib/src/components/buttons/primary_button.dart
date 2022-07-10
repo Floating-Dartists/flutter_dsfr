@@ -13,7 +13,8 @@ class DSFRPrimaryButton extends DSFRBaseButton with GroupeableButton {
     required super.onPressed,
     required super.label,
     super.icon,
-    super.iconPosition,
+    super.iconPosition = IconPosition.left,
+    super.mainAxisSize,
   });
 
   const DSFRPrimaryButton.icon({
@@ -24,9 +25,10 @@ class DSFRPrimaryButton extends DSFRBaseButton with GroupeableButton {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrSpacings = DSFRSizes.of(context);
+    final dsfrSizes = DSFRSizes.of(context);
     final dsfrColors = DSFRColors.of(context);
     final dsfrTypography = DSFRTypography.of(context);
+    final dsfrButtonStyle = DSFRButtonStyle.of(context);
 
     final scale = MediaQuery.maybeOf(context)?.textScaleFactor ?? 1;
     final double gap =
@@ -49,8 +51,8 @@ class DSFRPrimaryButton extends DSFRBaseButton with GroupeableButton {
       splashColor: dsfrColors.backgroundActionHighBlueFranceActive,
       shape: const RoundedRectangleBorder(),
       padding: EdgeInsets.symmetric(
-        vertical: dsfrSpacings.w1,
-        horizontal: iconOnly ? dsfrSpacings.w1 : dsfrSpacings.w3,
+        vertical: dsfrSizes.w1,
+        horizontal: iconOnly ? dsfrSizes.w1 : dsfrSizes.w3,
       ),
       constraints: const BoxConstraints(),
       textStyle: dsfrTypography.btnLabel.copyWith(color: foregroundColor),
@@ -58,7 +60,7 @@ class DSFRPrimaryButton extends DSFRBaseButton with GroupeableButton {
       child: iconOnly
           ? btnIcon
           : Row(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: mainAxisSize ?? dsfrButtonStyle.mainAxisSize,
               children: [
                 if (btnIcon != null && iconPosition == IconPosition.left) ...[
                   btnIcon,

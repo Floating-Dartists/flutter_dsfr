@@ -2,6 +2,7 @@ library flutter_dsfr;
 
 import 'package:flutter/material.dart';
 
+import 'src/theme/button_style.dart';
 import 'src/theme/colors.dart';
 import 'src/theme/sizes.dart';
 import 'src/theme/typography.dart';
@@ -19,6 +20,7 @@ export 'src/components/buttons/france_connect_button.dart'
 export 'src/components/buttons/primary_button.dart';
 export 'src/components/buttons/secondary_button.dart';
 export 'src/components/buttons/tertiary_button.dart';
+export 'src/components/buttons_group/buttons_group.dart';
 export 'src/components/icon/icon.dart';
 export 'src/theme/button_style.dart';
 export 'src/theme/colors.dart';
@@ -32,6 +34,7 @@ final dsfrExtensionsLight = <ThemeExtension>[
   const DSFRColors.light(),
   DSFRTypography.regular(),
   const DSFRSizes.regular(),
+  const DSFRButtonStyle.regular(),
 ];
 
 /// Provides the default [ThemeExtension] for the flutter_dsfr theme in dark
@@ -40,4 +43,5 @@ final dsfrExtensionsDark = <ThemeExtension>[
   const DSFRColors.dark(),
   DSFRTypography.regular(),
   const DSFRSizes.regular(),
+  const DSFRButtonStyle.regular(),
 ];

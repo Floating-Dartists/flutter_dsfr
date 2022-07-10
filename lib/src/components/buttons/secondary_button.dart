@@ -3,7 +3,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import '../../../flutter_dsfr.dart';
+import '../../theme/button_style.dart';
+import '../../theme/colors.dart';
+import '../../theme/sizes.dart';
+import '../../theme/typography.dart';
 import 'base_button.dart';
 
 class DSFRSecondaryButton extends DSFRBaseButton with GroupeableButton {
@@ -12,7 +15,8 @@ class DSFRSecondaryButton extends DSFRBaseButton with GroupeableButton {
     required super.onPressed,
     required super.label,
     super.icon,
-    super.iconPosition,
+    super.iconPosition = IconPosition.left,
+    super.mainAxisSize,
   });
 
   const DSFRSecondaryButton.icon({
@@ -26,6 +30,7 @@ class DSFRSecondaryButton extends DSFRBaseButton with GroupeableButton {
     final dsfrSpacings = DSFRSizes.of(context);
     final dsfrTypography = DSFRTypography.of(context);
     final dsfrColors = DSFRColors.of(context);
+    final dsfrButtonStyle = DSFRButtonStyle.of(context);
 
     final scale = MediaQuery.maybeOf(context)?.textScaleFactor ?? 1;
     final double gap =
@@ -56,7 +61,7 @@ class DSFRSecondaryButton extends DSFRBaseButton with GroupeableButton {
       child: iconOnly
           ? btnIcon
           : Row(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: mainAxisSize ?? dsfrButtonStyle.mainAxisSize,
               children: [
                 if (btnIcon != null && iconPosition == IconPosition.left) ...[
                   btnIcon,

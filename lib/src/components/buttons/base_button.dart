@@ -10,6 +10,7 @@ abstract class DSFRBaseButton extends StatelessWidget {
     required this.iconPosition,
     required this.iconOnly,
     required this.onPressed,
+    required this.mainAxisSize,
   }) : assert(
           (iconOnly && label == null && icon != null) ||
               (!iconOnly && label != null),
@@ -21,6 +22,7 @@ abstract class DSFRBaseButton extends StatelessWidget {
     required VoidCallback? onPressed,
     Widget? icon,
     IconPosition iconPosition = IconPosition.left,
+    MainAxisSize? mainAxisSize,
   }) : this._(
           key: key,
           label: label,
@@ -28,6 +30,7 @@ abstract class DSFRBaseButton extends StatelessWidget {
           iconPosition: iconPosition,
           iconOnly: false,
           onPressed: onPressed,
+          mainAxisSize: mainAxisSize,
         );
 
   const DSFRBaseButton.icon({
@@ -41,6 +44,7 @@ abstract class DSFRBaseButton extends StatelessWidget {
           iconPosition: IconPosition.left,
           iconOnly: true,
           onPressed: onPressed,
+          mainAxisSize: MainAxisSize.min,
         );
 
   /// {@template base.dsfrButtonStyleButton.onPressed}
@@ -67,6 +71,8 @@ abstract class DSFRBaseButton extends StatelessWidget {
   final IconPosition iconPosition;
 
   final bool iconOnly;
+
+  final MainAxisSize? mainAxisSize;
 }
 
 mixin GroupeableButton on DSFRBaseButton {}

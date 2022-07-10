@@ -9,52 +9,33 @@ import '../utils/named_property.dart';
 class DSFRIcons {
   const DSFRIcons._();
 
-  static const String _fontFamily = 'Remix Icon';
-  static String? get fontFamily => _packageName;
+  static const fontFamily = 'Remix Icon';
   static String? _packageName = 'flutter_dsfr';
   static String? get packageName => _packageName;
 
   @visibleForTesting
   static set packageName(String? value) => _packageName = value;
 
-  static IconData error = IconData(
-    0xECA0,
-    fontFamily: _fontFamily,
-    fontPackage: _packageName,
-  );
-  static IconData success = IconData(
-    0xEB80,
-    fontFamily: _fontFamily,
-    fontPackage: _packageName,
-  );
-  static IconData info = IconData(
-    0xEE58,
-    fontFamily: _fontFamily,
-    fontPackage: _packageName,
-  );
-  static IconData warning = IconData(
-    0xEA20,
-    fontFamily: _fontFamily,
-    fontPackage: _packageName,
-  );
-  static IconData closeFill = IconData(
-    0xEB98,
-    fontFamily: _fontFamily,
-    fontPackage: _packageName,
-  );
-  static IconData flashLightFill = IconData(
-    0xED3C,
-    fontFamily: _fontFamily,
-    fontPackage: _packageName,
-  );
+  static const errorWarningFill = IconData(0xECA0, fontFamily: fontFamily);
+  static const errorWarningLine = IconData(0xECA1, fontFamily: fontFamily);
+  static const checkboxCircleFill = IconData(0xEB80, fontFamily: fontFamily);
+  static const checkboxCircleLine = IconData(0xEB81, fontFamily: fontFamily);
+  static const info = IconData(0xEE58, fontFamily: fontFamily);
+  static const warning = IconData(0xEA20, fontFamily: fontFamily);
+  static const closeFill = IconData(0xEB98, fontFamily: fontFamily);
+  static const flashLightFill = IconData(0xED3C, fontFamily: fontFamily);
+  static const settings3Line = IconData(0xF0E6, fontFamily: fontFamily);
 
   @visibleForTesting
-  static List<NamedProperty<IconData>> get props => [
-        NamedProperty('error', error),
-        NamedProperty('success', success),
+  static List<NamedProperty<IconData>> get props => const [
+        NamedProperty('error-warning-fill', errorWarningFill),
+        NamedProperty('error-warning-line', errorWarningLine),
+        NamedProperty('checkbox-circle-fill', checkboxCircleFill),
+        NamedProperty('checkbox-circle-line', checkboxCircleLine),
         NamedProperty('info', info),
         NamedProperty('warning', warning),
         NamedProperty('closeFill', closeFill),
         NamedProperty('flashLightFill', flashLightFill),
+        NamedProperty('settings-3-line', settings3Line),
       ];
 }
