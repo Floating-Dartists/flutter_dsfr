@@ -7,8 +7,13 @@ import '../../theme/typography.dart';
 import '../buttons/base_button.dart';
 
 enum DSFRButtonsGroupBreakpoint {
+  /// 576px
   small(576),
+
+  /// 768px
   medium(768),
+
+  /// 992px
   large(992);
 
   final int width;
@@ -22,7 +27,12 @@ class DSFRButtonsGroup extends StatelessWidget {
   final Axis? direction;
   final DSFRButtonsGroupAlignment alignment;
   final List<GroupeableButton> buttons;
+
+  /// By setting a breakpoint, the buttons direction will become vertical if
+  /// there is not enough width space.
   final DSFRButtonsGroupBreakpoint? breakpoint;
+
+  /// Reverse the order of buttons.
   final bool reversed;
 
   const DSFRButtonsGroup({
@@ -32,10 +42,7 @@ class DSFRButtonsGroup extends StatelessWidget {
     this.direction,
     this.breakpoint,
     this.reversed = false,
-  }) : assert(
-          direction == null || breakpoint == null,
-          "You can't use both direction and breakpoint",
-        );
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -51,14 +58,12 @@ class DSFRButtonsGroup extends StatelessWidget {
       builder: (_, constraints) {
         final Axis axis;
         final groupBreakpoint = breakpoint;
-        if (direction != null) {
-          axis = direction!;
-        } else if (groupBreakpoint != null) {
+        if (groupBreakpoint != null) {
           axis = constraints.maxWidth < groupBreakpoint.width
-              ? Axis.horizontal
-              : Axis.vertical;
+              ? Axis.vertical
+              : Axis.horizontal;
         } else {
-          axis = Axis.vertical;
+          axis = direction ?? Axis.vertical;
         }
         return Theme(
           data: currentTheme.copyWith(
@@ -84,9 +89,10 @@ class DSFRButtonsGroup extends StatelessWidget {
                   ],
                 )
               : Wrap(
+                  alignment: alignment.toWrapAlignment(),
                   spacing: dsfrSizes.w2,
                   runSpacing: dsfrSizes.w2,
-                  children: buttons,
+                  children: buttonList,
                 ),
         );
       },
@@ -103,6 +109,17 @@ extension on DSFRButtonsGroupAlignment {
         return CrossAxisAlignment.center;
       case DSFRButtonsGroupAlignment.right:
         return CrossAxisAlignment.end;
+    }
+  }
+
+  WrapAlignment toWrapAlignment() {
+    switch (this) {
+      case DSFRButtonsGroupAlignment.left:
+        return WrapAlignment.start;
+      case DSFRButtonsGroupAlignment.center:
+        return WrapAlignment.center;
+      case DSFRButtonsGroupAlignment.right:
+        return WrapAlignment.end;
     }
   }
 }

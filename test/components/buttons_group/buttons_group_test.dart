@@ -8,15 +8,9 @@ void main() {
     const tSize = Size(250, 128);
 
     goldenTest(
-      'size: ${tSize.width}x${tSize.height}',
+      'vertical rendering',
       fileName: 'buttons_group_vertical',
       tags: ['golden', 'molecule'],
-      pumpBeforeTest: (tester) async {
-        await tester.binding.setSurfaceSize(tSize);
-
-        // reset
-        await tester.binding.setSurfaceSize(null);
-      },
       builder: () => GoldenTestGroup(
         columns: 2,
         children: [
@@ -84,80 +78,151 @@ void main() {
     );
   });
 
-  // goldenTest(
-  //   'ButtonsGroup horizontal',
-  //   fileName: 'buttons_group_horizontal',
-  //   tags: ['golden', 'molecule'],
-  //   builder: () => GoldenTestGroup(
-  //     columns: 1,
-  //     children: [
-  //       GoldenTestScenario(
-  //         name: 'default',
-  //         child: SizedBox(
-  //           width: _kWidth,
-  //           child: DSFRButtonsGroup(
-  //             buttons: [
-  //               DSFRPrimaryButton(
-  //                 label: 'Label Button',
-  //                 onPressed: () {},
-  //               ),
-  //               DSFRSecondaryButton(
-  //                 label: 'Lorem ipsum label très long',
-  //                 onPressed: () {},
-  //               ),
-  //             ],
-  //             direction: Axis.horizontal,
-  //           ),
-  //         ),
-  //       ),
-  //       GoldenTestScenario(
-  //         name: 'icon buttons',
-  //         child: SizedBox(
-  //           width: _kWidth,
-  //           child: DSFRButtonsGroup(
-  //             buttons: List<DSFRPrimaryButton>.generate(
-  //               6,
-  //               (_) => DSFRPrimaryButton.icon(
-  //                 icon: const DSFRIcon(DSFRIcons.settings3Line),
-  //                 onPressed: () {},
-  //               ),
-  //             ),
-  //             direction: Axis.horizontal,
-  //           ),
-  //         ),
-  //       ),
-  //       GoldenTestScenario(
-  //         name: 'mixed',
-  //         child: SizedBox.fromSize(
-  //           width: _kWidth,
-  //           child: DSFRButtonsGroup(
-  //             buttons: [
-  //               DSFRPrimaryButton(
-  //                 label: 'Label Button',
-  //                 onPressed: () {},
-  //               ),
-  //               DSFRSecondaryButton(
-  //                 label: 'Label Button',
-  //                 onPressed: () {},
-  //               ),
-  //               DSFRPrimaryButton.icon(
-  //                 icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
-  //                 onPressed: () {},
-  //               ),
-  //               DSFRSecondaryButton.icon(
-  //                 icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
-  //                 onPressed: () {},
-  //               ),
-  //               DSFRSecondaryButton.icon(
-  //                 icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
-  //                 onPressed: () {},
-  //               ),
-  //             ],
-  //             direction: Axis.horizontal,
-  //           ),
-  //         ),
-  //       ),
-  //     ],
-  //   ),
-  // );
+  group('ButtonsGroup horizontal', () {
+    const tSize = Size(450, 50);
+    const tSize2 = Size(350, 120);
+
+    goldenTest(
+      'horizontal rendering',
+      fileName: 'buttons_group_horizontal',
+      tags: ['golden', 'molecule'],
+      builder: () => GoldenTestGroup(
+        columns: 2,
+        children: [
+          GoldenTestScenario(
+            name: 'default',
+            child: SizedBox.fromSize(
+              size: tSize,
+              child: DSFRButtonsGroup(
+                direction: Axis.horizontal,
+                buttons: [
+                  DSFRPrimaryButton(
+                    label: 'Label Button',
+                    onPressed: () {},
+                  ),
+                  DSFRSecondaryButton(
+                    label: 'Lorem ipsum label très long',
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'icon buttons',
+            child: SizedBox.fromSize(
+              size: tSize,
+              child: DSFRButtonsGroup(
+                buttons: List<DSFRPrimaryButton>.generate(
+                  6,
+                  (_) => DSFRPrimaryButton.icon(
+                    icon: const DSFRIcon(DSFRIcons.settings3Line),
+                    onPressed: () {},
+                  ),
+                ),
+                direction: Axis.horizontal,
+              ),
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'mixed',
+            child: SizedBox.fromSize(
+              size: tSize2,
+              child: DSFRButtonsGroup(
+                buttons: [
+                  DSFRPrimaryButton(
+                    label: 'Label Button',
+                    onPressed: () {},
+                  ),
+                  DSFRSecondaryButton(
+                    label: 'Label Button',
+                    onPressed: () {},
+                  ),
+                  DSFRPrimaryButton.icon(
+                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    onPressed: () {},
+                  ),
+                  DSFRSecondaryButton.icon(
+                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    onPressed: () {},
+                  ),
+                  DSFRSecondaryButton.icon(
+                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    onPressed: () {},
+                  ),
+                ],
+                direction: Axis.horizontal,
+              ),
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'mixed with right alignment',
+            child: SizedBox.fromSize(
+              size: tSize2,
+              child: DSFRButtonsGroup(
+                direction: Axis.horizontal,
+                alignment: DSFRButtonsGroupAlignment.right,
+                buttons: [
+                  DSFRPrimaryButton(
+                    label: 'Label Button',
+                    onPressed: () {},
+                  ),
+                  DSFRSecondaryButton(
+                    label: 'Label Button',
+                    onPressed: () {},
+                  ),
+                  DSFRPrimaryButton.icon(
+                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    onPressed: () {},
+                  ),
+                  DSFRSecondaryButton.icon(
+                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    onPressed: () {},
+                  ),
+                  DSFRSecondaryButton.icon(
+                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'with DSFRButtonsGroupBreakpoint.small',
+            child: SizedBox.fromSize(
+              size: Size(tSize2.width, tSize2.height + 200),
+              child: DSFRButtonsGroup(
+                direction: Axis.horizontal,
+                breakpoint: DSFRButtonsGroupBreakpoint.small,
+                buttons: [
+                  DSFRPrimaryButton(
+                    label: 'Label Button',
+                    mainAxisSize: MainAxisSize.min,
+                    onPressed: () {},
+                  ),
+                  DSFRSecondaryButton(
+                    label: 'Label Button',
+                    mainAxisSize: MainAxisSize.min,
+                    onPressed: () {},
+                  ),
+                  DSFRPrimaryButton.icon(
+                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    onPressed: () {},
+                  ),
+                  DSFRSecondaryButton.icon(
+                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    onPressed: () {},
+                  ),
+                  DSFRSecondaryButton.icon(
+                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  });
 }
