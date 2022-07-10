@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   group('DSFRAlert', () {
     final widget = GoldenTestGroup(
+      columns: 4,
       children: [
         GoldenTestScenario(
           name: 'error',
@@ -36,11 +37,35 @@ void main() {
           ),
         ),
         GoldenTestScenario(
-          name: 'close button',
+          name: 'error - close button',
           child: DSFRSmallAlert(
-            description: "close button",
+            description: "error close button",
+            type: DSFRAlertType.error,
             onClose: () {},
+          ),
+        ),
+        GoldenTestScenario(
+          name: 'success - close button',
+          child: DSFRSmallAlert(
+            description: "success close button",
             type: DSFRAlertType.success,
+            onClose: () {},
+          ),
+        ),
+        GoldenTestScenario(
+          name: 'info - close button',
+          child: DSFRSmallAlert(
+            description: "info close button",
+            type: DSFRAlertType.info,
+            onClose: () {},
+          ),
+        ),
+        GoldenTestScenario(
+          name: 'warning - close button',
+          child: DSFRSmallAlert(
+            description: "warning close button",
+            type: DSFRAlertType.warning,
+            onClose: () {},
           ),
         ),
       ],
