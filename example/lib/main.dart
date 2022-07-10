@@ -196,7 +196,6 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         actions: [
           Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Icon(Icons.dark_mode),
               Switch(

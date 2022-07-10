@@ -167,15 +167,6 @@ void main() {
             showIcon: true,
           ),
         ),
-        // GoldenTestScenario(
-        //   name: 'icon - sm',
-        //   child: const DSFRBadge(
-        //     label: "success sm",
-        //     type: DSFRBadgeType.success,
-        // showIcon: true,
-        //     size: DSFRBadgeSize.sm,
-        //   ),
-        // ),
       ],
     );
 
