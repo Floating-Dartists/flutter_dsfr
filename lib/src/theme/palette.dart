@@ -105,17 +105,30 @@ abstract class ColorPalette {
   static const grey975 = Color(0xFFdfdfdf);
   static const grey1000 = Color(0xFFffffff);
 
+  static const error125 = Color(0xFF412121);
   static const error425 = Color(0xFFe10600);
   static const error625 = Color(0xFFFf3333);
+  static const error950 = Color(0xFFffe9e9);
 
+  static const success125 = Color(0xFF1e2e22);
   static const success425 = Color(0xFF008941);
   static const success625 = Color(0xFF00eb5e);
+  static const success950 = Color(0xFFb8fec9);
 
+  static const info125 = Color(0xFF222a3f);
   static const info425 = Color(0xFF0762c8);
   static const info625 = Color(0xFF2b8bf7);
+  static const info950 = Color(0xFFe8edff);
 
+  static const warning125 = Color(0xFF3e231e);
   static const warning425 = Color(0xFFb34000);
   static const warning625 = Color(0xFFff5d00);
+  static const warning950 = Color(0xFFffe9e6);
+
+  static const yellowTournesol100 = Color(0xFF292416);
+  static const yellowTounesolSun407 = Color(0xFF716043);
+  static const yellowTournesolMoon922 = Color(0XFFffe552);
+  static const yellowTournesol950 = Color(0xFFfeecc2);
 
   static const white = Color(0xFFffffff);
   static const black = Color(0xFF000000);

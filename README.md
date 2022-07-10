@@ -105,6 +105,20 @@ DSFRSmallAlert(
 
 ![small_alert.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/small_alert.png)
 
+## Badges
+
+* Badge
+
+```dart
+DSFRBadge(
+      type: DSFRBadgeType.success,
+      label: "label",
+      showIcon: true,
+    )
+```
+
+![badge.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/badge.png)
+
 ## Dependencies
 
 * [url_launcher](https://pub.dev/packages/url_launcher): Allows to open links in the browser.(used in the `FranceConnectButton` widget)

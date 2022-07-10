@@ -13,13 +13,13 @@ abstract class BaseAlert extends StatelessWidget {
   Color getColor(DSFRColors dsfrColors) {
     switch (type) {
       case DSFRAlertType.error:
-        return dsfrColors.alertError;
+        return dsfrColors.error;
       case DSFRAlertType.success:
-        return dsfrColors.alertSuccess;
+        return dsfrColors.success;
       case DSFRAlertType.info:
-        return dsfrColors.alertInfo;
+        return dsfrColors.info;
       case DSFRAlertType.warning:
-        return dsfrColors.alertWarning;
+        return dsfrColors.warning;
     }
   }
 
