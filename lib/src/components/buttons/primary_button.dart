@@ -7,7 +7,7 @@ import '../../../flutter_dsfr.dart';
 import 'base_button.dart';
 
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons#Bouton-primaire
-class DSFRPrimaryButton extends DSFRBaseButton {
+class DSFRPrimaryButton extends DSFRBaseButton with GroupeableButton {
   const DSFRPrimaryButton({
     super.key,
     required super.onPressed,

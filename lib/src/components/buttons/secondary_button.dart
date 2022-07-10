@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../../../flutter_dsfr.dart';
 import 'base_button.dart';
 
-class DSFRSecondaryButton extends DSFRBaseButton {
+class DSFRSecondaryButton extends DSFRBaseButton with GroupeableButton {
   const DSFRSecondaryButton({
     super.key,
     required super.onPressed,

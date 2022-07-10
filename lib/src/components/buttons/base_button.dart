@@ -68,3 +68,5 @@ abstract class DSFRBaseButton extends StatelessWidget {
 
   final bool iconOnly;
 }
+
+mixin GroupeableButton on DSFRBaseButton {}
