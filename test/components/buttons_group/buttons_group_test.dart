@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('ButtonsGroup vertical', () {
-    const tSize = Size(250, 100);
+    const tSize = Size(250, 128);
 
     goldenTest(
       'size: ${tSize.width}x${tSize.height}',
@@ -18,6 +18,7 @@ void main() {
         await tester.binding.setSurfaceSize(null);
       },
       builder: () => GoldenTestGroup(
+        columns: 2,
         children: [
           GoldenTestScenario(
             name: 'default',
@@ -42,6 +43,27 @@ void main() {
             child: SizedBox.fromSize(
               size: tSize,
               child: DSFRButtonsGroup(
+                buttons: [
+                  DSFRPrimaryButton(
+                    label: 'Label Button',
+                    mainAxisSize: MainAxisSize.min,
+                    onPressed: () {},
+                  ),
+                  DSFRSecondaryButton(
+                    label: 'Label Button',
+                    mainAxisSize: MainAxisSize.min,
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'with center alignment',
+            child: SizedBox.fromSize(
+              size: tSize,
+              child: DSFRButtonsGroup(
+                alignment: DSFRButtonsGroupAlignment.center,
                 buttons: [
                   DSFRPrimaryButton(
                     label: 'Label Button',
@@ -106,7 +128,7 @@ void main() {
   //       ),
   //       GoldenTestScenario(
   //         name: 'mixed',
-  //         child: SizedBox(
+  //         child: SizedBox.fromSize(
   //           width: _kWidth,
   //           child: DSFRButtonsGroup(
   //             buttons: [

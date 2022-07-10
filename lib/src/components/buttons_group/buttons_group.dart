@@ -15,16 +15,23 @@ enum DSFRButtonsGroupBreakpoint {
   const DSFRButtonsGroupBreakpoint(this.width);
 }
 
+enum DSFRButtonsGroupAlignment { left, center, right }
+
+/// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/487915549/Groupe+de+boutons
 class DSFRButtonsGroup extends StatelessWidget {
   final Axis? direction;
+  final DSFRButtonsGroupAlignment alignment;
   final List<GroupeableButton> buttons;
   final DSFRButtonsGroupBreakpoint? breakpoint;
+  final bool reversed;
 
   const DSFRButtonsGroup({
     super.key,
     required this.buttons,
+    this.alignment = DSFRButtonsGroupAlignment.left,
     this.direction,
     this.breakpoint,
+    this.reversed = false,
   }) : assert(
           direction == null || breakpoint == null,
           "You can't use both direction and breakpoint",
@@ -38,22 +45,7 @@ class DSFRButtonsGroup extends StatelessWidget {
     final dsfrButtonStyle = DSFRButtonStyle.of(context);
     final currentTheme = Theme.of(context);
 
-    // return Theme(
-    //   data: currentTheme.copyWith(
-    //     extensions: [
-    //       dsfrSizes,
-    //       dsfrColors,
-    //       dsfrTypography,
-    //       dsfrButtonStyle, // TODO manage button's width when vertical
-    //     ],
-    //   ),
-    //   child: Wrap(
-    //     direction: direction ?? Axis.vertical, // TODO: manage breakpoint
-    //     spacing: dsfrSizes.w2,
-    //     runSpacing: dsfrSizes.w2,
-    //     children: buttons,
-    //   ),
-    // );
+    final buttonList = reversed ? buttons.reversed.toList() : buttons;
 
     return LayoutBuilder(
       builder: (_, constraints) {
@@ -82,8 +74,14 @@ class DSFRButtonsGroup extends StatelessWidget {
           ),
           child: axis == Axis.vertical
               ? Column(
+                  crossAxisAlignment: alignment.toCrossAxisAlignment(),
                   mainAxisSize: MainAxisSize.min,
-                  children: buttons,
+                  children: [
+                    for (final e in buttonList) ...[
+                      e,
+                      SizedBox(height: dsfrSizes.w2),
+                    ]
+                  ],
                 )
               : Wrap(
                   spacing: dsfrSizes.w2,
@@ -93,5 +91,18 @@ class DSFRButtonsGroup extends StatelessWidget {
         );
       },
     );
+  }
+}
+
+extension on DSFRButtonsGroupAlignment {
+  CrossAxisAlignment toCrossAxisAlignment() {
+    switch (this) {
+      case DSFRButtonsGroupAlignment.left:
+        return CrossAxisAlignment.start;
+      case DSFRButtonsGroupAlignment.center:
+        return CrossAxisAlignment.center;
+      case DSFRButtonsGroupAlignment.right:
+        return CrossAxisAlignment.end;
+    }
   }
 }
