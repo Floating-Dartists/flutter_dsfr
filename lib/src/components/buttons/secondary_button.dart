@@ -61,6 +61,7 @@ class DSFRSecondaryButton extends DSFRBaseButton with GroupeableButton {
       child: iconOnly
           ? btnIcon
           : Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: mainAxisSize ?? dsfrButtonStyle.mainAxisSize,
               children: [
                 if (btnIcon != null && iconPosition == IconPosition.left) ...[

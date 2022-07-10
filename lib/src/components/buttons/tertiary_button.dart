@@ -67,6 +67,7 @@ class DSFRTertiaryButton extends DSFRBaseButton {
       child: iconOnly
           ? btnIcon
           : Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (btnIcon != null && iconPosition == IconPosition.left) ...[

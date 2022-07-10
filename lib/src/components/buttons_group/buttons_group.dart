@@ -38,33 +38,60 @@ class DSFRButtonsGroup extends StatelessWidget {
     final dsfrButtonStyle = DSFRButtonStyle.of(context);
     final currentTheme = Theme.of(context);
 
-    // final Axis axis;
-    // final groupBreakpoint = breakpoint;
-    // if (direction != null) {
-    //   axis = direction!;
-    // } else if (groupBreakpoint != null) {
-    //   axis = constraints.maxWidth < groupBreakpoint.width
-    //       ? Axis.horizontal
-    //       : Axis.vertical;
-    // } else {
-    //   axis = Axis.vertical;
-    // }
+    // return Theme(
+    //   data: currentTheme.copyWith(
+    //     extensions: [
+    //       dsfrSizes,
+    //       dsfrColors,
+    //       dsfrTypography,
+    //       dsfrButtonStyle, // TODO manage button's width when vertical
+    //     ],
+    //   ),
+    //   child: Wrap(
+    //     direction: direction ?? Axis.vertical, // TODO: manage breakpoint
+    //     spacing: dsfrSizes.w2,
+    //     runSpacing: dsfrSizes.w2,
+    //     children: buttons,
+    //   ),
+    // );
 
-    return Theme(
-      data: currentTheme.copyWith(
-        extensions: [
-          dsfrSizes,
-          dsfrColors,
-          dsfrTypography,
-          dsfrButtonStyle, // TODO manage button's width when vertical
-        ],
-      ),
-      child: Wrap(
-        direction: direction ?? Axis.vertical, // TODO: manage breakpoint
-        spacing: dsfrSizes.w2,
-        runSpacing: dsfrSizes.w2,
-        children: buttons,
-      ),
+    return LayoutBuilder(
+      builder: (_, constraints) {
+        final Axis axis;
+        final groupBreakpoint = breakpoint;
+        if (direction != null) {
+          axis = direction!;
+        } else if (groupBreakpoint != null) {
+          axis = constraints.maxWidth < groupBreakpoint.width
+              ? Axis.horizontal
+              : Axis.vertical;
+        } else {
+          axis = Axis.vertical;
+        }
+        return Theme(
+          data: currentTheme.copyWith(
+            extensions: [
+              dsfrSizes,
+              dsfrColors,
+              dsfrTypography,
+              dsfrButtonStyle.copyWith(
+                mainAxisSize:
+                    axis == Axis.vertical ? MainAxisSize.max : MainAxisSize.min,
+              ),
+            ],
+          ),
+          child: axis == Axis.vertical
+              ? Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: buttons,
+                )
+              : Wrap(
+                  spacing: dsfrSizes.w2,
+                  runSpacing: dsfrSizes.w2,
+                  children: buttons,
+                ),
+        );
+      },
     );
   }
 }
