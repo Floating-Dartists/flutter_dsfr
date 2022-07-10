@@ -17,6 +17,8 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle btnLabel;
   final TextStyle alertsTitle;
   final TextStyle defaultText;
+  final TextStyle badgeLabel;
+  final TextStyle badgeLabelSmall;
 
   const DSFRTypography._({
     required this.frConnectLogin,
@@ -25,6 +27,8 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.btnLabel,
     required this.alertsTitle,
     required this.defaultText,
+    required this.badgeLabel,
+    required this.badgeLabelSmall,
   });
 
   factory DSFRTypography.regular() {
@@ -68,6 +72,21 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         package: packageName,
         decoration: TextDecoration.none,
       ),
+      badgeLabel: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontWeight: FontWeight.w700,
+        // * 0.875rem
+        fontSize: 14.0,
+        decoration: TextDecoration.none,
+      ),
+      badgeLabelSmall: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontWeight: FontWeight.w700,
+        fontSize: dsfrSizes.v3,
+        decoration: TextDecoration.none,
+      ),
     );
   }
 
@@ -86,6 +105,8 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       btnLabel: btnLabel ?? this.btnLabel,
       alertsTitle: alertsTitle ?? this.alertsTitle,
       defaultText: defaultText,
+      badgeLabel: badgeLabel,
+      badgeLabelSmall: badgeLabelSmall,
     );
   }
 
@@ -101,6 +122,9 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       btnLabel: TextStyle.lerp(btnLabel, other.btnLabel, t)!,
       alertsTitle: TextStyle.lerp(alertsTitle, other.alertsTitle, t)!,
       defaultText: TextStyle.lerp(defaultText, other.defaultText, t)!,
+      badgeLabel: TextStyle.lerp(badgeLabel, other.badgeLabel, t)!,
+      badgeLabelSmall:
+          TextStyle.lerp(badgeLabelSmall, other.badgeLabelSmall, t)!,
     );
   }
 
@@ -112,5 +136,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('btnLabel', btnLabel),
         NamedProperty('alertsTitle', alertsTitle),
         NamedProperty('defaultText', defaultText),
+        NamedProperty('badgeLabel', badgeLabel),
+        NamedProperty('badgeLabelSmall', badgeLabelSmall),
       ];
 }

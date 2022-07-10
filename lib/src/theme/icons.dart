@@ -42,6 +42,11 @@ class DSFRIcons {
     fontFamily: _fontFamily,
     fontPackage: _packageName,
   );
+  static IconData flashLightFill = IconData(
+    0xED3C,
+    fontFamily: _fontFamily,
+    fontPackage: _packageName,
+  );
 
   @visibleForTesting
   static List<NamedProperty<IconData>> get props => [
@@ -50,5 +55,6 @@ class DSFRIcons {
         NamedProperty('info', info),
         NamedProperty('warning', warning),
         NamedProperty('closeFill', closeFill),
+        NamedProperty('flashLightFill', flashLightFill),
       ];
 }
