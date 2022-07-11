@@ -18,6 +18,8 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle alertsTitle;
   final TextStyle defaultText;
   final TextStyle accordionOpen;
+  final TextStyle badgeLabel;
+  final TextStyle badgeLabelSmall;
 
   const DSFRTypography._({
     required this.frConnectLogin,
@@ -27,6 +29,8 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.alertsTitle,
     required this.defaultText,
     required this.accordionOpen,
+    required this.badgeLabel,
+    required this.badgeLabelSmall,
   });
 
   factory DSFRTypography.regular() {
@@ -77,6 +81,21 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         fontWeight: FontWeight.w700,
         fontSize: dsfrSizes.w2,
       ),
+      badgeLabel: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontWeight: FontWeight.w700,
+        // * 0.875rem
+        fontSize: 14.0,
+        decoration: TextDecoration.none,
+      ),
+      badgeLabelSmall: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontWeight: FontWeight.w700,
+        fontSize: dsfrSizes.v3,
+        decoration: TextDecoration.none,
+      ),
     );
   }
 
@@ -96,6 +115,8 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       alertsTitle: alertsTitle ?? this.alertsTitle,
       defaultText: defaultText,
       accordionOpen: accordionOpen,
+      badgeLabel: badgeLabel,
+      badgeLabelSmall: badgeLabelSmall,
     );
   }
 
@@ -112,6 +133,9 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       alertsTitle: TextStyle.lerp(alertsTitle, other.alertsTitle, t)!,
       defaultText: TextStyle.lerp(defaultText, other.defaultText, t)!,
       accordionOpen: TextStyle.lerp(accordionOpen, other.accordionOpen, t)!,
+      badgeLabel: TextStyle.lerp(badgeLabel, other.badgeLabel, t)!,
+      badgeLabelSmall:
+          TextStyle.lerp(badgeLabelSmall, other.badgeLabelSmall, t)!,
     );
   }
 
@@ -124,5 +148,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('alertsTitle', alertsTitle),
         NamedProperty('defaultText', defaultText),
         NamedProperty('accordionOpen', accordionOpen),
+        NamedProperty('badgeLabel', badgeLabel),
+        NamedProperty('badgeLabelSmall', badgeLabelSmall),
       ];
 }

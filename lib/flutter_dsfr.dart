@@ -11,6 +11,9 @@ export 'src/components/accordion/accordion_data.dart';
 export 'src/components/alerts/alert.dart';
 export 'src/components/alerts/alert_type.dart';
 export 'src/components/alerts/small_alert.dart';
+export 'src/components/badges/badge.dart';
+export 'src/components/badges/badge_size.dart';
+export 'src/components/badges/badge_type.dart';
 export 'src/components/buttons/base_button.dart' hide DSFRBaseButton;
 export 'src/components/buttons/france_connect_button.dart'
     hide InfoLinkButton, FranceConnectBase;

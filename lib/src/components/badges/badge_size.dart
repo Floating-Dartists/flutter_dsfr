@@ -1,0 +1,1 @@
+enum DSFRBadgeSize { md, sm }
