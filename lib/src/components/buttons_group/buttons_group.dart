@@ -26,7 +26,7 @@ enum DSFRButtonsGroupAlignment { left, center, right }
 class DSFRButtonsGroup extends StatelessWidget {
   final Axis? direction;
   final DSFRButtonsGroupAlignment alignment;
-  final List<GroupeableButton> buttons;
+  final List<DSFRGroupeableButton> buttons;
 
   /// By setting a breakpoint, the buttons direction will become vertical if
   /// there is not enough width space.

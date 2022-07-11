@@ -9,7 +9,7 @@ import '../../theme/sizes.dart';
 import '../../theme/typography.dart';
 import 'base_button.dart';
 
-class DSFRSecondaryButton extends DSFRBaseButton with GroupeableButton {
+class DSFRSecondaryButton extends DSFRGroupeableButton {
   const DSFRSecondaryButton({
     super.key,
     required super.onPressed,

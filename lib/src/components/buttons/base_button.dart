@@ -75,4 +75,19 @@ abstract class DSFRBaseButton extends StatelessWidget {
   final MainAxisSize? mainAxisSize;
 }
 
-mixin GroupeableButton on DSFRBaseButton {}
+abstract class DSFRGroupeableButton extends DSFRBaseButton {
+  const DSFRGroupeableButton({
+    super.key,
+    required super.label,
+    required super.onPressed,
+    super.icon,
+    super.iconPosition = IconPosition.left,
+    super.mainAxisSize,
+  });
+
+  const DSFRGroupeableButton.icon({
+    super.key,
+    required super.icon,
+    required super.onPressed,
+  }) : super.icon();
+}
