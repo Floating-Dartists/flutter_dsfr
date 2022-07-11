@@ -27,9 +27,9 @@ abstract class BaseAlert extends StatelessWidget {
   IconData getIconData() {
     switch (type) {
       case DSFRAlertType.error:
-        return DSFRIcons.error;
+        return DSFRIcons.errorWarningFill;
       case DSFRAlertType.success:
-        return DSFRIcons.success;
+        return DSFRIcons.checkboxCircleFill;
       case DSFRAlertType.info:
         return DSFRIcons.info;
       case DSFRAlertType.warning:

@@ -90,6 +90,7 @@ void main() {
             DSFRTypography.regular(),
             const DSFRColors.dark(),
             const DSFRSizes.regular(),
+            const DSFRButtonStyle.regular(),
           ],
         ),
         child: widget,

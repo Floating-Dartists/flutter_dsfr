@@ -70,9 +70,9 @@ class DSFRBadge extends StatelessWidget {
   IconData _getIconData() {
     switch (type) {
       case DSFRBadgeType.error:
-        return DSFRIcons.error;
+        return DSFRIcons.errorWarningFill;
       case DSFRBadgeType.success:
-        return DSFRIcons.success;
+        return DSFRIcons.checkboxCircleFill;
       case DSFRBadgeType.info:
         return DSFRIcons.info;
       case DSFRBadgeType.warning:

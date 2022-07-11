@@ -137,6 +137,27 @@ DSFRBadge(
 
 ![badge.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/badge.png)
 
+## ButtonsGroup
+
+* ButtonsGroup
+
+```dart
+DSFRButtonsGroup(
+  buttons: [
+    DSFRButton(
+      label: "Label Button",
+      onPressed: () {},
+    ),
+    DSFRSecondaryButton(
+      label: "Label Button",
+      onPressed: () {},
+    ),
+  ],
+)
+```
+
+![buttons_group.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/buttons_group.png)
+
 ## Dependencies
 
 * [url_launcher](https://pub.dev/packages/url_launcher): Allows to open links in the browser.(used in the `FranceConnectButton` widget)
@@ -152,7 +173,7 @@ Components we need to implement
 - [ ] Banner
 - [ ] SearchBar
 - [X] Buttons
-- [ ] ButtonsGroup
+- [X] ButtonsGroup
 - [X] FranceConnectButton
 - [ ] Radio
 - [ ] RichRadio
