@@ -206,6 +206,18 @@ class _MyHomePageState extends State<MyHomePage> {
       size: DSFRBadgeSize.sm,
       showIcon: true,
     ),
+    DSFRButtonsGroup(
+      buttons: [
+        DSFRPrimaryButton(
+          label: 'Label Button',
+          onPressed: () {},
+        ),
+        DSFRSecondaryButton(
+          label: 'Label Button',
+          onPressed: () {},
+        ),
+      ],
+    ),
   ];
 
   @override
