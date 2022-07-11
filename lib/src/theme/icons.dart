@@ -25,6 +25,8 @@ class DSFRIcons {
   static const closeFill = IconData(0xEB98, fontFamily: fontFamily);
   static const flashLightFill = IconData(0xED3C, fontFamily: fontFamily);
   static const settings3Line = IconData(0xF0E6, fontFamily: fontFamily);
+  static const add = IconData(0xEA12, fontFamily: fontFamily);
+  static const substract = IconData(0xF1AE, fontFamily: fontFamily);
 
   @visibleForTesting
   static List<NamedProperty<IconData>> get props => const [
