@@ -87,6 +87,25 @@ class _MyHomePageState extends State<MyHomePage> {
       description: "Warning Alert - SM",
       onClose: () => debugPrint("close callback called"),
     ),
+    const DSFRAccordion(
+      panels: [
+        DSFRAccordionData(
+          title: "Accordion1",
+          content: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text("Im an awesome content, expanded by default"),
+          ),
+          isInitialyExpanded: true,
+        ),
+        DSFRAccordionData(
+          title: "Accordion2",
+          content: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text("Im also an awesome content"),
+          ),
+        ),
+      ],
+    ),
     const DSFRBadge(
       type: DSFRBadgeType.error,
       label: "error",

@@ -105,6 +105,24 @@ DSFRSmallAlert(
 
 ![small_alert.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/small_alert.png)
 
+## Accordion
+
+* Accordion
+
+```dart
+DSFRAccordionData(
+          title: "Accordion1",
+          content: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text("Im an awesome content, expanded by default"),
+          ),
+          isInitialyExpanded: true,
+        )
+```
+
+![accordion.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/accordion.png)
+
+
 ## Badges
 
 * Badge

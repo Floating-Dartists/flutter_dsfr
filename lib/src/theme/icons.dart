@@ -35,6 +35,8 @@ class DSFRIcons {
         NamedProperty('info', info),
         NamedProperty('warning', warning),
         NamedProperty('closeFill', closeFill),
+        NamedProperty('add', add),
+        NamedProperty('substract', substract),
         NamedProperty('flashLightFill', flashLightFill),
         NamedProperty('settings-3-line', settings3Line),
       ];

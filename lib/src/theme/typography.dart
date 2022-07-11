@@ -17,6 +17,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle btnLabel;
   final TextStyle alertsTitle;
   final TextStyle defaultText;
+  final TextStyle accordionOpen;
   final TextStyle badgeLabel;
   final TextStyle badgeLabelSmall;
 
@@ -27,6 +28,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.btnLabel,
     required this.alertsTitle,
     required this.defaultText,
+    required this.accordionOpen,
     required this.badgeLabel,
     required this.badgeLabelSmall,
   });
@@ -64,13 +66,20 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         fontFamily: 'Marianne',
         package: packageName,
         decoration: TextDecoration.none,
-        fontWeight: FontWeight.w500,
-        fontSize: dsfrSizes.w2,
+        fontWeight: FontWeight.w700,
+        fontSize: dsfrSizes.v5,
       ),
       defaultText: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
         decoration: TextDecoration.none,
+      ),
+      accordionOpen: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        decoration: TextDecoration.none,
+        fontWeight: FontWeight.w700,
+        fontSize: dsfrSizes.w2,
       ),
       badgeLabel: TextStyle(
         fontFamily: 'Marianne',
@@ -105,6 +114,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       btnLabel: btnLabel ?? this.btnLabel,
       alertsTitle: alertsTitle ?? this.alertsTitle,
       defaultText: defaultText,
+      accordionOpen: accordionOpen,
       badgeLabel: badgeLabel,
       badgeLabelSmall: badgeLabelSmall,
     );
@@ -122,6 +132,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       btnLabel: TextStyle.lerp(btnLabel, other.btnLabel, t)!,
       alertsTitle: TextStyle.lerp(alertsTitle, other.alertsTitle, t)!,
       defaultText: TextStyle.lerp(defaultText, other.defaultText, t)!,
+      accordionOpen: TextStyle.lerp(accordionOpen, other.accordionOpen, t)!,
       badgeLabel: TextStyle.lerp(badgeLabel, other.badgeLabel, t)!,
       badgeLabelSmall:
           TextStyle.lerp(badgeLabelSmall, other.badgeLabelSmall, t)!,
@@ -136,6 +147,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('btnLabel', btnLabel),
         NamedProperty('alertsTitle', alertsTitle),
         NamedProperty('defaultText', defaultText),
+        NamedProperty('accordionOpen', accordionOpen),
         NamedProperty('badgeLabel', badgeLabel),
         NamedProperty('badgeLabelSmall', badgeLabelSmall),
       ];
