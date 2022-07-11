@@ -166,10 +166,10 @@ DSFRButtonsGroup(
 
 Components we need to implement
 
-- [ ] Accordion
+- [X] Accordion
 - [ ] FileUpload
 - [X] Alerts
-- [ ] Badges
+- [X] Badges
 - [ ] Banner
 - [ ] SearchBar
 - [X] Buttons
