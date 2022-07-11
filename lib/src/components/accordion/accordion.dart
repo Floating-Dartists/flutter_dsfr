@@ -18,53 +18,44 @@ class DSFRAccordion extends StatefulWidget {
 }
 
 class _DSFRAccordionState extends State<DSFRAccordion> {
-  UniqueKey? accordionValue;
-  late final itemsValues = <UniqueKey>[];
-  late final panels = widget.panels;
+  UniqueKey? _accordionValue;
+  late final _itemsValues =
+      List<UniqueKey>.generate(widget.panels.length, (_) => UniqueKey());
+  late final _panels = widget.panels;
 
   @override
   void initState() {
     super.initState();
-    _initItemsValues();
     _setDefaultAccordionValue();
   }
 
   // ! this should only be called once in initState
-  void _initItemsValues() {
-    for (var i = 0; i < panels.length; i++) {
-      final uniqueKey = UniqueKey();
-      itemsValues.add(uniqueKey);
-    }
-  }
-
-  // ! this should only be called once in initState
-  // ! itemsValues must be initialized before calling this
   void _setDefaultAccordionValue() {
     final lastInitialyExpandedIndex =
-        panels.lastIndexWhere((panelData) => panelData.isInitialyExpanded);
+        _panels.lastIndexWhere((panelData) => panelData.isInitialyExpanded);
 
     if (lastInitialyExpandedIndex != -1 &&
-        itemsValues.length == panels.length) {
-      accordionValue = itemsValues[lastInitialyExpandedIndex];
+        _itemsValues.length == _panels.length) {
+      _accordionValue = _itemsValues[lastInitialyExpandedIndex];
     }
   }
 
   List<Widget> _renderPanels() {
     final children = <Widget>[];
 
-    for (var i = 0; i < panels.length; i++) {
-      final isLastInGroup = i == panels.length - 1;
-      final panelData = panels[i];
+    for (var i = 0; i < _panels.length; i++) {
+      final isLastInGroup = i == _panels.length - 1;
+      final panelData = _panels[i];
 
       final child = DSFRAccordionBorder(
         isLastInGroup: isLastInGroup,
         child: DSFRAccordionPanel(
           data: panelData,
-          accordionValue: accordionValue,
-          itemValue: itemsValues[i],
+          accordionValue: _accordionValue,
+          itemValue: _itemsValues[i],
           onExpandedChange: (newValue) {
             setState(() {
-              accordionValue = newValue;
+              _accordionValue = newValue;
             });
           },
         ),

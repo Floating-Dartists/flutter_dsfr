@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+@immutable
 class DSFRAccordionData {
   const DSFRAccordionData({
     required this.title,
