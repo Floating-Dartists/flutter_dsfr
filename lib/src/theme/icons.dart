@@ -42,6 +42,16 @@ class DSFRIcons {
     fontFamily: _fontFamily,
     fontPackage: _packageName,
   );
+  static IconData add = IconData(
+    0xEA12,
+    fontFamily: _fontFamily,
+    fontPackage: _packageName,
+  );
+  static IconData substract = IconData(
+    0xF1AE,
+    fontFamily: _fontFamily,
+    fontPackage: _packageName,
+  );
   static IconData flashLightFill = IconData(
     0xED3C,
     fontFamily: _fontFamily,
@@ -55,6 +65,8 @@ class DSFRIcons {
         NamedProperty('info', info),
         NamedProperty('warning', warning),
         NamedProperty('closeFill', closeFill),
+        NamedProperty('add', add),
+        NamedProperty('substract', substract),
         NamedProperty('flashLightFill', flashLightFill),
       ];
 }
