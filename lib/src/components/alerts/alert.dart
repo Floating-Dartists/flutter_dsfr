@@ -67,11 +67,7 @@ class DSFRAlert extends BaseAlert {
                 ),
               ),
             ),
-            if (onClose != null)
-              Align(
-                alignment: Alignment.topRight,
-                child: AlertCloseButton(onClose: onClose!),
-              ),
+            if (onClose != null) AlertCloseButton(onClose: onClose!),
           ],
         ),
       ),

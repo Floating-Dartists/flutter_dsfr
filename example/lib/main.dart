@@ -218,6 +218,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ],
     ),
+    DSFRBanner(
+      text: "Im an awesome banner",
+      onClose: () {},
+    )
   ];
 
   @override

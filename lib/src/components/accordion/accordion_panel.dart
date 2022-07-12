@@ -27,7 +27,7 @@ class DSFRAccordionPanel extends StatelessWidget {
     if (_isExpanded) {
       return Text(
         data.title,
-        style: dsfrTypography.accordionOpen.copyWith(
+        style: dsfrTypography.boldText.copyWith(
           color: dsfrColors.text,
         ),
       );

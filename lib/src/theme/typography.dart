@@ -17,7 +17,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle btnLabel;
   final TextStyle alertsTitle;
   final TextStyle defaultText;
-  final TextStyle accordionOpen;
+  final TextStyle boldText;
   final TextStyle badgeLabel;
   final TextStyle badgeLabelSmall;
 
@@ -28,7 +28,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.btnLabel,
     required this.alertsTitle,
     required this.defaultText,
-    required this.accordionOpen,
+    required this.boldText,
     required this.badgeLabel,
     required this.badgeLabelSmall,
   });
@@ -74,7 +74,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         package: packageName,
         decoration: TextDecoration.none,
       ),
-      accordionOpen: TextStyle(
+      boldText: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
         decoration: TextDecoration.none,
@@ -114,7 +114,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       btnLabel: btnLabel ?? this.btnLabel,
       alertsTitle: alertsTitle ?? this.alertsTitle,
       defaultText: defaultText,
-      accordionOpen: accordionOpen,
+      boldText: boldText,
       badgeLabel: badgeLabel,
       badgeLabelSmall: badgeLabelSmall,
     );
@@ -132,7 +132,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       btnLabel: TextStyle.lerp(btnLabel, other.btnLabel, t)!,
       alertsTitle: TextStyle.lerp(alertsTitle, other.alertsTitle, t)!,
       defaultText: TextStyle.lerp(defaultText, other.defaultText, t)!,
-      accordionOpen: TextStyle.lerp(accordionOpen, other.accordionOpen, t)!,
+      boldText: TextStyle.lerp(boldText, other.boldText, t)!,
       badgeLabel: TextStyle.lerp(badgeLabel, other.badgeLabel, t)!,
       badgeLabelSmall:
           TextStyle.lerp(badgeLabelSmall, other.badgeLabelSmall, t)!,
@@ -147,7 +147,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('btnLabel', btnLabel),
         NamedProperty('alertsTitle', alertsTitle),
         NamedProperty('defaultText', defaultText),
-        NamedProperty('accordionOpen', accordionOpen),
+        NamedProperty('boldText', boldText),
         NamedProperty('badgeLabel', badgeLabel),
         NamedProperty('badgeLabelSmall', badgeLabelSmall),
       ];
