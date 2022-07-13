@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../theme/colors.dart';
 import '../../theme/typography.dart';
 
+/// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088553/Boutons+radio+-+Radio+button
 class DSFRRadioButton<T> extends StatelessWidget {
   final String label;
   final T value;
