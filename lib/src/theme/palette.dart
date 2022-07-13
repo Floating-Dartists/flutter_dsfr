@@ -124,9 +124,10 @@ abstract class ColorPalette {
   static const success625 = Color(0xFF00eb5e);
   static const success950 = Color(0xFFb8fec9);
 
+  static const info100 = Color(0xFF1d2437);
   static const info125 = Color(0xFF222a3f);
-  static const info425 = Color(0xFF0762c8);
-  static const info625 = Color(0xFF2b8bf7);
+  static const info425 = Color(0xFF0063cb);
+  static const info625 = Color(0xFF518fff);
   static const info950 = Color(0xFFe8edff);
 
   static const warning125 = Color(0xFF3e231e);
