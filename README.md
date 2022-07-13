@@ -158,9 +158,27 @@ DSFRButtonsGroup(
 
 ![buttons_group.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/buttons_group.png)
 
+## Banners
+
+* Banner
+
+```dart
+DSFRBanner(
+      text: "Im an awesome banner",
+      link: DSFRBannerLink(
+        text: "this is an awesome link",
+        link: Uri.parse("https://http.cat/404"),
+      ),
+      onClose: () {},
+    )
+```
+
+![banner.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/banner.png)
+
+
 ## Dependencies
 
-* [url_launcher](https://pub.dev/packages/url_launcher): Allows to open links in the browser.(used in the `FranceConnectButton` widget)
+* [url_launcher](https://pub.dev/packages/url_launcher): Allows to open links in the browser.(used in the `FranceConnectButton` widget and in `DSFRBanner`)
 
 ## Roadmap
 

@@ -36,6 +36,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color badgeInfo;
   final Color badgeWarning;
   final Color badgeNews;
+  final Color banner;
   final Color radioActive;
   final Color frLabel;
 
@@ -70,6 +71,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.badgeInfo,
     required this.badgeWarning,
     required this.badgeNews,
+    required this.banner,
     required this.radioActive,
     required this.frLabel,
   });
@@ -108,6 +110,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           badgeInfo: ColorPalette.info950,
           badgeWarning: ColorPalette.warning950,
           badgeNews: ColorPalette.yellowTournesol950,
+          banner: ColorPalette.info950,
           radioActive: ColorPalette.blueFranceSun113,
           frLabel: const Color(0xFF1e1e1e),
         );
@@ -145,6 +148,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           badgeInfo: ColorPalette.info125,
           badgeWarning: ColorPalette.warning125,
           badgeNews: ColorPalette.yellowTournesol100,
+          banner: ColorPalette.info100,
           radioActive: const Color(0xFF9a9aff),
           frLabel: Colors.white,
         );
@@ -186,6 +190,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       badgeInfo: badgeInfo,
       badgeWarning: badgeWarning,
       badgeNews: badgeNews,
+      banner: banner,
       radioActive: radioActive,
       frLabel: frLabel,
     );
@@ -254,6 +259,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       badgeInfo: Color.lerp(badgeInfo, other.badgeInfo, t)!,
       badgeWarning: Color.lerp(badgeWarning, other.badgeWarning, t)!,
       badgeNews: Color.lerp(badgeNews, other.badgeNews, t)!,
+      banner: Color.lerp(banner, other.banner, t)!,
       radioActive: Color.lerp(radioActive, other.radioActive, t)!,
       frLabel: Color.lerp(frLabel, other.frLabel, t)!,
     );
@@ -300,6 +306,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('badgeInfo', badgeInfo),
         NamedProperty('badgeWarning', badgeWarning),
         NamedProperty('badgeNews', badgeNews),
+        NamedProperty('banner', banner),
         NamedProperty('radioActive', radioActive),
         NamedProperty('frLabel', frLabel),
       ];

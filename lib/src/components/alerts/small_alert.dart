@@ -51,8 +51,7 @@ class DSFRSmallAlert extends BaseAlert {
                 ),
               ),
             ),
-            if (onClose != null)
-              SizedBox(child: AlertCloseButton(onClose: onClose!)),
+            if (onClose != null) AlertCloseButton(onClose: onClose!),
           ],
         ),
       ),
