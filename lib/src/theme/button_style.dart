@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import 'theme_data_widget.dart';
+
 @immutable
 class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
   final double? elevation;
@@ -53,3 +55,5 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
     );
   }
 }
+
+typedef DSFRButtonStyleTheme = DSFRThemeDataWidget<DSFRButtonStyle>;

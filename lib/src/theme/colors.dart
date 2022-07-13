@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/named_property.dart';
 import 'palette.dart';
+import 'theme_data_widget.dart';
 
 @immutable
 class DSFRColors extends ThemeExtension<DSFRColors> {
@@ -289,3 +290,5 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('badgeNews', badgeNews),
       ];
 }
+
+typedef DSFRColorsTheme = DSFRThemeDataWidget<DSFRColors>;

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/button_style.dart';
-import '../../theme/colors.dart';
 import '../../theme/sizes.dart';
-import '../../theme/typography.dart';
 import '../buttons/base_button.dart';
 
 enum DSFRButtonsGroupBreakpoint {
@@ -47,10 +45,7 @@ class DSFRButtonsGroup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dsfrSizes = DSFRSizes.of(context);
-    final dsfrColors = DSFRColors.of(context);
-    final dsfrTypography = DSFRTypography.of(context);
     final dsfrButtonStyle = DSFRButtonStyle.of(context);
-    final currentTheme = Theme.of(context);
 
     final buttonList = reversed ? buttons.reversed.toList() : buttons;
 
@@ -65,17 +60,10 @@ class DSFRButtonsGroup extends StatelessWidget {
         } else {
           axis = direction ?? Axis.vertical;
         }
-        return Theme(
-          data: currentTheme.copyWith(
-            extensions: [
-              dsfrSizes,
-              dsfrColors,
-              dsfrTypography,
-              dsfrButtonStyle.copyWith(
-                mainAxisSize:
-                    axis == Axis.vertical ? MainAxisSize.max : MainAxisSize.min,
-              ),
-            ],
+        return DSFRButtonStyleTheme(
+          data: dsfrButtonStyle.copyWith(
+            mainAxisSize:
+                axis == Axis.vertical ? MainAxisSize.max : MainAxisSize.min,
           ),
           child: axis == Axis.vertical
               ? Column(

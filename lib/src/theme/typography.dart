@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/named_property.dart';
 import 'sizes.dart';
+import 'theme_data_widget.dart';
 
 @immutable
 class DSFRTypography extends ThemeExtension<DSFRTypography> {
@@ -152,3 +153,5 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('badgeLabelSmall', badgeLabelSmall),
       ];
 }
+
+typedef DSFRTypographyTheme = DSFRThemeDataWidget<DSFRTypography>;

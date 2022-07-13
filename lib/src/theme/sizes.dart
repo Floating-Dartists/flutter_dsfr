@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import '../utils/named_property.dart';
+import 'theme_data_widget.dart';
 
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222396724/Espacement+-+Spacing
 @immutable
@@ -181,3 +182,5 @@ class DSFRSizes extends ThemeExtension<DSFRSizes> {
         NamedProperty('w15', w15),
       ];
 }
+
+typedef DSFRSizesTheme = DSFRThemeDataWidget<DSFRSizes>;
