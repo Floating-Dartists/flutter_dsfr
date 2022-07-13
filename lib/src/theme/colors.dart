@@ -37,6 +37,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color badgeWarning;
   final Color badgeNews;
   final Color radioActive;
+  final Color frLabel;
 
   const DSFRColors._({
     required this.frConnectHover,
@@ -70,6 +71,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.badgeWarning,
     required this.badgeNews,
     required this.radioActive,
+    required this.frLabel,
   });
 
   const DSFRColors.light()
@@ -107,6 +109,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           badgeWarning: ColorPalette.warning950,
           badgeNews: ColorPalette.yellowTournesol950,
           radioActive: ColorPalette.blueFranceSun113,
+          frLabel: const Color(0xFF1e1e1e),
         );
 
   const DSFRColors.dark()
@@ -143,6 +146,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           badgeWarning: ColorPalette.warning125,
           badgeNews: ColorPalette.yellowTournesol100,
           radioActive: const Color(0xFF9a9aff),
+          frLabel: Colors.white,
         );
 
   static DSFRColors of(BuildContext context) =>
@@ -183,6 +187,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       badgeWarning: badgeWarning,
       badgeNews: badgeNews,
       radioActive: radioActive,
+      frLabel: frLabel,
     );
   }
 
@@ -250,6 +255,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       badgeWarning: Color.lerp(badgeWarning, other.badgeWarning, t)!,
       badgeNews: Color.lerp(badgeNews, other.badgeNews, t)!,
       radioActive: Color.lerp(radioActive, other.radioActive, t)!,
+      frLabel: Color.lerp(frLabel, other.frLabel, t)!,
     );
   }
 
@@ -295,6 +301,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('badgeWarning', badgeWarning),
         NamedProperty('badgeNews', badgeNews),
         NamedProperty('radioActive', radioActive),
+        NamedProperty('frLabel', frLabel),
       ];
 }
 
