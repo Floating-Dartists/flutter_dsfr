@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/colors.dart';
+
 class DSFRRadioButton<T> extends StatelessWidget {
   final String label;
   final T value;
@@ -16,10 +18,13 @@ class DSFRRadioButton<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Radio(
+    final appColors = DSFRColors.of(context);
+    return RadioListTile<T>(
       value: value,
       groupValue: groupValue,
       onChanged: onChanged,
+      title: Text(label),
+      activeColor: appColors.radioActive,
     );
   }
 }

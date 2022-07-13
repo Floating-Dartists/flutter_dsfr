@@ -13,6 +13,7 @@ void main() {
   goldenTest(
     'DSFRColors.light',
     fileName: 'colors_light',
+    tags: ['golden', 'light'],
     builder: () => GoldenTestGroup(
       columnWidthBuilder: columnWidthBuilder,
       children: const DSFRColors.light()
@@ -34,6 +35,7 @@ void main() {
   goldenTest(
     'DSFRColors.dark',
     fileName: 'colors_dark',
+    tags: ['golden', 'dark'],
     builder: () => GoldenTestGroup(
       columnWidthBuilder: columnWidthBuilder,
       children: const DSFRColors.dark()
