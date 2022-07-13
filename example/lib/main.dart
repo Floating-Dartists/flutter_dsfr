@@ -108,26 +108,6 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
     const DSFRBadge(
       type: DSFRBadgeType.error,
-      label: "error",
-    ),
-    const DSFRBadge(
-      type: DSFRBadgeType.success,
-      label: "success",
-    ),
-    const DSFRBadge(
-      type: DSFRBadgeType.info,
-      label: "info",
-    ),
-    const DSFRBadge(
-      type: DSFRBadgeType.warning,
-      label: "warning",
-    ),
-    const DSFRBadge(
-      type: DSFRBadgeType.news,
-      label: "news",
-    ),
-    const DSFRBadge(
-      type: DSFRBadgeType.error,
       label: "error icon",
       showIcon: true,
     ),
@@ -150,31 +130,6 @@ class _MyHomePageState extends State<MyHomePage> {
       type: DSFRBadgeType.news,
       label: "news icon",
       showIcon: true,
-    ),
-    const DSFRBadge(
-      type: DSFRBadgeType.error,
-      label: "error - sm",
-      size: DSFRBadgeSize.sm,
-    ),
-    const DSFRBadge(
-      type: DSFRBadgeType.success,
-      label: "success - sm",
-      size: DSFRBadgeSize.sm,
-    ),
-    const DSFRBadge(
-      type: DSFRBadgeType.info,
-      label: "info - sm",
-      size: DSFRBadgeSize.sm,
-    ),
-    const DSFRBadge(
-      type: DSFRBadgeType.warning,
-      label: "warning - sm",
-      size: DSFRBadgeSize.sm,
-    ),
-    const DSFRBadge(
-      type: DSFRBadgeType.news,
-      label: "news - sm",
-      size: DSFRBadgeSize.sm,
     ),
     const DSFRBadge(
       type: DSFRBadgeType.error,
@@ -220,6 +175,14 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
     DSFRBanner(
       text: "Im an awesome banner",
+      onClose: () {},
+    ),
+    DSFRBanner(
+      text: "Im an awesome banner",
+      link: DSFRBannerLink(
+        text: "this is an awesome link",
+        link: Uri.parse("https://http.cat/404"),
+      ),
       onClose: () {},
     )
   ];

@@ -16,6 +16,7 @@ export 'src/components/badges/badge.dart';
 export 'src/components/badges/badge_size.dart';
 export 'src/components/badges/badge_type.dart';
 export 'src/components/banners/banner.dart';
+export 'src/components/banners/banner_link.dart';
 export 'src/components/buttons/base_button.dart'
     hide DSFRBaseButton, DSFRGroupeableButton;
 export 'src/components/buttons/france_connect_button.dart'

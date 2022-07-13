@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../flutter_dsfr.dart';
 
+/// Create a badge .
+///
+/// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/851869737/Badges
 class DSFRBadge extends StatelessWidget {
   const DSFRBadge({
     required this.type,
