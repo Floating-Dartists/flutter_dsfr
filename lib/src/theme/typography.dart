@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../utils/named_property.dart';
-import 'sizes.dart';
 import 'theme_data_widget.dart';
 
 @immutable
@@ -21,6 +20,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle accordionOpen;
   final TextStyle badgeLabel;
   final TextStyle badgeLabelSmall;
+  final TextStyle frLabel;
 
   const DSFRTypography._({
     required this.frConnectLogin,
@@ -32,69 +32,78 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.accordionOpen,
     required this.badgeLabel,
     required this.badgeLabelSmall,
+    required this.frLabel,
   });
 
   factory DSFRTypography.regular() {
-    const dsfrSizes = DSFRSizes.regular();
     return DSFRTypography._(
       frConnectLogin: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
-        fontSize: 17,
+        fontSize: 17.0,
+        fontWeight: FontWeight.normal,
         decoration: TextDecoration.none,
       ),
       frConnectBrand: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
-        fontSize: 18,
+        fontSize: 18.0,
         fontWeight: FontWeight.w700,
         decoration: TextDecoration.none,
       ),
       frConnectGroup: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
-        fontSize: dsfrSizes.v3,
+        fontSize: 12.0,
+        fontWeight: FontWeight.normal,
         decoration: TextDecoration.none,
       ),
       btnLabel: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
+        fontSize: 16.0,
         fontWeight: FontWeight.w500,
-        fontSize: dsfrSizes.w2,
         decoration: TextDecoration.none,
       ),
       alertsTitle: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
-        decoration: TextDecoration.none,
+        fontSize: 20.0,
         fontWeight: FontWeight.w700,
-        fontSize: dsfrSizes.v5,
+        decoration: TextDecoration.none,
       ),
       defaultText: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
+        fontWeight: FontWeight.normal,
         decoration: TextDecoration.none,
       ),
       accordionOpen: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
-        decoration: TextDecoration.none,
+        fontSize: 16.0,
         fontWeight: FontWeight.w700,
-        fontSize: dsfrSizes.w2,
+        decoration: TextDecoration.none,
       ),
       badgeLabel: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
-        fontWeight: FontWeight.w700,
-        // * 0.875rem
         fontSize: 14.0,
+        fontWeight: FontWeight.w700,
         decoration: TextDecoration.none,
       ),
       badgeLabelSmall: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
+        fontSize: 12.0,
         fontWeight: FontWeight.w700,
-        fontSize: dsfrSizes.v3,
+        decoration: TextDecoration.none,
+      ),
+      frLabel: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontSize: 16.0,
+        fontWeight: FontWeight.normal,
         decoration: TextDecoration.none,
       ),
     );
@@ -107,6 +116,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   DSFRTypography copyWith({
     TextStyle? btnLabel,
     TextStyle? alertsTitle,
+    TextStyle? frLabel,
   }) {
     return DSFRTypography._(
       frConnectLogin: frConnectLogin,
@@ -118,6 +128,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       accordionOpen: accordionOpen,
       badgeLabel: badgeLabel,
       badgeLabelSmall: badgeLabelSmall,
+      frLabel: frLabel ?? this.frLabel,
     );
   }
 
@@ -137,6 +148,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       badgeLabel: TextStyle.lerp(badgeLabel, other.badgeLabel, t)!,
       badgeLabelSmall:
           TextStyle.lerp(badgeLabelSmall, other.badgeLabelSmall, t)!,
+      frLabel: TextStyle.lerp(frLabel, other.frLabel, t)!,
     );
   }
 
@@ -151,6 +163,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('accordionOpen', accordionOpen),
         NamedProperty('badgeLabel', badgeLabel),
         NamedProperty('badgeLabelSmall', badgeLabelSmall),
+        NamedProperty('frLabel', frLabel),
       ];
 }
 
