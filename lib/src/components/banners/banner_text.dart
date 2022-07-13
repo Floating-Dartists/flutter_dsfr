@@ -22,6 +22,8 @@ class DSFRBannerText extends StatelessWidget {
 
     final textColor = dsfrColors.info;
     final textStyle = dsfrTypography.boldText.copyWith(color: textColor);
+    // * we assign to a new variable for type shadowing
+    final bannerLink = link;
 
     return Text.rich(
       TextSpan(
@@ -30,13 +32,13 @@ class DSFRBannerText extends StatelessWidget {
             text: text,
             style: textStyle,
           ),
-          if (link != null) ...[
+          if (bannerLink != null) ...[
             TextSpan(
               text: ',\x20',
               style: textStyle,
             ),
             TextSpan(
-              text: link!.text,
+              text: bannerLink.text,
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   launchUrl(link!.link);

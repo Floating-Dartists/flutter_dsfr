@@ -12,7 +12,7 @@ class DSFRBanner extends StatelessWidget {
   const DSFRBanner({required this.text, this.onClose, this.link, super.key});
 
   final String text;
-  final void Function()? onClose;
+  final VoidCallback? onClose;
   final DSFRBannerLink? link;
 
   EdgeInsets _getPadding(double maxWidth) {

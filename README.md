@@ -178,7 +178,7 @@ DSFRBanner(
 
 ## Dependencies
 
-* [url_launcher](https://pub.dev/packages/url_launcher): Allows to open links in the browser.(used in the `FranceConnectButton` widget)
+* [url_launcher](https://pub.dev/packages/url_launcher): Allows to open links in the browser.(used in the `FranceConnectButton` widget and in `DSFRBanner`)
 
 ## Roadmap
 
