@@ -184,7 +184,10 @@ class _MyHomePageState extends State<MyHomePage> {
         link: Uri.parse("https://http.cat/404"),
       ),
       onClose: () {},
-    )
+    ),
+    const DSFRTextInput(
+      label: "Input label",
+    ),
   ];
 
   @override

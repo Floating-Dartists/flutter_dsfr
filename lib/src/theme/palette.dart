@@ -105,7 +105,9 @@ abstract class ColorPalette {
 
   static const grey100 = Color(0xFF242424);
   static const grey125 = Color(0xFF2a2a2a);
+  static const grey200 = Color(0xFF3a3a3a);
   static const grey425 = Color(0xFF666666);
+  static const grey850 = Color(0xFFcecece);
   static const grey925 = Color(0xFFe5e5e5);
   static const grey950 = Color(0xFFeeeeee);
   static const grey975 = Color(0xFFdfdfdf);

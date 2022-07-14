@@ -36,6 +36,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color badgeWarning;
   final Color badgeNews;
   final Color banner;
+  final Color input;
+  final Color inputBorder;
 
   const DSFRColors._({
     required this.frConnectHover,
@@ -69,6 +71,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.badgeWarning,
     required this.badgeNews,
     required this.banner,
+    required this.input,
+    required this.inputBorder,
   });
 
   const DSFRColors.light()
@@ -106,6 +110,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           badgeWarning: ColorPalette.warning950,
           badgeNews: ColorPalette.yellowTournesol950,
           banner: ColorPalette.info950,
+          input: ColorPalette.grey950,
+          inputBorder: ColorPalette.grey200,
         );
 
   const DSFRColors.dark()
@@ -142,6 +148,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           badgeWarning: ColorPalette.warning125,
           badgeNews: ColorPalette.yellowTournesol100,
           banner: ColorPalette.info100,
+          input: ColorPalette.grey100,
+          inputBorder: ColorPalette.grey850,
         );
 
   static DSFRColors of(BuildContext context) =>
@@ -182,6 +190,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       badgeWarning: badgeWarning,
       badgeNews: badgeNews,
       banner: banner,
+      input: input,
+      inputBorder: inputBorder,
     );
   }
 
@@ -249,6 +259,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       badgeWarning: Color.lerp(badgeWarning, other.badgeWarning, t)!,
       badgeNews: Color.lerp(badgeNews, other.badgeNews, t)!,
       banner: Color.lerp(banner, other.banner, t)!,
+      input: Color.lerp(input, other.input, t)!,
+      inputBorder: Color.lerp(inputBorder, other.inputBorder, t)!,
     );
   }
 
@@ -294,5 +306,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('badgeWarning', badgeWarning),
         NamedProperty('badgeNews', badgeNews),
         NamedProperty('banner', banner),
+        NamedProperty('input', input),
+        NamedProperty('inputBorder', inputBorder),
       ];
 }

@@ -20,6 +20,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle boldText;
   final TextStyle badgeLabel;
   final TextStyle badgeLabelSmall;
+  final TextStyle inputLabel;
 
   const DSFRTypography._({
     required this.frConnectLogin,
@@ -31,6 +32,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.boldText,
     required this.badgeLabel,
     required this.badgeLabelSmall,
+    required this.inputLabel,
   });
 
   factory DSFRTypography.regular() {
@@ -96,6 +98,13 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         fontSize: dsfrSizes.v3,
         decoration: TextDecoration.none,
       ),
+      inputLabel: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontWeight: FontWeight.w400,
+        fontSize: dsfrSizes.w2,
+        decoration: TextDecoration.none,
+      ),
     );
   }
 
@@ -117,6 +126,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       boldText: boldText,
       badgeLabel: badgeLabel,
       badgeLabelSmall: badgeLabelSmall,
+      inputLabel: inputLabel,
     );
   }
 
@@ -136,6 +146,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       badgeLabel: TextStyle.lerp(badgeLabel, other.badgeLabel, t)!,
       badgeLabelSmall:
           TextStyle.lerp(badgeLabelSmall, other.badgeLabelSmall, t)!,
+      inputLabel: TextStyle.lerp(inputLabel, other.inputLabel, t)!,
     );
   }
 
@@ -150,5 +161,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('boldText', boldText),
         NamedProperty('badgeLabel', badgeLabel),
         NamedProperty('badgeLabelSmall', badgeLabelSmall),
+        NamedProperty('inputLabel', inputLabel),
       ];
 }
