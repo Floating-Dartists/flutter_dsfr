@@ -188,7 +188,7 @@ Components we need to implement
 - [ ] FileUpload
 - [X] Alerts
 - [X] Badges
-- [ ] Banner
+- [X] Banner
 - [ ] SearchBar
 - [X] Buttons
 - [X] ButtonsGroup
