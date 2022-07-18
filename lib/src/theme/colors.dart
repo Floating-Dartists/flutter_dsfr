@@ -39,6 +39,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color banner;
   final Color radioActive;
   final Color frLabel;
+  final Color frFieldset;
+  final Color frHintText;
 
   const DSFRColors._({
     required this.frConnectHover,
@@ -74,6 +76,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.banner,
     required this.radioActive,
     required this.frLabel,
+    required this.frFieldset,
+    required this.frHintText,
   });
 
   const DSFRColors.light()
@@ -113,6 +117,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           banner: ColorPalette.info950,
           radioActive: ColorPalette.blueFranceSun113,
           frLabel: const Color(0xFF1e1e1e),
+          frFieldset: const Color(0xFF1e1e1e),
+          frHintText: const Color(0xFF6a6a6a),
         );
 
   const DSFRColors.dark()
@@ -151,6 +157,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           banner: ColorPalette.info100,
           radioActive: const Color(0xFF9a9aff),
           frLabel: Colors.white,
+          frFieldset: Colors.white,
+          frHintText: const Color(0xFF6a6a6a),
         );
 
   static DSFRColors of(BuildContext context) =>
@@ -193,6 +201,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       banner: banner,
       radioActive: radioActive,
       frLabel: frLabel,
+      frFieldset: frFieldset,
+      frHintText: frHintText,
     );
   }
 
@@ -262,6 +272,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       banner: Color.lerp(banner, other.banner, t)!,
       radioActive: Color.lerp(radioActive, other.radioActive, t)!,
       frLabel: Color.lerp(frLabel, other.frLabel, t)!,
+      frFieldset: Color.lerp(frFieldset, other.frFieldset, t)!,
+      frHintText: Color.lerp(frHintText, other.frHintText, t)!,
     );
   }
 
@@ -309,6 +321,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('banner', banner),
         NamedProperty('radioActive', radioActive),
         NamedProperty('frLabel', frLabel),
+        NamedProperty('frFieldset', frFieldset),
+        NamedProperty('frHintText', frHintText),
       ];
 }
 

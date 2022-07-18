@@ -21,6 +21,8 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle badgeLabel;
   final TextStyle badgeLabelSmall;
   final TextStyle frLabel;
+  final TextStyle frFieldsetLegend;
+  final TextStyle frHintText;
 
   const DSFRTypography._({
     required this.frConnectLogin,
@@ -33,6 +35,8 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.badgeLabel,
     required this.badgeLabelSmall,
     required this.frLabel,
+    required this.frFieldsetLegend,
+    required this.frHintText,
   });
 
   factory DSFRTypography.regular() {
@@ -106,6 +110,20 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         fontWeight: FontWeight.normal,
         decoration: TextDecoration.none,
       ),
+      frFieldsetLegend: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontSize: 16.0,
+        fontWeight: FontWeight.w400,
+        decoration: TextDecoration.none,
+      ),
+      frHintText: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontSize: 12.0,
+        fontWeight: FontWeight.w400,
+        decoration: TextDecoration.none,
+      ),
     );
   }
 
@@ -117,6 +135,8 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     TextStyle? btnLabel,
     TextStyle? alertsTitle,
     TextStyle? frLabel,
+    TextStyle? frFieldsetLegend,
+    TextStyle? frHintText,
   }) {
     return DSFRTypography._(
       frConnectLogin: frConnectLogin,
@@ -129,6 +149,8 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       badgeLabel: badgeLabel,
       badgeLabelSmall: badgeLabelSmall,
       frLabel: frLabel ?? this.frLabel,
+      frFieldsetLegend: frFieldsetLegend ?? this.frFieldsetLegend,
+      frHintText: frHintText ?? this.frHintText,
     );
   }
 
@@ -149,6 +171,9 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       badgeLabelSmall:
           TextStyle.lerp(badgeLabelSmall, other.badgeLabelSmall, t)!,
       frLabel: TextStyle.lerp(frLabel, other.frLabel, t)!,
+      frFieldsetLegend:
+          TextStyle.lerp(frFieldsetLegend, other.frFieldsetLegend, t)!,
+      frHintText: TextStyle.lerp(frHintText, other.frHintText, t)!,
     );
   }
 
@@ -164,6 +189,8 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('badgeLabel', badgeLabel),
         NamedProperty('badgeLabelSmall', badgeLabelSmall),
         NamedProperty('frLabel', frLabel),
+        NamedProperty('frFieldsetLegend', frFieldsetLegend),
+        NamedProperty('frHintText', frHintText),
       ];
 }
 

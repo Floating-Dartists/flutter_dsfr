@@ -26,6 +26,7 @@ export 'src/components/buttons/secondary.dart';
 export 'src/components/buttons/tertiary.dart';
 export 'src/components/buttons_group/buttons_group.dart';
 export 'src/components/icon/icon.dart';
+export 'src/components/radio_group/radio_group.dart';
 export 'src/theme/button_style.dart';
 export 'src/theme/colors.dart';
 export 'src/theme/icons.dart';

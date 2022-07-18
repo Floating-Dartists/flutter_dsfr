@@ -1,4 +1,5 @@
 import 'package:alchemist/alchemist.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_dsfr/flutter_dsfr.dart';
 import 'package:flutter_dsfr/src/components/buttons/radio.dart';
 
@@ -60,5 +61,65 @@ void main() {
         ],
       ),
     ),
+  );
+
+  goldenTest(
+    'light group radio button rendering',
+    fileName: 'radio_group_light',
+    tags: ['golden', 'light', 'molecule'],
+    builder: () {
+      const items = [
+        DSFRRadioData(label: 'Label radio', value: false),
+        DSFRRadioData(label: 'Label radio', value: false),
+        DSFRRadioData(label: 'Label radio', value: false),
+      ];
+
+      return GoldenTestGroup(
+        children: [
+          GoldenTestScenario(
+            name: 'vertical',
+            child: DSFRRadioGroup<bool>(
+              title: "Légende pour l'ensemble de champs",
+              onChanged: (_) {},
+              items: items,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'horizontal',
+            child: DSFRRadioGroup<bool>(
+              title: "Légende pour l'ensemble de champs",
+              onChanged: (_) {},
+              items: items,
+              direction: Axis.horizontal,
+            ),
+          ),
+          GoldenTestScenario(
+            name: 'with description',
+            child: DSFRRadioGroup(
+              title: "Légende pour l'ensemble de champs",
+              description: 'Texte de description additionnel',
+              onChanged: (_) {},
+              items: const [
+                DSFRRadioData(
+                  label: 'Label radio',
+                  description: 'Texte de description additionnel',
+                  value: false,
+                ),
+                DSFRRadioData(
+                  label: 'Label radio',
+                  description: 'Texte de description additionnel',
+                  value: false,
+                ),
+                DSFRRadioData(
+                  label: 'Label radio',
+                  description: 'Texte de description additionnel',
+                  value: false,
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+    },
   );
 }
