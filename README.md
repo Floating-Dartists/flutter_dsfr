@@ -1,7 +1,14 @@
 # Flutter DSFR
 
+<p align="center">
+  <a href="https://github.com/Floating-Dartists" target="_blank">
+    <img src="https://raw.githubusercontent.com/Floating-Dartists/fd_template/main/assets/Transparent-light.png" alt="Floating Dartists" width="600">
+  </a>
+</p>
+
 [![Test workflow](https://github.com/Floating-Dartists/flutter_dsfr/actions/workflows/tests.yml/badge.svg)](https://github.com/Floating-Dartists/flutter_dsfr/actions/workflows/tests.yml)
 [![Coverage Status](https://coveralls.io/repos/github/Floating-Dartists/flutter_dsfr/badge.svg?branch=main)](https://coveralls.io/github/Floating-Dartists/flutter_dsfr?branch=main)
+[![Join Flutter FR Community](https://dcbadge.vercel.app/api/server/BCqyRcQ2ns?style=flat)](https://discord.gg/BCqyRcQ2ns)
 
 Flutter implementation of the french government design system.
 
