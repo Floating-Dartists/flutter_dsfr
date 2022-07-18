@@ -10,12 +10,28 @@ class DSFRRadioData<T> {
   final String label;
   final String? description;
   final T value;
+  final bool hasError;
 
   const DSFRRadioData({
     required this.label,
     required this.value,
     this.description,
+    this.hasError = false,
   });
+
+  DSFRRadioData<T> copyWith({
+    String? label,
+    String? description,
+    T? value,
+    bool? hasError,
+  }) {
+    return DSFRRadioData<T>(
+      label: label ?? this.label,
+      description: description ?? this.description,
+      value: value ?? this.value,
+      hasError: hasError ?? this.hasError,
+    );
+  }
 }
 
 class DSFRRadioGroup<T> extends StatefulWidget {

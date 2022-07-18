@@ -23,6 +23,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle frLabel;
   final TextStyle frFieldsetLegend;
   final TextStyle frHintText;
+  final TextStyle frErrorText;
 
   const DSFRTypography._({
     required this.frConnectLogin,
@@ -37,6 +38,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.frLabel,
     required this.frFieldsetLegend,
     required this.frHintText,
+    required this.frErrorText,
   });
 
   factory DSFRTypography.regular() {
@@ -124,6 +126,13 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         fontWeight: FontWeight.w400,
         decoration: TextDecoration.none,
       ),
+      frErrorText: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontSize: 12.0,
+        fontWeight: FontWeight.normal,
+        decoration: TextDecoration.none,
+      ),
     );
   }
 
@@ -137,6 +146,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     TextStyle? frLabel,
     TextStyle? frFieldsetLegend,
     TextStyle? frHintText,
+    TextStyle? frErrorText,
   }) {
     return DSFRTypography._(
       frConnectLogin: frConnectLogin,
@@ -151,6 +161,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       frLabel: frLabel ?? this.frLabel,
       frFieldsetLegend: frFieldsetLegend ?? this.frFieldsetLegend,
       frHintText: frHintText ?? this.frHintText,
+      frErrorText: frErrorText ?? this.frErrorText,
     );
   }
 
@@ -174,6 +185,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       frFieldsetLegend:
           TextStyle.lerp(frFieldsetLegend, other.frFieldsetLegend, t)!,
       frHintText: TextStyle.lerp(frHintText, other.frHintText, t)!,
+      frErrorText: TextStyle.lerp(frErrorText, other.frErrorText, t)!,
     );
   }
 
@@ -191,6 +203,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('frLabel', frLabel),
         NamedProperty('frFieldsetLegend', frFieldsetLegend),
         NamedProperty('frHintText', frHintText),
+        NamedProperty('frErrorText', frErrorText),
       ];
 }
 
