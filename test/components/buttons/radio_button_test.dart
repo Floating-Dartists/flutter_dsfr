@@ -1,6 +1,6 @@
 import 'package:alchemist/alchemist.dart';
 import 'package:flutter_dsfr/flutter_dsfr.dart';
-import 'package:flutter_dsfr/src/components/radio_button/radio_button.dart';
+import 'package:flutter_dsfr/src/components/buttons/radio.dart';
 
 void main() {
   goldenTest(

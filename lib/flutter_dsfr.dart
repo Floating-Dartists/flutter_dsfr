@@ -17,13 +17,13 @@ export 'src/components/badges/badge_size.dart';
 export 'src/components/badges/badge_type.dart';
 export 'src/components/banners/banner.dart';
 export 'src/components/banners/banner_link.dart';
-export 'src/components/buttons/base_button.dart'
+export 'src/components/buttons/base.dart'
     hide DSFRBaseButton, DSFRGroupeableButton;
-export 'src/components/buttons/france_connect_button.dart'
+export 'src/components/buttons/france_connect.dart'
     hide InfoLinkButton, FranceConnectBase;
-export 'src/components/buttons/primary_button.dart';
-export 'src/components/buttons/secondary_button.dart';
-export 'src/components/buttons/tertiary_button.dart';
+export 'src/components/buttons/primary.dart';
+export 'src/components/buttons/secondary.dart';
+export 'src/components/buttons/tertiary.dart';
 export 'src/components/buttons_group/buttons_group.dart';
 export 'src/components/icon/icon.dart';
 export 'src/theme/button_style.dart';

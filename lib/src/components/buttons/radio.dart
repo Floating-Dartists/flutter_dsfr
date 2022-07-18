@@ -27,15 +27,21 @@ class DSFRRadioButton<T> extends StatelessWidget {
       data: Theme.of(context).copyWith(
         unselectedWidgetColor: dsfrColors.frLabel,
       ),
-      child: RadioListTile<T>(
-        value: value,
-        groupValue: groupValue,
-        onChanged: onChanged,
-        title: Text(
-          label,
-          style: dsfrTypography.frLabel.copyWith(color: dsfrColors.frLabel),
-        ),
-        activeColor: dsfrColors.radioActive,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Radio<T>(
+            value: value,
+            groupValue: groupValue,
+            onChanged: onChanged,
+            activeColor: dsfrColors.radioActive,
+          ),
+          Text(
+            label,
+            style: dsfrTypography.frLabel.copyWith(color: dsfrColors.frLabel),
+          ),
+        ],
       ),
     );
   }
