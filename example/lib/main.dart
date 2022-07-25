@@ -184,7 +184,19 @@ class _MyHomePageState extends State<MyHomePage> {
         link: Uri.parse("https://http.cat/404"),
       ),
       onClose: () {},
-    )
+    ),
+    DSFRRadioGroupFormField<int>(
+      title: 'Légende pour l’ensemble de champs',
+      onChanged: (_) {},
+      items: List<DSFRRadioData<int>>.generate(
+        3,
+        (i) => DSFRRadioData(label: 'Label radio', value: i),
+      ),
+      autovalidateMode: AutovalidateMode.always,
+      validator: (selected) =>
+          selected == null ? 'Veuillez choisir une option' : null,
+      successMessage: 'Vous avez choisi une option',
+    ),
   ];
 
   @override

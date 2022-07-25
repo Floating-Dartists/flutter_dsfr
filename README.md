@@ -171,17 +171,66 @@ DSFRButtonsGroup(
 
 ```dart
 DSFRBanner(
-      text: "Im an awesome banner",
-      link: DSFRBannerLink(
-        text: "this is an awesome link",
-        link: Uri.parse("https://http.cat/404"),
-      ),
-      onClose: () {},
-    )
+  text: "Im an awesome banner",
+  link: DSFRBannerLink(
+    text: "this is an awesome link",
+    link: Uri.parse("https://http.cat/404"),
+  ),
+  onClose: () {},
+)
 ```
 
 ![banner.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/banner.png)
 
+## Radio
+
+* Single Radio button
+
+```dart
+DSFRRadioButton<bool>(
+  label: 'Label radio',
+  value: true,
+  groupValue: false,
+  onChanged: (_) {},
+)
+```
+
+![radio.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/radio.png)
+
+* Multiple Radio buttons
+
+```dart
+DSFRRadioGroup<bool>(
+  title: "Légende pour l'ensemble de champs",
+  onChanged: (_) {},
+  items: [
+    DSFRRadioData(label: 'Label radio', value: false),
+    DSFRRadioData(label: 'Label radio', value: false),
+    DSFRRadioData(label: 'Label radio', value: false)
+  ],
+)
+```
+
+Which also exists as a `FormField` to manage validation and error states:
+
+```dart
+DSFRRadioGroupFormField<bool>(
+  title: "Légende pour l'ensemble de champs",
+  onChanged: (_) {},
+  items: [
+    DSFRRadioData(label: 'Label radio', value: false),
+    DSFRRadioData(label: 'Label radio', value: false),
+    DSFRRadioData(label: 'Label radio', value: false)
+  ],
+   autovalidateMode: AutovalidateMode.always,
+   validator: (selectedValue) =>
+      selectedValue == null || !selectedValue
+        ? "Texte d'erreur obligatoire"
+        : null,
+)
+```
+
+![radio_group.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/radio_group.png)
 
 ## Dependencies
 
@@ -200,7 +249,7 @@ Components we need to implement
 - [X] Buttons
 - [X] ButtonsGroup
 - [X] FranceConnectButton
-- [ ] Radio
+- [X] Radio
 - [ ] RichRadio
 - [ ] Checkbox
 - [ ] Card
