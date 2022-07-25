@@ -33,7 +33,7 @@ abstract class BaseAlert extends StatelessWidget {
       case DSFRAlertType.info:
         return DSFRIcons.info;
       case DSFRAlertType.warning:
-        return DSFRIcons.warning;
+        return DSFRIcons.alertFill;
     }
   }
 }

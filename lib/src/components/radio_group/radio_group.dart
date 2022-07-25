@@ -40,6 +40,8 @@ class DSFRRadioGroup<T> extends StatefulWidget {
   final ValueChanged<T?>? onChanged;
   final List<DSFRRadioData<T>> items;
   final Axis direction;
+  final bool hasError;
+  final bool isValid;
 
   const DSFRRadioGroup({
     super.key,
@@ -48,6 +50,8 @@ class DSFRRadioGroup<T> extends StatefulWidget {
     required this.items,
     this.direction = Axis.vertical,
     this.description,
+    this.hasError = false,
+    this.isValid = false,
   }) : assert(items.length > 0);
 
   @override
@@ -98,6 +102,8 @@ class _DSFRRadioGroupState<T> extends State<DSFRRadioGroup<T>> {
                   value: e.value,
                   groupValue: _groupValue,
                   onChanged: _onChangedHandler,
+                  hasError: widget.hasError,
+                  isValid: widget.isValid,
                 ),
               )
               .toList(),

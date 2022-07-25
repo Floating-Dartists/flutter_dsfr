@@ -11,6 +11,8 @@ class DSFRRadioButton<T> extends StatelessWidget {
   final T value;
   final T? groupValue;
   final ValueChanged<T?>? onChanged;
+  final bool hasError;
+  final bool isValid;
 
   const DSFRRadioButton({
     super.key,
@@ -19,6 +21,8 @@ class DSFRRadioButton<T> extends StatelessWidget {
     required this.groupValue,
     required this.onChanged,
     this.description,
+    this.hasError = false,
+    this.isValid = false,
   });
 
   @override
@@ -27,9 +31,18 @@ class DSFRRadioButton<T> extends StatelessWidget {
     final dsfrTypography = DSFRTypography.of(context);
     final dsfrSizes = DSFRSizes.of(context);
 
+    final Color foregroundColor;
+    if (hasError) {
+      foregroundColor = dsfrColors.error;
+    } else if (isValid) {
+      foregroundColor = dsfrColors.success;
+    } else {
+      foregroundColor = dsfrColors.frLabel;
+    }
+
     return Theme(
       data: Theme.of(context).copyWith(
-        unselectedWidgetColor: dsfrColors.frLabel,
+        unselectedWidgetColor: foregroundColor,
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -59,7 +72,7 @@ class DSFRRadioButton<T> extends StatelessWidget {
                   ),
               ],
             ),
-            style: dsfrTypography.frLabel.copyWith(color: dsfrColors.frLabel),
+            style: dsfrTypography.frLabel.copyWith(color: foregroundColor),
           ),
         ],
       ),

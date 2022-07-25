@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/colors.dart';
-import '../../theme/typography.dart';
-import 'radio_group.dart';
+import '../../../flutter_dsfr.dart';
 
 class DSFRRadioGroupFormField<T> extends FormField<T> {
+  final String? successMessage;
+
   DSFRRadioGroupFormField({
     super.key,
     required String title,
@@ -14,11 +14,12 @@ class DSFRRadioGroupFormField<T> extends FormField<T> {
     super.onSaved,
     super.validator,
     super.autovalidateMode,
+    this.successMessage,
   }) : super(
           builder: (state) {
             final context = state.context;
-            final dsfrTypography = DSFRTypography.of(context);
             final dsfrColors = DSFRColors.of(context);
+            final isValid = state.isValid && successMessage != null;
 
             void onChangedHandler(T? value) {
               state.didChange(value);
@@ -37,16 +38,60 @@ class DSFRRadioGroupFormField<T> extends FormField<T> {
                     description: description,
                     onChanged: onChangedHandler,
                     items: items,
+                    hasError: state.hasError,
+                    isValid: isValid,
                   ),
                   if (state.hasError)
-                    Text(
-                      state.errorText!,
-                      style: dsfrTypography.frErrorText
-                          .copyWith(color: dsfrColors.error),
+                    _FormMessage(
+                      icon: DSFRIcons.alertLine,
+                      message: state.errorText!,
+                      color: dsfrColors.error,
+                    ),
+                  if (isValid)
+                    _FormMessage(
+                      icon: DSFRIcons.checkboxCircleLine,
+                      message: successMessage,
+                      color: dsfrColors.success,
                     ),
                 ],
               ),
             );
           },
         );
+}
+
+class _FormMessage extends StatelessWidget {
+  final IconData icon;
+  final String message;
+  final Color color;
+
+  const _FormMessage({
+    required this.icon,
+    required this.message,
+    required this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final dsfrTypography = DSFRTypography.of(context);
+    final dsfrSizes = DSFRSizes.of(context);
+
+    return Padding(
+      padding: EdgeInsets.only(top: dsfrSizes.v3),
+      child: Row(
+        children: [
+          DSFRIcon(
+            icon,
+            color: color,
+            size: (dsfrTypography.frErrorText.fontSize ?? 12.0) + 2,
+          ),
+          const SizedBox(width: 2.0),
+          Text(
+            message,
+            style: dsfrTypography.frErrorText.copyWith(color: color),
+          ),
+        ],
+      ),
+    );
+  }
 }
