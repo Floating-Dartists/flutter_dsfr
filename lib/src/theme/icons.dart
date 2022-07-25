@@ -36,11 +36,12 @@ class DSFRIcons {
         NamedProperty('checkbox-circle-fill', checkboxCircleFill),
         NamedProperty('checkbox-circle-line', checkboxCircleLine),
         NamedProperty('info', info),
-        NamedProperty('warning', alertFill),
-        NamedProperty('closeFill', closeFill),
+        NamedProperty('alert-fill', alertFill),
+        NamedProperty('alert-line', alertLine),
+        NamedProperty('close-fill', closeFill),
+        NamedProperty('flash-light-fill', flashLightFill),
+        NamedProperty('settings-3-line', settings3Line),
         NamedProperty('add', add),
         NamedProperty('substract', substract),
-        NamedProperty('flashLightFill', flashLightFill),
-        NamedProperty('settings-3-line', settings3Line),
       ];
 }
