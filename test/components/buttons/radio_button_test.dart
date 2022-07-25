@@ -143,6 +143,14 @@ void main() {
               successMessage: 'Texte de validation',
               validator: (_) => null,
             ),
+          ),
+          GoldenTestScenario(
+            name: 'disabled state',
+            child: DSFRRadioGroup<bool>(
+              title: "Légende pour l'ensemble de champs",
+              onChanged: null,
+              items: items,
+            ),
           )
         ],
       );

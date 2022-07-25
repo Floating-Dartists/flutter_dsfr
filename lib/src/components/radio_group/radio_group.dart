@@ -68,6 +68,8 @@ class _DSFRRadioGroupState<T> extends State<DSFRRadioGroup<T>> {
     final dsfrSizes = DSFRSizes.of(context);
     final description = widget.description;
 
+    final disabled = widget.onChanged == null;
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,8 +88,8 @@ class _DSFRRadioGroupState<T> extends State<DSFRRadioGroup<T>> {
                 ),
             ],
           ),
-          style: dsfrTypography.frFieldsetLegend
-              .copyWith(color: dsfrColors.frFieldset),
+          style:
+              dsfrTypography.frFieldsetLegend.copyWith(color: dsfrColors.g800),
         ),
         SizedBox(height: dsfrSizes.v3),
         Wrap(
@@ -101,7 +103,7 @@ class _DSFRRadioGroupState<T> extends State<DSFRRadioGroup<T>> {
                   description: e.description,
                   value: e.value,
                   groupValue: _groupValue,
-                  onChanged: _onChangedHandler,
+                  onChanged: disabled ? null : _onChangedHandler,
                   hasError: widget.hasError,
                   isValid: widget.isValid,
                 ),

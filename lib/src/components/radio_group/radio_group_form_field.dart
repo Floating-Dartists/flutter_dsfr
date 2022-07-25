@@ -19,7 +19,10 @@ class DSFRRadioGroupFormField<T> extends FormField<T> {
           builder: (state) {
             final context = state.context;
             final dsfrColors = DSFRColors.of(context);
-            final isValid = state.isValid && successMessage != null;
+            final disabled = onChanged == null;
+            final hasError = state.hasError && !disabled;
+            final isValid =
+                state.isValid && successMessage != null && !disabled;
 
             void onChangedHandler(T? value) {
               state.didChange(value);
@@ -41,7 +44,7 @@ class DSFRRadioGroupFormField<T> extends FormField<T> {
                     hasError: state.hasError,
                     isValid: isValid,
                   ),
-                  if (state.hasError)
+                  if (hasError)
                     _FormMessage(
                       icon: DSFRIcons.alertLine,
                       message: state.errorText!,

@@ -4,6 +4,8 @@ import '../../theme/colors.dart';
 import '../../theme/sizes.dart';
 import '../../theme/typography.dart';
 
+const _kRadioSize = Size.square(15.0);
+
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088553/Boutons+radio+-+Radio+button
 class DSFRRadioButton<T> extends StatelessWidget {
   final String label;
@@ -30,9 +32,12 @@ class DSFRRadioButton<T> extends StatelessWidget {
     final dsfrColors = DSFRColors.of(context);
     final dsfrTypography = DSFRTypography.of(context);
     final dsfrSizes = DSFRSizes.of(context);
+    final disabled = onChanged == null;
 
     final Color foregroundColor;
-    if (hasError) {
+    if (disabled) {
+      foregroundColor = dsfrColors.frFieldsetDisabled;
+    } else if (hasError) {
       foregroundColor = dsfrColors.error;
     } else if (isValid) {
       foregroundColor = dsfrColors.success;
@@ -48,16 +53,30 @@ class DSFRRadioButton<T> extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Radio<T>(
-            value: value,
-            groupValue: groupValue,
-            onChanged: onChanged,
-            activeColor: dsfrColors.radioActive,
-            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            visualDensity: const VisualDensity(
-              horizontal: VisualDensity.minimumDensity,
-              vertical: VisualDensity.minimumDensity,
-            ),
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              if (disabled)
+                Container(
+                  height: _kRadioSize.height,
+                  width: _kRadioSize.width,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: disabled ? dsfrColors.g200 : Colors.transparent,
+                  ),
+                ),
+              Radio<T>(
+                value: value,
+                groupValue: groupValue,
+                onChanged: onChanged,
+                activeColor: dsfrColors.radioActive,
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                visualDensity: const VisualDensity(
+                  horizontal: VisualDensity.minimumDensity,
+                  vertical: VisualDensity.minimumDensity,
+                ),
+              ),
+            ],
           ),
           SizedBox(width: dsfrSizes.w4),
           Text.rich(

@@ -39,8 +39,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color banner;
   final Color radioActive;
   final Color frLabel;
-  final Color frFieldset;
+  final Color g800;
+  final Color frFieldsetDisabled;
   final Color frHintText;
+  final Color g200;
 
   const DSFRColors._({
     required this.frConnectHover,
@@ -76,8 +78,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.banner,
     required this.radioActive,
     required this.frLabel,
-    required this.frFieldset,
+    required this.g800,
+    required this.frFieldsetDisabled,
     required this.frHintText,
+    required this.g200,
   });
 
   const DSFRColors.light()
@@ -117,8 +121,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           banner: ColorPalette.info950,
           radioActive: ColorPalette.blueFranceSun113,
           frLabel: const Color(0xFF1e1e1e),
-          frFieldset: const Color(0xFF1e1e1e),
+          g800: const Color(0xFF1e1e1e),
+          frFieldsetDisabled: const Color(0xFF6a6a6a),
           frHintText: const Color(0xFF6a6a6a),
+          g200: const Color(0xFFf0f0f0),
         );
 
   const DSFRColors.dark()
@@ -157,8 +163,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           banner: ColorPalette.info100,
           radioActive: const Color(0xFF9a9aff),
           frLabel: Colors.white,
-          frFieldset: Colors.white,
+          g800: Colors.white,
+          frFieldsetDisabled: const Color(0xFFcecece),
           frHintText: const Color(0xFF6a6a6a),
+          g200: const Color(0xFF383838),
         );
 
   static DSFRColors of(BuildContext context) =>
@@ -201,8 +209,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       banner: banner,
       radioActive: radioActive,
       frLabel: frLabel,
-      frFieldset: frFieldset,
+      g800: g800,
+      frFieldsetDisabled: frFieldsetDisabled,
       frHintText: frHintText,
+      g200: g200,
     );
   }
 
@@ -272,8 +282,11 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       banner: Color.lerp(banner, other.banner, t)!,
       radioActive: Color.lerp(radioActive, other.radioActive, t)!,
       frLabel: Color.lerp(frLabel, other.frLabel, t)!,
-      frFieldset: Color.lerp(frFieldset, other.frFieldset, t)!,
+      g800: Color.lerp(g800, other.g800, t)!,
+      frFieldsetDisabled:
+          Color.lerp(frFieldsetDisabled, other.frFieldsetDisabled, t)!,
       frHintText: Color.lerp(frHintText, other.frHintText, t)!,
+      g200: Color.lerp(g200, other.g200, t)!,
     );
   }
 
@@ -321,7 +334,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('banner', banner),
         NamedProperty('radioActive', radioActive),
         NamedProperty('frLabel', frLabel),
-        NamedProperty('frFieldset', frFieldset),
+        NamedProperty('frFieldset', g800),
+        NamedProperty('frFieldsetDisabled', frFieldsetDisabled),
         NamedProperty('frHintText', frHintText),
       ];
 }
