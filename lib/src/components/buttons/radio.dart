@@ -36,13 +36,20 @@ class DSFRRadioButton<T> extends StatelessWidget {
 
     final Color foregroundColor;
     if (disabled) {
-      foregroundColor = dsfrColors.frFieldsetDisabled;
+      foregroundColor = dsfrColors.disabledGrey;
     } else if (hasError) {
-      foregroundColor = dsfrColors.error;
+      foregroundColor = dsfrColors.defaultError;
     } else if (isValid) {
-      foregroundColor = dsfrColors.success;
+      foregroundColor = dsfrColors.defaultSuccess;
     } else {
-      foregroundColor = dsfrColors.frLabel;
+      foregroundColor = dsfrColors.highGrey;
+    }
+
+    final Color descriptionColor;
+    if (disabled) {
+      descriptionColor = dsfrColors.disabledGrey;
+    } else {
+      descriptionColor = dsfrColors.mentionGrey;
     }
 
     return Theme(
@@ -69,7 +76,7 @@ class DSFRRadioButton<T> extends StatelessWidget {
                 value: value,
                 groupValue: groupValue,
                 onChanged: onChanged,
-                activeColor: dsfrColors.radioActive,
+                activeColor: dsfrColors.backgroundActiveBlueFrance,
                 materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 visualDensity: const VisualDensity(
                   horizontal: VisualDensity.minimumDensity,
@@ -86,12 +93,12 @@ class DSFRRadioButton<T> extends StatelessWidget {
                 if (description != null)
                   TextSpan(
                     text: '\n$description',
-                    style: dsfrTypography.frHintText
-                        .copyWith(color: dsfrColors.frHintText),
+                    style: dsfrTypography.mention
+                        .copyWith(color: descriptionColor),
                   ),
               ],
             ),
-            style: dsfrTypography.frLabel.copyWith(color: foregroundColor),
+            style: dsfrTypography.body.copyWith(color: foregroundColor),
           ),
         ],
       ),

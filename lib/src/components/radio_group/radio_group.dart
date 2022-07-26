@@ -79,14 +79,13 @@ class _DSFRRadioGroupState<T> extends State<DSFRRadioGroup<T>> {
               if (description != null)
                 TextSpan(
                   text: '\n$description',
-                  style: dsfrTypography.frHintText.copyWith(
-                    color: dsfrColors.frHintText,
+                  style: dsfrTypography.mention.copyWith(
+                    color: dsfrColors.mentionGrey,
                   ),
                 ),
             ],
           ),
-          style:
-              dsfrTypography.frFieldsetLegend.copyWith(color: dsfrColors.g800),
+          style: dsfrTypography.body.copyWith(color: dsfrColors.titleGrey),
         ),
         SizedBox(height: dsfrSizes.v3),
         Wrap(
