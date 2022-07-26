@@ -35,3 +35,5 @@ test/**/goldens/**/*.*
 test/**/failures/**/*.*
 !test/**/goldens/ci/*.*
 .flutter-plugins-dependencies
+
+coverage/

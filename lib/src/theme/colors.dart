@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/named_property.dart';
 import 'palette.dart';
+import 'theme_data_widget.dart';
 
 @immutable
 class DSFRColors extends ThemeExtension<DSFRColors> {
@@ -36,6 +37,14 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color badgeWarning;
   final Color badgeNews;
   final Color banner;
+  final Color radioActive;
+  final Color frLabel;
+  final Color frFieldsetDisabled;
+  final Color frHintText;
+  final Color g200;
+  final Color g600;
+  final Color g700;
+  final Color g800;
 
   const DSFRColors._({
     required this.frConnectHover,
@@ -69,6 +78,14 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.badgeWarning,
     required this.badgeNews,
     required this.banner,
+    required this.radioActive,
+    required this.frLabel,
+    required this.frFieldsetDisabled,
+    required this.frHintText,
+    required this.g200,
+    required this.g600,
+    required this.g700,
+    required this.g800,
   });
 
   const DSFRColors.light()
@@ -87,8 +104,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           blockColorActive: const Color.fromRGBO(194, 194, 194, 0.5),
           defaultBorderGrey: const Color(0xFFe5e5e5),
           alertsBackground: ColorPalette.grey1000,
-          backgroundDisabledGrey: const Color(0xFFe5e5e5),
-          textDisabledGrey: const Color(0xFF929292),
+          backgroundDisabledGrey: ColorPalette.grey925,
+          textDisabledGrey: ColorPalette.grey625,
           alertsCloseButtonIcon: ColorPalette.blueFranceSun113,
           hover: ColorPalette.grey1000Hover,
           active: ColorPalette.grey1000Active,
@@ -106,6 +123,14 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           badgeWarning: ColorPalette.warning950,
           badgeNews: ColorPalette.yellowTournesol950,
           banner: ColorPalette.info950,
+          radioActive: ColorPalette.blueFranceSun113,
+          frLabel: ColorPalette.grey75,
+          frFieldsetDisabled: const Color(0xFF6a6a6a),
+          frHintText: const Color(0xFF6a6a6a),
+          g200: const Color(0xFFf0f0f0),
+          g600: const Color(0xFF6a6a6a),
+          g700: const Color(0xFF383838),
+          g800: ColorPalette.grey75,
         );
 
   const DSFRColors.dark()
@@ -121,10 +146,10 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           borderActionHighBlueFrance: const Color(0xFF9a9aff),
           blockColorHover: const Color.fromRGBO(65, 65, 65, 0.5),
           blockColorActive: const Color.fromRGBO(99, 99, 99, 0.5),
-          defaultBorderGrey: const Color(0xFF2a2a2a),
+          defaultBorderGrey: ColorPalette.grey125,
           alertsBackground: ColorPalette.grey50,
-          backgroundDisabledGrey: const Color(0xFF2a2a2a),
-          textDisabledGrey: const Color.fromRGBO(102, 102, 102, 1),
+          backgroundDisabledGrey: ColorPalette.grey125,
+          textDisabledGrey: ColorPalette.grey425,
           alertsCloseButtonIcon: ColorPalette.blueFrance625,
           hover: ColorPalette.grey50Hover,
           active: ColorPalette.grey50Active,
@@ -142,6 +167,14 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           badgeWarning: ColorPalette.warning125,
           badgeNews: ColorPalette.yellowTournesol100,
           banner: ColorPalette.info100,
+          radioActive: const Color(0xFF9a9aff),
+          frLabel: Colors.white,
+          frFieldsetDisabled: ColorPalette.grey850,
+          frHintText: const Color(0xFF6a6a6a),
+          g200: const Color(0xFF383838),
+          g700: const Color(0xFFf0f0f0),
+          g600: const Color(0xFFe7e7e7),
+          g800: Colors.white,
         );
 
   static DSFRColors of(BuildContext context) =>
@@ -182,6 +215,14 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       badgeWarning: badgeWarning,
       badgeNews: badgeNews,
       banner: banner,
+      radioActive: radioActive,
+      frLabel: frLabel,
+      frFieldsetDisabled: frFieldsetDisabled,
+      frHintText: frHintText,
+      g200: g200,
+      g600: g600,
+      g700: g700,
+      g800: g800,
     );
   }
 
@@ -249,6 +290,15 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       badgeWarning: Color.lerp(badgeWarning, other.badgeWarning, t)!,
       badgeNews: Color.lerp(badgeNews, other.badgeNews, t)!,
       banner: Color.lerp(banner, other.banner, t)!,
+      radioActive: Color.lerp(radioActive, other.radioActive, t)!,
+      frLabel: Color.lerp(frLabel, other.frLabel, t)!,
+      frFieldsetDisabled:
+          Color.lerp(frFieldsetDisabled, other.frFieldsetDisabled, t)!,
+      frHintText: Color.lerp(frHintText, other.frHintText, t)!,
+      g200: Color.lerp(g200, other.g200, t)!,
+      g600: Color.lerp(g600, other.g600, t)!,
+      g700: Color.lerp(g700, other.g700, t)!,
+      g800: Color.lerp(g800, other.g800, t)!,
     );
   }
 
@@ -294,5 +344,15 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('badgeWarning', badgeWarning),
         NamedProperty('badgeNews', badgeNews),
         NamedProperty('banner', banner),
+        NamedProperty('radioActive', radioActive),
+        NamedProperty('frLabel', frLabel),
+        NamedProperty('frFieldsetDisabled', frFieldsetDisabled),
+        NamedProperty('frHintText', frHintText),
+        NamedProperty('g200', g200),
+        NamedProperty('g600', g600),
+        NamedProperty('g700', g700),
+        NamedProperty('g800', g800),
       ];
 }
+
+typedef DSFRColorsTheme = DSFRThemeDataWidget<DSFRColors>;

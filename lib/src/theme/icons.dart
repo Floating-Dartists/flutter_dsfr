@@ -21,7 +21,8 @@ class DSFRIcons {
   static const checkboxCircleFill = IconData(0xEB80, fontFamily: fontFamily);
   static const checkboxCircleLine = IconData(0xEB81, fontFamily: fontFamily);
   static const info = IconData(0xEE58, fontFamily: fontFamily);
-  static const warning = IconData(0xEA20, fontFamily: fontFamily);
+  static const alertFill = IconData(0xEA20, fontFamily: fontFamily);
+  static const alertLine = IconData(0xEA21, fontFamily: fontFamily);
   static const closeFill = IconData(0xEB98, fontFamily: fontFamily);
   static const flashLightFill = IconData(0xED3C, fontFamily: fontFamily);
   static const settings3Line = IconData(0xF0E6, fontFamily: fontFamily);
@@ -35,11 +36,12 @@ class DSFRIcons {
         NamedProperty('checkbox-circle-fill', checkboxCircleFill),
         NamedProperty('checkbox-circle-line', checkboxCircleLine),
         NamedProperty('info', info),
-        NamedProperty('warning', warning),
-        NamedProperty('closeFill', closeFill),
+        NamedProperty('alert-fill', alertFill),
+        NamedProperty('alert-line', alertLine),
+        NamedProperty('close-fill', closeFill),
+        NamedProperty('flash-light-fill', flashLightFill),
+        NamedProperty('settings-3-line', settings3Line),
         NamedProperty('add', add),
         NamedProperty('substract', substract),
-        NamedProperty('flashLightFill', flashLightFill),
-        NamedProperty('settings-3-line', settings3Line),
       ];
 }

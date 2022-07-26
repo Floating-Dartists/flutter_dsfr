@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../utils/named_property.dart';
-import 'sizes.dart';
+import 'theme_data_widget.dart';
 
 @immutable
 class DSFRTypography extends ThemeExtension<DSFRTypography> {
@@ -20,6 +20,10 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle boldText;
   final TextStyle badgeLabel;
   final TextStyle badgeLabelSmall;
+  final TextStyle frLabel;
+  final TextStyle frFieldsetLegend;
+  final TextStyle frHintText;
+  final TextStyle frErrorText;
 
   const DSFRTypography._({
     required this.frConnectLogin,
@@ -31,69 +35,102 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.boldText,
     required this.badgeLabel,
     required this.badgeLabelSmall,
+    required this.frLabel,
+    required this.frFieldsetLegend,
+    required this.frHintText,
+    required this.frErrorText,
   });
 
   factory DSFRTypography.regular() {
-    const dsfrSizes = DSFRSizes.regular();
     return DSFRTypography._(
       frConnectLogin: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
-        fontSize: 17,
+        fontSize: 17.0,
+        fontWeight: FontWeight.normal,
         decoration: TextDecoration.none,
       ),
       frConnectBrand: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
-        fontSize: 18,
+        fontSize: 18.0,
         fontWeight: FontWeight.w700,
         decoration: TextDecoration.none,
       ),
       frConnectGroup: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
-        fontSize: dsfrSizes.v3,
+        fontSize: 12.0,
+        fontWeight: FontWeight.normal,
         decoration: TextDecoration.none,
       ),
       btnLabel: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
+        fontSize: 16.0,
         fontWeight: FontWeight.w500,
-        fontSize: dsfrSizes.w2,
         decoration: TextDecoration.none,
       ),
       alertsTitle: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
-        decoration: TextDecoration.none,
+        fontSize: 20.0,
         fontWeight: FontWeight.w700,
-        fontSize: dsfrSizes.v5,
+        decoration: TextDecoration.none,
       ),
       defaultText: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
+        fontWeight: FontWeight.normal,
         decoration: TextDecoration.none,
       ),
       boldText: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
-        decoration: TextDecoration.none,
+        fontSize: 16.0,
         fontWeight: FontWeight.w700,
-        fontSize: dsfrSizes.w2,
+        decoration: TextDecoration.none,
       ),
       badgeLabel: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
-        fontWeight: FontWeight.w700,
-        // * 0.875rem
         fontSize: 14.0,
+        fontWeight: FontWeight.w700,
         decoration: TextDecoration.none,
       ),
       badgeLabelSmall: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
+        fontSize: 12.0,
         fontWeight: FontWeight.w700,
-        fontSize: dsfrSizes.v3,
+        decoration: TextDecoration.none,
+      ),
+      frLabel: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontSize: 16.0,
+        fontWeight: FontWeight.normal,
+        decoration: TextDecoration.none,
+      ),
+      frFieldsetLegend: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontSize: 16.0,
+        fontWeight: FontWeight.w400,
+        decoration: TextDecoration.none,
+      ),
+      frHintText: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontSize: 12.0,
+        fontWeight: FontWeight.w400,
+        decoration: TextDecoration.none,
+      ),
+      frErrorText: TextStyle(
+        fontFamily: 'Marianne',
+        package: packageName,
+        fontSize: 12.0,
+        fontWeight: FontWeight.normal,
         decoration: TextDecoration.none,
       ),
     );
@@ -106,6 +143,10 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   DSFRTypography copyWith({
     TextStyle? btnLabel,
     TextStyle? alertsTitle,
+    TextStyle? frLabel,
+    TextStyle? frFieldsetLegend,
+    TextStyle? frHintText,
+    TextStyle? frErrorText,
   }) {
     return DSFRTypography._(
       frConnectLogin: frConnectLogin,
@@ -117,6 +158,10 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       boldText: boldText,
       badgeLabel: badgeLabel,
       badgeLabelSmall: badgeLabelSmall,
+      frLabel: frLabel ?? this.frLabel,
+      frFieldsetLegend: frFieldsetLegend ?? this.frFieldsetLegend,
+      frHintText: frHintText ?? this.frHintText,
+      frErrorText: frErrorText ?? this.frErrorText,
     );
   }
 
@@ -136,6 +181,11 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       badgeLabel: TextStyle.lerp(badgeLabel, other.badgeLabel, t)!,
       badgeLabelSmall:
           TextStyle.lerp(badgeLabelSmall, other.badgeLabelSmall, t)!,
+      frLabel: TextStyle.lerp(frLabel, other.frLabel, t)!,
+      frFieldsetLegend:
+          TextStyle.lerp(frFieldsetLegend, other.frFieldsetLegend, t)!,
+      frHintText: TextStyle.lerp(frHintText, other.frHintText, t)!,
+      frErrorText: TextStyle.lerp(frErrorText, other.frErrorText, t)!,
     );
   }
 
@@ -150,5 +200,11 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('boldText', boldText),
         NamedProperty('badgeLabel', badgeLabel),
         NamedProperty('badgeLabelSmall', badgeLabelSmall),
+        NamedProperty('frLabel', frLabel),
+        NamedProperty('frFieldsetLegend', frFieldsetLegend),
+        NamedProperty('frHintText', frHintText),
+        NamedProperty('frErrorText', frErrorText),
       ];
 }
+
+typedef DSFRTypographyTheme = DSFRThemeDataWidget<DSFRTypography>;

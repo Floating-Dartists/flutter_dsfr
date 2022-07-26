@@ -3,34 +3,36 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import '../../theme/button_style.dart';
 import '../../theme/colors.dart';
 import '../../theme/sizes.dart';
 import '../../theme/typography.dart';
-import 'base_button.dart';
+import 'base.dart';
 
-class DSFRSecondaryButton extends DSFRGroupeableButton {
-  const DSFRSecondaryButton({
+/// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons#Bouton-tertiaire
+class DSFRTertiaryButton extends DSFRBaseButton {
+  final bool noOutline;
+
+  const DSFRTertiaryButton({
     super.key,
     required super.onPressed,
     required super.label,
     super.icon,
-    super.iconPosition = IconPosition.left,
-    super.mainAxisSize,
+    super.iconPosition,
+    this.noOutline = false,
   });
 
-  const DSFRSecondaryButton.icon({
+  const DSFRTertiaryButton.icon({
     super.key,
-    required super.onPressed,
     required super.icon,
+    required super.onPressed,
+    this.noOutline = false,
   }) : super.icon();
 
   @override
   Widget build(BuildContext context) {
+    final dsfrColors = DSFRColors.of(context);
     final dsfrSpacings = DSFRSizes.of(context);
     final dsfrTypography = DSFRTypography.of(context);
-    final dsfrColors = DSFRColors.of(context);
-    final dsfrButtonStyle = DSFRButtonStyle.of(context);
 
     final scale = MediaQuery.maybeOf(context)?.textScaleFactor ?? 1;
     final double gap =
@@ -43,14 +45,17 @@ class DSFRSecondaryButton extends DSFRGroupeableButton {
         : dsfrColors.textDisabledGrey;
 
     return RawMaterialButton(
-      onPressed: onPressed,
       elevation: 0.0,
       disabledElevation: 0.0,
       fillColor: Colors.transparent,
-      hoverColor: dsfrColors.blockColorHover,
-      splashColor: dsfrColors.blockColorActive,
       shape: RoundedRectangleBorder(
-        side: BorderSide(color: foregroundColor, width: 1),
+        side: !noOutline
+            ? BorderSide(
+                color: enabled
+                    ? dsfrColors.defaultBorderGrey
+                    : dsfrColors.textDisabledGrey,
+              )
+            : BorderSide.none,
       ),
       padding: EdgeInsets.symmetric(
         vertical: dsfrSpacings.w1,
@@ -58,11 +63,12 @@ class DSFRSecondaryButton extends DSFRGroupeableButton {
       ),
       constraints: const BoxConstraints(),
       textStyle: dsfrTypography.btnLabel.copyWith(color: foregroundColor),
+      onPressed: onPressed,
       child: iconOnly
           ? btnIcon
           : Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: mainAxisSize ?? dsfrButtonStyle.mainAxisSize,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 if (btnIcon != null && iconPosition == IconPosition.left) ...[
                   btnIcon,

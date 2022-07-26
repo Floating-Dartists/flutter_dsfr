@@ -101,16 +101,8 @@ void main() {
     goldenTest(
       'renders dark mode',
       fileName: 'tertiary_button_dark',
-      builder: () => Theme(
-        data: ThemeData(
-          fontFamily: 'Marianne',
-          brightness: Brightness.dark,
-          extensions: [
-            DSFRTypography.regular(),
-            const DSFRColors.dark(),
-            const DSFRSizes.regular(),
-          ],
-        ),
+      builder: () => DSFRColorsTheme(
+        data: const DSFRColors.dark(),
         child: widget,
       ),
     );

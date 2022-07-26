@@ -79,7 +79,7 @@ class DSFRBadge extends StatelessWidget {
       case DSFRBadgeType.info:
         return DSFRIcons.info;
       case DSFRBadgeType.warning:
-        return DSFRIcons.warning;
+        return DSFRIcons.alertFill;
       case DSFRBadgeType.news:
         return DSFRIcons.flashLightFill;
     }
