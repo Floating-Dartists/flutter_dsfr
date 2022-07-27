@@ -120,14 +120,17 @@ class ColorPalette {
   static const grey1000Active = Color(0xFFededed);
 
   static const error125 = Color(0xFF412121);
-  static const error425 = Color(0xFFe10600);
-  static const error625 = Color(0xFFFf3333);
+  static const error425 = Color(0xFFce0500);
+  static const error625 = Color(0xFFff5655);
   static const error950 = Color(0xFFffe9e9);
 
   static const success125 = Color(0xFF1e2e22);
-  static const success425 = Color(0xFF008941);
-  static const success625 = Color(0xFF00eb5e);
+  static const success425 = Color(0xFF18753c);
+  static const success525 = Color(0xFF1f8d49);
+  static const success625 = Color(0xFF27a658);
+  static const success850 = Color(0xFF3bea7e);
   static const success950 = Color(0xFFb8fec9);
+  static const success975 = Color(0xFFdffee6);
 
   static const info100 = Color(0xFF1d2437);
   static const info125 = Color(0xFF222a3f);

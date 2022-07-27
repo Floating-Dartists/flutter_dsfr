@@ -86,12 +86,13 @@ class _FormMessage extends StatelessWidget {
           DSFRIcon(
             icon,
             color: color,
-            size: (dsfrTypography.frErrorText.fontSize ?? 12.0) + 2,
+            size: (dsfrTypography.mention.fontSize ?? 12.0) + 2,
           ),
           const SizedBox(width: 2.0),
           Text(
             message,
-            style: dsfrTypography.frErrorText.copyWith(color: color),
+            style: dsfrTypography.mention
+                .copyWith(color: color, fontWeight: FontWeight.normal),
           ),
         ],
       ),

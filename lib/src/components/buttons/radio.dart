@@ -4,8 +4,6 @@ import '../../theme/colors.dart';
 import '../../theme/sizes.dart';
 import '../../theme/typography.dart';
 
-const _kRadioSize = Size.square(15.0);
-
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088553/Boutons+radio+-+Radio+button
 class DSFRRadioButton<T> extends StatelessWidget {
   final String label;
@@ -36,13 +34,20 @@ class DSFRRadioButton<T> extends StatelessWidget {
 
     final Color foregroundColor;
     if (disabled) {
-      foregroundColor = dsfrColors.frFieldsetDisabled;
+      foregroundColor = dsfrColors.disabledGrey;
     } else if (hasError) {
-      foregroundColor = dsfrColors.error;
+      foregroundColor = dsfrColors.defaultError;
     } else if (isValid) {
-      foregroundColor = dsfrColors.success;
+      foregroundColor = dsfrColors.defaultSuccess;
     } else {
-      foregroundColor = dsfrColors.frLabel;
+      foregroundColor = dsfrColors.highGrey;
+    }
+
+    final Color descriptionColor;
+    if (disabled) {
+      descriptionColor = dsfrColors.disabledGrey;
+    } else {
+      descriptionColor = dsfrColors.mentionGrey;
     }
 
     return Theme(
@@ -53,30 +58,16 @@ class DSFRRadioButton<T> extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              if (disabled)
-                Container(
-                  height: _kRadioSize.height,
-                  width: _kRadioSize.width,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: disabled ? dsfrColors.g200 : Colors.transparent,
-                  ),
-                ),
-              Radio<T>(
-                value: value,
-                groupValue: groupValue,
-                onChanged: onChanged,
-                activeColor: dsfrColors.radioActive,
-                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                visualDensity: const VisualDensity(
-                  horizontal: VisualDensity.minimumDensity,
-                  vertical: VisualDensity.minimumDensity,
-                ),
-              ),
-            ],
+          Radio<T>(
+            value: value,
+            groupValue: groupValue,
+            onChanged: onChanged,
+            activeColor: dsfrColors.backgroundActiveBlueFrance,
+            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            visualDensity: const VisualDensity(
+              horizontal: VisualDensity.minimumDensity,
+              vertical: VisualDensity.minimumDensity,
+            ),
           ),
           SizedBox(width: dsfrSizes.w4),
           Text.rich(
@@ -86,12 +77,12 @@ class DSFRRadioButton<T> extends StatelessWidget {
                 if (description != null)
                   TextSpan(
                     text: '\n$description',
-                    style: dsfrTypography.frHintText
-                        .copyWith(color: dsfrColors.frHintText),
+                    style: dsfrTypography.mention
+                        .copyWith(color: descriptionColor),
                   ),
               ],
             ),
-            style: dsfrTypography.frLabel.copyWith(color: foregroundColor),
+            style: dsfrTypography.body.copyWith(color: foregroundColor),
           ),
         ],
       ),

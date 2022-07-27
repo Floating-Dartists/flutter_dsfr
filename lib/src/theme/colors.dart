@@ -12,6 +12,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color backgroundActionHighBlueFrance;
   final Color backgroundActionHighBlueFranceHover;
   final Color backgroundActionHighBlueFranceActive;
+  final Color backgroundActiveBlueFrance;
   final Color textInvertedBlueFrance;
   final Color borderActionHighBlueFrance;
   final Color blockColorHover;
@@ -37,14 +38,14 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color badgeWarning;
   final Color badgeNews;
   final Color banner;
-  final Color radioActive;
-  final Color frLabel;
-  final Color frFieldsetDisabled;
-  final Color frHintText;
   final Color g200;
-  final Color g600;
-  final Color g700;
   final Color g800;
+  final Color highGrey;
+  final Color disabledGrey;
+  final Color mentionGrey;
+  final Color defaultError;
+  final Color defaultSuccess;
+  final Color titleGrey;
 
   const DSFRColors._({
     required this.frConnectHover,
@@ -53,6 +54,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.backgroundActionHighBlueFrance,
     required this.backgroundActionHighBlueFranceHover,
     required this.backgroundActionHighBlueFranceActive,
+    required this.backgroundActiveBlueFrance,
     required this.textInvertedBlueFrance,
     required this.borderActionHighBlueFrance,
     required this.blockColorHover,
@@ -78,14 +80,14 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.badgeWarning,
     required this.badgeNews,
     required this.banner,
-    required this.radioActive,
-    required this.frLabel,
-    required this.frFieldsetDisabled,
-    required this.frHintText,
     required this.g200,
-    required this.g600,
-    required this.g700,
     required this.g800,
+    required this.highGrey,
+    required this.disabledGrey,
+    required this.mentionGrey,
+    required this.defaultError,
+    required this.defaultSuccess,
+    required this.titleGrey,
   });
 
   const DSFRColors.light()
@@ -98,6 +100,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
               ColorPalette.blueFranceSun113Hover,
           backgroundActionHighBlueFranceActive:
               ColorPalette.blueFranceSun113Active,
+          backgroundActiveBlueFrance: ColorPalette.blueFranceSun113,
           textInvertedBlueFrance: ColorPalette.blueFrance975,
           borderActionHighBlueFrance: ColorPalette.blueFranceSun113,
           blockColorHover: const Color.fromRGBO(224, 224, 224, 0.5),
@@ -123,14 +126,14 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           badgeWarning: ColorPalette.warning950,
           badgeNews: ColorPalette.yellowTournesol950,
           banner: ColorPalette.info950,
-          radioActive: ColorPalette.blueFranceSun113,
-          frLabel: ColorPalette.grey75,
-          frFieldsetDisabled: const Color(0xFF6a6a6a),
-          frHintText: const Color(0xFF6a6a6a),
           g200: const Color(0xFFf0f0f0),
-          g600: const Color(0xFF6a6a6a),
-          g700: const Color(0xFF383838),
           g800: ColorPalette.grey75,
+          highGrey: ColorPalette.grey50,
+          disabledGrey: ColorPalette.grey925,
+          mentionGrey: ColorPalette.grey425,
+          defaultError: ColorPalette.error425,
+          defaultSuccess: ColorPalette.success425,
+          titleGrey: ColorPalette.grey50,
         );
 
   const DSFRColors.dark()
@@ -142,6 +145,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           backgroundActionHighBlueFranceHover: ColorPalette.blueFrance625Hover,
           backgroundActionHighBlueFranceActive:
               ColorPalette.blueFrance625Active,
+          backgroundActiveBlueFrance: ColorPalette.blueFrance625,
           textInvertedBlueFrance: ColorPalette.blueFranceSun113,
           borderActionHighBlueFrance: const Color(0xFF9a9aff),
           blockColorHover: const Color.fromRGBO(65, 65, 65, 0.5),
@@ -167,14 +171,14 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           badgeWarning: ColorPalette.warning125,
           badgeNews: ColorPalette.yellowTournesol100,
           banner: ColorPalette.info100,
-          radioActive: const Color(0xFF9a9aff),
-          frLabel: Colors.white,
-          frFieldsetDisabled: ColorPalette.grey850,
-          frHintText: const Color(0xFF6a6a6a),
           g200: const Color(0xFF383838),
-          g700: const Color(0xFFf0f0f0),
-          g600: const Color(0xFFe7e7e7),
           g800: Colors.white,
+          highGrey: Colors.white,
+          disabledGrey: ColorPalette.grey125,
+          mentionGrey: ColorPalette.grey625,
+          defaultError: ColorPalette.error625,
+          defaultSuccess: ColorPalette.success625,
+          titleGrey: Colors.white,
         );
 
   static DSFRColors of(BuildContext context) =>
@@ -190,6 +194,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       backgroundActionHighBlueFranceHover: backgroundActionHighBlueFranceHover,
       backgroundActionHighBlueFranceActive:
           backgroundActionHighBlueFranceActive,
+      backgroundActiveBlueFrance: backgroundActiveBlueFrance,
       textInvertedBlueFrance: textInvertedBlueFrance,
       borderActionHighBlueFrance: borderActionHighBlueFrance,
       blockColorHover: blockColorHover,
@@ -215,14 +220,14 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       badgeWarning: badgeWarning,
       badgeNews: badgeNews,
       banner: banner,
-      radioActive: radioActive,
-      frLabel: frLabel,
-      frFieldsetDisabled: frFieldsetDisabled,
-      frHintText: frHintText,
       g200: g200,
-      g600: g600,
-      g700: g700,
       g800: g800,
+      highGrey: highGrey,
+      disabledGrey: disabledGrey,
+      mentionGrey: mentionGrey,
+      defaultError: defaultError,
+      defaultSuccess: defaultSuccess,
+      titleGrey: titleGrey,
     );
   }
 
@@ -249,6 +254,11 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       backgroundActionHighBlueFranceActive: Color.lerp(
         backgroundActionHighBlueFranceActive,
         other.backgroundActionHighBlueFranceActive,
+        t,
+      )!,
+      backgroundActiveBlueFrance: Color.lerp(
+        backgroundActiveBlueFrance,
+        other.backgroundActiveBlueFrance,
         t,
       )!,
       textInvertedBlueFrance: Color.lerp(
@@ -290,15 +300,14 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       badgeWarning: Color.lerp(badgeWarning, other.badgeWarning, t)!,
       badgeNews: Color.lerp(badgeNews, other.badgeNews, t)!,
       banner: Color.lerp(banner, other.banner, t)!,
-      radioActive: Color.lerp(radioActive, other.radioActive, t)!,
-      frLabel: Color.lerp(frLabel, other.frLabel, t)!,
-      frFieldsetDisabled:
-          Color.lerp(frFieldsetDisabled, other.frFieldsetDisabled, t)!,
-      frHintText: Color.lerp(frHintText, other.frHintText, t)!,
       g200: Color.lerp(g200, other.g200, t)!,
-      g600: Color.lerp(g600, other.g600, t)!,
-      g700: Color.lerp(g700, other.g700, t)!,
       g800: Color.lerp(g800, other.g800, t)!,
+      highGrey: Color.lerp(highGrey, other.highGrey, t)!,
+      disabledGrey: Color.lerp(disabledGrey, other.disabledGrey, t)!,
+      mentionGrey: Color.lerp(mentionGrey, other.mentionGrey, t)!,
+      defaultError: Color.lerp(defaultError, other.defaultError, t)!,
+      defaultSuccess: Color.lerp(defaultSuccess, other.defaultSuccess, t)!,
+      titleGrey: Color.lerp(titleGrey, other.titleGrey, t)!,
     );
   }
 
@@ -319,6 +328,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           'backgroundActionHighBlueFranceActive',
           backgroundActionHighBlueFranceActive,
         ),
+        NamedProperty('backgroundActiveBlueFrance', backgroundActiveBlueFrance),
         NamedProperty('textInvertedBlueFrance', textInvertedBlueFrance),
         NamedProperty('borderActionHighBlueFrance', borderActionHighBlueFrance),
         NamedProperty('blockColorHover', blockColorHover),
@@ -344,14 +354,13 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('badgeWarning', badgeWarning),
         NamedProperty('badgeNews', badgeNews),
         NamedProperty('banner', banner),
-        NamedProperty('radioActive', radioActive),
-        NamedProperty('frLabel', frLabel),
-        NamedProperty('frFieldsetDisabled', frFieldsetDisabled),
-        NamedProperty('frHintText', frHintText),
         NamedProperty('g200', g200),
-        NamedProperty('g600', g600),
-        NamedProperty('g700', g700),
         NamedProperty('g800', g800),
+        NamedProperty('highGrey', highGrey),
+        NamedProperty('disabledGrey', disabledGrey),
+        NamedProperty('mentionGrey', mentionGrey),
+        NamedProperty('defaultError', defaultError),
+        NamedProperty('defaultSuccess', defaultSuccess),
       ];
 }
 
