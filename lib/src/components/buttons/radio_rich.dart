@@ -38,7 +38,7 @@ class DSFRRadioRich<T> extends DSFRBaseRadio<T> {
     } else if (isSelected) {
       borderColor = dsfrColors.activeBlueFrance;
     } else {
-      borderColor = dsfrColors.defaultBorderGrey;
+      borderColor = dsfrColors.defaultGrey;
     }
 
     final Color descriptionColor;
@@ -97,7 +97,7 @@ class DSFRRadioRich<T> extends DSFRBaseRadio<T> {
               ),
             ),
             Container(
-              color: dsfrColors.defaultBorderGrey,
+              color: dsfrColors.defaultGrey,
               width: 1,
               height: 80,
             ),

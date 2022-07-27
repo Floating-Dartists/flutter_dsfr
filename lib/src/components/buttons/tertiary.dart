@@ -52,7 +52,7 @@ class DSFRTertiaryButton extends DSFRBaseButton {
         side: !noOutline
             ? BorderSide(
                 color: enabled
-                    ? dsfrColors.defaultBorderGrey
+                    ? dsfrColors.defaultGrey
                     : dsfrColors.textDisabledGrey,
               )
             : BorderSide.none,
