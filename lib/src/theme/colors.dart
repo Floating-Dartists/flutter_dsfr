@@ -332,7 +332,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('borderActionHighBlueFrance', borderActionHighBlueFrance),
         NamedProperty('blockColorHover', blockColorHover),
         NamedProperty('blockColorActive', blockColorActive),
-        NamedProperty('defaultBorderGrey', defaultGrey),
+        NamedProperty('defaultGrey', defaultGrey),
         NamedProperty('backgroundDisabledGrey', backgroundDisabledGrey),
         NamedProperty('textDisabledGrey', textDisabledGrey),
         NamedProperty('alertsBackground', alertsBackground),
