@@ -7,7 +7,7 @@ import '../../theme/button_style.dart';
 import '../../theme/colors.dart';
 import '../../theme/sizes.dart';
 import '../../theme/typography.dart';
-import 'base.dart';
+import 'base_button.dart';
 
 class DSFRSecondaryButton extends DSFRGroupeableButton {
   const DSFRSecondaryButton({

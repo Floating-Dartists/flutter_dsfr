@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../../theme/colors.dart';
 import '../../theme/sizes.dart';
 import '../../theme/typography.dart';
-import 'base.dart';
+import 'base_button.dart';
 
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons#Bouton-tertiaire
 class DSFRTertiaryButton extends DSFRBaseButton {

@@ -1,27 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/colors.dart';
-import '../../theme/sizes.dart';
-import '../../theme/typography.dart';
+import '../../../flutter_dsfr.dart';
+import 'base_radio.dart';
 
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088553/Boutons+radio+-+Radio+button
-class DSFRRadioButton<T> extends StatelessWidget {
-  final String label;
-  final String? description;
-  final T value;
-  final T? groupValue;
-  final ValueChanged<T?>? onChanged;
-  final bool hasError;
+class DSFRRadioButton<T> extends DSFRBaseRadio<T> {
   final bool isValid;
 
   const DSFRRadioButton({
     super.key,
-    required this.label,
-    required this.value,
-    required this.groupValue,
-    required this.onChanged,
-    this.description,
-    this.hasError = false,
+    required super.label,
+    required super.value,
+    required super.groupValue,
+    required super.onChanged,
+    super.description,
+    super.hasError = false,
     this.isValid = false,
   });
 
@@ -30,7 +23,6 @@ class DSFRRadioButton<T> extends StatelessWidget {
     final dsfrColors = DSFRColors.of(context);
     final dsfrTypography = DSFRTypography.of(context);
     final dsfrSizes = DSFRSizes.of(context);
-    final disabled = onChanged == null;
 
     final Color foregroundColor;
     if (disabled) {
@@ -62,7 +54,7 @@ class DSFRRadioButton<T> extends StatelessWidget {
             value: value,
             groupValue: groupValue,
             onChanged: onChanged,
-            activeColor: dsfrColors.backgroundActiveBlueFrance,
+            activeColor: dsfrColors.activeBlueFrance,
             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
             visualDensity: const VisualDensity(
               horizontal: VisualDensity.minimumDensity,
