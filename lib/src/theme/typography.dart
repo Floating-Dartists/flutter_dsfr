@@ -20,9 +20,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle boldText;
   final TextStyle badgeLabel;
   final TextStyle badgeLabelSmall;
-  final TextStyle frLabel;
-  final TextStyle frFieldsetLegend;
-  final TextStyle frErrorText;
   final TextStyle body;
   final TextStyle mention;
 
@@ -36,9 +33,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.boldText,
     required this.badgeLabel,
     required this.badgeLabelSmall,
-    required this.frLabel,
-    required this.frFieldsetLegend,
-    required this.frErrorText,
     required this.body,
     required this.mention,
   });
@@ -107,27 +101,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         fontWeight: FontWeight.w700,
         decoration: TextDecoration.none,
       ),
-      frLabel: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 16.0,
-        fontWeight: FontWeight.normal,
-        decoration: TextDecoration.none,
-      ),
-      frFieldsetLegend: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 16.0,
-        fontWeight: FontWeight.w400,
-        decoration: TextDecoration.none,
-      ),
-      frErrorText: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 12.0,
-        fontWeight: FontWeight.normal,
-        decoration: TextDecoration.none,
-      ),
       body: TextStyle(
         fontFamily: 'Marianne',
         package: packageName,
@@ -160,9 +133,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       boldText: boldText,
       badgeLabel: badgeLabel,
       badgeLabelSmall: badgeLabelSmall,
-      frLabel: frLabel,
-      frFieldsetLegend: frFieldsetLegend,
-      frErrorText: frErrorText,
       body: body,
       mention: mention,
     );
@@ -184,10 +154,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       badgeLabel: TextStyle.lerp(badgeLabel, other.badgeLabel, t)!,
       badgeLabelSmall:
           TextStyle.lerp(badgeLabelSmall, other.badgeLabelSmall, t)!,
-      frLabel: TextStyle.lerp(frLabel, other.frLabel, t)!,
-      frFieldsetLegend:
-          TextStyle.lerp(frFieldsetLegend, other.frFieldsetLegend, t)!,
-      frErrorText: TextStyle.lerp(frErrorText, other.frErrorText, t)!,
       body: TextStyle.lerp(body, other.body, t)!,
       mention: TextStyle.lerp(mention, other.mention, t)!,
     );
@@ -204,9 +170,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('boldText', boldText),
         NamedProperty('badgeLabel', badgeLabel),
         NamedProperty('badgeLabelSmall', badgeLabelSmall),
-        NamedProperty('frLabel', frLabel),
-        NamedProperty('frFieldsetLegend', frFieldsetLegend),
-        NamedProperty('frErrorText', frErrorText),
         NamedProperty('body', body),
         NamedProperty('mention', mention),
       ];

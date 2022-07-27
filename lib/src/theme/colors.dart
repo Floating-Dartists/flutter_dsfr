@@ -38,8 +38,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color badgeWarning;
   final Color badgeNews;
   final Color banner;
-  final Color frLabel;
-  final Color frHintText;
   final Color g200;
   final Color g800;
   final Color highGrey;
@@ -82,8 +80,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.badgeWarning,
     required this.badgeNews,
     required this.banner,
-    required this.frLabel,
-    required this.frHintText,
     required this.g200,
     required this.g800,
     required this.highGrey,
@@ -130,8 +126,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           badgeWarning: ColorPalette.warning950,
           badgeNews: ColorPalette.yellowTournesol950,
           banner: ColorPalette.info950,
-          frLabel: ColorPalette.grey75,
-          frHintText: const Color(0xFF6a6a6a),
           g200: const Color(0xFFf0f0f0),
           g800: ColorPalette.grey75,
           highGrey: ColorPalette.grey50,
@@ -177,8 +171,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           badgeWarning: ColorPalette.warning125,
           badgeNews: ColorPalette.yellowTournesol100,
           banner: ColorPalette.info100,
-          frLabel: Colors.white,
-          frHintText: const Color(0xFF6a6a6a),
           g200: const Color(0xFF383838),
           g800: Colors.white,
           highGrey: Colors.white,
@@ -228,8 +220,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       badgeWarning: badgeWarning,
       badgeNews: badgeNews,
       banner: banner,
-      frLabel: frLabel,
-      frHintText: frHintText,
       g200: g200,
       g800: g800,
       highGrey: highGrey,
@@ -310,8 +300,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       badgeWarning: Color.lerp(badgeWarning, other.badgeWarning, t)!,
       badgeNews: Color.lerp(badgeNews, other.badgeNews, t)!,
       banner: Color.lerp(banner, other.banner, t)!,
-      frLabel: Color.lerp(frLabel, other.frLabel, t)!,
-      frHintText: Color.lerp(frHintText, other.frHintText, t)!,
       g200: Color.lerp(g200, other.g200, t)!,
       g800: Color.lerp(g800, other.g800, t)!,
       highGrey: Color.lerp(highGrey, other.highGrey, t)!,
@@ -366,8 +354,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('badgeWarning', badgeWarning),
         NamedProperty('badgeNews', badgeNews),
         NamedProperty('banner', banner),
-        NamedProperty('frLabel', frLabel),
-        NamedProperty('frHintText', frHintText),
         NamedProperty('g200', g200),
         NamedProperty('g800', g800),
         NamedProperty('highGrey', highGrey),
