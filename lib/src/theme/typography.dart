@@ -13,9 +13,10 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle alertsTitle;
   final TextStyle defaultText;
   final TextStyle boldText;
-  final TextStyle standard;
+  final TextStyle medium;
   final TextStyle mention;
   final TextStyle detail;
+  final TextStyle regular;
 
   const DSFRTypography._({
     required this.frConnectLogin,
@@ -24,9 +25,10 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.alertsTitle,
     required this.defaultText,
     required this.boldText,
-    required this.standard,
+    required this.medium,
     required this.mention,
     required this.detail,
+    required this.regular,
   });
 
   const DSFRTypography.small()
@@ -72,7 +74,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
-          standard: const TextStyle(
+          medium: const TextStyle(
             fontFamily: 'Marianne',
             package: packageName,
             fontSize: 14.0,
@@ -91,6 +93,13 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
             package: packageName,
             fontSize: 12.0,
             fontWeight: FontWeight.w700,
+            decoration: TextDecoration.none,
+          ),
+          regular: const TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
+            fontSize: 16.0,
+            fontWeight: FontWeight.w400,
             decoration: TextDecoration.none,
           ),
         );
@@ -138,7 +147,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
-          standard: const TextStyle(
+          medium: const TextStyle(
             fontFamily: 'Marianne',
             package: packageName,
             fontSize: 16.0,
@@ -157,6 +166,13 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
             package: packageName,
             fontSize: 14.0,
             fontWeight: FontWeight.w700,
+            decoration: TextDecoration.none,
+          ),
+          regular: const TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
+            fontSize: 16.0,
+            fontWeight: FontWeight.w400,
             decoration: TextDecoration.none,
           ),
         );
@@ -204,7 +220,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
-          standard: const TextStyle(
+          medium: const TextStyle(
             fontFamily: 'Marianne',
             package: packageName,
             fontSize: 18.0,
@@ -225,6 +241,13 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
+          regular: const TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
+            fontSize: 16.0,
+            fontWeight: FontWeight.w400,
+            decoration: TextDecoration.none,
+          ),
         );
 
   static DSFRTypography of(BuildContext context) =>
@@ -239,9 +262,10 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       alertsTitle: alertsTitle,
       defaultText: defaultText,
       boldText: boldText,
-      standard: standard,
+      medium: medium,
       mention: mention,
       detail: detail,
+      regular: regular,
     );
   }
 
@@ -257,9 +281,10 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       alertsTitle: TextStyle.lerp(alertsTitle, other.alertsTitle, t)!,
       defaultText: TextStyle.lerp(defaultText, other.defaultText, t)!,
       boldText: TextStyle.lerp(boldText, other.boldText, t)!,
-      standard: TextStyle.lerp(standard, other.standard, t)!,
+      medium: TextStyle.lerp(medium, other.medium, t)!,
       mention: TextStyle.lerp(mention, other.mention, t)!,
       detail: TextStyle.lerp(detail, other.detail, t)!,
+      regular: TextStyle.lerp(regular, other.regular, t)!,
     );
   }
 
@@ -271,9 +296,10 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('alertsTitle', alertsTitle),
         NamedProperty('defaultText', defaultText),
         NamedProperty('boldText', boldText),
-        NamedProperty('standard', standard),
+        NamedProperty('medium', medium),
         NamedProperty('mention', mention),
         NamedProperty('detail', detail),
+        NamedProperty('regular', regular),
       ];
 }
 

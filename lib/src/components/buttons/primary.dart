@@ -64,7 +64,7 @@ class DSFRPrimaryButton extends DSFRGroupeableButton {
               horizontal: spacings.horizontal,
             ),
       constraints: const BoxConstraints(),
-      textStyle: dsfrTypography.standard.copyWith(color: foregroundColor),
+      textStyle: dsfrTypography.medium.copyWith(color: foregroundColor),
       onPressed: onPressed,
       child: iconOnly
           ? btnIcon

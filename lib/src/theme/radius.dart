@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/named_property.dart';
+
 @immutable
 class DSFRRadius extends ThemeExtension<DSFRRadius> {
   final Radius small;
@@ -21,6 +23,10 @@ class DSFRRadius extends ThemeExtension<DSFRRadius> {
     if (other is! DSFRRadius) return this;
     return DSFRRadius._(small: Radius.lerp(small, other.small, t)!);
   }
+
+  List<NamedProperty<Radius>> get props => [
+        NamedProperty('small', small),
+      ];
 }
 
 @immutable

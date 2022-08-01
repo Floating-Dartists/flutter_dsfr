@@ -85,7 +85,7 @@ class _DSFRRadioGroupState<T> extends State<DSFRRadioGroup<T>> {
                 ),
             ],
           ),
-          style: dsfrTypography.standard.copyWith(color: dsfrColors.titleGrey),
+          style: dsfrTypography.regular.copyWith(color: dsfrColors.titleGrey),
         ),
         SizedBox(height: dsfrSizes.v3),
         Wrap(
