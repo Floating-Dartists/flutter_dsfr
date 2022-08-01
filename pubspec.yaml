@@ -13,7 +13,7 @@ dependencies:
   url_launcher: ^6.1.3
 
 dev_dependencies:
-  alchemist: ^0.3.3
+  alchemist: ^0.4.1
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
