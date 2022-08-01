@@ -10,14 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DynamicTheme(themedWidgetBuilder: (_, themeMode, __) {
-      return MaterialApp(
+      return DSFRApp(
         themeMode: themeMode,
-        theme: ThemeData.light().copyWith(
-          extensions: dsfrExtensionsLight,
-        ),
-        darkTheme: ThemeData.dark().copyWith(
-          extensions: dsfrExtensionsDark,
-        ),
         home: const MyHomePage(),
       );
     });

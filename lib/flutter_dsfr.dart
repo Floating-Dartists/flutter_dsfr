@@ -29,6 +29,7 @@ export 'src/components/buttons/tertiary.dart';
 export 'src/components/buttons_group/buttons_group.dart';
 export 'src/components/radio_group/radio_group.dart';
 export 'src/components/radio_group/radio_group_form_field.dart';
+export 'src/dsfr_app.dart';
 export 'src/theme/button_style.dart';
 export 'src/theme/colors.dart';
 export 'src/theme/icons.dart';

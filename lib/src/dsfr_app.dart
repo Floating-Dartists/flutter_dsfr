@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../flutter_dsfr.dart';
 
 /// An application that uses the french government design system.
 class DSFRApp extends StatefulWidget {
@@ -206,6 +208,60 @@ class _DSFRAppState extends State<DSFRApp> {
 
   @override
   Widget build(BuildContext context) {
+    final result = _buildDsfrApp(context);
+    return result;
+  }
+
+  Iterable<LocalizationsDelegate<dynamic>> get _localizationsDelegates sync* {
+    if (widget.localizationsDelegates != null) {
+      yield* widget.localizationsDelegates!;
+    }
+    yield DefaultMaterialLocalizations.delegate;
+    yield DefaultCupertinoLocalizations.delegate;
+    yield DefaultWidgetsLocalizations.delegate;
+  }
+
+  Widget _dsfrBuilder(BuildContext context, Widget? child) {
+    final mode = widget.themeMode ?? ThemeMode.system;
+    final platformBrightness = MediaQuery.platformBrightnessOf(context);
+    final useDarkTheme = mode == ThemeMode.dark ||
+        (mode == ThemeMode.system && platformBrightness == Brightness.dark);
+
+    const typography = DSFRTypography.regular();
+    const sizes = DSFRSizes.regular();
+    const buttonStyle = DSFRButtonStyle.regular();
+
+    late final ThemeData theme;
+    late final DSFRColors colors;
+    if (useDarkTheme) {
+      colors = const DSFRColors.dark();
+      theme = ThemeData.dark().copyWith(
+        brightness: Brightness.dark,
+        extensions: [colors, typography, sizes, buttonStyle],
+      );
+    } else {
+      colors = const DSFRColors.light();
+      theme = ThemeData.light().copyWith(
+        brightness: Brightness.light,
+        extensions: [colors, typography, sizes, buttonStyle],
+      );
+    }
+
+    return Theme(
+      data: theme,
+      child: DefaultTextStyle(
+        style: TextStyle(color: colors.highGrey),
+        child: widget.builder != null
+            ?
+            // See the MaterialApp source code for the explanation for
+            // wrapping a builder in a builder
+            Builder(builder: (context) => widget.builder!(context, child))
+            : child ?? const SizedBox.shrink(),
+      ),
+    );
+  }
+
+  Widget _buildDsfrApp(BuildContext context) {
     if (_usesRouter) {
       return MaterialApp.router(
         key: GlobalObjectKey(this),
@@ -213,14 +269,14 @@ class _DSFRAppState extends State<DSFRApp> {
         routeInformationParser: widget.routeInformationParser!,
         routerDelegate: widget.routerDelegate!,
         backButtonDispatcher: widget.backButtonDispatcher,
-        builder: widget.builder,
+        builder: _dsfrBuilder,
         title: widget.title,
         onGenerateTitle: widget.onGenerateTitle,
         color: widget.color,
         locale: widget.locale,
         localeResolutionCallback: widget.localeResolutionCallback,
         localeListResolutionCallback: widget.localeListResolutionCallback,
-        localizationsDelegates: widget.localizationsDelegates,
+        localizationsDelegates: _localizationsDelegates,
         supportedLocales: widget.supportedLocales,
         showPerformanceOverlay: widget.showPerformanceOverlay,
         checkerboardRasterCacheImages: widget.checkerboardRasterCacheImages,
@@ -242,12 +298,12 @@ class _DSFRAppState extends State<DSFRApp> {
       onGenerateInitialRoutes: widget.onGenerateInitialRoutes,
       onUnknownRoute: widget.onUnknownRoute,
       navigatorObservers: widget.navigatorObservers!,
-      builder: widget.builder,
+      builder: _dsfrBuilder,
       title: widget.title,
       onGenerateTitle: widget.onGenerateTitle,
       color: widget.color,
       locale: widget.locale,
-      localizationsDelegates: widget.localizationsDelegates,
+      localizationsDelegates: _localizationsDelegates,
       localeListResolutionCallback: widget.localeListResolutionCallback,
       localeResolutionCallback: widget.localeResolutionCallback,
       supportedLocales: widget.supportedLocales,
