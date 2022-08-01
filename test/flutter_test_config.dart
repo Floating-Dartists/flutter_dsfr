@@ -17,7 +17,7 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
         fontFamily: 'Marianne',
         brightness: Brightness.light,
         extensions: const [
-          DSFRTypography.regular(),
+          DSFRTypography.medium(),
           DSFRColors.light(),
           DSFRSizes.regular(),
           DSFRButtonStyle.regular(),

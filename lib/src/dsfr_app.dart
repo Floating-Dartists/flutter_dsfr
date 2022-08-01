@@ -227,7 +227,7 @@ class _DSFRAppState extends State<DSFRApp> {
     final useDarkTheme = mode == ThemeMode.dark ||
         (mode == ThemeMode.system && platformBrightness == Brightness.dark);
 
-    const typography = DSFRTypography.regular();
+    const typography = DSFRTypography.medium();
     const sizes = DSFRSizes.regular();
     const buttonStyle = DSFRButtonStyle.regular();
     const spacings = DSFRSpacings.medium();

@@ -10,7 +10,7 @@ void main() {
     fileName: 'typography',
     skip: isRunningInCi, // Test not needed in CI
     builder: () => GoldenTestGroup(
-      children: const DSFRTypography.regular()
+      children: const DSFRTypography.medium()
           .props
           .map<GoldenTestScenario>(
             (e) => GoldenTestScenario(

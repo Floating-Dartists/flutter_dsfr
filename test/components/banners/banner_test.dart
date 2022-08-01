@@ -107,7 +107,7 @@ void main() {
           fontFamily: 'Marianne',
           brightness: Brightness.dark,
           extensions: const [
-            DSFRTypography.regular(),
+            DSFRTypography.medium(),
             DSFRColors.dark(),
             DSFRSizes.regular(),
           ],
@@ -130,7 +130,7 @@ void main() {
           fontFamily: 'Marianne',
           brightness: Brightness.dark,
           extensions: const [
-            DSFRTypography.regular(),
+            DSFRTypography.medium(),
             DSFRColors.dark(),
             DSFRSizes.regular(),
           ],

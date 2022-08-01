@@ -33,7 +33,7 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.mention,
   });
 
-  const DSFRTypography.regular()
+  const DSFRTypography.medium()
       : this._(
           frConnectLogin: const TextStyle(
             fontFamily: 'Marianne',
