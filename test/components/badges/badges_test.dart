@@ -1,5 +1,4 @@
 import 'package:alchemist/alchemist.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_dsfr/flutter_dsfr.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -87,7 +86,7 @@ void main() {
           child: const DSFRBadge(
             label: "error sm",
             type: DSFRBadgeType.error,
-            size: DSFRBadgeSize.sm,
+            size: DSFRBadgeSize.small(),
           ),
         ),
         GoldenTestScenario(
@@ -95,7 +94,7 @@ void main() {
           child: const DSFRBadge(
             label: "success sm",
             type: DSFRBadgeType.success,
-            size: DSFRBadgeSize.sm,
+            size: DSFRBadgeSize.small(),
           ),
         ),
         GoldenTestScenario(
@@ -103,7 +102,7 @@ void main() {
           child: const DSFRBadge(
             label: "info sm",
             type: DSFRBadgeType.info,
-            size: DSFRBadgeSize.sm,
+            size: DSFRBadgeSize.small(),
           ),
         ),
         GoldenTestScenario(
@@ -111,7 +110,7 @@ void main() {
           child: const DSFRBadge(
             label: "warning sm",
             type: DSFRBadgeType.warning,
-            size: DSFRBadgeSize.sm,
+            size: DSFRBadgeSize.small(),
           ),
         ),
         GoldenTestScenario(
@@ -119,7 +118,7 @@ void main() {
           child: const DSFRBadge(
             label: "news sm",
             type: DSFRBadgeType.news,
-            size: DSFRBadgeSize.sm,
+            size: DSFRBadgeSize.small(),
           ),
         ),
         GoldenTestScenario(
@@ -127,7 +126,7 @@ void main() {
           child: const DSFRBadge(
             label: "error sm icon",
             type: DSFRBadgeType.error,
-            size: DSFRBadgeSize.sm,
+            size: DSFRBadgeSize.small(),
             showIcon: true,
           ),
         ),
@@ -136,7 +135,7 @@ void main() {
           child: const DSFRBadge(
             label: "success sm icon",
             type: DSFRBadgeType.success,
-            size: DSFRBadgeSize.sm,
+            size: DSFRBadgeSize.small(),
             showIcon: true,
           ),
         ),
@@ -145,7 +144,7 @@ void main() {
           child: const DSFRBadge(
             label: "info sm icon",
             type: DSFRBadgeType.info,
-            size: DSFRBadgeSize.sm,
+            size: DSFRBadgeSize.small(),
             showIcon: true,
           ),
         ),
@@ -154,7 +153,7 @@ void main() {
           child: const DSFRBadge(
             label: "warning sm icon",
             type: DSFRBadgeType.warning,
-            size: DSFRBadgeSize.sm,
+            size: DSFRBadgeSize.small(),
             showIcon: true,
           ),
         ),
@@ -163,7 +162,7 @@ void main() {
           child: const DSFRBadge(
             label: "news sm icon",
             type: DSFRBadgeType.news,
-            size: DSFRBadgeSize.sm,
+            size: DSFRBadgeSize.small(),
             showIcon: true,
           ),
         ),
@@ -179,16 +178,8 @@ void main() {
     goldenTest(
       'renders dark mode',
       fileName: 'badge_dark',
-      builder: () => Theme(
-        data: ThemeData(
-          fontFamily: 'Marianne',
-          brightness: Brightness.dark,
-          extensions: const [
-            DSFRTypography.regular(),
-            DSFRColors.dark(),
-            DSFRSizes.regular(),
-          ],
-        ),
+      builder: () => DSFRColorsTheme(
+        data: const DSFRColors.dark(),
         child: widget,
       ),
     );

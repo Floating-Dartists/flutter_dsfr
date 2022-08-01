@@ -11,16 +11,21 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
 
   await loadTestFonts();
 
+  const radius = DSFRRadius.regular();
+
   return AlchemistConfig.runWithConfig(
     config: AlchemistConfig(
       theme: ThemeData(
         fontFamily: 'Marianne',
         brightness: Brightness.light,
         extensions: const [
-          DSFRTypography.regular(),
+          DSFRTypography.medium(),
           DSFRColors.light(),
           DSFRSizes.regular(),
           DSFRButtonStyle.regular(),
+          DSFRSpacings.medium(),
+          radius,
+          DSFRBorderRadius(radius),
         ],
       ),
       platformGoldensConfig: const PlatformGoldensConfig(
