@@ -184,3 +184,5 @@ class DSFRSizes extends ThemeExtension<DSFRSizes> {
 }
 
 typedef DSFRSizesTheme = DSFRThemeDataWidget<DSFRSizes>;
+
+enum DSFRScale { small, medium, large }
