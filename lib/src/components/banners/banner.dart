@@ -44,7 +44,7 @@ class DSFRBanner extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                DSFRIcon(
+                Icon(
                   DSFRIcons.info,
                   color: textColor,
                   size: dsfrSizes.w3,

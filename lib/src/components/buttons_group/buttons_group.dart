@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../theme/button_style.dart';
 import '../../theme/sizes.dart';
-import '../buttons/base.dart';
+import '../buttons/base_button.dart';
 
 enum DSFRButtonsGroupBreakpoint {
   /// 576px

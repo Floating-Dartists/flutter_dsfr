@@ -104,7 +104,7 @@ class DSFRBadge extends StatelessWidget {
           children: <InlineSpan>[
             if (showIcon) ...[
               WidgetSpan(
-                child: DSFRIcon(
+                child: Icon(
                   _getIconData(),
                   color: textColor,
                   size: dsfrSizes.w2,

@@ -17,15 +17,16 @@ export 'src/components/badges/badge_size.dart';
 export 'src/components/badges/badge_type.dart';
 export 'src/components/banners/banner.dart';
 export 'src/components/banners/banner_link.dart';
-export 'src/components/buttons/base.dart'
+export 'src/components/buttons/base_button.dart'
     hide DSFRBaseButton, DSFRGroupeableButton;
 export 'src/components/buttons/france_connect.dart'
     hide InfoLinkButton, FranceConnectBase;
 export 'src/components/buttons/primary.dart';
+export 'src/components/buttons/radio.dart';
+export 'src/components/buttons/radio_rich.dart';
 export 'src/components/buttons/secondary.dart';
 export 'src/components/buttons/tertiary.dart';
 export 'src/components/buttons_group/buttons_group.dart';
-export 'src/components/icon/icon.dart';
 export 'src/components/radio_group/radio_group.dart';
 export 'src/components/radio_group/radio_group_form_field.dart';
 export 'src/theme/button_style.dart';
@@ -38,7 +39,7 @@ export 'src/theme/typography.dart';
 /// mode.
 final dsfrExtensionsLight = <ThemeExtension>[
   const DSFRColors.light(),
-  DSFRTypography.regular(),
+  const DSFRTypography.regular(),
   const DSFRSizes.regular(),
   const DSFRButtonStyle.regular(),
 ];
@@ -47,7 +48,7 @@ final dsfrExtensionsLight = <ThemeExtension>[
 /// mode.
 final dsfrExtensionsDark = <ThemeExtension>[
   const DSFRColors.dark(),
-  DSFRTypography.regular(),
+  const DSFRTypography.regular(),
   const DSFRSizes.regular(),
   const DSFRButtonStyle.regular(),
 ];

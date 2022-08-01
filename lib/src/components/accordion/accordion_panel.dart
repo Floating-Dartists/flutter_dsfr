@@ -46,7 +46,7 @@ class DSFRAccordionPanel extends StatelessWidget {
   }) {
     final iconData = _isExpanded ? DSFRIcons.substract : DSFRIcons.add;
 
-    return DSFRIcon(
+    return Icon(
       iconData,
       color: dsfrColors.text,
       size: dsfrSizes.w2,

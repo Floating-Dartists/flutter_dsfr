@@ -5,11 +5,7 @@ import 'theme_data_widget.dart';
 
 @immutable
 class DSFRTypography extends ThemeExtension<DSFRTypography> {
-  static String? _packageName = 'flutter_dsfr';
-  static String? get packageName => _packageName;
-
-  @visibleForTesting
-  static set packageName(String? value) => _packageName = value;
+  static const packageName = 'flutter_dsfr';
 
   final TextStyle frConnectLogin;
   final TextStyle frConnectBrand;
@@ -37,86 +33,85 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.mention,
   });
 
-  factory DSFRTypography.regular() {
-    return DSFRTypography._(
-      frConnectLogin: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 17.0,
-        fontWeight: FontWeight.normal,
-        decoration: TextDecoration.none,
-      ),
-      frConnectBrand: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 18.0,
-        fontWeight: FontWeight.w700,
-        decoration: TextDecoration.none,
-      ),
-      frConnectGroup: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 12.0,
-        fontWeight: FontWeight.normal,
-        decoration: TextDecoration.none,
-      ),
-      btnLabel: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 16.0,
-        fontWeight: FontWeight.w500,
-        decoration: TextDecoration.none,
-      ),
-      alertsTitle: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 20.0,
-        fontWeight: FontWeight.w700,
-        decoration: TextDecoration.none,
-      ),
-      defaultText: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontWeight: FontWeight.normal,
-        decoration: TextDecoration.none,
-      ),
-      boldText: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 16.0,
-        fontWeight: FontWeight.w700,
-        decoration: TextDecoration.none,
-      ),
-      badgeLabel: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 14.0,
-        fontWeight: FontWeight.w700,
-        decoration: TextDecoration.none,
-      ),
-      badgeLabelSmall: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 12.0,
-        fontWeight: FontWeight.w700,
-        decoration: TextDecoration.none,
-      ),
-      body: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 16.0,
-        fontWeight: FontWeight.w400,
-        decoration: TextDecoration.none,
-      ),
-      mention: TextStyle(
-        fontFamily: 'Marianne',
-        package: packageName,
-        fontSize: 12.0,
-        fontWeight: FontWeight.w400,
-        decoration: TextDecoration.none,
-      ),
-    );
-  }
+  const DSFRTypography.regular()
+      : this._(
+          frConnectLogin: const TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
+            fontSize: 17.0,
+            fontWeight: FontWeight.normal,
+            decoration: TextDecoration.none,
+          ),
+          frConnectBrand: const TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
+            fontSize: 18.0,
+            fontWeight: FontWeight.w700,
+            decoration: TextDecoration.none,
+          ),
+          frConnectGroup: const TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
+            fontSize: 12.0,
+            fontWeight: FontWeight.normal,
+            decoration: TextDecoration.none,
+          ),
+          btnLabel: const TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
+            fontSize: 16.0,
+            fontWeight: FontWeight.w500,
+            decoration: TextDecoration.none,
+          ),
+          alertsTitle: const TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
+            fontSize: 20.0,
+            fontWeight: FontWeight.w700,
+            decoration: TextDecoration.none,
+          ),
+          defaultText: const TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
+            fontWeight: FontWeight.normal,
+            decoration: TextDecoration.none,
+          ),
+          boldText: const TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
+            fontSize: 16.0,
+            fontWeight: FontWeight.w700,
+            decoration: TextDecoration.none,
+          ),
+          badgeLabel: const TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
+            fontSize: 14.0,
+            fontWeight: FontWeight.w700,
+            decoration: TextDecoration.none,
+          ),
+          badgeLabelSmall: const TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
+            fontSize: 12.0,
+            fontWeight: FontWeight.w700,
+            decoration: TextDecoration.none,
+          ),
+          body: const TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
+            fontSize: 16.0,
+            fontWeight: FontWeight.w400,
+            decoration: TextDecoration.none,
+          ),
+          mention: const TextStyle(
+            fontFamily: 'Marianne',
+            package: packageName,
+            fontSize: 12.0,
+            fontWeight: FontWeight.w400,
+            decoration: TextDecoration.none,
+          ),
+        );
 
   static DSFRTypography of(BuildContext context) =>
       Theme.of(context).extension<DSFRTypography>()!;

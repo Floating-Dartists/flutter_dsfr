@@ -83,7 +83,7 @@ class _FormMessage extends StatelessWidget {
       padding: EdgeInsets.only(top: dsfrSizes.v3),
       child: Row(
         children: [
-          DSFRIcon(
+          Icon(
             icon,
             color: color,
             size: (dsfrTypography.mention.fontSize ?? 12.0) + 2,

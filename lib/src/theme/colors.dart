@@ -12,12 +12,12 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color backgroundActionHighBlueFrance;
   final Color backgroundActionHighBlueFranceHover;
   final Color backgroundActionHighBlueFranceActive;
-  final Color backgroundActiveBlueFrance;
+  final Color activeBlueFrance;
   final Color textInvertedBlueFrance;
   final Color borderActionHighBlueFrance;
   final Color blockColorHover;
   final Color blockColorActive;
-  final Color defaultBorderGrey;
+  final Color defaultGrey;
   final Color backgroundDisabledGrey;
   final Color textDisabledGrey;
   final Color alertsBackground;
@@ -54,12 +54,12 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.backgroundActionHighBlueFrance,
     required this.backgroundActionHighBlueFranceHover,
     required this.backgroundActionHighBlueFranceActive,
-    required this.backgroundActiveBlueFrance,
+    required this.activeBlueFrance,
     required this.textInvertedBlueFrance,
     required this.borderActionHighBlueFrance,
     required this.blockColorHover,
     required this.blockColorActive,
-    required this.defaultBorderGrey,
+    required this.defaultGrey,
     required this.alertsBackground,
     required this.backgroundDisabledGrey,
     required this.textDisabledGrey,
@@ -100,12 +100,12 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
               ColorPalette.blueFranceSun113Hover,
           backgroundActionHighBlueFranceActive:
               ColorPalette.blueFranceSun113Active,
-          backgroundActiveBlueFrance: ColorPalette.blueFranceSun113,
+          activeBlueFrance: ColorPalette.blueFranceSun113,
           textInvertedBlueFrance: ColorPalette.blueFrance975,
           borderActionHighBlueFrance: ColorPalette.blueFranceSun113,
           blockColorHover: const Color.fromRGBO(224, 224, 224, 0.5),
           blockColorActive: const Color.fromRGBO(194, 194, 194, 0.5),
-          defaultBorderGrey: const Color(0xFFe5e5e5),
+          defaultGrey: ColorPalette.grey925,
           alertsBackground: ColorPalette.grey1000,
           backgroundDisabledGrey: ColorPalette.grey925,
           textDisabledGrey: ColorPalette.grey625,
@@ -145,12 +145,12 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           backgroundActionHighBlueFranceHover: ColorPalette.blueFrance625Hover,
           backgroundActionHighBlueFranceActive:
               ColorPalette.blueFrance625Active,
-          backgroundActiveBlueFrance: ColorPalette.blueFrance625,
+          activeBlueFrance: ColorPalette.blueFrance625,
           textInvertedBlueFrance: ColorPalette.blueFranceSun113,
           borderActionHighBlueFrance: const Color(0xFF9a9aff),
           blockColorHover: const Color.fromRGBO(65, 65, 65, 0.5),
           blockColorActive: const Color.fromRGBO(99, 99, 99, 0.5),
-          defaultBorderGrey: ColorPalette.grey125,
+          defaultGrey: ColorPalette.grey125,
           alertsBackground: ColorPalette.grey50,
           backgroundDisabledGrey: ColorPalette.grey125,
           textDisabledGrey: ColorPalette.grey425,
@@ -194,12 +194,12 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       backgroundActionHighBlueFranceHover: backgroundActionHighBlueFranceHover,
       backgroundActionHighBlueFranceActive:
           backgroundActionHighBlueFranceActive,
-      backgroundActiveBlueFrance: backgroundActiveBlueFrance,
+      activeBlueFrance: activeBlueFrance,
       textInvertedBlueFrance: textInvertedBlueFrance,
       borderActionHighBlueFrance: borderActionHighBlueFrance,
       blockColorHover: blockColorHover,
       blockColorActive: blockColorActive,
-      defaultBorderGrey: defaultBorderGrey,
+      defaultGrey: defaultGrey,
       backgroundDisabledGrey: backgroundDisabledGrey,
       textDisabledGrey: textDisabledGrey,
       alertsBackground: alertsBackground,
@@ -256,9 +256,9 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         other.backgroundActionHighBlueFranceActive,
         t,
       )!,
-      backgroundActiveBlueFrance: Color.lerp(
-        backgroundActiveBlueFrance,
-        other.backgroundActiveBlueFrance,
+      activeBlueFrance: Color.lerp(
+        activeBlueFrance,
+        other.activeBlueFrance,
         t,
       )!,
       textInvertedBlueFrance: Color.lerp(
@@ -274,8 +274,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       blockColorHover: Color.lerp(blockColorHover, other.blockColorHover, t)!,
       blockColorActive:
           Color.lerp(blockColorActive, other.blockColorActive, t)!,
-      defaultBorderGrey:
-          Color.lerp(defaultBorderGrey, other.defaultBorderGrey, t)!,
+      defaultGrey: Color.lerp(defaultGrey, other.defaultGrey, t)!,
       backgroundDisabledGrey:
           Color.lerp(backgroundDisabledGrey, other.backgroundDisabledGrey, t)!,
       textDisabledGrey:
@@ -328,12 +327,12 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           'backgroundActionHighBlueFranceActive',
           backgroundActionHighBlueFranceActive,
         ),
-        NamedProperty('backgroundActiveBlueFrance', backgroundActiveBlueFrance),
+        NamedProperty('activeBlueFrance', activeBlueFrance),
         NamedProperty('textInvertedBlueFrance', textInvertedBlueFrance),
         NamedProperty('borderActionHighBlueFrance', borderActionHighBlueFrance),
         NamedProperty('blockColorHover', blockColorHover),
         NamedProperty('blockColorActive', blockColorActive),
-        NamedProperty('defaultBorderGrey', defaultBorderGrey),
+        NamedProperty('defaultGrey', defaultGrey),
         NamedProperty('backgroundDisabledGrey', backgroundDisabledGrey),
         NamedProperty('textDisabledGrey', textDisabledGrey),
         NamedProperty('alertsBackground', alertsBackground),

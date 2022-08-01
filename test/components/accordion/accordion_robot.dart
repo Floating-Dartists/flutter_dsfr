@@ -18,10 +18,10 @@ class AccordionRobot {
             data: ThemeData(
               fontFamily: 'Marianne',
               brightness: Brightness.light,
-              extensions: [
+              extensions: const [
                 DSFRTypography.regular(),
-                const DSFRColors.light(),
-                const DSFRSizes.regular(),
+                DSFRColors.light(),
+                DSFRSizes.regular(),
               ],
             ),
             child: SingleChildScrollView(

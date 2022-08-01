@@ -35,7 +35,7 @@ class SharedCloseButton extends StatelessWidget {
         focusColor: dsfrColors.hover,
         splashColor: dsfrColors.splash,
         onPressed: onClose,
-        child: DSFRIcon(
+        child: Icon(
           DSFRIcons.closeFill,
           color: dsfrColors.alertsCloseButtonIcon,
           size: dsfrSizes.w2,

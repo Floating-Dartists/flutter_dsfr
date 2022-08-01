@@ -47,10 +47,10 @@ void main() {
         data: ThemeData(
           fontFamily: 'Marianne',
           brightness: Brightness.dark,
-          extensions: [
+          extensions: const [
             DSFRTypography.regular(),
-            const DSFRColors.dark(),
-            const DSFRSizes.regular(),
+            DSFRColors.dark(),
+            DSFRSizes.regular(),
           ],
         ),
         child: widget,

@@ -116,7 +116,7 @@ void main() {
                 buttons: List<DSFRPrimaryButton>.generate(
                   6,
                   (_) => DSFRPrimaryButton.icon(
-                    icon: const DSFRIcon(DSFRIcons.settings3Line),
+                    icon: const Icon(DSFRIcons.settings3Line),
                     onPressed: () {},
                   ),
                 ),
@@ -139,15 +139,15 @@ void main() {
                     onPressed: () {},
                   ),
                   DSFRPrimaryButton.icon(
-                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    icon: const Icon(DSFRIcons.checkboxCircleLine),
                     onPressed: () {},
                   ),
                   DSFRSecondaryButton.icon(
-                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    icon: const Icon(DSFRIcons.checkboxCircleLine),
                     onPressed: () {},
                   ),
                   DSFRSecondaryButton.icon(
-                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    icon: const Icon(DSFRIcons.checkboxCircleLine),
                     onPressed: () {},
                   ),
                 ],
@@ -172,15 +172,15 @@ void main() {
                     onPressed: () {},
                   ),
                   DSFRPrimaryButton.icon(
-                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    icon: const Icon(DSFRIcons.checkboxCircleLine),
                     onPressed: () {},
                   ),
                   DSFRSecondaryButton.icon(
-                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    icon: const Icon(DSFRIcons.checkboxCircleLine),
                     onPressed: () {},
                   ),
                   DSFRSecondaryButton.icon(
-                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    icon: const Icon(DSFRIcons.checkboxCircleLine),
                     onPressed: () {},
                   ),
                 ],
@@ -206,15 +206,15 @@ void main() {
                     onPressed: () {},
                   ),
                   DSFRPrimaryButton.icon(
-                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    icon: const Icon(DSFRIcons.checkboxCircleLine),
                     onPressed: () {},
                   ),
                   DSFRSecondaryButton.icon(
-                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    icon: const Icon(DSFRIcons.checkboxCircleLine),
                     onPressed: () {},
                   ),
                   DSFRSecondaryButton.icon(
-                    icon: const DSFRIcon(DSFRIcons.checkboxCircleLine),
+                    icon: const Icon(DSFRIcons.checkboxCircleLine),
                     onPressed: () {},
                   ),
                 ],
