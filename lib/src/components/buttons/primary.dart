@@ -25,7 +25,7 @@ class DSFRPrimaryButton extends DSFRGroupeableButton {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrSizes = DSFRSizes.of(context);
+    final spacings = DSFRSpacings.of(context).buttonSizes;
     final dsfrColors = DSFRColors.of(context);
     final dsfrTypography = DSFRTypography.of(context);
     final dsfrButtonStyle = DSFRButtonStyle.of(context);
@@ -35,13 +35,20 @@ class DSFRPrimaryButton extends DSFRGroupeableButton {
         scale <= 1 ? 8 : lerpDouble(8, 4, math.min(scale - 1, 1))!;
 
     final enabled = onPressed != null;
-    final btnIcon = icon;
     final backgroundColor = enabled
         ? dsfrColors.backgroundActionHighBlueFrance
         : dsfrColors.backgroundDisabledGrey;
     final foregroundColor = enabled
         ? dsfrColors.textInvertedBlueFrance
         : dsfrColors.textDisabledGrey;
+
+    Widget? btnIcon = icon;
+    if (btnIcon != null) {
+      btnIcon = IconTheme(
+        data: IconThemeData(color: foregroundColor, size: spacings.iconSize),
+        child: btnIcon,
+      );
+    }
 
     return RawMaterialButton(
       elevation: 0.0,
@@ -50,10 +57,12 @@ class DSFRPrimaryButton extends DSFRGroupeableButton {
       hoverColor: dsfrColors.backgroundActionHighBlueFranceHover,
       splashColor: dsfrColors.backgroundActionHighBlueFranceActive,
       shape: const RoundedRectangleBorder(),
-      padding: EdgeInsets.symmetric(
-        vertical: dsfrSizes.w1,
-        horizontal: iconOnly ? dsfrSizes.w1 : dsfrSizes.w3,
-      ),
+      padding: iconOnly
+          ? EdgeInsets.all(spacings.iconPadding)
+          : EdgeInsets.symmetric(
+              vertical: spacings.vertical,
+              horizontal: spacings.horizontal,
+            ),
       constraints: const BoxConstraints(),
       textStyle: dsfrTypography.btnLabel.copyWith(color: foregroundColor),
       onPressed: onPressed,

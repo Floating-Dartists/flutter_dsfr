@@ -230,20 +230,23 @@ class _DSFRAppState extends State<DSFRApp> {
     const typography = DSFRTypography.regular();
     const sizes = DSFRSizes.regular();
     const buttonStyle = DSFRButtonStyle.regular();
+    const spacings = DSFRSpacings.medium();
 
     late final ThemeData theme;
     late final DSFRColors colors;
     if (useDarkTheme) {
       colors = const DSFRColors.dark();
-      theme = ThemeData.dark().copyWith(
+      theme = ThemeData(
+        fontFamily: 'Marianne',
         brightness: Brightness.dark,
-        extensions: [colors, typography, sizes, buttonStyle],
+        extensions: [colors, typography, sizes, buttonStyle, spacings],
       );
     } else {
       colors = const DSFRColors.light();
-      theme = ThemeData.light().copyWith(
+      theme = ThemeData(
+        fontFamily: 'Marianne',
         brightness: Brightness.light,
-        extensions: [colors, typography, sizes, buttonStyle],
+        extensions: [colors, typography, sizes, buttonStyle, spacings],
       );
     }
 

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'src/theme/button_style.dart';
 import 'src/theme/colors.dart';
 import 'src/theme/sizes.dart';
+import 'src/theme/spacings.dart';
 import 'src/theme/typography.dart';
 
 export 'src/components/accordion/accordion.dart';
@@ -34,6 +35,7 @@ export 'src/theme/button_style.dart';
 export 'src/theme/colors.dart';
 export 'src/theme/icons.dart';
 export 'src/theme/sizes.dart';
+export 'src/theme/spacings.dart';
 export 'src/theme/typography.dart';
 
 /// Provides the default [ThemeExtension] for the flutter_dsfr theme in light
@@ -43,6 +45,7 @@ final dsfrExtensionsLight = <ThemeExtension>[
   const DSFRTypography.regular(),
   const DSFRSizes.regular(),
   const DSFRButtonStyle.regular(),
+  const DSFRSpacings.medium(),
 ];
 
 /// Provides the default [ThemeExtension] for the flutter_dsfr theme in dark
@@ -52,4 +55,5 @@ final dsfrExtensionsDark = <ThemeExtension>[
   const DSFRTypography.regular(),
   const DSFRSizes.regular(),
   const DSFRButtonStyle.regular(),
+  const DSFRSpacings.medium(),
 ];

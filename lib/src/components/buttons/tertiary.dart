@@ -2,10 +2,8 @@ import 'dart:math' as math;
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import '../../../flutter_dsfr.dart';
 
-import '../../theme/colors.dart';
-import '../../theme/sizes.dart';
-import '../../theme/typography.dart';
 import 'base_button.dart';
 
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons#Bouton-tertiaire
@@ -30,8 +28,8 @@ class DSFRTertiaryButton extends DSFRBaseButton {
 
   @override
   Widget build(BuildContext context) {
+    final spacings = DSFRSpacings.of(context).buttonSizes;
     final dsfrColors = DSFRColors.of(context);
-    final dsfrSpacings = DSFRSizes.of(context);
     final dsfrTypography = DSFRTypography.of(context);
 
     final scale = MediaQuery.maybeOf(context)?.textScaleFactor ?? 1;
@@ -39,10 +37,17 @@ class DSFRTertiaryButton extends DSFRBaseButton {
         scale <= 1 ? 8 : lerpDouble(8, 4, math.min(scale - 1, 1))!;
 
     final enabled = onPressed != null;
-    final btnIcon = icon;
     final foregroundColor = enabled
         ? dsfrColors.borderActionHighBlueFrance
         : dsfrColors.textDisabledGrey;
+
+    Widget? btnIcon = icon;
+    if (btnIcon != null) {
+      btnIcon = IconTheme(
+        data: IconThemeData(color: foregroundColor, size: spacings.iconSize),
+        child: btnIcon,
+      );
+    }
 
     return RawMaterialButton(
       elevation: 0.0,
@@ -57,10 +62,12 @@ class DSFRTertiaryButton extends DSFRBaseButton {
               )
             : BorderSide.none,
       ),
-      padding: EdgeInsets.symmetric(
-        vertical: dsfrSpacings.w1,
-        horizontal: iconOnly ? dsfrSpacings.w1 : dsfrSpacings.w3,
-      ),
+      padding: iconOnly
+          ? EdgeInsets.all(spacings.iconPadding)
+          : EdgeInsets.symmetric(
+              vertical: spacings.vertical,
+              horizontal: spacings.horizontal,
+            ),
       constraints: const BoxConstraints(),
       textStyle: dsfrTypography.btnLabel.copyWith(color: foregroundColor),
       onPressed: onPressed,
