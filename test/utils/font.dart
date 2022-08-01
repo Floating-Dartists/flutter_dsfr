@@ -33,6 +33,7 @@ Future<void> loadTestFonts() async {
       'fonts/Spectral/Spectral-Italic.ttf',
     ],
   );
+  await _loadFamily('flutter_dsfr', 'Remix Icon', ['icons/remixicon.ttf']);
 }
 
 Future<void> _loadFamily(

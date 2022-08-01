@@ -9,7 +9,6 @@ import 'utils/font.dart';
 Future<void> testExecutable(FutureOr<void> Function() testMain) async {
   const isRunningInCi = bool.fromEnvironment('CI', defaultValue: false);
 
-  DSFRIcons.packageName = null;
   await loadTestFonts();
 
   return AlchemistConfig.runWithConfig(

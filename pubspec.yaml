@@ -67,4 +67,4 @@ flutter:
           style: italic
     - family: Remix Icon
       fonts:
-        - asset: assets/icons/remixicon.ttf
+        - asset: packages/flutter_dsfr/icons/remixicon.ttf

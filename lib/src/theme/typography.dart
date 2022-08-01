@@ -5,7 +5,7 @@ import 'theme_data_widget.dart';
 
 @immutable
 class DSFRTypography extends ThemeExtension<DSFRTypography> {
-  static const String packageName = 'flutter_dsfr';
+  static const packageName = 'flutter_dsfr';
 
   final TextStyle frConnectLogin;
   final TextStyle frConnectBrand;

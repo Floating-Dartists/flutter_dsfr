@@ -1,4 +1,5 @@
 import 'package:alchemist/alchemist.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_dsfr/flutter_dsfr.dart';
 
 void main() {
@@ -14,7 +15,7 @@ void main() {
           .map<GoldenTestScenario>(
             (e) => GoldenTestScenario(
               name: e.name,
-              child: DSFRIcon(e.property),
+              child: Icon(e.property),
             ),
           )
           .toList(),

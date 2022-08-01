@@ -26,7 +26,7 @@ class AlertIcon extends StatelessWidget {
       padding: padding,
       child: Align(
         alignment: aligment,
-        child: DSFRIcon(
+        child: Icon(
           icon,
           color: dsfrColors.alertsBackground,
         ),
