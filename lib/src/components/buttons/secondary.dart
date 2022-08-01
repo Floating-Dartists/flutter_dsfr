@@ -63,7 +63,7 @@ class DSFRSecondaryButton extends DSFRGroupeableButton {
               horizontal: spacings.horizontal,
             ),
       constraints: const BoxConstraints(),
-      textStyle: dsfrTypography.btnLabel.copyWith(color: foregroundColor),
+      textStyle: dsfrTypography.body.copyWith(color: foregroundColor),
       child: iconOnly
           ? btnIcon
           : Row(
@@ -74,7 +74,7 @@ class DSFRSecondaryButton extends DSFRGroupeableButton {
                   btnIcon,
                   SizedBox(width: gap)
                 ],
-                Flexible(child: Text(label!)),
+                Flexible(child: Text(label!, textAlign: TextAlign.center)),
                 if (btnIcon != null && iconPosition == IconPosition.right) ...[
                   SizedBox(width: gap),
                   btnIcon

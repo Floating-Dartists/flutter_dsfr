@@ -69,7 +69,7 @@ class DSFRTertiaryButton extends DSFRBaseButton {
               horizontal: spacings.horizontal,
             ),
       constraints: const BoxConstraints(),
-      textStyle: dsfrTypography.btnLabel.copyWith(color: foregroundColor),
+      textStyle: dsfrTypography.body.copyWith(color: foregroundColor),
       onPressed: onPressed,
       child: iconOnly
           ? btnIcon
@@ -81,7 +81,7 @@ class DSFRTertiaryButton extends DSFRBaseButton {
                   btnIcon,
                   SizedBox(width: gap)
                 ],
-                Flexible(child: Text(label!)),
+                Flexible(child: Text(label!, textAlign: TextAlign.center)),
                 if (btnIcon != null && iconPosition == IconPosition.right) ...[
                   SizedBox(width: gap),
                   btnIcon
