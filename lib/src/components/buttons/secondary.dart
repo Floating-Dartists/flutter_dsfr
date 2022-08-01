@@ -24,7 +24,7 @@ class DSFRSecondaryButton extends DSFRGroupeableButton {
 
   @override
   Widget build(BuildContext context) {
-    final spacings = DSFRSpacings.of(context).buttonSizes;
+    final spacings = DSFRSpacings.of(context).buttonSize;
     final dsfrTypography = DSFRTypography.of(context);
     final dsfrColors = DSFRColors.of(context);
     final dsfrButtonStyle = DSFRButtonStyle.of(context);
@@ -63,7 +63,7 @@ class DSFRSecondaryButton extends DSFRGroupeableButton {
               horizontal: spacings.horizontal,
             ),
       constraints: const BoxConstraints(),
-      textStyle: dsfrTypography.body.copyWith(color: foregroundColor),
+      textStyle: dsfrTypography.standard.copyWith(color: foregroundColor),
       child: iconOnly
           ? btnIcon
           : Row(

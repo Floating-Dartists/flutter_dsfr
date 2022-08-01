@@ -9,14 +9,14 @@ class DSFRBadge extends StatelessWidget {
   const DSFRBadge({
     required this.type,
     required this.label,
-    this.size = DSFRBadgeSize.md,
+    this.size,
     this.showIcon = false,
     super.key,
   });
 
   final DSFRBadgeType type;
   final String label;
-  final DSFRBadgeSize size;
+  final DSFRBadgeSize? size;
   final bool showIcon;
 
   Color _getTextColor(DSFRColors dsfrColors) {
@@ -49,27 +49,6 @@ class DSFRBadge extends StatelessWidget {
     }
   }
 
-  TextStyle _getTextStyle(DSFRTypography dsfrTypography) {
-    if (size == DSFRBadgeSize.md) {
-      return dsfrTypography.badgeLabel;
-    }
-
-    return dsfrTypography.badgeLabelSmall;
-  }
-
-  double _getLeftPadding(double initialValue) {
-    if (showIcon) {
-      return initialValue / 2;
-    }
-
-    return initialValue;
-  }
-
-  EdgeInsets _getPadding(DSFRSizes dsfrSizes) {
-    final space = size == DSFRBadgeSize.md ? dsfrSizes.w1 : dsfrSizes.v1_5;
-    return EdgeInsets.fromLTRB(_getLeftPadding(space), space, space, space);
-  }
-
   IconData _getIconData() {
     switch (type) {
       case DSFRBadgeType.error:
@@ -87,41 +66,37 @@ class DSFRBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrSizes = DSFRSizes.of(context);
     final dsfrColors = DSFRColors.of(context);
     final dsfrTypography = DSFRTypography.of(context);
-    final textStyle = _getTextStyle(dsfrTypography);
     final textColor = _getTextColor(dsfrColors);
+    final badgeSize = size ?? DSFRSpacings.of(context).badgeSize;
+    final borderRadius = DSFRBorderRadius.of(context);
 
     return Container(
-      padding: _getPadding(dsfrSizes),
+      padding: EdgeInsets.symmetric(
+        horizontal: badgeSize.horizontal,
+        vertical: badgeSize.vertical,
+      ),
       decoration: BoxDecoration(
         color: _getColor(dsfrColors),
-        borderRadius: BorderRadius.circular(dsfrSizes.v1),
+        borderRadius: borderRadius.small,
       ),
-      child: Text.rich(
-        TextSpan(
-          children: <InlineSpan>[
-            if (showIcon) ...[
-              WidgetSpan(
-                child: Icon(
-                  _getIconData(),
-                  color: textColor,
-                  size: dsfrSizes.w2,
-                ),
-              ),
-              WidgetSpan(
-                child: SizedBox(
-                  width: dsfrSizes.v1,
-                ),
-              )
-            ],
-            TextSpan(
-              text: label.toUpperCase(),
-              style: textStyle.copyWith(color: textColor),
-            )
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (showIcon) ...[
+            Icon(
+              _getIconData(),
+              color: textColor,
+              size: badgeSize.iconSize,
+            ),
+            SizedBox(width: badgeSize.spacing),
           ],
-        ),
+          Text(
+            label.toUpperCase(),
+            style: dsfrTypography.detail.copyWith(color: textColor),
+          ),
+        ],
       ),
     );
   }

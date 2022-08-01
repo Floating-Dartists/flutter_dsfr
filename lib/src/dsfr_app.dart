@@ -231,6 +231,8 @@ class _DSFRAppState extends State<DSFRApp> {
     const sizes = DSFRSizes.regular();
     const buttonStyle = DSFRButtonStyle.regular();
     const spacings = DSFRSpacings.medium();
+    const radius = DSFRRadius.regular();
+    const borderRadius = DSFRBorderRadius(radius);
 
     late final ThemeData theme;
     late final DSFRColors colors;
@@ -239,14 +241,30 @@ class _DSFRAppState extends State<DSFRApp> {
       theme = ThemeData(
         fontFamily: 'Marianne',
         brightness: Brightness.dark,
-        extensions: [colors, typography, sizes, buttonStyle, spacings],
+        extensions: [
+          colors,
+          typography,
+          sizes,
+          buttonStyle,
+          spacings,
+          radius,
+          borderRadius,
+        ],
       );
     } else {
       colors = const DSFRColors.light();
       theme = ThemeData(
         fontFamily: 'Marianne',
         brightness: Brightness.light,
-        extensions: [colors, typography, sizes, buttonStyle, spacings],
+        extensions: [
+          colors,
+          typography,
+          sizes,
+          buttonStyle,
+          spacings,
+          radius,
+          borderRadius,
+        ],
       );
     }
 

@@ -28,7 +28,7 @@ class DSFRTertiaryButton extends DSFRBaseButton {
 
   @override
   Widget build(BuildContext context) {
-    final spacings = DSFRSpacings.of(context).buttonSizes;
+    final spacings = DSFRSpacings.of(context).buttonSize;
     final dsfrColors = DSFRColors.of(context);
     final dsfrTypography = DSFRTypography.of(context);
 
@@ -69,7 +69,7 @@ class DSFRTertiaryButton extends DSFRBaseButton {
               horizontal: spacings.horizontal,
             ),
       constraints: const BoxConstraints(),
-      textStyle: dsfrTypography.body.copyWith(color: foregroundColor),
+      textStyle: dsfrTypography.standard.copyWith(color: foregroundColor),
       onPressed: onPressed,
       child: iconOnly
           ? btnIcon

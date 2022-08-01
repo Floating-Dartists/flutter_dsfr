@@ -128,31 +128,31 @@ class _MyHomePageState extends State<MyHomePage> {
     const DSFRBadge(
       type: DSFRBadgeType.error,
       label: "error - sm - icon",
-      size: DSFRBadgeSize.sm,
+      size: DSFRBadgeSize.small(),
       showIcon: true,
     ),
     const DSFRBadge(
       type: DSFRBadgeType.success,
       label: "success - sm - icon",
-      size: DSFRBadgeSize.sm,
+      size: DSFRBadgeSize.small(),
       showIcon: true,
     ),
     const DSFRBadge(
       type: DSFRBadgeType.info,
       label: "info - sm - icon",
-      size: DSFRBadgeSize.sm,
+      size: DSFRBadgeSize.small(),
       showIcon: true,
     ),
     const DSFRBadge(
       type: DSFRBadgeType.warning,
       label: "warning - sm - icon",
-      size: DSFRBadgeSize.sm,
+      size: DSFRBadgeSize.small(),
       showIcon: true,
     ),
     const DSFRBadge(
       type: DSFRBadgeType.news,
       label: "news - sm - icon",
-      size: DSFRBadgeSize.sm,
+      size: DSFRBadgeSize.small(),
       showIcon: true,
     ),
     DSFRButtonsGroup(

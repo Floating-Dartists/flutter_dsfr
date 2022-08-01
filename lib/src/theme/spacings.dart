@@ -6,30 +6,30 @@ import 'theme_data_widget.dart';
 
 @immutable
 class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
-  final DSFRAlertSizes alertSizes;
-  final DSFRButtonSizes buttonSizes;
+  final DSFRBadgeSize badgeSize;
+  final DSFRButtonSize buttonSize;
 
   const DSFRSpacings({
-    required this.alertSizes,
-    required this.buttonSizes,
+    required this.badgeSize,
+    required this.buttonSize,
   });
 
   const DSFRSpacings.small()
       : this(
-          alertSizes: const DSFRAlertSizes.small(),
-          buttonSizes: const DSFRButtonSizes.small(),
+          badgeSize: const DSFRBadgeSize.small(),
+          buttonSize: const DSFRButtonSize.small(),
         );
 
   const DSFRSpacings.medium()
       : this(
-          alertSizes: const DSFRAlertSizes.medium(),
-          buttonSizes: const DSFRButtonSizes.medium(),
+          badgeSize: const DSFRBadgeSize.medium(),
+          buttonSize: const DSFRButtonSize.medium(),
         );
 
   const DSFRSpacings.large()
       : this(
-          alertSizes: const DSFRAlertSizes.medium(),
-          buttonSizes: const DSFRButtonSizes.large(),
+          badgeSize: const DSFRBadgeSize.medium(),
+          buttonSize: const DSFRButtonSize.large(),
         );
 
   static DSFRSpacings of(BuildContext context) =>
@@ -37,12 +37,12 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
 
   @override
   DSFRSpacings copyWith({
-    DSFRAlertSizes? alertSizes,
-    DSFRButtonSizes? buttonSizes,
+    DSFRBadgeSize? badgeSize,
+    DSFRButtonSize? buttonSize,
   }) {
     return DSFRSpacings(
-      alertSizes: alertSizes ?? this.alertSizes,
-      buttonSizes: buttonSizes ?? this.buttonSizes,
+      badgeSize: badgeSize ?? this.badgeSize,
+      buttonSize: buttonSize ?? this.buttonSize,
     );
   }
 
@@ -50,72 +50,64 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
   DSFRSpacings lerp(ThemeExtension<DSFRSpacings>? other, double t) {
     if (other is! DSFRSpacings) return this;
     return DSFRSpacings(
-      alertSizes: DSFRAlertSizes.lerp(alertSizes, other.alertSizes, t)!,
-      buttonSizes: DSFRButtonSizes.lerp(buttonSizes, other.buttonSizes, t)!,
+      badgeSize: DSFRBadgeSize.lerp(badgeSize, other.badgeSize, t)!,
+      buttonSize: DSFRButtonSize.lerp(buttonSize, other.buttonSize, t)!,
     );
   }
 }
 
 @immutable
-class DSFRAlertSizes {
+class DSFRBadgeSize {
+  final double horizontal;
+  final double vertical;
   final double iconSize;
-  final double iconHorizontalPadding;
-  final double iconVerticalPadding;
+  final double spacing;
 
-  const DSFRAlertSizes._({
+  const DSFRBadgeSize._({
+    required this.horizontal,
+    required this.vertical,
     required this.iconSize,
-    required this.iconHorizontalPadding,
-    required this.iconVerticalPadding,
+    required this.spacing,
   });
 
-  const DSFRAlertSizes.small()
+  const DSFRBadgeSize.small()
       : this._(
-          iconSize: 20,
-          iconHorizontalPadding: 10,
-          iconVerticalPadding: 10,
+          horizontal: 6,
+          vertical: 5,
+          iconSize: 10,
+          spacing: 5,
         );
 
-  const DSFRAlertSizes.medium()
+  const DSFRBadgeSize.medium()
       : this._(
-          iconSize: 20,
-          iconHorizontalPadding: 10,
-          iconVerticalPadding: 18,
+          horizontal: 8,
+          vertical: 5,
+          iconSize: 14,
+          spacing: 5,
         );
 
-  static DSFRAlertSizes? lerp(
-    DSFRAlertSizes? a,
-    DSFRAlertSizes? b,
-    double t,
-  ) {
+  static DSFRBadgeSize? lerp(DSFRBadgeSize? a, DSFRBadgeSize? b, double t) {
     if (a == null && b == null) return null;
     if (a == null) return b;
     if (b == null) return a;
-
-    return DSFRAlertSizes._(
+    return DSFRBadgeSize._(
+      horizontal: lerpDouble(a.horizontal, b.horizontal, t)!,
+      vertical: lerpDouble(a.vertical, b.vertical, t)!,
       iconSize: lerpDouble(a.iconSize, b.iconSize, t)!,
-      iconHorizontalPadding: lerpDouble(
-        a.iconHorizontalPadding,
-        b.iconHorizontalPadding,
-        t,
-      )!,
-      iconVerticalPadding: lerpDouble(
-        a.iconVerticalPadding,
-        b.iconVerticalPadding,
-        t,
-      )!,
+      spacing: lerpDouble(a.spacing, b.spacing, t)!,
     );
   }
 }
 
 @immutable
-class DSFRButtonSizes {
+class DSFRButtonSize {
   final double vertical;
   final double horizontal;
   final double spacing;
   final double iconPadding;
   final double iconSize;
 
-  const DSFRButtonSizes._({
+  const DSFRButtonSize._({
     required this.vertical,
     required this.horizontal,
     required this.spacing,
@@ -123,7 +115,7 @@ class DSFRButtonSizes {
     required this.iconSize,
   });
 
-  const DSFRButtonSizes.small()
+  const DSFRButtonSize.small()
       : this._(
           vertical: 4,
           horizontal: 12,
@@ -132,7 +124,7 @@ class DSFRButtonSizes {
           iconSize: 14,
         );
 
-  const DSFRButtonSizes.medium()
+  const DSFRButtonSize.medium()
       : this._(
           vertical: 8,
           horizontal: 16,
@@ -141,7 +133,7 @@ class DSFRButtonSizes {
           iconSize: 20,
         );
 
-  const DSFRButtonSizes.large()
+  const DSFRButtonSize.large()
       : this._(
           vertical: 10,
           horizontal: 24,
@@ -150,16 +142,16 @@ class DSFRButtonSizes {
           iconSize: 20,
         );
 
-  static DSFRButtonSizes? lerp(
-    DSFRButtonSizes? a,
-    DSFRButtonSizes? b,
+  static DSFRButtonSize? lerp(
+    DSFRButtonSize? a,
+    DSFRButtonSize? b,
     double t,
   ) {
     if (a == null && b == null) return null;
     if (a == null) return b;
     if (b == null) return a;
 
-    return DSFRButtonSizes._(
+    return DSFRButtonSize._(
       vertical: lerpDouble(a.vertical, b.vertical, t)!,
       horizontal: lerpDouble(a.horizontal, b.horizontal, t)!,
       spacing: lerpDouble(a.spacing, b.spacing, t)!,

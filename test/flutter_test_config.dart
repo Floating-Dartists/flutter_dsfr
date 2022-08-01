@@ -11,6 +11,8 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
 
   await loadTestFonts();
 
+  const radius = DSFRRadius.regular();
+
   return AlchemistConfig.runWithConfig(
     config: AlchemistConfig(
       theme: ThemeData(
@@ -22,6 +24,8 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
           DSFRSizes.regular(),
           DSFRButtonStyle.regular(),
           DSFRSpacings.medium(),
+          radius,
+          DSFRBorderRadius(radius),
         ],
       ),
       platformGoldensConfig: const PlatformGoldensConfig(
