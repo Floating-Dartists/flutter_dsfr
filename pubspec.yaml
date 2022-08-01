@@ -23,46 +23,46 @@ flutter:
   fonts:
     - family: Marianne
       fonts:
-        - asset: assets/fonts/Marianne/Marianne-Thin.otf
+        - asset: packages/flutter_dsfr/fonts/Marianne/Marianne-Thin.otf
           weight: 100
-        - asset: assets/fonts/Marianne/Marianne-ThinItalic.otf
+        - asset: packages/flutter_dsfr/fonts/Marianne/Marianne-ThinItalic.otf
           weight: 100
           style: italic
-        - asset: assets/fonts/Marianne/Marianne-Light.otf
+        - asset: packages/flutter_dsfr/fonts/Marianne/Marianne-Light.otf
           weight: 300
-        - asset: assets/fonts/Marianne/Marianne-LightItalic.otf
+        - asset: packages/flutter_dsfr/fonts/Marianne/Marianne-LightItalic.otf
           weight: 300
           style: italic
-        - asset: assets/fonts/Marianne/Marianne-Regular.otf
+        - asset: packages/flutter_dsfr/fonts/Marianne/Marianne-Regular.otf
           weight: 400
-        - asset: assets/fonts/Marianne/Marianne-RegularItalic.otf
+        - asset: packages/flutter_dsfr/fonts/Marianne/Marianne-RegularItalic.otf
           weight: 400
           style: italic
-        - asset: assets/fonts/Marianne/Marianne-Medium.otf
+        - asset: packages/flutter_dsfr/fonts/Marianne/Marianne-Medium.otf
           weight: 500
-        - asset: assets/fonts/Marianne/Marianne-MediumItalic.otf
+        - asset: packages/flutter_dsfr/fonts/Marianne/Marianne-MediumItalic.otf
           weight: 500
           style: italic
-        - asset: assets/fonts/Marianne/Marianne-Bold.otf
+        - asset: packages/flutter_dsfr/fonts/Marianne/Marianne-Bold.otf
           weight: 700
-        - asset: assets/fonts/Marianne/Marianne-BoldItalic.otf
+        - asset: packages/flutter_dsfr/fonts/Marianne/Marianne-BoldItalic.otf
           weight: 700
           style: italic
-        - asset: assets/fonts/Marianne/Marianne-ExtraBold.otf
+        - asset: packages/flutter_dsfr/fonts/Marianne/Marianne-ExtraBold.otf
           weight: 800
-        - asset: assets/fonts/Marianne/Marianne-ExtraBoldItalic.otf
+        - asset: packages/flutter_dsfr/fonts/Marianne/Marianne-ExtraBoldItalic.otf
           weight: 800
           style: italic
     - family: Spectral
       fonts:
-        - asset: assets/fonts/Spectral/Spectral-Light.ttf
+        - asset: packages/flutter_dsfr/fonts/Spectral/Spectral-Light.ttf
           weight: 300
-        - asset: assets/fonts/Spectral/Spectral-LightItalic.ttf
+        - asset: packages/flutter_dsfr/fonts/Spectral/Spectral-LightItalic.ttf
           weight: 300
           style: italic
-        - asset: assets/fonts/Spectral/Spectral-Regular.ttf
+        - asset: packages/flutter_dsfr/fonts/Spectral/Spectral-Regular.ttf
           weight: 400
-        - asset: assets/fonts/Spectral/Spectral-Italic.ttf
+        - asset: packages/flutter_dsfr/fonts/Spectral/Spectral-Italic.ttf
           weight: 400
           style: italic
     - family: Remix Icon

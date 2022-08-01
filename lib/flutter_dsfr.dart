@@ -40,7 +40,7 @@ export 'src/theme/typography.dart';
 /// mode.
 final dsfrExtensionsLight = <ThemeExtension>[
   const DSFRColors.light(),
-  DSFRTypography.regular(),
+  const DSFRTypography.regular(),
   const DSFRSizes.regular(),
   const DSFRButtonStyle.regular(),
 ];
@@ -49,7 +49,7 @@ final dsfrExtensionsLight = <ThemeExtension>[
 /// mode.
 final dsfrExtensionsDark = <ThemeExtension>[
   const DSFRColors.dark(),
-  DSFRTypography.regular(),
+  const DSFRTypography.regular(),
   const DSFRSizes.regular(),
   const DSFRButtonStyle.regular(),
 ];
