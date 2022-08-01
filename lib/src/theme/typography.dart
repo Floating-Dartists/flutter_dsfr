@@ -13,8 +13,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   final TextStyle alertsTitle;
   final TextStyle defaultText;
   final TextStyle boldText;
-  final TextStyle badgeLabel;
-  final TextStyle badgeLabelSmall;
   final TextStyle standard;
   final TextStyle mention;
   final TextStyle detail;
@@ -26,8 +24,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
     required this.alertsTitle,
     required this.defaultText,
     required this.boldText,
-    required this.badgeLabel,
-    required this.badgeLabelSmall,
     required this.standard,
     required this.mention,
     required this.detail,
@@ -73,20 +69,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
             fontFamily: 'Marianne',
             package: packageName,
             fontSize: 16.0,
-            fontWeight: FontWeight.w700,
-            decoration: TextDecoration.none,
-          ),
-          badgeLabel: const TextStyle(
-            fontFamily: 'Marianne',
-            package: packageName,
-            fontSize: 14.0,
-            fontWeight: FontWeight.w700,
-            decoration: TextDecoration.none,
-          ),
-          badgeLabelSmall: const TextStyle(
-            fontFamily: 'Marianne',
-            package: packageName,
-            fontSize: 12.0,
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
@@ -156,20 +138,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
-          badgeLabel: const TextStyle(
-            fontFamily: 'Marianne',
-            package: packageName,
-            fontSize: 14.0,
-            fontWeight: FontWeight.w700,
-            decoration: TextDecoration.none,
-          ),
-          badgeLabelSmall: const TextStyle(
-            fontFamily: 'Marianne',
-            package: packageName,
-            fontSize: 12.0,
-            fontWeight: FontWeight.w700,
-            decoration: TextDecoration.none,
-          ),
           standard: const TextStyle(
             fontFamily: 'Marianne',
             package: packageName,
@@ -236,20 +204,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
-          badgeLabel: const TextStyle(
-            fontFamily: 'Marianne',
-            package: packageName,
-            fontSize: 14.0,
-            fontWeight: FontWeight.w700,
-            decoration: TextDecoration.none,
-          ),
-          badgeLabelSmall: const TextStyle(
-            fontFamily: 'Marianne',
-            package: packageName,
-            fontSize: 12.0,
-            fontWeight: FontWeight.w700,
-            decoration: TextDecoration.none,
-          ),
           standard: const TextStyle(
             fontFamily: 'Marianne',
             package: packageName,
@@ -285,8 +239,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       alertsTitle: alertsTitle,
       defaultText: defaultText,
       boldText: boldText,
-      badgeLabel: badgeLabel,
-      badgeLabelSmall: badgeLabelSmall,
       standard: standard,
       mention: mention,
       detail: detail,
@@ -305,9 +257,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
       alertsTitle: TextStyle.lerp(alertsTitle, other.alertsTitle, t)!,
       defaultText: TextStyle.lerp(defaultText, other.defaultText, t)!,
       boldText: TextStyle.lerp(boldText, other.boldText, t)!,
-      badgeLabel: TextStyle.lerp(badgeLabel, other.badgeLabel, t)!,
-      badgeLabelSmall:
-          TextStyle.lerp(badgeLabelSmall, other.badgeLabelSmall, t)!,
       standard: TextStyle.lerp(standard, other.standard, t)!,
       mention: TextStyle.lerp(mention, other.mention, t)!,
       detail: TextStyle.lerp(detail, other.detail, t)!,
@@ -322,8 +271,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('alertsTitle', alertsTitle),
         NamedProperty('defaultText', defaultText),
         NamedProperty('boldText', boldText),
-        NamedProperty('badgeLabel', badgeLabel),
-        NamedProperty('badgeLabelSmall', badgeLabelSmall),
         NamedProperty('standard', standard),
         NamedProperty('mention', mention),
         NamedProperty('detail', detail),
