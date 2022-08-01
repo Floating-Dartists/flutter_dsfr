@@ -3,10 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import '../../theme/button_style.dart';
-import '../../theme/colors.dart';
-import '../../theme/sizes.dart';
-import '../../theme/typography.dart';
+import '../../../flutter_dsfr.dart';
 import 'base_button.dart';
 
 class DSFRSecondaryButton extends DSFRGroupeableButton {
@@ -27,7 +24,7 @@ class DSFRSecondaryButton extends DSFRGroupeableButton {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrSpacings = DSFRSizes.of(context);
+    final spacings = DSFRSpacings.of(context).buttonSize;
     final dsfrTypography = DSFRTypography.of(context);
     final dsfrColors = DSFRColors.of(context);
     final dsfrButtonStyle = DSFRButtonStyle.of(context);
@@ -37,10 +34,17 @@ class DSFRSecondaryButton extends DSFRGroupeableButton {
         scale <= 1 ? 8 : lerpDouble(8, 4, math.min(scale - 1, 1))!;
 
     final enabled = onPressed != null;
-    final btnIcon = icon;
     final foregroundColor = enabled
         ? dsfrColors.borderActionHighBlueFrance
         : dsfrColors.textDisabledGrey;
+
+    Widget? btnIcon = icon;
+    if (btnIcon != null) {
+      btnIcon = IconTheme(
+        data: IconThemeData(color: foregroundColor, size: spacings.iconSize),
+        child: btnIcon,
+      );
+    }
 
     return RawMaterialButton(
       onPressed: onPressed,
@@ -52,12 +56,14 @@ class DSFRSecondaryButton extends DSFRGroupeableButton {
       shape: RoundedRectangleBorder(
         side: BorderSide(color: foregroundColor, width: 1),
       ),
-      padding: EdgeInsets.symmetric(
-        vertical: dsfrSpacings.w1,
-        horizontal: iconOnly ? dsfrSpacings.w1 : dsfrSpacings.w3,
-      ),
+      padding: iconOnly
+          ? EdgeInsets.all(spacings.iconPadding)
+          : EdgeInsets.symmetric(
+              vertical: spacings.vertical,
+              horizontal: spacings.horizontal,
+            ),
       constraints: const BoxConstraints(),
-      textStyle: dsfrTypography.btnLabel.copyWith(color: foregroundColor),
+      textStyle: dsfrTypography.medium.copyWith(color: foregroundColor),
       child: iconOnly
           ? btnIcon
           : Row(
@@ -68,7 +74,7 @@ class DSFRSecondaryButton extends DSFRGroupeableButton {
                   btnIcon,
                   SizedBox(width: gap)
                 ],
-                Flexible(child: Text(label!)),
+                Flexible(child: Text(label!, textAlign: TextAlign.center)),
                 if (btnIcon != null && iconPosition == IconPosition.right) ...[
                   SizedBox(width: gap),
                   btnIcon

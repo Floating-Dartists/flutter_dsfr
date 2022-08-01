@@ -10,14 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DynamicTheme(themedWidgetBuilder: (_, themeMode, __) {
-      return MaterialApp(
+      return DSFRApp(
         themeMode: themeMode,
-        theme: ThemeData.light().copyWith(
-          extensions: dsfrExtensionsLight,
-        ),
-        darkTheme: ThemeData.dark().copyWith(
-          extensions: dsfrExtensionsDark,
-        ),
         home: const MyHomePage(),
       );
     });
@@ -134,31 +128,31 @@ class _MyHomePageState extends State<MyHomePage> {
     const DSFRBadge(
       type: DSFRBadgeType.error,
       label: "error - sm - icon",
-      size: DSFRBadgeSize.sm,
+      size: DSFRBadgeSize.small(),
       showIcon: true,
     ),
     const DSFRBadge(
       type: DSFRBadgeType.success,
       label: "success - sm - icon",
-      size: DSFRBadgeSize.sm,
+      size: DSFRBadgeSize.small(),
       showIcon: true,
     ),
     const DSFRBadge(
       type: DSFRBadgeType.info,
       label: "info - sm - icon",
-      size: DSFRBadgeSize.sm,
+      size: DSFRBadgeSize.small(),
       showIcon: true,
     ),
     const DSFRBadge(
       type: DSFRBadgeType.warning,
       label: "warning - sm - icon",
-      size: DSFRBadgeSize.sm,
+      size: DSFRBadgeSize.small(),
       showIcon: true,
     ),
     const DSFRBadge(
       type: DSFRBadgeType.news,
       label: "news - sm - icon",
-      size: DSFRBadgeSize.sm,
+      size: DSFRBadgeSize.small(),
       showIcon: true,
     ),
     DSFRButtonsGroup(

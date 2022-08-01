@@ -22,7 +22,7 @@ class DSFRRadioButton<T> extends DSFRBaseRadio<T> {
   Widget build(BuildContext context) {
     final dsfrColors = DSFRColors.of(context);
     final dsfrTypography = DSFRTypography.of(context);
-    final dsfrSizes = DSFRSizes.of(context);
+    final sizes = DSFRSpacings.of(context).radioSize;
 
     final Color foregroundColor;
     if (disabled) {
@@ -45,6 +45,7 @@ class DSFRRadioButton<T> extends DSFRBaseRadio<T> {
     return Theme(
       data: Theme.of(context).copyWith(
         unselectedWidgetColor: foregroundColor,
+        radioTheme: RadioThemeData(splashRadius: sizes.size),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -61,7 +62,7 @@ class DSFRRadioButton<T> extends DSFRBaseRadio<T> {
               vertical: VisualDensity.minimumDensity,
             ),
           ),
-          SizedBox(width: dsfrSizes.w4),
+          SizedBox(width: sizes.spacing),
           Text.rich(
             TextSpan(
               children: [
@@ -74,7 +75,7 @@ class DSFRRadioButton<T> extends DSFRBaseRadio<T> {
                   ),
               ],
             ),
-            style: dsfrTypography.body.copyWith(color: foregroundColor),
+            style: dsfrTypography.regular.copyWith(color: foregroundColor),
           ),
         ],
       ),
