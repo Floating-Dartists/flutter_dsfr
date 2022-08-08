@@ -279,6 +279,8 @@ Components we need to implement
 - [ ] DownloadFile
 - [ ] Tile
 
+## Contributors
+
 <!-- readme: contributors -start -->
 <table>
 <tr>
