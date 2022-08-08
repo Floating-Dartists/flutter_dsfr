@@ -278,3 +278,8 @@ Components we need to implement
 - [ ] Tag
 - [ ] DownloadFile
 - [ ] Tile
+
+## Contributors
+
+<!-- readme: contributors -start -->
+<!-- readme: contributors -end -->
