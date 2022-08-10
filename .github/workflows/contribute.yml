@@ -2,12 +2,13 @@ name: Contribute List
 
 on:
     workflow_run:
-        workflows: Test workflow
+        workflows: Build example
         branches: main
         types: completed
 
 jobs:
     contrib-readme-job:
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         runs-on: ubuntu-latest
         name: A job to automate contrib in readme
         steps:
