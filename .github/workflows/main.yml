@@ -1,3 +1,5 @@
+name: Contribute List
+
 on:
     workflow_run:
         workflows: Test workflow
