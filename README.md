@@ -278,3 +278,25 @@ Components we need to implement
 - [ ] Tag
 - [ ] DownloadFile
 - [ ] Tile
+
+## Contributors
+
+<!-- readme: contributors -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/TesteurManiak">
+            <img src="https://avatars.githubusercontent.com/u/14369698?v=4" width="100;" alt="TesteurManiak"/>
+            <br />
+            <sub><b>Guillaume Roux</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/Pierre-Monier">
+            <img src="https://avatars.githubusercontent.com/u/65488471?v=4" width="100;" alt="Pierre-Monier"/>
+            <br />
+            <sub><b>Null</b></sub>
+        </a>
+    </td></tr>
+</table>
+<!-- readme: contributors -end -->
