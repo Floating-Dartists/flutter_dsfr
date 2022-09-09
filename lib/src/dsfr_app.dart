@@ -227,13 +227,6 @@ class _DSFRAppState extends State<DSFRApp> {
     final useDarkTheme = mode == ThemeMode.dark ||
         (mode == ThemeMode.system && platformBrightness == Brightness.dark);
 
-    const typography = DSFRTypography.medium();
-    const sizes = DSFRSizes.regular();
-    const buttonStyle = DSFRButtonStyle.regular();
-    const spacings = DSFRSpacings.medium();
-    const radius = DSFRRadius.regular();
-    const borderRadius = DSFRBorderRadius(radius);
-
     late final ThemeData theme;
     late final DSFRColors colors;
     if (useDarkTheme) {
@@ -242,13 +235,7 @@ class _DSFRAppState extends State<DSFRApp> {
         fontFamily: 'Marianne',
         brightness: Brightness.dark,
         extensions: [
-          colors,
-          typography,
-          sizes,
-          buttonStyle,
-          spacings,
-          radius,
-          borderRadius,
+          DSFRThemeData(colors: colors),
         ],
       );
     } else {
@@ -257,13 +244,7 @@ class _DSFRAppState extends State<DSFRApp> {
         fontFamily: 'Marianne',
         brightness: Brightness.light,
         extensions: [
-          colors,
-          typography,
-          sizes,
-          buttonStyle,
-          spacings,
-          radius,
-          borderRadius,
+          DSFRThemeData(colors: colors),
         ],
       );
     }
