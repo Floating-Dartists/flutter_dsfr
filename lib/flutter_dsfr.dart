@@ -29,5 +29,5 @@ export 'src/theme/radius.dart';
 export 'src/theme/sizes.dart';
 export 'src/theme/spacings.dart';
 export 'src/theme/theme_data.dart';
-export 'src/theme/theme_data_widget.dart';
+export 'src/theme/theme_widget.dart';
 export 'src/theme/typography.dart';

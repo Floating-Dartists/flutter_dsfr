@@ -60,7 +60,7 @@ class DSFRButtonsGroup extends StatelessWidget {
         } else {
           axis = direction ?? Axis.vertical;
         }
-        return DSFRThemeDataWidget(
+        return DSFRThemeWidget(
           data: dsfrTheme.copyWith(
             buttonStyle: dsfrButtonStyle.copyWith(
               mainAxisSize:

@@ -102,15 +102,9 @@ void main() {
     goldenTest(
       'renders large dark mode',
       fileName: 'banner_large_dark',
-      builder: () => Theme(
-        data: ThemeData(
-          fontFamily: 'Marianne',
-          brightness: Brightness.dark,
-          extensions: const [
-            DSFRTypography.medium(),
-            DSFRColors.dark(),
-            DSFRSizes.regular(),
-          ],
+      builder: () => DSFRThemeWidget(
+        data: const DSFRThemeData(
+          colors: DSFRColors.dark(),
         ),
         child: Material(child: widgetLarge),
       ),
@@ -125,15 +119,9 @@ void main() {
     goldenTest(
       'renders small dark mode',
       fileName: 'banner_small_dark',
-      builder: () => Theme(
-        data: ThemeData(
-          fontFamily: 'Marianne',
-          brightness: Brightness.dark,
-          extensions: const [
-            DSFRTypography.medium(),
-            DSFRColors.dark(),
-            DSFRSizes.regular(),
-          ],
+      builder: () => DSFRThemeWidget(
+        data: const DSFRThemeData(
+          colors: DSFRColors.dark(),
         ),
         child: Material(child: widgetSmall),
       ),

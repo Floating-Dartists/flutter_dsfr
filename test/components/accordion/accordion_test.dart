@@ -70,7 +70,7 @@ void main() {
     goldenTest(
       'renders dark mode',
       fileName: 'accordion_dark',
-      builder: () => DSFRThemeDataWidget(
+      builder: () => DSFRThemeWidget(
         data: const DSFRThemeData(
           colors: DSFRColors.dark(),
         ),

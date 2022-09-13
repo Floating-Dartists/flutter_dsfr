@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../flutter_dsfr.dart';
 
-class DSFRThemeDataWidget extends StatelessWidget {
+/// A widget that overrides the theme with the provided [theme] for its [child].
+class DSFRThemeWidget extends StatelessWidget {
   final DSFRThemeData data;
   final Widget child;
 
-  const DSFRThemeDataWidget({
+  const DSFRThemeWidget({
     super.key,
     required this.data,
     required this.child,

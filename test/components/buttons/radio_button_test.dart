@@ -35,7 +35,7 @@ void main() {
     'dark radio button widget rendering',
     fileName: 'radio_button_dark',
     tags: ['golden', 'dark', 'atom'],
-    builder: () => DSFRThemeDataWidget(
+    builder: () => DSFRThemeWidget(
       data: const DSFRThemeData(colors: DSFRColors.dark()),
       child: GoldenTestGroup(
         children: [
