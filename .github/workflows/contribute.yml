@@ -2,9 +2,9 @@ name: Contribute List
 
 on:
     workflow_run:
-        workflows: Build example
+        workflows: [Build example]
         branches: main
-        types: completed
+        types: [completed]
 
 jobs:
     contrib-readme-job:
