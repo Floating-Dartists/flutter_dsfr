@@ -66,11 +66,12 @@ class DSFRBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrColors = DSFRColors.of(context);
-    final dsfrTypography = DSFRTypography.of(context);
+    final dsfrTheme = DSFRThemeData.of(context);
+    final dsfrColors = dsfrTheme.colors;
+    final dsfrTypography = dsfrTheme.typography;
     final textColor = _getTextColor(dsfrColors);
-    final badgeSize = size ?? DSFRSpacings.of(context).badgeSize;
-    final borderRadius = DSFRBorderRadius.of(context);
+    final badgeSize = size ?? dsfrTheme.spacings.badgeSize;
+    final borderRadius = dsfrTheme.borderRadius;
 
     return Container(
       padding: EdgeInsets.symmetric(

@@ -82,8 +82,8 @@ void main() {
     goldenTest(
       'renders dark mode',
       fileName: 'secondary_button_dark',
-      builder: () => DSFRColorsTheme(
-        data: const DSFRColors.dark(),
+      builder: () => DSFRThemeDataWidget(
+        data: const DSFRThemeData(colors: DSFRColors.dark()),
         child: widget,
       ),
     );

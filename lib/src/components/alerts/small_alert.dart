@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/colors.dart';
-import '../../theme/sizes.dart';
+import '../../../flutter_dsfr.dart';
 import 'alert_close_button.dart';
 import 'alert_icon.dart';
 import 'base_alert.dart';
@@ -22,8 +21,9 @@ class DSFRSmallAlert extends BaseAlert {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrColors = DSFRColors.of(context);
-    final dsfrSizes = DSFRSizes.of(context);
+    final dsfrTheme = DSFRThemeData.of(context);
+    final dsfrColors = dsfrTheme.colors;
+    final dsfrSizes = dsfrTheme.sizes;
     final color = getColor(dsfrColors);
 
     return DecoratedBox(

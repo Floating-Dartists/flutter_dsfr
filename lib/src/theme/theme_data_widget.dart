@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class DSFRThemeDataWidget<T extends ThemeExtension<T>> extends StatelessWidget {
-  final T data;
+import '../../flutter_dsfr.dart';
+
+class DSFRThemeDataWidget extends StatelessWidget {
+  final DSFRThemeData data;
   final Widget child;
 
   const DSFRThemeDataWidget({
@@ -15,7 +17,7 @@ class DSFRThemeDataWidget<T extends ThemeExtension<T>> extends StatelessWidget {
     final theme = Theme.of(context);
     final themeExtensions = Map<Object, ThemeExtension>.from(theme.extensions);
 
-    themeExtensions[T] = data;
+    themeExtensions[DSFRThemeData] = data;
 
     return Theme(
       data: theme.copyWith(extensions: themeExtensions.values),

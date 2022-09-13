@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../utils/named_property.dart';
-import 'theme_data_widget.dart';
 
 @immutable
 class DSFRTypography extends ThemeExtension<DSFRTypography> {
@@ -250,9 +249,6 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
           ),
         );
 
-  static DSFRTypography of(BuildContext context) =>
-      Theme.of(context).extension<DSFRTypography>()!;
-
   @override
   DSFRTypography copyWith() {
     return DSFRTypography._(
@@ -302,5 +298,3 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('regular', regular),
       ];
 }
-
-typedef DSFRTypographyTheme = DSFRThemeDataWidget<DSFRTypography>;

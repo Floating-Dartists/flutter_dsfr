@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../flutter_dsfr.dart';
 import '../../consts/endpoints.dart';
-import '../../theme/button_style.dart';
-import '../../theme/colors.dart';
-import '../../theme/sizes.dart';
-import '../../theme/typography.dart';
 import '../logo/logo.dart';
 
 /// Create a button to connect using FranceConnect services.
@@ -60,9 +57,10 @@ class FranceConnectBase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrColors = DSFRColors.of(context);
-    final dsfrTextStyles = DSFRTypography.of(context);
-    final dsfrSpacings = DSFRSizes.of(context);
+    final dsfrTheme = DSFRThemeData.of(context);
+    final dsfrColors = dsfrTheme.colors;
+    final dsfrTextStyles = dsfrTheme.typography;
+    final dsfrSizes = dsfrTheme.sizes;
 
     final btnStyle = DSFRButtonStyle(
       shape: style?.shape ?? const RoundedRectangleBorder(),
@@ -71,7 +69,7 @@ class FranceConnectBase extends StatelessWidget {
 
     return Padding(
       padding: EdgeInsets.only(
-        bottom: dsfrSpacings.v3,
+        bottom: dsfrSizes.v3,
       ),
       child: RawMaterialButton(
         elevation: btnStyle.elevation ?? 0,
@@ -80,10 +78,10 @@ class FranceConnectBase extends StatelessWidget {
         disabledElevation: 0,
         highlightElevation: 0,
         padding: EdgeInsets.only(
-          top: dsfrSpacings.v1,
-          bottom: dsfrSpacings.v1,
-          left: dsfrSpacings.v3,
-          right: dsfrSpacings.w3,
+          top: dsfrSizes.v1,
+          bottom: dsfrSizes.v1,
+          left: dsfrSizes.v3,
+          right: dsfrSizes.w3,
         ),
         shape: btnStyle.shape ?? const RoundedRectangleBorder(),
         fillColor: dsfrColors.frConnectBackground,
@@ -95,10 +93,10 @@ class FranceConnectBase extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.symmetric(
-                vertical: dsfrSpacings.v1,
-                horizontal: dsfrSpacings.v3,
+                vertical: dsfrSizes.v1,
+                horizontal: dsfrSizes.v3,
               ),
-              child: DSFRLogo(size: dsfrSpacings.w5),
+              child: DSFRLogo(size: dsfrSizes.w5),
             ),
             Text.rich(
               TextSpan(
@@ -115,10 +113,10 @@ class FranceConnectBase extends StatelessWidget {
             ),
             if (variant)
               Padding(
-                padding: EdgeInsets.only(left: dsfrSpacings.v1),
+                padding: EdgeInsets.only(left: dsfrSizes.v1),
                 child: Icon(
                   Icons.add,
-                  size: dsfrSpacings.w5,
+                  size: dsfrSizes.w5,
                   color: dsfrColors.textInvertedBlueFrance,
                 ),
               ),
@@ -146,8 +144,9 @@ class _InfoLinkButtonState extends State<InfoLinkButton> {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrColors = DSFRColors.of(context);
-    final baseStyle = DSFRTypography.of(context).frConnectGroup;
+    final dsfrTheme = DSFRThemeData.of(context);
+    final dsfrColors = dsfrTheme.colors;
+    final baseStyle = dsfrTheme.typography.frConnectGroup;
     final style = baseStyle.merge(
       TextStyle(
         decoration: _isHovered ? TextDecoration.underline : null,

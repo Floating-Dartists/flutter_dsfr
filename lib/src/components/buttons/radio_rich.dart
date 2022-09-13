@@ -20,9 +20,10 @@ class DSFRRadioRich<T> extends DSFRBaseRadio<T> {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrColors = DSFRColors.of(context);
-    final dsfrTypography = DSFRTypography.of(context);
-    final dsfrSizes = DSFRSizes.of(context);
+    final dsfrTheme = DSFRThemeData.of(context);
+    final dsfrColors = dsfrTheme.colors;
+    final dsfrTypography = dsfrTheme.typography;
+    final dsfrSizes = dsfrTheme.sizes;
 
     final Color foregroundColor;
     if (disabled) {
