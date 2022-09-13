@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/colors.dart';
-import '../../theme/sizes.dart';
-import '../../theme/typography.dart';
-import '../buttons/radio.dart';
+import '../../../flutter_dsfr.dart';
 
 @immutable
 class DSFRRadioData<T> {
@@ -60,9 +57,10 @@ class _DSFRRadioGroupState<T> extends State<DSFRRadioGroup<T>> {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrTypography = DSFRTypography.of(context);
-    final dsfrColors = DSFRColors.of(context);
-    final dsfrSizes = DSFRSizes.of(context);
+    final dsfrTheme = DSFRThemeData.of(context);
+    final dsfrTypography = dsfrTheme.typography;
+    final dsfrColors = dsfrTheme.colors;
+    final dsfrSizes = dsfrTheme.sizes;
     final description = widget.description;
 
     final disabled = widget.onChanged == null;

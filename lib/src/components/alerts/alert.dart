@@ -26,8 +26,9 @@ class DSFRAlert extends BaseAlert {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrColors = DSFRColors.of(context);
-    final dsfrTextStyles = DSFRTypography.of(context);
+    final dsfrTheme = DSFRThemeData.of(context);
+    final dsfrColors = dsfrTheme.colors;
+    final dsfrTextStyles = dsfrTheme.typography;
 
     final color = getColor(dsfrColors);
 
@@ -43,7 +44,7 @@ class DSFRAlert extends BaseAlert {
             AlertIcon(
               color: color,
               icon: getIconData(),
-              padding: _getIconPadding(DSFRSizes.of(context)),
+              padding: _getIconPadding(dsfrTheme.sizes),
             ),
             Expanded(
               child: Padding(

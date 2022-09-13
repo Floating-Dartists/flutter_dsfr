@@ -22,6 +22,9 @@ class DSFRThemeData extends ThemeExtension<DSFRThemeData> {
     this.typography = const DSFRTypography.medium(),
   });
 
+  static DSFRThemeData of(BuildContext context) =>
+      Theme.of(context).extension<DSFRThemeData>()!;
+
   @override
   DSFRThemeData copyWith({
     DSFRButtonStyle? buttonStyle,

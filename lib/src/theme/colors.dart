@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../utils/named_property.dart';
 import 'palette.dart';
-import 'theme_data_widget.dart';
 
 @immutable
 class DSFRColors extends ThemeExtension<DSFRColors> {
@@ -180,9 +179,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           defaultSuccess: ColorPalette.success625,
           titleGrey: Colors.white,
         );
-
-  static DSFRColors of(BuildContext context) =>
-      Theme.of(context).extension<DSFRColors>()!;
 
   @override
   DSFRColors copyWith() {
@@ -362,5 +358,3 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('defaultSuccess', defaultSuccess),
       ];
 }
-
-typedef DSFRColorsTheme = DSFRThemeDataWidget<DSFRColors>;

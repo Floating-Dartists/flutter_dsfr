@@ -10,9 +10,6 @@ class DSFRRadius extends ThemeExtension<DSFRRadius> {
 
   const DSFRRadius.regular() : this._(small: const Radius.circular(4));
 
-  static DSFRRadius of(BuildContext context) =>
-      Theme.of(context).extension<DSFRRadius>()!;
-
   @override
   DSFRRadius copyWith() {
     return DSFRRadius._(small: small);
@@ -34,9 +31,6 @@ class DSFRBorderRadius extends ThemeExtension<DSFRBorderRadius> {
   final DSFRRadius _radius;
 
   const DSFRBorderRadius(this._radius);
-
-  static DSFRBorderRadius of(BuildContext context) =>
-      Theme.of(context).extension<DSFRBorderRadius>()!;
 
   BorderRadius get small => BorderRadius.all(_radius.small);
 

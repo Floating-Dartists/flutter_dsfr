@@ -43,15 +43,9 @@ void main() {
     goldenTest(
       'renders dark mode',
       fileName: 'france_connect_button_dark',
-      builder: () => Theme(
-        data: ThemeData(
-          fontFamily: 'Marianne',
-          brightness: Brightness.dark,
-          extensions: const [
-            DSFRTypography.medium(),
-            DSFRColors.dark(),
-            DSFRSizes.regular(),
-          ],
+      builder: () => DSFRThemeWidget(
+        data: const DSFRThemeData(
+          colors: DSFRColors.dark(),
         ),
         child: widget,
       ),

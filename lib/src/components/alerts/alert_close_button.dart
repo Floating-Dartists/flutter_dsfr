@@ -10,10 +10,10 @@ class AlertCloseButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrSizes = DSFRSizes.of(context);
+    final dsfrTheme = DSFRThemeData.of(context);
 
     return Padding(
-      padding: EdgeInsets.all(dsfrSizes.v1),
+      padding: EdgeInsets.all(dsfrTheme.sizes.v1),
       child: Align(
         alignment: Alignment.topCenter,
         child: SharedCloseButton(onClose: onClose),

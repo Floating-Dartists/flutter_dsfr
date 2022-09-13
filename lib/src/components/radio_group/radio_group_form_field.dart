@@ -18,7 +18,7 @@ class DSFRRadioGroupFormField<T> extends FormField<T> {
   }) : super(
           builder: (state) {
             final context = state.context;
-            final dsfrColors = DSFRColors.of(context);
+            final dsfrColors = DSFRThemeData.of(context).colors;
             final disabled = onChanged == null;
             final hasError = state.hasError && !disabled;
             final isValid =
@@ -76,8 +76,9 @@ class _FormMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrTypography = DSFRTypography.of(context);
-    final dsfrSizes = DSFRSizes.of(context);
+    final dsfrTheme = DSFRThemeData.of(context);
+    final dsfrTypography = dsfrTheme.typography;
+    final dsfrSizes = dsfrTheme.sizes;
 
     return Padding(
       padding: EdgeInsets.only(top: dsfrSizes.v3),
