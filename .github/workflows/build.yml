@@ -21,4 +21,4 @@ jobs:
         with:
           workingDir: example
           webRenderer: canvaskit
-          baseHref: /flutter_dsfr_example/
+          baseHref: /flutter_dsfr/
