@@ -13,8 +13,9 @@ class SharedCloseButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrSizes = DSFRSizes.of(context);
-    final dsfrColors = DSFRColors.of(context);
+    final dsfrTheme = DSFRThemeData.of(context);
+    final dsfrSizes = dsfrTheme.sizes;
+    final dsfrColors = dsfrTheme.colors;
 
     return SizedBox(
       width: dsfrSizes.w3,

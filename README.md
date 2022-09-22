@@ -25,7 +25,7 @@ dependencies:
     flutter_dsfr: any
 ```
 
-* Add the required extensions to your theme:
+* Use the `DSFRApp` widget:
 
 ```dart
 import 'package:flutter_dsfr/flutter_dsfr.dart';
@@ -35,14 +35,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return DSFRApp(
+        home: MyHomePage(),
+    );
+  }
+}
+```
+
+Or you can also use the `DSFRThemeData` extension:
+
+```dart
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData.light().copyWith(
-          extensions: dsfrExtensionsLight,
-        ),
-        darkTheme: ThemeData.dark().copyWith(
-          extensions: dsfrExtensionsDark,
-        ),
-        home: const MyHomePage(),
+        theme: DSFRThemeData(colors: DSFRColors.light()),
+        home: MyHomePage(),
     );
   }
 }

@@ -18,7 +18,7 @@ class AlertIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrColors = DSFRColors.of(context);
+    final dsfrTheme = DSFRThemeData.of(context);
     final aligment = shouldCenterIcon ? Alignment.center : Alignment.topCenter;
 
     return Container(
@@ -28,7 +28,7 @@ class AlertIcon extends StatelessWidget {
         alignment: aligment,
         child: Icon(
           icon,
-          color: dsfrColors.alertsBackground,
+          color: dsfrTheme.colors.alertsBackground,
         ),
       ),
     );

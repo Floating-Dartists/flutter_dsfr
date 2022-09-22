@@ -1,22 +1,25 @@
 name: Build example
 
 on:
-    workflow_run:
-        workflows: Test workflow
-        branches: main
-        types: completed
-        
+  workflow_run:
+    workflows: [Test workflow]
+    branches: main
+    types: [completed]
+
 jobs:
   build:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Build example
     runs-on: ubuntu-latest
     defaults:
-        run:
-           working-directory: example 
+      run:
+        working-directory: example
     steps:
-      - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v1.5.3
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.0.5"
+          channel: "stable"
       - name: Fetch dependencies
         run: flutter pub get
       - name: Build example project to ensure compatibility

@@ -14,7 +14,8 @@ class DSFRAccordionBorder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrColors = DSFRColors.of(context);
+    final dsfrTheme = DSFRThemeData.of(context);
+    final dsfrColors = dsfrTheme.colors;
     final border = BorderSide(color: dsfrColors.accordionBorder, width: 1.0);
     final bottomBorder = isLastInGroup ? border : BorderSide.none;
 

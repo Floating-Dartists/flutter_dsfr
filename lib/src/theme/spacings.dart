@@ -2,8 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import 'theme_data_widget.dart';
-
 @immutable
 class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
   final DSFRBadgeSize badgeSize;
@@ -36,9 +34,6 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
           buttonSize: const DSFRButtonSize.large(),
           radioSize: const DSFRRadioSize.medium(),
         );
-
-  static DSFRSpacings of(BuildContext context) =>
-      Theme.of(context).extension<DSFRSpacings>()!;
 
   @override
   DSFRSpacings copyWith({
@@ -192,5 +187,3 @@ class DSFRRadioSize {
     );
   }
 }
-
-typedef DSFRSpacingsTheme = DSFRThemeDataWidget<DSFRSpacings>;

@@ -25,10 +25,11 @@ class DSFRPrimaryButton extends DSFRGroupeableButton {
 
   @override
   Widget build(BuildContext context) {
-    final spacings = DSFRSpacings.of(context).buttonSize;
-    final dsfrColors = DSFRColors.of(context);
-    final dsfrTypography = DSFRTypography.of(context);
-    final dsfrButtonStyle = DSFRButtonStyle.of(context);
+    final dsfrTheme = DSFRThemeData.of(context);
+    final spacings = dsfrTheme.spacings.buttonSize;
+    final dsfrColors = dsfrTheme.colors;
+    final dsfrTypography = dsfrTheme.typography;
+    final dsfrButtonStyle = dsfrTheme.buttonStyle;
 
     final scale = MediaQuery.maybeOf(context)?.textScaleFactor ?? 1;
     final double gap =

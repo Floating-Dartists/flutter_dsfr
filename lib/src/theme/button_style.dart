@@ -2,8 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import 'theme_data_widget.dart';
-
 @immutable
 class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
   final double? elevation;
@@ -26,9 +24,6 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
           elevation: 0.0,
           mainAxisSize: MainAxisSize.min,
         );
-
-  static DSFRButtonStyle of(BuildContext context) =>
-      Theme.of(context).extension<DSFRButtonStyle>()!;
 
   @override
   DSFRButtonStyle copyWith({
@@ -55,5 +50,3 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
     );
   }
 }
-
-typedef DSFRButtonStyleTheme = DSFRThemeDataWidget<DSFRButtonStyle>;

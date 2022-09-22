@@ -55,9 +55,10 @@ class DSFRAccordionPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrTypography = DSFRTypography.of(context);
-    final dsfrColors = DSFRColors.of(context);
-    final dsfrSizes = DSFRSizes.of(context);
+    final dsfrTheme = DSFRThemeData.of(context);
+    final dsfrTypography = dsfrTheme.typography;
+    final dsfrColors = dsfrTheme.colors;
+    final dsfrSizes = dsfrTheme.sizes;
 
     return Theme(
       data: Theme.of(context).copyWith(

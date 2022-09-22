@@ -27,8 +27,9 @@ class DSFRBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dsfrColors = DSFRColors.of(context);
-    final dsfrSizes = DSFRSizes.of(context);
+    final dsfrTheme = DSFRThemeData.of(context);
+    final dsfrColors = dsfrTheme.colors;
+    final dsfrSizes = dsfrTheme.sizes;
 
     final textColor = dsfrColors.info;
 
