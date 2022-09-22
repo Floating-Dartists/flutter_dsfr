@@ -60,6 +60,8 @@ class MyApp extends StatelessWidget {
 
 ## Components
 
+You can check the [example](https://floating-dartists.github.io/flutter_dsfr/#/) to see all the components.
+
 ### Buttons
 
 * Primary
