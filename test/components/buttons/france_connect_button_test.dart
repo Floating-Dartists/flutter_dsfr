@@ -17,7 +17,7 @@ void main() {
           name: 'variant',
           child: FranceConnectButton(
             onPressed: () {},
-            variant: true,
+            _variant: true,
           ),
         ),
         GoldenTestScenario(

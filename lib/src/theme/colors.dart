@@ -181,51 +181,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         );
 
   @override
-  DSFRColors copyWith() {
-    return DSFRColors._(
-      frConnectHover: frConnectHover,
-      frConnectActive: frConnectActive,
-      frConnectBackground: frConnectBackground,
-      backgroundActionHighBlueFrance: backgroundActionHighBlueFrance,
-      backgroundActionHighBlueFranceHover: backgroundActionHighBlueFranceHover,
-      backgroundActionHighBlueFranceActive:
-          backgroundActionHighBlueFranceActive,
-      activeBlueFrance: activeBlueFrance,
-      textInvertedBlueFrance: textInvertedBlueFrance,
-      borderActionHighBlueFrance: borderActionHighBlueFrance,
-      blockColorHover: blockColorHover,
-      blockColorActive: blockColorActive,
-      defaultGrey: defaultGrey,
-      backgroundDisabledGrey: backgroundDisabledGrey,
-      textDisabledGrey: textDisabledGrey,
-      alertsBackground: alertsBackground,
-      alertsCloseButtonIcon: alertsCloseButtonIcon,
-      hover: hover,
-      active: active,
-      splash: splash,
-      text: text,
-      accordionBorder: accordionBorder,
-      error: error,
-      success: success,
-      info: info,
-      warning: warning,
-      news: news,
-      badgeError: badgeError,
-      badgeSuccess: badgeSuccess,
-      badgeInfo: badgeInfo,
-      badgeWarning: badgeWarning,
-      badgeNews: badgeNews,
-      banner: banner,
-      g200: g200,
-      g800: g800,
-      highGrey: highGrey,
-      disabledGrey: disabledGrey,
-      mentionGrey: mentionGrey,
-      defaultError: defaultError,
-      defaultSuccess: defaultSuccess,
-      titleGrey: titleGrey,
-    );
-  }
+  DSFRColors copyWith() => this;
 
   @override
   DSFRColors lerp(ThemeExtension<DSFRColors>? other, double t) {

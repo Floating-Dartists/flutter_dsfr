@@ -29,8 +29,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final _widgets = <Widget>[
-    FranceConnectButton(onPressed: () {}),
-    FranceConnectButton(onPressed: () {}, variant: true),
+    FranceConnectButton(
+      onPressed: () {},
+      onInfoLinkTap: () {},
+    ),
+    FranceConnectButton.plus(
+      onPressed: () {},
+      onInfoLinkTap: () {},
+    ),
     UnconstrainedBox(
       child: DSFRPrimaryButton(
         onPressed: () {},
