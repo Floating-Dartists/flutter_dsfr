@@ -9,12 +9,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DynamicTheme(themedWidgetBuilder: (_, themeMode, __) {
-      return DSFRApp(
-        themeMode: themeMode,
-        home: const MyHomePage(),
-      );
-    });
+    return DynamicTheme(
+      themedWidgetBuilder: (_, themeMode, __) {
+        return DSFRApp(
+          themeMode: themeMode,
+          home: const MyHomePage(),
+        );
+      },
+    );
   }
 }
 
