@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../flutter_dsfr.dart';
-import '../../consts/endpoints.dart';
 import '../logo/logo.dart';
 
 /// Create a button to connect using FranceConnect services.
@@ -49,7 +48,10 @@ class FranceConnectButton extends StatelessWidget {
           onPressed: onPressed,
           style: style,
         ),
-        InfoLinkButton(variant: _variant),
+        InfoLinkButton(
+          variant: _variant,
+          onTap: onInfoLinkTap,
+        ),
       ],
     );
   }
@@ -141,8 +143,13 @@ class FranceConnectBase extends StatelessWidget {
 
 class InfoLinkButton extends StatefulWidget {
   final bool variant;
+  final VoidCallback onTap;
 
-  const InfoLinkButton({super.key, required this.variant});
+  const InfoLinkButton({
+    super.key,
+    required this.variant,
+    required this.onTap,
+  });
 
   @override
   State<InfoLinkButton> createState() => _InfoLinkButtonState();
@@ -167,13 +174,7 @@ class _InfoLinkButtonState extends State<InfoLinkButton> {
     );
     return InkWell(
       hoverColor: Colors.transparent,
-      onTap: () => launchUrl(
-        Uri.parse(
-          widget.variant
-              ? Endpoints.franceConnectPlus
-              : Endpoints.franceConnect,
-        ),
-      ),
+      onTap: widget.onTap,
       onHover: (isHovered) => setState(() => _isHovered = isHovered),
       child: Text(
         widget.variant ? _kFranceConnectTextVariant : _kFranceConnectText,

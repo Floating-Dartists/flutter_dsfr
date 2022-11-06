@@ -1,6 +1,7 @@
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dsfr/flutter_dsfr.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 void main() => runApp(const MyApp());
 
@@ -31,11 +32,15 @@ class _MyHomePageState extends State<MyHomePage> {
   final _widgets = <Widget>[
     FranceConnectButton(
       onPressed: () {},
-      onInfoLinkTap: () {},
+      onInfoLinkTap: () {
+        launchUrlString('https://franceconnect.gouv.fr/');
+      },
     ),
     FranceConnectButton.plus(
       onPressed: () {},
-      onInfoLinkTap: () {},
+      onInfoLinkTap: () {
+        launchUrlString('https://franceconnect.gouv.fr/france-connect-plus');
+      },
     ),
     UnconstrainedBox(
       child: DSFRPrimaryButton(
@@ -183,7 +188,9 @@ class _MyHomePageState extends State<MyHomePage> {
       text: "Im an awesome banner",
       link: DSFRBannerLink(
         text: "this is an awesome link",
-        link: Uri.parse("https://http.cat/404"),
+        onTap: () {
+          launchUrlString('https://http.cat/404');
+        },
       ),
       onClose: () {},
     ),

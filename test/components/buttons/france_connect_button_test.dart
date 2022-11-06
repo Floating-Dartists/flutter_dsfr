@@ -11,19 +11,21 @@ void main() {
           name: 'default',
           child: FranceConnectButton(
             onPressed: () {},
+            onInfoLinkTap: () {},
           ),
         ),
         GoldenTestScenario(
           name: 'variant',
-          child: FranceConnectButton(
+          child: FranceConnectButton.plus(
             onPressed: () {},
-            _variant: true,
+            onInfoLinkTap: () {},
           ),
         ),
         GoldenTestScenario(
           name: 'rounded',
           child: FranceConnectButton(
             onPressed: () {},
+            onInfoLinkTap: () {},
             style: DSFRButtonStyle(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
