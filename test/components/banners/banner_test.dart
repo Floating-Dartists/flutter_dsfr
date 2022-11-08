@@ -32,7 +32,7 @@ void main() {
             text: "Im an awesome banner with a link",
             link: DSFRBannerLink(
               text: "this is an awesome link",
-              link: Uri.parse("https://http.cat/404"),
+              onTap: () {},
             ),
           ),
         ),
@@ -42,7 +42,7 @@ void main() {
             text: "Im an awesome banner with a link and a close button",
             link: DSFRBannerLink(
               text: "this is an awesome link",
-              link: Uri.parse("https://http.cat/404"),
+              onTap: () {},
             ),
             onClose: () {},
           ),
@@ -75,7 +75,7 @@ void main() {
             text: "Im an awesome banner with a link",
             link: DSFRBannerLink(
               text: "this is an awesome link",
-              link: Uri.parse("https://http.cat/404"),
+              onTap: () {},
             ),
           ),
         ),
@@ -85,7 +85,7 @@ void main() {
             text: "Im an awesome banner with a link and a close button",
             link: DSFRBannerLink(
               text: "this is an awesome link",
-              link: Uri.parse("https://http.cat/404"),
+              onTap: () {},
             ),
             onClose: () {},
           ),

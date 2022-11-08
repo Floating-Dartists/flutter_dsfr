@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../flutter_dsfr.dart';
 
@@ -23,7 +22,7 @@ class DSFRBannerText extends StatelessWidget {
 
     final textColor = dsfrColors.info;
     final textStyle = dsfrTypography.boldText.copyWith(color: textColor);
-    // * we assign to a new variable for type shadowing
+    // we assign to a new variable for type shadowing
     final bannerLink = link;
 
     return Text.rich(
@@ -40,10 +39,7 @@ class DSFRBannerText extends StatelessWidget {
             ),
             TextSpan(
               text: bannerLink.text,
-              recognizer: TapGestureRecognizer()
-                ..onTap = () {
-                  launchUrl(link!.link);
-                },
+              recognizer: TapGestureRecognizer()..onTap = link?.onTap,
               style: textStyle.copyWith(
                 decoration: TextDecoration.underline,
               ),

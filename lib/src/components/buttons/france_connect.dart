@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../flutter_dsfr.dart';
-import '../../consts/endpoints.dart';
 import '../logo/logo.dart';
 
 /// Create a button to connect using FranceConnect services.
@@ -16,16 +14,29 @@ class FranceConnectButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   /// If `true` the button displayed will be FranceConnect+.
-  final bool variant;
+  final bool _variant;
 
   final DSFRButtonStyle? style;
+
+  /// Tapping on the info link should open either of the url:
+  /// - https://franceconnect.gouv.fr/
+  /// - https://franceconnect.gouv.fr/france-connect-plus for the "plus"
+  /// variant.
+  final VoidCallback onInfoLinkTap;
 
   const FranceConnectButton({
     super.key,
     required this.onPressed,
-    this.variant = false,
+    required this.onInfoLinkTap,
     this.style,
-  });
+  }) : _variant = false;
+
+  const FranceConnectButton.plus({
+    super.key,
+    required this.onPressed,
+    required this.onInfoLinkTap,
+    this.style,
+  }) : _variant = true;
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +44,14 @@ class FranceConnectButton extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         FranceConnectBase(
-          variant: variant,
+          variant: _variant,
           onPressed: onPressed,
           style: style,
         ),
-        InfoLinkButton(variant: variant),
+        InfoLinkButton(
+          variant: _variant,
+          onTap: onInfoLinkTap,
+        ),
       ],
     );
   }
@@ -129,8 +143,13 @@ class FranceConnectBase extends StatelessWidget {
 
 class InfoLinkButton extends StatefulWidget {
   final bool variant;
+  final VoidCallback onTap;
 
-  const InfoLinkButton({super.key, required this.variant});
+  const InfoLinkButton({
+    super.key,
+    required this.variant,
+    required this.onTap,
+  });
 
   @override
   State<InfoLinkButton> createState() => _InfoLinkButtonState();
@@ -155,13 +174,7 @@ class _InfoLinkButtonState extends State<InfoLinkButton> {
     );
     return InkWell(
       hoverColor: Colors.transparent,
-      onTap: () => launchUrl(
-        Uri.parse(
-          widget.variant
-              ? Endpoints.franceConnectPlus
-              : Endpoints.franceConnect,
-        ),
-      ),
+      onTap: widget.onTap,
       onHover: (isHovered) => setState(() => _isHovered = isHovered),
       child: Text(
         widget.variant ? _kFranceConnectTextVariant : _kFranceConnectText,
