@@ -16,7 +16,7 @@ class AccordionRobot {
         home: Material(
           child: Theme(
             data: ThemeData(
-              fontFamily: 'Marianne',
+              fontFamily: DSFRFonts.marianne,
               brightness: Brightness.light,
               extensions: const [
                 DSFRTypography.medium(),

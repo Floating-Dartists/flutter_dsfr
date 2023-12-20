@@ -234,7 +234,7 @@ class _DSFRAppState extends State<DSFRApp> {
       colors = const DSFRColors.dark();
       theme = ThemeData(
         useMaterial3: false,
-        fontFamily: 'Marianne',
+        fontFamily: DSFRFonts.marianne,
         brightness: Brightness.dark,
         extensions: [
           DSFRThemeData(colors: colors),
@@ -244,7 +244,7 @@ class _DSFRAppState extends State<DSFRApp> {
       colors = const DSFRColors.light();
       theme = ThemeData(
         useMaterial3: false,
-        fontFamily: 'Marianne',
+        fontFamily: DSFRFonts.marianne,
         brightness: Brightness.light,
         extensions: [
           DSFRThemeData(colors: colors),

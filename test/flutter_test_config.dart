@@ -14,7 +14,7 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
   return AlchemistConfig.runWithConfig(
     config: AlchemistConfig(
       theme: ThemeData(
-        fontFamily: 'Marianne',
+        fontFamily: DSFRFonts.marianne,
         brightness: Brightness.light,
         useMaterial3: false,
         extensions: const [

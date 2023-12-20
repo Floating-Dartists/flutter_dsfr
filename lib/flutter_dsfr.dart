@@ -1,5 +1,6 @@
 library flutter_dsfr;
 
+export 'fonts/fonts.dart';
 export 'src/components/accordion/accordion.dart';
 export 'src/components/accordion/accordion_data.dart';
 export 'src/components/alerts/alert.dart';
