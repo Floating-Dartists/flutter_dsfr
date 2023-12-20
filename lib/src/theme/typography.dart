@@ -298,4 +298,38 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('detail', detail),
         NamedProperty('regular', regular),
       ];
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is DSFRTypography &&
+            runtimeType == other.runtimeType &&
+            frConnectLogin == other.frConnectLogin &&
+            frConnectBrand == other.frConnectBrand &&
+            frConnectGroup == other.frConnectGroup &&
+            alertsTitle == other.alertsTitle &&
+            defaultText == other.defaultText &&
+            boldText == other.boldText &&
+            medium == other.medium &&
+            mention == other.mention &&
+            detail == other.detail &&
+            regular == other.regular;
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      frConnectLogin,
+      frConnectBrand,
+      frConnectGroup,
+      alertsTitle,
+      defaultText,
+      boldText,
+      medium,
+      mention,
+      detail,
+      regular,
+    );
+  }
 }

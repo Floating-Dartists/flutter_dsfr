@@ -62,4 +62,30 @@ class DSFRThemeData extends ThemeExtension<DSFRThemeData> {
       typography: typography.lerp(other.typography, t),
     );
   }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is DSFRThemeData &&
+            runtimeType == other.runtimeType &&
+            buttonStyle == other.buttonStyle &&
+            colors == other.colors &&
+            radius == other.radius &&
+            borderRadius == other.borderRadius &&
+            sizes == other.sizes &&
+            spacings == other.spacings &&
+            typography == other.typography;
+  }
+
+  @override
+  int get hashCode => Object.hash(
+        runtimeType,
+        buttonStyle,
+        colors,
+        radius,
+        borderRadius,
+        sizes,
+        spacings,
+        typography,
+      );
 }
