@@ -40,8 +40,6 @@ abstract class DSFRLocalizationLabels {
 
   String get france_connect;
 
-  String get france_connect_plus;
-
   String get what_is_france_connect;
 
   String get what_is_france_connect_plus;

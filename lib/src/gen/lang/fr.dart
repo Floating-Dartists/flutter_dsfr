@@ -14,9 +14,6 @@ class FrLocalizations extends DSFRLocalizationLabels {
   String get france_connect => "FranceConnect";
 
   @override
-  String get france_connect_plus => "FranceConnect+";
-
-  @override
   String get what_is_france_connect => "Qu'est-ce que FranceConnect ?";
 
   @override

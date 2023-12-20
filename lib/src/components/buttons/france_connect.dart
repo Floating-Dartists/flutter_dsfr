@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dsfr/flutter_dsfr.dart';
+import 'package:flutter_dsfr/flutter_dsfr_localizations.dart';
 import 'package:flutter_dsfr/src/components/logo/logo.dart';
 
 /// {@template dsfr_fr_connect_button}
@@ -73,6 +74,7 @@ class FranceConnectBase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dsfrTheme = DSFRThemeData.of(context);
+    final strings = DSFRLocalizations.labelsOf(context);
     final dsfrColors = dsfrTheme.colors;
     final dsfrTextStyles = dsfrTheme.typography;
     final dsfrSizes = dsfrTheme.sizes;
@@ -114,12 +116,12 @@ class FranceConnectBase extends StatelessWidget {
             ),
             Text.rich(
               TextSpan(
-                text: "S'identifier avec\n",
+                text: "${strings.auth}\n",
                 style: dsfrTextStyles.frConnectLogin
                     .copyWith(color: dsfrColors.textInvertedBlueFrance),
                 children: [
                   TextSpan(
-                    text: "FranceConnect",
+                    text: strings.france_connect,
                     style: dsfrTextStyles.frConnectBrand,
                   ),
                 ],
@@ -155,14 +157,12 @@ class InfoLinkButton extends StatefulWidget {
 }
 
 class _InfoLinkButtonState extends State<InfoLinkButton> {
-  static const _kFranceConnectText = "Qu'est ce que FranceConnect ?";
-  static const _kFranceConnectTextVariant = "Qu'est ce que FranceConnect+ ?";
-
   bool _isHovered = false;
 
   @override
   Widget build(BuildContext context) {
     final dsfrTheme = DSFRThemeData.of(context);
+    final strings = DSFRLocalizations.labelsOf(context);
     final dsfrColors = dsfrTheme.colors;
     final baseStyle = dsfrTheme.typography.frConnectGroup;
     final style = baseStyle.merge(
@@ -176,7 +176,9 @@ class _InfoLinkButtonState extends State<InfoLinkButton> {
       onTap: widget.onTap,
       onHover: (isHovered) => setState(() => _isHovered = isHovered),
       child: Text(
-        widget.variant ? _kFranceConnectTextVariant : _kFranceConnectText,
+        widget.variant
+            ? strings.what_is_france_connect_plus
+            : strings.what_is_france_connect,
         style: style,
       ),
     );
