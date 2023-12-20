@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
-import 'programmable_expansion_tile.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
+import 'package:flutter_dsfr/src/components/accordion/programmable_expansion_tile.dart';
 
 class DSFRAccordionPanel extends StatelessWidget {
   const DSFRAccordionPanel({

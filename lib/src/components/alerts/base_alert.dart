@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '../../theme/colors.dart';
-import '../../theme/icons.dart';
-import 'alert_type.dart';
+import 'package:flutter_dsfr/src/components/alerts/alert_type.dart';
+import 'package:flutter_dsfr/src/theme/colors.dart';
+import 'package:flutter_dsfr/src/theme/icons.dart';
 
 abstract class BaseAlert extends StatelessWidget {
   const BaseAlert({required this.type, this.onClose, super.key});

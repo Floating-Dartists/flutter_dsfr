@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
-import '../../theme/breakpoints.dart';
-import '../shared/close_button.dart';
-import 'banner_text.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
+import 'package:flutter_dsfr/src/components/banners/banner_text.dart';
+import 'package:flutter_dsfr/src/components/shared/close_button.dart';
+import 'package:flutter_dsfr/src/theme/breakpoints.dart';
 
 /// Create a banner .
 ///

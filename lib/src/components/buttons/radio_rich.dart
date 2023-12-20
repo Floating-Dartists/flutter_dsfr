@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
-import 'base_radio.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
+import 'package:flutter_dsfr/src/components/buttons/base_radio.dart';
 
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/368935129/Boutons+radio+riches+-+Radio+buttons+extended
 class DSFRRadioRich<T> extends DSFRBaseRadio<T> {
-  final Widget image;
-
   const DSFRRadioRich({
     super.key,
     required super.label,
@@ -17,6 +14,8 @@ class DSFRRadioRich<T> extends DSFRBaseRadio<T> {
     super.hasError = false,
     required this.image,
   });
+
+  final Widget image;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +55,7 @@ class DSFRRadioRich<T> extends DSFRBaseRadio<T> {
       ),
       child: DecoratedBox(
         decoration: BoxDecoration(
-          border: Border.all(color: borderColor, width: 1),
+          border: Border.all(color: borderColor),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,

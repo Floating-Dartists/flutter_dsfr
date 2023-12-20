@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
 
 /// Create a badge .
 ///

@@ -12,7 +12,7 @@ export 'src/components/banners/banner_link.dart';
 export 'src/components/buttons/base_button.dart'
     hide DSFRBaseButton, DSFRGroupeableButton;
 export 'src/components/buttons/france_connect.dart'
-    hide InfoLinkButton, FranceConnectBase;
+    hide FranceConnectBase, InfoLinkButton;
 export 'src/components/buttons/primary.dart';
 export 'src/components/buttons/radio.dart';
 export 'src/components/buttons/radio_rich.dart';

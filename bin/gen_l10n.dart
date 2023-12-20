@@ -64,7 +64,8 @@ Future<void> main() async {
   await Future.wait(genOps);
 
   await generateDefaultLocalizations(
-    (labelsByLocale['fr']['default'] as Map).cast<String, dynamic>(),
+    ((labelsByLocale['fr'] as Map<String, dynamic>)['default'] as Map)
+        .cast<String, dynamic>(),
   );
 
   Process.runSync('dart', ['format', outDir.path]);
@@ -82,9 +83,7 @@ Future<void> generateLocalizationsClass({
     outFile.createSync(recursive: true);
   }
 
-  final out = outFile.openWrite();
-
-  out
+  final out = outFile.openWrite()
     ..writeln('// coverage:ignore-file')
     ..writeln('// GENERATED CODE - DO NOT MODIFY BY HAND')
     ..writeln('// ignore_for_file: non_constant_identifier_names')
@@ -147,8 +146,7 @@ Future<void> generateDefaultLocalizations(Map<String, dynamic> arb) async {
     outFile.createSync(recursive: true);
   }
 
-  final out = outFile.openWrite();
-  out.write(content);
+  final out = outFile.openWrite()..write(content);
   await out.flush();
   await out.close();
 }
@@ -169,12 +167,10 @@ bool isLabelEntry(MapEntry<String, dynamic> entry) {
 }
 
 Future<String> getDefaultLocalizationsContent(List<Label> labels) async {
-  final sb = StringBuffer();
-
-  sb.writeln(defaultLocalizationsHeader);
-
-  sb.writeln('abstract class DSFRLocalizationLabels {');
-  sb.writeln('  const DSFRLocalizationLabels();');
+  final sb = StringBuffer()
+    ..writeln(defaultLocalizationsHeader)
+    ..writeln('abstract class DSFRLocalizationLabels {')
+    ..writeln('  const DSFRLocalizationLabels();');
 
   for (final label in labels) {
     sb.writeln();
@@ -187,10 +183,10 @@ Future<String> getDefaultLocalizationsContent(List<Label> labels) async {
     sb.writeln('  String get ${label.key};');
   }
 
-  sb.writeln('}');
-  sb.writeln();
-
-  sb.writeln(defaultLocalizationsFooter);
+  sb
+    ..writeln('}')
+    ..writeln()
+    ..writeln(defaultLocalizationsFooter);
 
   return sb.toString();
 }

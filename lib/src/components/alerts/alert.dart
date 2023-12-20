@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
-import 'alert_close_button.dart';
-import 'alert_icon.dart';
-import 'base_alert.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
+import 'package:flutter_dsfr/src/components/alerts/alert_close_button.dart';
+import 'package:flutter_dsfr/src/components/alerts/alert_icon.dart';
+import 'package:flutter_dsfr/src/components/alerts/base_alert.dart';
 
 /// Create an alert .
 ///
@@ -48,7 +47,7 @@ class DSFRAlert extends BaseAlert {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

@@ -3,19 +3,6 @@ import 'package:flutter/material.dart';
 enum IconPosition { left, right }
 
 abstract class DSFRBaseButton extends StatelessWidget {
-  const DSFRBaseButton._({
-    super.key,
-    required this.label,
-    required this.icon,
-    required this.iconPosition,
-    required this.iconOnly,
-    required this.onPressed,
-    required this.mainAxisSize,
-  }) : assert(
-          (iconOnly && label == null && icon != null) ||
-              (!iconOnly && label != null),
-        );
-
   const DSFRBaseButton({
     Key? key,
     required String label,
@@ -31,6 +18,19 @@ abstract class DSFRBaseButton extends StatelessWidget {
           iconOnly: false,
           onPressed: onPressed,
           mainAxisSize: mainAxisSize,
+        );
+
+  const DSFRBaseButton._({
+    super.key,
+    required this.label,
+    required this.icon,
+    required this.iconPosition,
+    required this.iconOnly,
+    required this.onPressed,
+    required this.mainAxisSize,
+  }) : assert(
+          (iconOnly && label == null && icon != null) ||
+              (!iconOnly && label != null),
         );
 
   const DSFRBaseButton.icon({

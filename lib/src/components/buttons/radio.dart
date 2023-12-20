@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
-import 'base_radio.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
+import 'package:flutter_dsfr/src/components/buttons/base_radio.dart';
 
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088553/Boutons+radio+-+Radio+button
 class DSFRRadioButton<T> extends DSFRBaseRadio<T> {
-  final bool isValid;
-
   const DSFRRadioButton({
     super.key,
     required super.label,
@@ -17,6 +14,8 @@ class DSFRRadioButton<T> extends DSFRBaseRadio<T> {
     super.hasError = false,
     this.isValid = false,
   });
+
+  final bool isValid;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +49,6 @@ class DSFRRadioButton<T> extends DSFRBaseRadio<T> {
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Radio<T>(
             value: value,

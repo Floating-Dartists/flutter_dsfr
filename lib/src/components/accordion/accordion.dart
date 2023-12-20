@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
-import 'accordion_border.dart';
-import 'accordion_panel.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
+import 'package:flutter_dsfr/src/components/accordion/accordion_border.dart';
+import 'package:flutter_dsfr/src/components/accordion/accordion_panel.dart';
 
 /// Create an Accordion .
 /// Must be render inside a Scrollable widget

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
 
 class DSFRAccordionBorder extends StatelessWidget {
   const DSFRAccordionBorder({
@@ -16,7 +15,7 @@ class DSFRAccordionBorder extends StatelessWidget {
   Widget build(BuildContext context) {
     final dsfrTheme = DSFRThemeData.of(context);
     final dsfrColors = dsfrTheme.colors;
-    final border = BorderSide(color: dsfrColors.accordionBorder, width: 1.0);
+    final border = BorderSide(color: dsfrColors.accordionBorder);
     final bottomBorder = isLastInGroup ? border : BorderSide.none;
 
     return DecoratedBox(

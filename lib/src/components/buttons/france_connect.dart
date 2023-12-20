@@ -1,29 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
+import 'package:flutter_dsfr/src/components/logo/logo.dart';
 
-import '../../../flutter_dsfr.dart';
-import '../logo/logo.dart';
-
+/// {@template dsfr_fr_connect_button}
 /// Create a button to connect using FranceConnect services.
 ///
 /// This widgets requires you to inject the extension [DSFRColors] in your
 /// theme.
 ///
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/967868417/Bouton+FranceConnect
+/// {@endtemplate}
 class FranceConnectButton extends StatelessWidget {
-  /// {@macro base.dsfrButtonStyleButton.onPressed}
-  final VoidCallback onPressed;
-
-  /// If `true` the button displayed will be FranceConnect+.
-  final bool _variant;
-
-  final DSFRButtonStyle? style;
-
-  /// Tapping on the info link should open either of the url:
-  /// - https://franceconnect.gouv.fr/
-  /// - https://franceconnect.gouv.fr/france-connect-plus for the "plus"
-  /// variant.
-  final VoidCallback onInfoLinkTap;
-
+  /// {@macro dsfr_fr_connect_button}
   const FranceConnectButton({
     super.key,
     required this.onPressed,
@@ -37,6 +25,20 @@ class FranceConnectButton extends StatelessWidget {
     required this.onInfoLinkTap,
     this.style,
   }) : _variant = true;
+
+  /// {@macro base.dsfrButtonStyleButton.onPressed}
+  final VoidCallback onPressed;
+
+  /// If `true` the button displayed will be FranceConnect+.
+  final bool _variant;
+
+  final DSFRButtonStyle? style;
+
+  /// Tapping on the info link should open either of the url:
+  /// - https://franceconnect.gouv.fr/
+  /// - https://franceconnect.gouv.fr/france-connect-plus for the "plus"
+  /// variant.
+  final VoidCallback onInfoLinkTap;
 
   @override
   Widget build(BuildContext context) {
@@ -58,16 +60,15 @@ class FranceConnectButton extends StatelessWidget {
 }
 
 class FranceConnectBase extends StatelessWidget {
-  final bool variant;
-  final VoidCallback onPressed;
-  final DSFRButtonStyle? style;
-
   const FranceConnectBase({
     super.key,
     required this.onPressed,
     required this.variant,
     required this.style,
   });
+  final bool variant;
+  final VoidCallback onPressed;
+  final DSFRButtonStyle? style;
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +90,6 @@ class FranceConnectBase extends StatelessWidget {
         elevation: btnStyle.elevation ?? 0,
         hoverElevation: 0,
         focusElevation: 0,
-        disabledElevation: 0,
         highlightElevation: 0,
         padding: EdgeInsets.only(
           top: dsfrSizes.v1,
@@ -142,14 +142,13 @@ class FranceConnectBase extends StatelessWidget {
 }
 
 class InfoLinkButton extends StatefulWidget {
-  final bool variant;
-  final VoidCallback onTap;
-
   const InfoLinkButton({
     super.key,
     required this.variant,
     required this.onTap,
   });
+  final bool variant;
+  final VoidCallback onTap;
 
   @override
   State<InfoLinkButton> createState() => _InfoLinkButtonState();

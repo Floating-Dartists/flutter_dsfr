@@ -25,8 +25,9 @@ Future<void> main(List<String> args) async {
     final newContent = await addLabel(file, name, description, frTranslation);
     final b = StringBuffer();
     final string = const JsonEncoder.withIndent('  ').convert(newContent);
-    b.write(string);
-    b.write('\n');
+    b
+      ..write(string)
+      ..writeln();
 
     await file.writeAsString(b.toString());
   });

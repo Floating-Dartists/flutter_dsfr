@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
-import '../buttons/base_button.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
+import 'package:flutter_dsfr/src/components/buttons/base_button.dart';
 
 enum DSFRButtonsGroupBreakpoint {
   /// 576px
@@ -13,14 +12,23 @@ enum DSFRButtonsGroupBreakpoint {
   /// 992px
   large(992);
 
-  final int width;
   const DSFRButtonsGroupBreakpoint(this.width);
+
+  final int width;
 }
 
 enum DSFRButtonsGroupAlignment { left, center, right }
 
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/487915549/Groupe+de+boutons
 class DSFRButtonsGroup extends StatelessWidget {
+  const DSFRButtonsGroup({
+    super.key,
+    required this.buttons,
+    this.alignment = DSFRButtonsGroupAlignment.left,
+    this.direction,
+    this.breakpoint,
+    this.reversed = false,
+  });
   final Axis? direction;
   final DSFRButtonsGroupAlignment alignment;
   final List<DSFRGroupeableButton> buttons;
@@ -31,15 +39,6 @@ class DSFRButtonsGroup extends StatelessWidget {
 
   /// Reverse the order of buttons.
   final bool reversed;
-
-  const DSFRButtonsGroup({
-    super.key,
-    required this.buttons,
-    this.alignment = DSFRButtonsGroupAlignment.left,
-    this.direction,
-    this.breakpoint,
-    this.reversed = false,
-  });
 
   @override
   Widget build(BuildContext context) {
