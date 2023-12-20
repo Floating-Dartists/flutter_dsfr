@@ -45,6 +45,13 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.defaultError,
     required this.defaultSuccess,
     required this.titleGrey,
+    required this.strong,
+    required this.main,
+    required this.softest,
+    required this.light,
+    required this.lighter,
+    required this.lightest,
+    required this.inverted,
   });
 
   const DSFRColors.light()
@@ -91,6 +98,13 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           defaultError: ColorPalette.error425,
           defaultSuccess: ColorPalette.success425,
           titleGrey: ColorPalette.grey50,
+          strong: ColorPalette.blueFranceSun113,
+          main: ColorPalette.blueFranceMain525,
+          softest: ColorPalette.blueFrance850,
+          light: ColorPalette.blueFrance925,
+          lighter: ColorPalette.blueFrance950,
+          lightest: ColorPalette.blueFrance975,
+          inverted: ColorPalette.blueFrance975,
         );
 
   const DSFRColors.dark()
@@ -136,6 +150,13 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           defaultError: ColorPalette.error625,
           defaultSuccess: ColorPalette.success625,
           titleGrey: Colors.white,
+          strong: ColorPalette.blueFrance625,
+          main: ColorPalette.blueFranceMain525,
+          softest: ColorPalette.blueFrance200,
+          light: ColorPalette.blueFrance125,
+          lighter: ColorPalette.blueFrance100,
+          lightest: ColorPalette.blueFrance75,
+          inverted: ColorPalette.blueFrance113,
         );
 
   final Color frConnectHover;
@@ -178,6 +199,28 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color defaultError;
   final Color defaultSuccess;
   final Color titleGrey;
+
+  /// Used for backgrounds, borders, dividers, titles, clickable text, active
+  /// text, icons and pictograms.
+  final Color strong;
+
+  /// Used for borders, dividers, icons and pictograms.
+  final Color main;
+
+  /// Used for borders
+  final Color softest;
+
+  /// Used for backgrounds and borders.
+  final Color light;
+
+  /// Used for backgrounds and pictograms.
+  final Color lighter;
+
+  /// Used for backgrounds.
+  final Color lightest;
+
+  /// Used for clickable text and active text.
+  final Color inverted;
 
   @override
   DSFRColors copyWith() => this;
@@ -258,6 +301,14 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       defaultError: Color.lerp(defaultError, other.defaultError, t)!,
       defaultSuccess: Color.lerp(defaultSuccess, other.defaultSuccess, t)!,
       titleGrey: Color.lerp(titleGrey, other.titleGrey, t)!,
+      // ===
+      strong: Color.lerp(strong, other.strong, t)!,
+      main: Color.lerp(main, other.main, t)!,
+      softest: Color.lerp(softest, other.softest, t)!,
+      light: Color.lerp(light, other.light, t)!,
+      lighter: Color.lerp(lighter, other.lighter, t)!,
+      lightest: Color.lerp(lightest, other.lightest, t)!,
+      inverted: Color.lerp(inverted, other.inverted, t)!,
     );
   }
 
@@ -308,7 +359,15 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
             mentionGrey == other.mentionGrey &&
             defaultError == other.defaultError &&
             defaultSuccess == other.defaultSuccess &&
-            titleGrey == other.titleGrey;
+            titleGrey == other.titleGrey &&
+            // ===
+            strong == other.strong &&
+            main == other.main &&
+            softest == other.softest &&
+            light == other.light &&
+            lighter == other.lighter &&
+            lightest == other.lightest &&
+            inverted == other.inverted;
   }
 
   @override
@@ -355,6 +414,14 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       defaultError,
       defaultSuccess,
       titleGrey,
+      // ===
+      strong,
+      main,
+      softest,
+      light,
+      lighter,
+      lightest,
+      inverted,
     ]);
   }
 
@@ -408,5 +475,14 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('mentionGrey', mentionGrey),
         NamedProperty('defaultError', defaultError),
         NamedProperty('defaultSuccess', defaultSuccess),
+        NamedProperty('titleGrey', titleGrey),
+        // ===
+        NamedProperty('strong', strong),
+        NamedProperty('main', main),
+        NamedProperty('softest', softest),
+        NamedProperty('light', light),
+        NamedProperty('lighter', lighter),
+        NamedProperty('lightest', lightest),
+        NamedProperty('inverted', inverted),
       ];
 }
