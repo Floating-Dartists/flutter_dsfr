@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
 
 /// DSFRBannerText, it add a clickable link when the link attribute is not empty
 class DSFRBannerText extends StatelessWidget {

@@ -2,9 +2,8 @@ import 'dart:math' as math;
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
-import 'base_button.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
+import 'package:flutter_dsfr/src/components/buttons/base_button.dart';
 
 class DSFRSecondaryButton extends DSFRGroupeableButton {
   const DSFRSecondaryButton({
@@ -49,13 +48,12 @@ class DSFRSecondaryButton extends DSFRGroupeableButton {
 
     return RawMaterialButton(
       onPressed: onPressed,
-      elevation: 0.0,
-      disabledElevation: 0.0,
+      elevation: 0,
       fillColor: Colors.transparent,
       hoverColor: dsfrColors.blockColorHover,
       splashColor: dsfrColors.blockColorActive,
       shape: RoundedRectangleBorder(
-        side: BorderSide(color: foregroundColor, width: 1),
+        side: BorderSide(color: foregroundColor),
       ),
       padding: iconOnly
           ? EdgeInsets.all(spacings.iconPadding)

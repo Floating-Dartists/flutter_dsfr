@@ -14,8 +14,8 @@ void main() {
             (e) => GoldenTestScenario(
               name: e.name,
               child: Container(
-                height: 50.0,
-                width: 50.0,
+                height: 50,
+                width: 50,
                 color: e.property,
               ),
             ),
@@ -35,8 +35,8 @@ void main() {
             (e) => GoldenTestScenario(
               name: e.name,
               child: Container(
-                height: 50.0,
-                width: 50.0,
+                height: 50,
+                width: 50,
                 color: e.property,
               ),
             ),

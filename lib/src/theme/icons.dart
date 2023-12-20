@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../utils/named_property.dart';
+import 'package:flutter_dsfr/src/utils/named_property.dart';
 
 /// DSFRIcons, use the remix icon icon pack
 ///

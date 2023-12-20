@@ -4,7 +4,7 @@ version: 0.0.1
 homepage: https://github.com/TesteurManiak/flutter_dsfr
 
 environment:
-  sdk: ">=2.18.0 <4.0.0"
+  sdk: ">=3.0.0 <4.0.0"
   flutter: ">=3.0.0"
 
 dependencies:
@@ -12,13 +12,14 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  path: ^1.8.3
 
 dev_dependencies:
   alchemist:
     git:
       url: https://github.com/Betterment/alchemist.git
       ref: ab1f2eb49584339be119eaec28a5562f6b325cbc
-  flutter_lints: ^3.0.1
+  fd_lints: ^2.2.0
   flutter_test:
     sdk: flutter
 

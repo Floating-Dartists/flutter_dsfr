@@ -9,6 +9,7 @@ void main() {
     'icons rendering',
     fileName: 'icons',
     tags: ['golden', 'atom'],
+    // ignore: avoid_redundant_argument_values
     skip: isRunningInCi,
     builder: () => GoldenTestGroup(
       children: DSFRIcons.props

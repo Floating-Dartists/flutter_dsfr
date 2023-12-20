@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
-import 'alert_close_button.dart';
-import 'alert_icon.dart';
-import 'base_alert.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
+import 'package:flutter_dsfr/src/components/alerts/alert_close_button.dart';
+import 'package:flutter_dsfr/src/components/alerts/alert_icon.dart';
+import 'package:flutter_dsfr/src/components/alerts/base_alert.dart';
 
 class DSFRSmallAlert extends BaseAlert {
   const DSFRSmallAlert({

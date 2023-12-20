@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-
-import '../utils/named_property.dart';
+import 'package:flutter_dsfr/src/utils/named_property.dart';
 
 @immutable
 class DSFRRadius extends ThemeExtension<DSFRRadius> {
-  final Radius small;
-
   const DSFRRadius._({required this.small});
 
   const DSFRRadius.regular() : this._(small: const Radius.circular(4));
+
+  final Radius small;
 
   @override
   DSFRRadius copyWith() {
@@ -40,9 +39,9 @@ class DSFRRadius extends ThemeExtension<DSFRRadius> {
 
 @immutable
 class DSFRBorderRadius extends ThemeExtension<DSFRBorderRadius> {
-  final DSFRRadius _radius;
-
   const DSFRBorderRadius(this._radius);
+
+  final DSFRRadius _radius;
 
   BorderRadius get small => BorderRadius.all(_radius.small);
 

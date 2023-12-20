@@ -2,9 +2,8 @@ import 'dart:math' as math;
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
-import 'base_button.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
+import 'package:flutter_dsfr/src/components/buttons/base_button.dart';
 
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons#Bouton-primaire
 class DSFRPrimaryButton extends DSFRGroupeableButton {
@@ -52,12 +51,10 @@ class DSFRPrimaryButton extends DSFRGroupeableButton {
     }
 
     return RawMaterialButton(
-      elevation: 0.0,
-      disabledElevation: 0.0,
+      elevation: 0,
       fillColor: backgroundColor,
       hoverColor: dsfrColors.backgroundActionHighBlueFranceHover,
       splashColor: dsfrColors.backgroundActionHighBlueFranceActive,
-      shape: const RoundedRectangleBorder(),
       padding: iconOnly
           ? EdgeInsets.all(spacings.iconPadding)
           : EdgeInsets.symmetric(

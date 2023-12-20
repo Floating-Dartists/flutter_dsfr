@@ -4,10 +4,6 @@ import 'package:flutter/material.dart';
 
 @immutable
 class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
-  final DSFRBadgeSize badgeSize;
-  final DSFRButtonSize buttonSize;
-  final DSFRRadioSize radioSize;
-
   const DSFRSpacings({
     required this.badgeSize,
     required this.buttonSize,
@@ -34,6 +30,10 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
           buttonSize: const DSFRButtonSize.large(),
           radioSize: const DSFRRadioSize.medium(),
         );
+
+  final DSFRBadgeSize badgeSize;
+  final DSFRButtonSize buttonSize;
+  final DSFRRadioSize radioSize;
 
   @override
   DSFRSpacings copyWith({
@@ -76,11 +76,6 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
 
 @immutable
 class DSFRBadgeSize {
-  final double horizontal;
-  final double vertical;
-  final double iconSize;
-  final double spacing;
-
   const DSFRBadgeSize._({
     required this.horizontal,
     required this.vertical,
@@ -103,6 +98,10 @@ class DSFRBadgeSize {
           iconSize: 14,
           spacing: 5,
         );
+  final double horizontal;
+  final double vertical;
+  final double iconSize;
+  final double spacing;
 
   static DSFRBadgeSize? lerp(DSFRBadgeSize? a, DSFRBadgeSize? b, double t) {
     if (a == null && b == null) return null;
@@ -135,12 +134,6 @@ class DSFRBadgeSize {
 
 @immutable
 class DSFRButtonSize {
-  final double vertical;
-  final double horizontal;
-  final double spacing;
-  final double iconPadding;
-  final double iconSize;
-
   const DSFRButtonSize._({
     required this.vertical,
     required this.horizontal,
@@ -175,6 +168,11 @@ class DSFRButtonSize {
           iconPadding: 14,
           iconSize: 20,
         );
+  final double vertical;
+  final double horizontal;
+  final double spacing;
+  final double iconPadding;
+  final double iconSize;
 
   static DSFRButtonSize? lerp(
     DSFRButtonSize? a,
@@ -221,9 +219,6 @@ class DSFRButtonSize {
 
 @immutable
 class DSFRRadioSize {
-  final double size;
-  final double spacing;
-
   const DSFRRadioSize._({
     required this.size,
     required this.spacing,
@@ -231,6 +226,8 @@ class DSFRRadioSize {
 
   const DSFRRadioSize.small() : this._(size: 16, spacing: 12);
   const DSFRRadioSize.medium() : this._(size: 24, spacing: 8);
+  final double size;
+  final double spacing;
 
   static DSFRRadioSize? lerp(DSFRRadioSize? a, DSFRRadioSize? b, double t) {
     if (a == null && b == null) return null;

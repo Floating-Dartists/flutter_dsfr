@@ -1,0 +1,42 @@
+# Flutter DSFR Roadmap
+
+Components we need to implement
+
+- [X] Accordion
+- [ ] FileUpload
+- [X] Alerts
+- [X] Badges
+- [X] Banner
+- [ ] SearchBar
+- [X] Buttons
+- [X] ButtonsGroup
+- [X] FranceConnectButton
+- [X] Radio
+- [ ] RichRadio
+- [ ] Checkbox
+- [ ] Card
+- [ ] Input
+- [ ] Quote
+- [ ] Header
+- [ ] Breadcrumb
+- [ ] ConscentBanner
+- [ ] StepIndicateur
+- [ ] ToggleSwitch
+- [ ] Links
+- [ ] SkipLinks
+- [ ] Select
+- [ ] SideMenu
+- [ ] Callout
+- [ ] Highlight
+- [ ] Modal
+- [ ] MainNavigation
+- [ ] Tabs
+- [ ] Display
+- [ ] Share
+- [ ] Footer
+- [ ] Pagination
+- [ ] Summary
+- [ ] Table
+- [ ] Tag
+- [ ] DownloadFile
+- [ ] Tile

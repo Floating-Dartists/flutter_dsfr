@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
 
-import '../../../flutter_dsfr.dart';
-
+/// {@template dsfr_fr_connect_button}
 /// A close button used in mutliple component
 ///
 /// this is an internal component and shouldn't be exposed
+/// {@endtemplate}
 class SharedCloseButton extends StatelessWidget {
+  /// {@macro dsfr_fr_connect_button}
   const SharedCloseButton({required this.onClose, super.key});
 
-  final void Function() onClose;
+  final VoidCallback onClose;
+
   static const _elevation = 0.0;
 
   @override
@@ -22,12 +25,9 @@ class SharedCloseButton extends StatelessWidget {
       height: dsfrSizes.w3,
       child: RawMaterialButton(
         elevation: _elevation,
-        disabledElevation: _elevation,
         fillColor: Colors.transparent,
         constraints: const BoxConstraints(),
-        shape: const CircleBorder(
-          side: BorderSide.none,
-        ),
+        shape: const CircleBorder(),
         hoverColor: dsfrColors.hover,
         highlightColor: dsfrColors.active,
         hoverElevation: _elevation,

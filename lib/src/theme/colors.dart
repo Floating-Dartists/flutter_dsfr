@@ -1,51 +1,9 @@
 import 'package:flutter/material.dart';
-
-import '../utils/named_property.dart';
-import 'palette.dart';
+import 'package:flutter_dsfr/src/theme/palette.dart';
+import 'package:flutter_dsfr/src/utils/named_property.dart';
 
 @immutable
 class DSFRColors extends ThemeExtension<DSFRColors> {
-  final Color frConnectHover;
-  final Color frConnectActive;
-  final Color frConnectBackground;
-  final Color backgroundActionHighBlueFrance;
-  final Color backgroundActionHighBlueFranceHover;
-  final Color backgroundActionHighBlueFranceActive;
-  final Color activeBlueFrance;
-  final Color textInvertedBlueFrance;
-  final Color borderActionHighBlueFrance;
-  final Color blockColorHover;
-  final Color blockColorActive;
-  final Color defaultGrey;
-  final Color backgroundDisabledGrey;
-  final Color textDisabledGrey;
-  final Color alertsBackground;
-  final Color alertsCloseButtonIcon;
-  final Color hover;
-  final Color active;
-  final Color splash;
-  final Color text;
-  final Color accordionBorder;
-  final Color error;
-  final Color success;
-  final Color info;
-  final Color warning;
-  final Color news;
-  final Color badgeError;
-  final Color badgeSuccess;
-  final Color badgeInfo;
-  final Color badgeWarning;
-  final Color badgeNews;
-  final Color banner;
-  final Color g200;
-  final Color g800;
-  final Color highGrey;
-  final Color disabledGrey;
-  final Color mentionGrey;
-  final Color defaultError;
-  final Color defaultSuccess;
-  final Color titleGrey;
-
   const DSFRColors._({
     required this.frConnectHover,
     required this.frConnectActive,
@@ -179,6 +137,47 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           defaultSuccess: ColorPalette.success625,
           titleGrey: Colors.white,
         );
+
+  final Color frConnectHover;
+  final Color frConnectActive;
+  final Color frConnectBackground;
+  final Color backgroundActionHighBlueFrance;
+  final Color backgroundActionHighBlueFranceHover;
+  final Color backgroundActionHighBlueFranceActive;
+  final Color activeBlueFrance;
+  final Color textInvertedBlueFrance;
+  final Color borderActionHighBlueFrance;
+  final Color blockColorHover;
+  final Color blockColorActive;
+  final Color defaultGrey;
+  final Color backgroundDisabledGrey;
+  final Color textDisabledGrey;
+  final Color alertsBackground;
+  final Color alertsCloseButtonIcon;
+  final Color hover;
+  final Color active;
+  final Color splash;
+  final Color text;
+  final Color accordionBorder;
+  final Color error;
+  final Color success;
+  final Color info;
+  final Color warning;
+  final Color news;
+  final Color badgeError;
+  final Color badgeSuccess;
+  final Color badgeInfo;
+  final Color badgeWarning;
+  final Color badgeNews;
+  final Color banner;
+  final Color g200;
+  final Color g800;
+  final Color highGrey;
+  final Color disabledGrey;
+  final Color mentionGrey;
+  final Color defaultError;
+  final Color defaultSuccess;
+  final Color titleGrey;
 
   @override
   DSFRColors copyWith() => this;

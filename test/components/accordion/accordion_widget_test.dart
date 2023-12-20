@@ -63,8 +63,9 @@ void main() {
       accordionRobot.expectContentByText(contentText1);
 
       await accordionRobot.tapOnLastAccordionPanelWidget();
-      accordionRobot.expectNoContentByText(contentText1);
-      accordionRobot.expectContentByText(contentText2);
+      accordionRobot
+        ..expectNoContentByText(contentText1)
+        ..expectContentByText(contentText2);
     },
     skip: isRunningInCi, // FIXME
   );
@@ -94,8 +95,9 @@ void main() {
         panels: panels,
       );
 
-      accordionRobot.expenctNAccordionPanelWidget(panels.length);
-      accordionRobot.expectContentByText(contentText2);
+      accordionRobot
+        ..expenctNAccordionPanelWidget(panels.length)
+        ..expectContentByText(contentText2);
     },
     skip: isRunningInCi, // FIXME
   );
@@ -125,9 +127,10 @@ void main() {
         panels: panels,
       );
 
-      accordionRobot.expenctNAccordionPanelWidget(panels.length);
-      accordionRobot.expectNoContentByText(contentText1);
-      accordionRobot.expectContentByText(contentText2);
+      accordionRobot
+        ..expenctNAccordionPanelWidget(panels.length)
+        ..expectNoContentByText(contentText1)
+        ..expectContentByText(contentText2);
     },
     skip: isRunningInCi, // FIXME
   );

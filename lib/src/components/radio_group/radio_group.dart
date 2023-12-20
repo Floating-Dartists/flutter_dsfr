@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
 
 @immutable
 class DSFRRadioData<T> {
-  final String label;
-  final String? description;
-  final T value;
-
   const DSFRRadioData({
     required this.label,
     required this.value,
     this.description,
   });
+
+  final String label;
+  final String? description;
+  final T value;
 
   DSFRRadioData<T> copyWith({
     String? label,
@@ -29,14 +28,6 @@ class DSFRRadioData<T> {
 }
 
 class DSFRRadioGroup<T> extends StatefulWidget {
-  final String title;
-  final String? description;
-  final ValueChanged<T?>? onChanged;
-  final List<DSFRRadioData<T>> items;
-  final Axis direction;
-  final bool hasError;
-  final bool isValid;
-
   const DSFRRadioGroup({
     super.key,
     required this.title,
@@ -47,6 +38,14 @@ class DSFRRadioGroup<T> extends StatefulWidget {
     this.hasError = false,
     this.isValid = false,
   }) : assert(items.length > 0);
+
+  final String title;
+  final String? description;
+  final ValueChanged<T?>? onChanged;
+  final List<DSFRRadioData<T>> items;
+  final Axis direction;
+  final bool hasError;
+  final bool isValid;
 
   @override
   State<DSFRRadioGroup<T>> createState() => _DSFRRadioGroupState<T>();
@@ -68,7 +67,6 @@ class _DSFRRadioGroupState<T> extends State<DSFRRadioGroup<T>> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Text.rich(
           TextSpan(
