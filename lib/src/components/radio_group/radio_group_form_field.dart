@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
 
 class DSFRRadioGroupFormField<T> extends FormField<T> {
-  final String? successMessage;
-
   DSFRRadioGroupFormField({
     super.key,
     required String title,
@@ -33,7 +30,6 @@ class DSFRRadioGroupFormField<T> extends FormField<T> {
               bucket: state.bucket,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   DSFRRadioGroup<T>(
@@ -61,18 +57,20 @@ class DSFRRadioGroupFormField<T> extends FormField<T> {
             );
           },
         );
+
+  final String? successMessage;
 }
 
 class _FormMessage extends StatelessWidget {
-  final IconData icon;
-  final String message;
-  final Color color;
-
   const _FormMessage({
     required this.icon,
     required this.message,
     required this.color,
   });
+
+  final IconData icon;
+  final String message;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +87,7 @@ class _FormMessage extends StatelessWidget {
             color: color,
             size: (dsfrTypography.mention.fontSize ?? 12.0) + 2,
           ),
-          const SizedBox(width: 2.0),
+          const SizedBox(width: 2),
           Text(
             message,
             style: dsfrTypography.mention

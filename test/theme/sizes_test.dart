@@ -7,6 +7,7 @@ import '../flutter_test_config.dart';
 void main() {
   goldenTest(
     'DSFRSizes.regular',
+    // ignore: avoid_redundant_argument_values
     skip: isRunningInCi,
     fileName: 'sizes',
     builder: () => GoldenTestGroup(
@@ -17,7 +18,7 @@ void main() {
               name: e.name,
               child: Container(
                 color: Colors.white,
-                height: 50.0,
+                height: 50,
                 width: e.property,
               ),
             ),

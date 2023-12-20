@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
-
-import '../gen/default_localizations.dart';
-import '../gen/lang/fr.dart';
+import 'package:flutter_dsfr/src/gen/default_localizations.dart';
+import 'package:flutter_dsfr/src/gen/lang/fr.dart';
 
 final kSupportedLanguages = <String>{
   'fr',

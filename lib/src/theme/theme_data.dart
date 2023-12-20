@@ -1,17 +1,8 @@
 import 'package:flutter/material.dart';
-
-import '../../flutter_dsfr.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
 
 @immutable
 class DSFRThemeData extends ThemeExtension<DSFRThemeData> {
-  final DSFRButtonStyle buttonStyle;
-  final DSFRColors colors;
-  final DSFRRadius radius;
-  final DSFRBorderRadius borderRadius;
-  final DSFRSizes sizes;
-  final DSFRSpacings spacings;
-  final DSFRTypography typography;
-
   const DSFRThemeData({
     required this.colors,
     this.buttonStyle = const DSFRButtonStyle.regular(),
@@ -21,6 +12,14 @@ class DSFRThemeData extends ThemeExtension<DSFRThemeData> {
     this.spacings = const DSFRSpacings.medium(),
     this.typography = const DSFRTypography.medium(),
   });
+
+  final DSFRButtonStyle buttonStyle;
+  final DSFRColors colors;
+  final DSFRRadius radius;
+  final DSFRBorderRadius borderRadius;
+  final DSFRSizes sizes;
+  final DSFRSpacings spacings;
+  final DSFRTypography typography;
 
   static DSFRThemeData of(BuildContext context) =>
       Theme.of(context).extension<DSFRThemeData>()!;

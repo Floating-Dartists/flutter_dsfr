@@ -4,13 +4,6 @@ import 'package:flutter/material.dart';
 
 @immutable
 class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
-  final double? elevation;
-
-  /// The shape of the button.
-  final ShapeBorder? shape;
-
-  final MainAxisSize mainAxisSize;
-
   const DSFRButtonStyle({
     this.shape,
     this.elevation,
@@ -21,9 +14,16 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
   const DSFRButtonStyle.regular()
       : this(
           shape: const RoundedRectangleBorder(),
-          elevation: 0.0,
+          elevation: 0,
           mainAxisSize: MainAxisSize.min,
         );
+
+  final double? elevation;
+
+  /// The shape of the button.
+  final ShapeBorder? shape;
+
+  final MainAxisSize mainAxisSize;
 
   @override
   DSFRButtonStyle copyWith({

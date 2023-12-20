@@ -2,14 +2,11 @@ import 'dart:math' as math;
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-
-import '../../../flutter_dsfr.dart';
-import 'base_button.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
+import 'package:flutter_dsfr/src/components/buttons/base_button.dart';
 
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons#Bouton-tertiaire
 class DSFRTertiaryButton extends DSFRBaseButton {
-  final bool noOutline;
-
   const DSFRTertiaryButton({
     super.key,
     required super.onPressed,
@@ -25,6 +22,8 @@ class DSFRTertiaryButton extends DSFRBaseButton {
     required super.onPressed,
     this.noOutline = false,
   }) : super.icon();
+
+  final bool noOutline;
 
   @override
   Widget build(BuildContext context) {
@@ -51,8 +50,7 @@ class DSFRTertiaryButton extends DSFRBaseButton {
     }
 
     return RawMaterialButton(
-      elevation: 0.0,
-      disabledElevation: 0.0,
+      elevation: 0,
       fillColor: Colors.transparent,
       shape: RoundedRectangleBorder(
         side: !noOutline

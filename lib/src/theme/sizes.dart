@@ -1,12 +1,50 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-
-import '../utils/named_property.dart';
+import 'package:flutter_dsfr/src/utils/named_property.dart';
 
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222396724/Espacement+-+Spacing
 @immutable
 class DSFRSizes extends ThemeExtension<DSFRSizes> {
+  const DSFRSizes._({
+    required this.v0_5,
+    required this.v1,
+    required this.v1_5,
+    required this.w1,
+    required this.v3,
+    required this.w2,
+    required this.v5,
+    required this.w3,
+    required this.w4,
+    required this.w5,
+    required this.w6,
+    required this.w7,
+    required this.w8,
+    required this.w9,
+    required this.w12,
+    required this.w15,
+  });
+
+  const DSFRSizes.regular()
+      : this._(
+          v0_5: 2,
+          v1: 4,
+          v1_5: 6,
+          w1: 8,
+          v3: 12,
+          w2: 16,
+          v5: 20,
+          w3: 24,
+          w4: 32,
+          w5: 40,
+          w6: 48,
+          w7: 56,
+          w8: 64,
+          w9: 72,
+          w12: 96,
+          w15: 120,
+        );
+
   /// Space in rem: 0.125
   final double v0_5;
 
@@ -54,45 +92,6 @@ class DSFRSizes extends ThemeExtension<DSFRSizes> {
 
   /// Space in rem: 7.5
   final double w15;
-
-  const DSFRSizes._({
-    required this.v0_5,
-    required this.v1,
-    required this.v1_5,
-    required this.w1,
-    required this.v3,
-    required this.w2,
-    required this.v5,
-    required this.w3,
-    required this.w4,
-    required this.w5,
-    required this.w6,
-    required this.w7,
-    required this.w8,
-    required this.w9,
-    required this.w12,
-    required this.w15,
-  });
-
-  const DSFRSizes.regular()
-      : this._(
-          v0_5: 2,
-          v1: 4,
-          v1_5: 6,
-          w1: 8,
-          v3: 12,
-          w2: 16,
-          v5: 20,
-          w3: 24,
-          w4: 32,
-          w5: 40,
-          w6: 48,
-          w7: 56,
-          w8: 64,
-          w9: 72,
-          w12: 96,
-          w15: 120,
-        );
 
   @override
   DSFRSizes copyWith({

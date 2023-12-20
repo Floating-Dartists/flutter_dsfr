@@ -86,7 +86,7 @@ Future<void> generateLocalizationsClass({
   final out = outFile.openWrite()
     ..writeln('// coverage:ignore-file')
     ..writeln('// GENERATED CODE - DO NOT MODIFY BY HAND')
-    ..writeln('// ignore_for_file: non_constant_identifier_names')
+    ..writeln('// ignore_for_file: ${ignoredRules.join(', ')}')
     ..writeln()
     ..writeln("import '../default_localizations.dart';");
 
@@ -221,10 +221,15 @@ class Label {
   final String? description;
 }
 
-const defaultLocalizationsHeader = '''
+const ignoredRules = <String>{
+  'non_constant_identifier_names',
+  'always_use_package_imports',
+};
+
+final defaultLocalizationsHeader = '''
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: ${ignoredRules.join(', ')}
 
 import 'package:flutter/material.dart';
 

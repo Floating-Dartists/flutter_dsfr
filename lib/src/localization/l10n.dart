@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
-
-import '../gen/default_localizations.dart';
-import 'all_languages.dart';
+import 'package:flutter_dsfr/src/gen/default_localizations.dart';
+import 'package:flutter_dsfr/src/localization/all_languages.dart';
 
 const kDefaultLocale = Locale('fr');
 

@@ -1,10 +1,87 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../flutter_dsfr.dart';
+import 'package:flutter_dsfr/flutter_dsfr.dart';
 
 /// An application that uses the french government design system.
 class DSFRApp extends StatefulWidget {
+  /// Creates a DSFRApp.
+  ///
+  /// At least one of [home], [routes], [onGenerateRoute], or [builder] must be
+  /// non-null. If only [routes] is given, it must include an entry for the
+  /// [Navigator.defaultRouteName] (`/`), since that is the route used when the
+  /// application is launched with an intent that specifies an otherwise
+  /// unsupported route.
+  const DSFRApp({
+    super.key,
+    this.navigatorKey,
+    this.home,
+    Map<String, WidgetBuilder> this.routes = const <String, WidgetBuilder>{},
+    this.initialRoute,
+    this.onGenerateRoute,
+    this.onGenerateInitialRoutes,
+    this.onUnknownRoute,
+    List<NavigatorObserver> this.navigatorObservers =
+        const <NavigatorObserver>[],
+    this.builder,
+    this.title = '',
+    this.onGenerateTitle,
+    this.color,
+    this.locale,
+    this.localizationsDelegates,
+    this.localeListResolutionCallback,
+    this.localeResolutionCallback,
+    this.supportedLocales = const <Locale>[Locale('en', 'US')],
+    this.showPerformanceOverlay = false,
+    this.checkerboardRasterCacheImages = false,
+    this.checkerboardOffscreenLayers = false,
+    this.showSemanticsDebugger = false,
+    this.debugShowCheckedModeBanner = true,
+    this.shortcuts,
+    this.actions,
+    this.restorationScopeId,
+    this.scrollBehavior,
+    this.themeMode,
+  })  : routeInformationProvider = null,
+        routeInformationParser = null,
+        routerDelegate = null,
+        backButtonDispatcher = null;
+
+  /// Creates a [DSFRApp] that uses the [Router] instead of a [Navigator].
+  DSFRApp.router({
+    super.key,
+    this.routeInformationProvider,
+    required RouteInformationParser<Object> this.routeInformationParser,
+    required RouterDelegate<Object> this.routerDelegate,
+    this.backButtonDispatcher,
+    this.builder,
+    this.title = '',
+    this.onGenerateTitle,
+    this.color,
+    this.locale,
+    this.localizationsDelegates,
+    this.localeListResolutionCallback,
+    this.localeResolutionCallback,
+    this.supportedLocales = const <Locale>[Locale('en', 'US')],
+    this.showPerformanceOverlay = false,
+    this.checkerboardRasterCacheImages = false,
+    this.checkerboardOffscreenLayers = false,
+    this.showSemanticsDebugger = false,
+    this.debugShowCheckedModeBanner = true,
+    this.shortcuts,
+    this.actions,
+    this.restorationScopeId,
+    this.scrollBehavior,
+    this.themeMode,
+  })  : assert(supportedLocales.isNotEmpty),
+        navigatorObservers = null,
+        navigatorKey = null,
+        onGenerateRoute = null,
+        home = null,
+        onGenerateInitialRoutes = null,
+        onUnknownRoute = null,
+        routes = null,
+        initialRoute = null;
+
   /// {@macro flutter.widgets.widgetsApp.navigatorKey}
   final GlobalKey<NavigatorState>? navigatorKey;
 
@@ -122,84 +199,6 @@ class DSFRApp extends StatefulWidget {
   /// The current theme mode.
   final ThemeMode? themeMode;
 
-  /// Creates a DSFRApp.
-  ///
-  /// At least one of [home], [routes], [onGenerateRoute], or [builder] must be
-  /// non-null. If only [routes] is given, it must include an entry for the
-  /// [Navigator.defaultRouteName] (`/`), since that is the route used when the
-  /// application is launched with an intent that specifies an otherwise
-  /// unsupported route.
-  const DSFRApp({
-    super.key,
-    this.navigatorKey,
-    this.home,
-    Map<String, WidgetBuilder> this.routes = const <String, WidgetBuilder>{},
-    this.initialRoute,
-    this.onGenerateRoute,
-    this.onGenerateInitialRoutes,
-    this.onUnknownRoute,
-    List<NavigatorObserver> this.navigatorObservers =
-        const <NavigatorObserver>[],
-    this.builder,
-    this.title = '',
-    this.onGenerateTitle,
-    this.color,
-    this.locale,
-    this.localizationsDelegates,
-    this.localeListResolutionCallback,
-    this.localeResolutionCallback,
-    this.supportedLocales = const <Locale>[Locale('en', 'US')],
-    this.showPerformanceOverlay = false,
-    this.checkerboardRasterCacheImages = false,
-    this.checkerboardOffscreenLayers = false,
-    this.showSemanticsDebugger = false,
-    this.debugShowCheckedModeBanner = true,
-    this.shortcuts,
-    this.actions,
-    this.restorationScopeId,
-    this.scrollBehavior,
-    this.themeMode,
-  })  : routeInformationProvider = null,
-        routeInformationParser = null,
-        routerDelegate = null,
-        backButtonDispatcher = null;
-
-  /// Creates a [DSFRApp] that uses the [Router] instead of a [Navigator].
-  DSFRApp.router({
-    super.key,
-    this.routeInformationProvider,
-    required RouteInformationParser<Object> this.routeInformationParser,
-    required RouterDelegate<Object> this.routerDelegate,
-    this.backButtonDispatcher,
-    this.builder,
-    this.title = '',
-    this.onGenerateTitle,
-    this.color,
-    this.locale,
-    this.localizationsDelegates,
-    this.localeListResolutionCallback,
-    this.localeResolutionCallback,
-    this.supportedLocales = const <Locale>[Locale('en', 'US')],
-    this.showPerformanceOverlay = false,
-    this.checkerboardRasterCacheImages = false,
-    this.checkerboardOffscreenLayers = false,
-    this.showSemanticsDebugger = false,
-    this.debugShowCheckedModeBanner = true,
-    this.shortcuts,
-    this.actions,
-    this.restorationScopeId,
-    this.scrollBehavior,
-    this.themeMode,
-  })  : assert(supportedLocales.isNotEmpty),
-        navigatorObservers = null,
-        navigatorKey = null,
-        onGenerateRoute = null,
-        home = null,
-        onGenerateInitialRoutes = null,
-        onUnknownRoute = null,
-        routes = null,
-        initialRoute = null;
-
   @override
   State<DSFRApp> createState() => _DSFRAppState();
 }
@@ -271,8 +270,8 @@ class _DSFRAppState extends State<DSFRApp> {
       return MaterialApp.router(
         key: GlobalObjectKey(this),
         routeInformationProvider: widget.routeInformationProvider,
-        routeInformationParser: widget.routeInformationParser!,
-        routerDelegate: widget.routerDelegate!,
+        routeInformationParser: widget.routeInformationParser,
+        routerDelegate: widget.routerDelegate,
         backButtonDispatcher: widget.backButtonDispatcher,
         builder: _dsfrBuilder,
         title: widget.title,

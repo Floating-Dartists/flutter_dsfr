@@ -8,6 +8,7 @@ void main() {
   goldenTest(
     'DSFRTypography.regular',
     fileName: 'typography',
+    // ignore: avoid_redundant_argument_values
     skip: isRunningInCi, // Test not needed in CI
     builder: () => GoldenTestGroup(
       children: const DSFRTypography.medium()

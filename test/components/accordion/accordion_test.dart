@@ -4,7 +4,7 @@ import 'package:flutter_dsfr/flutter_dsfr.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 const content = Padding(
-  padding: EdgeInsets.all(8.0),
+  padding: EdgeInsets.all(8),
   child: Text("I'm an awesome content"),
 );
 

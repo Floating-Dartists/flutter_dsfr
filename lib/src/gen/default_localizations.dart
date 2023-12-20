@@ -1,6 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, always_use_package_imports
 
 import 'package:flutter/material.dart';
 
