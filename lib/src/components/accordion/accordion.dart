@@ -3,73 +3,71 @@ import 'package:flutter_dsfr/flutter_dsfr.dart';
 import 'package:flutter_dsfr/src/components/accordion/accordion_border.dart';
 import 'package:flutter_dsfr/src/components/accordion/accordion_panel.dart';
 
+/// {@template accordion_data}
 /// Create an Accordion .
 /// Must be render inside a Scrollable widget
 ///
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/312082509/Accord+on+-+Accordion
+/// {@endtemplate}
 class DSFRAccordion extends StatefulWidget {
+  /// {@macro accordion_data}
   const DSFRAccordion({required this.panels, super.key});
 
   final List<DSFRAccordionData> panels;
 
   @override
-  State<StatefulWidget> createState() => _DSFRAccordionState();
+  State<DSFRAccordion> createState() => _DSFRAccordionState();
 }
 
 class _DSFRAccordionState extends State<DSFRAccordion> {
-  UniqueKey? _accordionValue;
-  late final _itemsValues =
+  UniqueKey? accordionValue;
+  late final itemsValues =
       List<UniqueKey>.generate(widget.panels.length, (_) => UniqueKey());
-  late final _panels = widget.panels;
+  late final panels = widget.panels;
+  bool initialized = false;
 
   @override
   void initState() {
     super.initState();
-    _setDefaultAccordionValue();
+    setDefaultAccordionValue();
   }
 
-  // ! this should only be called once in initState
-  void _setDefaultAccordionValue() {
+  void setDefaultAccordionValue() {
+    if (initialized) return;
     final lastInitialyExpandedIndex =
-        _panels.lastIndexWhere((panelData) => panelData.isInitialyExpanded);
+        panels.lastIndexWhere((panelData) => panelData.isInitialyExpanded);
 
     if (lastInitialyExpandedIndex != -1 &&
-        _itemsValues.length == _panels.length) {
-      _accordionValue = _itemsValues[lastInitialyExpandedIndex];
+        itemsValues.length == panels.length) {
+      accordionValue = itemsValues[lastInitialyExpandedIndex];
     }
+    initialized = true;
   }
 
-  List<Widget> _renderPanels() {
-    final children = <Widget>[];
+  Iterable<Widget> renderPanels() sync* {
+    for (var i = 0; i < panels.length; i++) {
+      final isLastInGroup = i == panels.length - 1;
+      final panelData = panels[i];
 
-    for (var i = 0; i < _panels.length; i++) {
-      final isLastInGroup = i == _panels.length - 1;
-      final panelData = _panels[i];
-
-      final child = DSFRAccordionBorder(
+      yield DSFRAccordionBorder(
         isLastInGroup: isLastInGroup,
         child: DSFRAccordionPanel(
           data: panelData,
-          accordionValue: _accordionValue,
-          itemValue: _itemsValues[i],
+          accordionValue: accordionValue,
+          itemValue: itemsValues[i],
           onExpandedChange: (newValue) {
-            setState(() {
-              _accordionValue = newValue;
-            });
+            setState(() => accordionValue = newValue);
           },
         ),
       );
-
-      children.add(child);
     }
-
-    return children;
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: _renderPanels(),
+      mainAxisSize: MainAxisSize.min,
+      children: [...renderPanels()],
     );
   }
 }

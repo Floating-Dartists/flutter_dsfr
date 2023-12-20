@@ -38,18 +38,14 @@ void main() {
   testWidgets(
     'it have a radio like logic, only one content can be open at a time',
     (tester) async {
-      final panels = [
-        const DSFRAccordionData(
+      const panels = [
+        DSFRAccordionData(
           title: titleText,
-          content: Text(
-            contentText1,
-          ),
+          content: Text(contentText1),
         ),
-        const DSFRAccordionData(
+        DSFRAccordionData(
           title: titleText,
-          content: Text(
-            contentText2,
-          ),
+          content: Text(contentText2),
         ),
       ];
 
