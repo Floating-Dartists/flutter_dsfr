@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../fonts/fonts.dart';
+import '../../flutter_dsfr.dart';
 import '../utils/named_property.dart';
 
 @immutable

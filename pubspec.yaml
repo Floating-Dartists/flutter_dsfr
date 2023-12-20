@@ -4,10 +4,13 @@ version: 0.0.1
 homepage: https://github.com/TesteurManiak/flutter_dsfr
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ">=2.18.0 <4.0.0"
+  flutter: ">=3.0.0"
 
 dependencies:
   flutter:
+    sdk: flutter
+  flutter_localizations:
     sdk: flutter
 
 dev_dependencies:
@@ -17,7 +20,7 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-  uses-material-design: true
+  generate: true
   fonts:
     - family: Marianne
       fonts:

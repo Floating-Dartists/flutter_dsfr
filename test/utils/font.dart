@@ -1,5 +1,5 @@
 import 'package:flutter/services.dart';
-import 'package:flutter_dsfr/fonts/fonts.dart';
+import 'package:flutter_dsfr/src/fonts.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// This loads fonts for the test runner.
