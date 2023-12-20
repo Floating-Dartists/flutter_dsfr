@@ -12,7 +12,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.backgroundActionHighBlueFranceHover,
     required this.backgroundActionHighBlueFranceActive,
     required this.activeBlueFrance,
-    required this.textInvertedBlueFrance,
     required this.borderActionHighBlueFrance,
     required this.blockColorHover,
     required this.blockColorActive,
@@ -56,24 +55,22 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
 
   const DSFRColors.light()
       : this._(
-          frConnectHover: ColorPalette.blueFranceSun113Hover,
-          frConnectActive: ColorPalette.blueFranceSun113Active,
-          frConnectBackground: ColorPalette.blueFranceSun113,
-          backgroundActionHighBlueFrance: ColorPalette.blueFranceSun113,
-          backgroundActionHighBlueFranceHover:
-              ColorPalette.blueFranceSun113Hover,
+          frConnectHover: ColorPalette.blueFrance113Hover,
+          frConnectActive: ColorPalette.blueFrance113Active,
+          frConnectBackground: ColorPalette.blueFrance113,
+          backgroundActionHighBlueFrance: ColorPalette.blueFrance113,
+          backgroundActionHighBlueFranceHover: ColorPalette.blueFrance113Hover,
           backgroundActionHighBlueFranceActive:
-              ColorPalette.blueFranceSun113Active,
-          activeBlueFrance: ColorPalette.blueFranceSun113,
-          textInvertedBlueFrance: ColorPalette.blueFrance975,
-          borderActionHighBlueFrance: ColorPalette.blueFranceSun113,
+              ColorPalette.blueFrance113Active,
+          activeBlueFrance: ColorPalette.blueFrance113,
+          borderActionHighBlueFrance: ColorPalette.blueFrance113,
           blockColorHover: const Color.fromRGBO(224, 224, 224, 0.5),
           blockColorActive: const Color.fromRGBO(194, 194, 194, 0.5),
           defaultGrey: ColorPalette.grey925,
           alertsBackground: ColorPalette.grey1000,
           backgroundDisabledGrey: ColorPalette.grey925,
           textDisabledGrey: ColorPalette.grey625,
-          alertsCloseButtonIcon: ColorPalette.blueFranceSun113,
+          alertsCloseButtonIcon: ColorPalette.blueFrance113,
           hover: ColorPalette.grey1000Hover,
           active: ColorPalette.grey1000Active,
           splash: ColorPalette.transparent,
@@ -98,8 +95,8 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           defaultError: ColorPalette.error425,
           defaultSuccess: ColorPalette.success425,
           titleGrey: ColorPalette.grey50,
-          strong: ColorPalette.blueFranceSun113,
-          main: ColorPalette.blueFranceMain525,
+          strong: ColorPalette.blueFrance113,
+          main: ColorPalette.blueFrance525,
           softest: ColorPalette.blueFrance850,
           light: ColorPalette.blueFrance925,
           lighter: ColorPalette.blueFrance950,
@@ -117,7 +114,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           backgroundActionHighBlueFranceActive:
               ColorPalette.blueFrance625Active,
           activeBlueFrance: ColorPalette.blueFrance625,
-          textInvertedBlueFrance: ColorPalette.blueFranceSun113,
           borderActionHighBlueFrance: const Color(0xFF9a9aff),
           blockColorHover: const Color.fromRGBO(65, 65, 65, 0.5),
           blockColorActive: const Color.fromRGBO(99, 99, 99, 0.5),
@@ -151,7 +147,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           defaultSuccess: ColorPalette.success625,
           titleGrey: Colors.white,
           strong: ColorPalette.blueFrance625,
-          main: ColorPalette.blueFranceMain525,
+          main: ColorPalette.blueFrance525,
           softest: ColorPalette.blueFrance200,
           light: ColorPalette.blueFrance125,
           lighter: ColorPalette.blueFrance100,
@@ -166,7 +162,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color backgroundActionHighBlueFranceHover;
   final Color backgroundActionHighBlueFranceActive;
   final Color activeBlueFrance;
-  final Color textInvertedBlueFrance;
   final Color borderActionHighBlueFrance;
   final Color blockColorHover;
   final Color blockColorActive;
@@ -255,11 +250,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         other.activeBlueFrance,
         t,
       )!,
-      textInvertedBlueFrance: Color.lerp(
-        textInvertedBlueFrance,
-        other.textInvertedBlueFrance,
-        t,
-      )!,
       borderActionHighBlueFrance: Color.lerp(
         borderActionHighBlueFrance,
         other.borderActionHighBlueFrance,
@@ -327,7 +317,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
             backgroundActionHighBlueFranceActive ==
                 other.backgroundActionHighBlueFranceActive &&
             activeBlueFrance == other.activeBlueFrance &&
-            textInvertedBlueFrance == other.textInvertedBlueFrance &&
             borderActionHighBlueFrance == other.borderActionHighBlueFrance &&
             blockColorHover == other.blockColorHover &&
             blockColorActive == other.blockColorActive &&
@@ -381,7 +370,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       backgroundActionHighBlueFranceHover,
       backgroundActionHighBlueFranceActive,
       activeBlueFrance,
-      textInvertedBlueFrance,
       borderActionHighBlueFrance,
       blockColorHover,
       blockColorActive,
@@ -443,7 +431,6 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           backgroundActionHighBlueFranceActive,
         ),
         NamedProperty('activeBlueFrance', activeBlueFrance),
-        NamedProperty('textInvertedBlueFrance', textInvertedBlueFrance),
         NamedProperty('borderActionHighBlueFrance', borderActionHighBlueFrance),
         NamedProperty('blockColorHover', blockColorHover),
         NamedProperty('blockColorActive', blockColorActive),

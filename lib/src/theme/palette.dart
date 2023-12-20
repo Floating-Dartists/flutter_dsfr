@@ -5,14 +5,6 @@ import 'package:flutter/material.dart';
 class ColorPalette {
   const ColorPalette._();
 
-  static const blueFranceMain525 = Color(0xFF6a6af4);
-  static const blueFranceMain525Hover = Color(0xFF9898f8);
-  static const blueFranceMain525Active = Color(0xFFaeaef9);
-
-  static const blueFranceSun113 = Color(0xFF000091);
-  static const blueFranceSun113Hover = Color(0xFF1212ff);
-  static const blueFranceSun113Active = Color(0xFF2323ff);
-
   static const blueFrance75 = Color(0xFF1b1b35);
   static const blueFrance75Hover = Color(0xFF3a3a68);
   static const blueFrance75Active = Color(0xFF4d4d83);
@@ -22,6 +14,8 @@ class ColorPalette {
   static const blueFrance100Active = Color(0xFF56568c);
 
   static const blueFrance113 = Color(0xFF000091);
+  static const blueFrance113Hover = Color(0xFF1212ff);
+  static const blueFrance113Active = Color(0xFF2323ff);
 
   static const blueFrance125 = Color(0xFF272747);
   static const blueFrance125Hover = Color(0xFF4a4a7d);
@@ -30,6 +24,10 @@ class ColorPalette {
   static const blueFrance200 = Color(0xFF313178);
   static const blueFrance200Hover = Color(0xFF5757ad);
   static const blueFrance200Active = Color(0xFF6c6cbb);
+
+  static const blueFrance525 = Color(0xFF6a6af4);
+  static const blueFrance525Hover = Color(0xFF9898f8);
+  static const blueFrance525Active = Color(0xFFaeaef9);
 
   static const blueFrance625 = Color(0xFF8585f6);
   static const blueFrance625Hover = Color(0xFFb1b1f9);
@@ -51,33 +49,29 @@ class ColorPalette {
   static const blueFrance975Hover = Color(0xFFdcdcfc);
   static const blueFrance975Active = Color(0xFFcbcbfa);
 
-  static const redMarianneMain472 = Color(0xFFe1000f);
-  static const redMarianneMain472Hover = Color(0xFFff292f);
-  static const redMarianneMain472Active = Color(0xFFff4347);
-
   static const redMarianne425 = Color(0xFFc9191e);
   static const redMarianne425Hover = Color(0xFFf93f42);
   static const redMarianne425Active = Color(0xFFf95a5c);
 
-  static const redMarianne975 = Color(0xFFfef4f4);
-  static const redMarianne975Hover = Color(0xFFfcd7d7);
-  static const redMarianne975Active = Color(0xFFfac4c4);
-
-  static const redMarianne950 = Color(0xFFfee9e9);
-  static const redMarianne950Hover = Color(0xFFfdc5c5);
-  static const redMarianne950Active = Color(0xFFfcafaf);
-
-  static const redMarianne925 = Color(0xFFfddede);
-  static const redMarianne925Hover = Color(0xFFfbb6b6);
-  static const redMarianne925Active = Color(0xFFfa9e9e);
+  static const redMarianne472 = Color(0xFFe1000f);
+  static const redMarianne472Hover = Color(0xFFff292f);
+  static const redMarianne472Active = Color(0xFFff4347);
 
   static const redMarianne850 = Color(0xFFfcbfbf);
   static const redMarianne850Hover = Color(0xFFfb8f8f);
   static const redMarianne850Active = Color(0xFFfa7474);
 
-  static const redMariane472 = Color(0xFFe1000f);
-  static const redMariane472Hover = Color(0xFFff292f);
-  static const redMariane472Active = Color(0xFFff4347);
+  static const redMarianne925 = Color(0xFFfddede);
+  static const redMarianne925Hover = Color(0xFFfbb6b6);
+  static const redMarianne925Active = Color(0xFFfa9e9e);
+
+  static const redMarianne950 = Color(0xFFfee9e9);
+  static const redMarianne950Hover = Color(0xFFfdc5c5);
+  static const redMarianne950Active = Color(0xFFfcafaf);
+
+  static const redMarianne975 = Color(0xFFfef4f4);
+  static const redMarianne975Hover = Color(0xFFfcd7d7);
+  static const redMarianne975Active = Color(0xFFfac4c4);
 
   static const redMariane625 = Color(0xFFf95c5e);
   static const redMariane625Hover = Color(0xFFfa9293);

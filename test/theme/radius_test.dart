@@ -18,7 +18,7 @@ void main() {
                 height: 50,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(topLeft: e.property),
-                  color: ColorPalette.blueFranceMain525,
+                  color: ColorPalette.blueFrance525,
                 ),
               ),
             ),

@@ -118,7 +118,7 @@ class FranceConnectBase extends StatelessWidget {
               TextSpan(
                 text: "${strings.auth}\n",
                 style: dsfrTextStyles.frConnectLogin
-                    .copyWith(color: dsfrColors.textInvertedBlueFrance),
+                    .copyWith(color: dsfrColors.inverted),
                 children: [
                   TextSpan(
                     text: strings.france_connect,
@@ -133,7 +133,7 @@ class FranceConnectBase extends StatelessWidget {
                 child: Icon(
                   Icons.add,
                   size: dsfrSizes.w5,
-                  color: dsfrColors.textInvertedBlueFrance,
+                  color: dsfrColors.inverted,
                 ),
               ),
           ],
