@@ -1,11 +1,9 @@
-// ignore_for_file: cascade_invocations
-
 import 'package:flutter/material.dart';
 
 class DSFRLogo extends StatelessWidget {
-  const DSFRLogo({super.key, this.size = 20.0});
-
   final double size;
+
+  const DSFRLogo({super.key, this.size = 20.0});
 
   @override
   Widget build(BuildContext context) {
@@ -19,131 +17,147 @@ class DSFRLogo extends StatelessWidget {
 class _DSFRLogoPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    final path_0 = Path()
-      ..moveTo(size.width * 0.8741250, size.height * 0.3145833)
-      ..lineTo(size.width * 0.4992750, size.height * 0.1338125)
-      ..lineTo(size.width * 0.1244250, size.height * 0.3163333)
-      ..arcToPoint(
-        Offset(size.width * 0.1167750, size.height * 0.3272500),
-        radius: Radius.elliptical(
-          size.width * 0.01515000,
-          size.height * 0.01262500,
-        ),
-        clockwise: false,
-      )
-      ..lineTo(size.width * 0.1167750, size.height * 0.6803333)
-      ..arcToPoint(
-        Offset(size.width * 0.1244250, size.height * 0.6912500),
-        radius: Radius.elliptical(
-          size.width * 0.01665000,
-          size.height * 0.01387500,
-        ),
-        clockwise: false,
-      )
-      ..lineTo(size.width * 0.4992250, size.height * 0.8704167)
-      ..lineTo(size.width * 0.8740750, size.height * 0.6890417)
-      ..arcToPoint(
-        Offset(size.width * 0.8817250, size.height * 0.6781250),
-        radius: Radius.elliptical(
-          size.width * 0.01662500,
-          size.height * 0.01385417,
-        ),
-        clockwise: false,
-      )
-      ..lineTo(size.width * 0.8817250, size.height * 0.3255833)
-      ..arcToPoint(
-        Offset(size.width * 0.8741250, size.height * 0.3145833),
-        radius: Radius.elliptical(
-          size.width * 0.01512500,
-          size.height * 0.01260417,
-        ),
-        clockwise: false,
-      )
-      ..close();
+    final path_0 = Path();
+    path_0.moveTo(size.width * 0.8741250, size.height * 0.3145833);
+    path_0.lineTo(size.width * 0.4992750, size.height * 0.1338125);
+    path_0.lineTo(size.width * 0.1244250, size.height * 0.3163333);
+    path_0.arcToPoint(
+      Offset(size.width * 0.1167750, size.height * 0.3272500),
+      radius: Radius.elliptical(
+        size.width * 0.01515000,
+        size.height * 0.01262500,
+      ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: false,
+    );
+    path_0.lineTo(size.width * 0.1167750, size.height * 0.6803333);
+    path_0.arcToPoint(
+      Offset(size.width * 0.1244250, size.height * 0.6912500),
+      radius: Radius.elliptical(
+        size.width * 0.01665000,
+        size.height * 0.01387500,
+      ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: false,
+    );
+    path_0.lineTo(size.width * 0.4992250, size.height * 0.8704167);
+    path_0.lineTo(size.width * 0.8740750, size.height * 0.6890417);
+    path_0.arcToPoint(
+      Offset(size.width * 0.8817250, size.height * 0.6781250),
+      radius: Radius.elliptical(
+        size.width * 0.01662500,
+        size.height * 0.01385417,
+      ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: false,
+    );
+    path_0.lineTo(size.width * 0.8817250, size.height * 0.3255833);
+    path_0.arcToPoint(
+      Offset(size.width * 0.8741250, size.height * 0.3145833),
+      radius: Radius.elliptical(
+        size.width * 0.01512500,
+        size.height * 0.01260417,
+      ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: false,
+    );
+    path_0.close();
 
-    final paint0Fill = Paint()
-      ..style = PaintingStyle.fill
-      ..color = const Color(0xff2a2f82).withOpacity(1);
+    final Paint paint0Fill = Paint()..style = PaintingStyle.fill;
+    paint0Fill.color = const Color(0xff2a2f82).withOpacity(1.0);
     canvas.drawPath(path_0, paint0Fill);
 
-    final path_1 = Path()
-      ..moveTo(size.width * 0.3653500, size.height * 0.3250000)
-      ..lineTo(size.width * 0.2396250, size.height * 0.5047500)
-      ..lineTo(size.width * 0.1257000, size.height * 0.3136042)
-      ..lineTo(size.width * 0.2604500, size.height * 0.2487500)
-      ..lineTo(size.width * 0.3726750, size.height * 0.3145833)
-      ..close()
-      ..moveTo(size.width * 0.8817500, size.height * 0.6787500)
-      ..lineTo(size.width * 0.8817500, size.height * 0.3254583)
-      ..arcToPoint(
-        Offset(size.width * 0.8741000, size.height * 0.3145625),
-        radius: Radius.elliptical(
-          size.width * 0.01500000,
-          size.height * 0.01250000,
-        ),
-        clockwise: false,
-      )
-      ..lineTo(size.width * 0.4992750, size.height * 0.1338125);
+    final Path path_1 = Path();
+    path_1.moveTo(size.width * 0.3653500, size.height * 0.3250000);
+    path_1.lineTo(size.width * 0.2396250, size.height * 0.5047500);
+    path_1.lineTo(size.width * 0.1257000, size.height * 0.3136042);
+    path_1.lineTo(size.width * 0.2604500, size.height * 0.2487500);
+    path_1.lineTo(size.width * 0.3726750, size.height * 0.3145833);
+    path_1.close();
+    path_1.moveTo(size.width * 0.8817500, size.height * 0.6787500);
+    path_1.lineTo(size.width * 0.8817500, size.height * 0.3254583);
+    path_1.arcToPoint(
+      Offset(size.width * 0.8741000, size.height * 0.3145625),
+      radius: Radius.elliptical(
+        size.width * 0.01500000,
+        size.height * 0.01250000,
+      ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: false,
+    );
+    path_1.lineTo(size.width * 0.4992750, size.height * 0.1338125);
 
-    final paint1Fill = Paint()
-      ..style = PaintingStyle.fill
-      ..color = const Color(0xffdf1f26).withOpacity(1);
+    final Paint paint1Fill = Paint()..style = PaintingStyle.fill;
+    paint1Fill.color = const Color(0xffdf1f26).withOpacity(1.0);
     canvas.drawPath(path_1, paint1Fill);
 
-    final path_2 = Path()
-      ..moveTo(size.width * 0.1168250, size.height * 0.6787500)
-      ..lineTo(size.width * 0.4993250, size.height * 0.1338125)
-      ..lineTo(size.width * 0.4993250, size.height * 0.8705208)
-      ..lineTo(size.width * 0.1244250, size.height * 0.6912500)
-      ..arcToPoint(
-        Offset(size.width * 0.1167750, size.height * 0.6803333),
-        radius: Radius.elliptical(
-          size.width * 0.01665000,
-          size.height * 0.01387500,
-        ),
-      )
-      ..lineTo(size.width * 0.1167750, size.height * 0.3272500)
-      ..close()
-      ..moveTo(size.width * 0.7335500, size.height * 0.2467708)
-      ..lineTo(size.width * 0.8700000, size.height * 0.3125000)
-      ..lineTo(size.width * 0.7577750, size.height * 0.5031250)
-      ..lineTo(size.width * 0.6231000, size.height * 0.3107083)
-      ..close();
+    final Path path_2 = Path();
+    path_2.moveTo(size.width * 0.1168250, size.height * 0.6787500);
+    path_2.lineTo(size.width * 0.4993250, size.height * 0.1338125);
+    path_2.lineTo(size.width * 0.4993250, size.height * 0.8705208);
+    path_2.lineTo(size.width * 0.1244250, size.height * 0.6912500);
+    path_2.arcToPoint(
+      Offset(size.width * 0.1167750, size.height * 0.6803333),
+      radius: Radius.elliptical(
+        size.width * 0.01665000,
+        size.height * 0.01387500,
+      ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
+    );
+    path_2.lineTo(size.width * 0.1167750, size.height * 0.3272500);
+    path_2.close();
+    path_2.moveTo(size.width * 0.7335500, size.height * 0.2467708);
+    path_2.lineTo(size.width * 0.8700000, size.height * 0.3125000);
+    path_2.lineTo(size.width * 0.7577750, size.height * 0.5031250);
+    path_2.lineTo(size.width * 0.6231000, size.height * 0.3107083);
+    path_2.close();
 
-    final paint2Fill = Paint()
-      ..style = PaintingStyle.fill
-      ..color = const Color(0xff2e65b0).withOpacity(1);
+    final Paint paint2Fill = Paint()..style = PaintingStyle.fill;
+    paint2Fill.color = const Color(0xff2e65b0).withOpacity(1.0);
     canvas.drawPath(path_2, paint2Fill);
 
-    final path_3 = Path()
-      ..moveTo(size.width * 0.9901500, size.height * 0.2563542)
-      ..lineTo(size.width * 0.5104000, size.height * 0.02677083)
-      ..arcToPoint(
-        Offset(size.width * 0.4896000, size.height * 0.02677083),
-        radius: Radius.elliptical(
-          size.width * 0.02332500,
-          size.height * 0.01943750,
-        ),
-        clockwise: false,
-      )
-      ..lineTo(size.width * 0.009850000, size.height * 0.2563542)
-      ..arcToPoint(
-        Offset(0, size.height * 0.2708333),
-        radius: Radius.elliptical(
-          size.width * 0.02215000,
-          size.height * 0.01845833,
-        ),
-        clockwise: false,
-      )
-      ..lineTo(0, size.height * 0.7291667)
-      ..arcToPoint(
-        Offset(size.width * 0.009850000, size.height * 0.7437500),
-        radius: Radius.elliptical(
-          size.width * 0.02215000,
-          size.height * 0.01845833,
-        ),
-        clockwise: false,
-      );
+    final Path path_3 = Path();
+    path_3.moveTo(size.width * 0.9901500, size.height * 0.2563542);
+    path_3.lineTo(size.width * 0.5104000, size.height * 0.02677083);
+    path_3.arcToPoint(
+      Offset(size.width * 0.4896000, size.height * 0.02677083),
+      radius: Radius.elliptical(
+        size.width * 0.02332500,
+        size.height * 0.01943750,
+      ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: false,
+    );
+    path_3.lineTo(size.width * 0.009850000, size.height * 0.2563542);
+    path_3.arcToPoint(
+      Offset(0, size.height * 0.2708333),
+      radius: Radius.elliptical(
+        size.width * 0.02215000,
+        size.height * 0.01845833,
+      ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: false,
+    );
+    path_3.lineTo(0, size.height * 0.7291667);
+    path_3.arcToPoint(
+      Offset(size.width * 0.009850000, size.height * 0.7437500),
+      radius: Radius.elliptical(
+        size.width * 0.02215000,
+        size.height * 0.01845833,
+      ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: false,
+    );
     path_3.lineTo(size.width * 0.4895750, size.height * 0.9733333);
     path_3.arcToPoint(
       Offset(size.width * 0.5103750, size.height * 0.9733333),
@@ -151,6 +165,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.02332500,
         size.height * 0.01943750,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.lineTo(size.width * 0.9901500, size.height * 0.7437500);
@@ -160,6 +176,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.02215000,
         size.height * 0.01845833,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.lineTo(size.width, size.height * 0.2708333);
@@ -169,6 +187,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.02215000,
         size.height * 0.01845833,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.close();
@@ -196,6 +216,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.02280000,
         size.height * 0.01900000,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.cubicTo(
@@ -220,6 +242,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.004425000,
         size.height * 0.003687500,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.cubicTo(
@@ -285,6 +309,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.008775000,
         size.height * 0.007312500,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.lineTo(size.width * 0.1728500, size.height * 0.6907083);
@@ -335,18 +361,24 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.005475000,
         size.height * 0.004562500,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.2420250, size.height * 0.6953958),
       radius:
           Radius.elliptical(size.width * 0.2258500, size.height * 0.1882083),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.2942250, size.height * 0.6629167),
       radius:
           Radius.elliptical(size.width * 0.1921250, size.height * 0.1601042),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
@@ -355,6 +387,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.004400000,
         size.height * 0.003666667,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.2753250, size.height * 0.6875000),
@@ -362,6 +397,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.05420000,
         size.height * 0.04516667,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.cubicTo(
       size.width * 0.2684000,
@@ -375,12 +413,17 @@ class _DSFRLogoPainter extends CustomPainter {
       Offset(size.width * 0.2471250, size.height * 0.7032083),
       radius:
           Radius.elliptical(size.width * 0.1011250, size.height * 0.08427083),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.1986500, size.height * 0.7117917),
       radius:
           Radius.elliptical(size.width * 0.2690250, size.height * 0.2241875),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.lineTo(size.width * 0.1910250, size.height * 0.7127083);
     path_3.cubicTo(
@@ -398,6 +441,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.01620000,
         size.height * 0.01350000,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.1195750, size.height * 0.6813750),
@@ -405,6 +451,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.01435000,
         size.height * 0.01195833,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
@@ -413,6 +461,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.006625000,
         size.height * 0.005520833,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.lineTo(size.width * 0.1167500, size.height * 0.6663542);
@@ -420,12 +470,16 @@ class _DSFRLogoPainter extends CustomPainter {
       Offset(size.width * 0.1927000, size.height * 0.6467292),
       radius:
           Radius.elliptical(size.width * 0.3196500, size.height * 0.2663750),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.1167750, size.height * 0.6187500),
       radius:
           Radius.elliptical(size.width * 0.2186500, size.height * 0.1822083),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.lineTo(size.width * 0.1167750, size.height * 0.5871875);
@@ -433,11 +487,17 @@ class _DSFRLogoPainter extends CustomPainter {
       Offset(size.width * 0.1577500, size.height * 0.5953542),
       radius:
           Radius.elliptical(size.width * 0.2915500, size.height * 0.2429583),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.1873000, size.height * 0.6073958),
       radius:
           Radius.elliptical(size.width * 0.1603750, size.height * 0.1336458),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.1992500, size.height * 0.6152500),
@@ -445,6 +505,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.07782500,
         size.height * 0.06485417,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
@@ -453,6 +515,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.02275000,
         size.height * 0.01895833,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.lineTo(size.width * 0.2275000, size.height * 0.6162917);
@@ -462,6 +526,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.09902500,
         size.height * 0.08252083,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.cubicTo(
@@ -478,6 +544,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.09075000,
         size.height * 0.07562500,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.cubicTo(
       size.width * 0.2678000,
@@ -511,12 +580,16 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.09227500,
         size.height * 0.07689583,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.2998750, size.height * 0.7388542),
       radius:
           Radius.elliptical(size.width * 0.3990000, size.height * 0.3325000),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.cubicTo(
@@ -533,18 +606,25 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.05962500,
         size.height * 0.04968750,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.lineTo(size.width * 0.2089500, size.height * 0.7315625);
     path_3.arcToPoint(
       Offset(size.width * 0.2358500, size.height * 0.7304583),
       radius:
           Radius.elliptical(size.width * 0.1011750, size.height * 0.08431250),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.2572250, size.height * 0.7236458),
       radius:
           Radius.elliptical(size.width * 0.1246000, size.height * 0.1038333),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.lineTo(size.width * 0.2572250, size.height * 0.7257292);
@@ -570,6 +650,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.04707500,
         size.height * 0.03922917,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.cubicTo(
       size.width * 0.3490250,
@@ -603,6 +686,9 @@ class _DSFRLogoPainter extends CustomPainter {
       Offset(size.width * 0.1564750, size.height * 0.5644583),
       radius:
           Radius.elliptical(size.width * 0.1453500, size.height * 0.1211250),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.1684250, size.height * 0.5644583),
@@ -610,11 +696,16 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.03800000,
         size.height * 0.03166667,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.1167750, size.height * 0.5722500),
       radius:
           Radius.elliptical(size.width * 0.1465250, size.height * 0.1221042),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.close();
@@ -625,12 +716,18 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.01662500,
         size.height * 0.01385417,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.lineTo(size.width * 0.6221500, size.height * 0.8110625);
     path_3.arcToPoint(
       Offset(size.width * 0.5369500, size.height * 0.7863750),
       radius:
           Radius.elliptical(size.width * 0.8075000, size.height * 0.6729167),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.5357000, size.height * 0.7396042),
@@ -638,6 +735,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.07065000,
         size.height * 0.05887500,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.5445000, size.height * 0.7212083),
@@ -645,6 +745,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.09485000,
         size.height * 0.07904167,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.cubicTo(
       size.width * 0.5451250,
@@ -660,12 +763,17 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.0006250000,
         size.height * 0.0005208333,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.5558000, size.height * 0.7075417),
       radius:
           Radius.elliptical(size.width * 0.1079000, size.height * 0.08991667),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.lineTo(size.width * 0.5561750, size.height * 0.7072292);
     path_3.lineTo(size.width * 0.5566750, size.height * 0.7067917);
@@ -692,16 +800,25 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.09427500,
         size.height * 0.07856250,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.5916250, size.height * 0.6881667),
       radius:
           Radius.elliptical(size.width * 0.1017500, size.height * 0.08479167),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.6520000, size.height * 0.6950000),
       radius:
           Radius.elliptical(size.width * 0.4954250, size.height * 0.4128542),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.6589250, size.height * 0.6970833),
@@ -709,6 +826,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.01877500,
         size.height * 0.01564583,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.6815500, size.height * 0.6960417),
@@ -716,6 +836,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.04622500,
         size.height * 0.03852083,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
@@ -724,6 +846,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.02842500,
         size.height * 0.02368750,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
@@ -732,6 +856,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.03030000,
         size.height * 0.02525000,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.cubicTo(
@@ -749,6 +875,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.02925000,
         size.height * 0.02437500,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.cubicTo(
@@ -797,6 +925,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.02845000,
         size.height * 0.02370833,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.lineTo(size.width * 0.7334250, size.height * 0.5535000);
@@ -804,17 +934,25 @@ class _DSFRLogoPainter extends CustomPainter {
       Offset(size.width * 0.7281500, size.height * 0.5468333),
       radius:
           Radius.elliptical(size.width * 0.1188500, size.height * 0.09904167),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.7149500, size.height * 0.5310625),
       radius:
           Radius.elliptical(size.width * 0.1728500, size.height * 0.1440417),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.7017500, size.height * 0.5100417),
       radius:
           Radius.elliptical(size.width * 0.1075000, size.height * 0.08958333),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.cubicTo(
       size.width * 0.6979750,
@@ -828,6 +966,8 @@ class _DSFRLogoPainter extends CustomPainter {
       Offset(size.width * 0.6948250, size.height * 0.4427917),
       radius:
           Radius.elliptical(size.width * 0.1586750, size.height * 0.1322292),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.cubicTo(
@@ -844,6 +984,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.02800000,
         size.height * 0.02333333,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
@@ -852,11 +994,16 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.009375000,
         size.height * 0.007812500,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.6954750, size.height * 0.3918333),
       radius:
           Radius.elliptical(size.width * 0.1218500, size.height * 0.1015417),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
@@ -865,6 +1012,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.01417500,
         size.height * 0.01181250,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.cubicTo(
@@ -906,6 +1055,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.09892500,
         size.height * 0.08243750,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
@@ -914,6 +1065,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.05797500,
         size.height * 0.04831250,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
@@ -922,6 +1075,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.04175000,
         size.height * 0.03479167,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.cubicTo(
@@ -938,6 +1093,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.02000000,
         size.height * 0.01666667,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
@@ -946,12 +1103,17 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.05472500,
         size.height * 0.04560417,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.6244500, size.height * 0.2962500),
       radius:
           Radius.elliptical(size.width * 0.2282500, size.height * 0.1902083),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.6181750, size.height * 0.2936250),
@@ -959,6 +1121,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.02380000,
         size.height * 0.01983333,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.cubicTo(
@@ -974,6 +1138,8 @@ class _DSFRLogoPainter extends CustomPainter {
       Offset(size.width * 0.3483750, size.height * 0.3035208),
       radius:
           Radius.elliptical(size.width * 0.2061000, size.height * 0.1717500),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
@@ -982,6 +1148,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.09805000,
         size.height * 0.08170833,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
@@ -990,6 +1158,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.09572500,
         size.height * 0.07977083,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.cubicTo(
@@ -1012,6 +1182,8 @@ class _DSFRLogoPainter extends CustomPainter {
       Offset(size.width * 0.2477250, size.height * 0.5009583),
       radius:
           Radius.elliptical(size.width * 0.1167000, size.height * 0.09725000),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.cubicTo(
@@ -1044,6 +1216,9 @@ class _DSFRLogoPainter extends CustomPainter {
       Offset(size.width * 0.2886250, size.height * 0.5679792),
       radius:
           Radius.elliptical(size.width * 0.1611500, size.height * 0.1342917),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.cubicTo(
       size.width * 0.2911250,
@@ -1057,6 +1232,9 @@ class _DSFRLogoPainter extends CustomPainter {
       Offset(size.width * 0.2428250, size.height * 0.5491042),
       radius:
           Radius.elliptical(size.width * 0.1494750, size.height * 0.1245625),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.2415500, size.height * 0.5511875),
@@ -1064,6 +1242,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.004375000,
         size.height * 0.003645833,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.cubicTo(
@@ -1110,12 +1290,16 @@ class _DSFRLogoPainter extends CustomPainter {
       Offset(size.width * 0.1604250, size.height * 0.5590833),
       radius:
           Radius.elliptical(size.width * 0.3790500, size.height * 0.3158750),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.1169500, size.height * 0.5557708),
       radius:
           Radius.elliptical(size.width * 0.3784250, size.height * 0.3153542),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.lineTo(size.width * 0.1169500, size.height * 0.3272500);
@@ -1125,6 +1309,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.01515000,
         size.height * 0.01262500,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.lineTo(size.width * 0.4992750, size.height * 0.1338125);
     path_3.lineTo(size.width * 0.8741250, size.height * 0.3145833);
@@ -1134,6 +1321,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.01512500,
         size.height * 0.01260417,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.close();
     path_3.moveTo(size.width * 0.6829250, size.height * 0.5061458);
@@ -1143,6 +1333,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.008125000,
         size.height * 0.006770833,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.6688250, size.height * 0.5149375),
@@ -1150,6 +1343,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.07107500,
         size.height * 0.05922917,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.cubicTo(
@@ -1174,6 +1369,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.05440000,
         size.height * 0.04533333,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.6422000, size.height * 0.5342292),
@@ -1181,6 +1379,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.01805000,
         size.height * 0.01504167,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.lineTo(size.width * 0.6443250, size.height * 0.5342292);
     path_3.arcToPoint(
@@ -1189,6 +1390,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.009550000,
         size.height * 0.007958333,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.lineTo(size.width * 0.6527500, size.height * 0.5273125);
@@ -1206,6 +1409,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.004025000,
         size.height * 0.003354167,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.6439000, size.height * 0.5231458),
@@ -1213,6 +1419,8 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.005575000,
         size.height * 0.004645833,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
@@ -1221,6 +1429,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.02017500,
         size.height * 0.01681250,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.6368500, size.height * 0.5164167),
@@ -1228,6 +1439,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.01675000,
         size.height * 0.01395833,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.cubicTo(
       size.width * 0.6400500,
@@ -1260,12 +1474,16 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.05647500,
         size.height * 0.04706250,
       ),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.6118750, size.height * 0.4957708),
       radius:
           Radius.elliptical(size.width * 0.1162500, size.height * 0.09687500),
+      rotation: 0,
+      largeArc: false,
       clockwise: false,
     );
     path_3.arcToPoint(
@@ -1274,6 +1492,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.08062500,
         size.height * 0.06718750,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.arcToPoint(
       Offset(size.width * 0.6529000, size.height * 0.4817917),
@@ -1281,6 +1502,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.09715000,
         size.height * 0.08095833,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.lineTo(size.width * 0.6562000, size.height * 0.4812500);
     path_3.lineTo(size.width * 0.6595250, size.height * 0.4806875);
@@ -1290,6 +1514,9 @@ class _DSFRLogoPainter extends CustomPainter {
         size.width * 0.02427500,
         size.height * 0.02022917,
       ),
+      rotation: 0,
+      largeArc: false,
+      clockwise: true,
     );
     path_3.cubicTo(
       size.width * 0.6792000,
@@ -1318,7 +1545,7 @@ class _DSFRLogoPainter extends CustomPainter {
     path_3.close();
 
     final paint3Fill = Paint()..style = PaintingStyle.fill;
-    paint3Fill.color = const Color(0xffffffff).withOpacity(1);
+    paint3Fill.color = const Color(0xffffffff).withOpacity(1.0);
     canvas.drawPath(path_3, paint3Fill);
   }
 
