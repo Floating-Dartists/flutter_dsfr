@@ -12,45 +12,9 @@ class DSFRAccordionPanel extends StatelessWidget {
   });
 
   final DSFRAccordionData data;
-  final void Function(UniqueKey?) onExpandedChange;
+  final ValueChanged<UniqueKey?> onExpandedChange;
   final UniqueKey? accordionValue;
   final UniqueKey itemValue;
-
-  bool get _isExpanded => itemValue == accordionValue;
-
-  Widget _getTitle(
-    BuildContext context, {
-    required DSFRTypography dsfrTypography,
-    required DSFRColors dsfrColors,
-  }) {
-    if (_isExpanded) {
-      return Text(
-        data.title,
-        style: dsfrTypography.boldText.copyWith(
-          color: dsfrColors.text,
-        ),
-      );
-    }
-
-    return Text(
-      data.title,
-      style:
-          DefaultTextStyle.of(context).style.copyWith(color: dsfrColors.text),
-    );
-  }
-
-  Widget _getTrailingIcon({
-    required DSFRColors dsfrColors,
-    required DSFRSizes dsfrSizes,
-  }) {
-    final iconData = _isExpanded ? DSFRIcons.substract : DSFRIcons.add;
-
-    return Icon(
-      iconData,
-      color: dsfrColors.text,
-      size: dsfrSizes.w2,
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +22,7 @@ class DSFRAccordionPanel extends StatelessWidget {
     final dsfrTypography = dsfrTheme.typography;
     final dsfrColors = dsfrTheme.colors;
     final dsfrSizes = dsfrTheme.sizes;
+    final isExpanded = itemValue == accordionValue;
 
     return Theme(
       data: Theme.of(context).copyWith(
@@ -75,14 +40,19 @@ class DSFRAccordionPanel extends StatelessWidget {
             onExpandedChange(null);
           }
         },
-        isExpanded: _isExpanded,
-        title: _getTitle(
-          context,
-          dsfrTypography: dsfrTypography,
-          dsfrColors: dsfrColors,
+        isExpanded: isExpanded,
+        title: DefaultTextStyle(
+          style: (isExpanded
+                  ? dsfrTypography.boldText
+                  : dsfrTypography.defaultText)
+              .copyWith(color: dsfrColors.text),
+          child: Text(data.title),
         ),
-        trailing:
-            _getTrailingIcon(dsfrColors: dsfrColors, dsfrSizes: dsfrSizes),
+        trailing: Icon(
+          isExpanded ? DSFRIcons.substract : DSFRIcons.add,
+          color: dsfrColors.text,
+          size: dsfrSizes.w2,
+        ),
         child: data.content,
       ),
     );
