@@ -1,5 +1,0 @@
-include: package:fd_lints/flutter.yaml
-
-analyzer:
-  exclude:
-    - "lib/src/components/logo/logo.dart"
