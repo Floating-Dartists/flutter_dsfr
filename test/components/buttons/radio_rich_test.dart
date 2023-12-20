@@ -47,7 +47,7 @@ void main() {
             onChanged: null,
             image: image,
           ),
-        )
+        ),
       ],
     ),
   );

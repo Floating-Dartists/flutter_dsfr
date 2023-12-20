@@ -75,7 +75,7 @@ class DSFRButtonsGroup extends StatelessWidget {
                     for (final e in buttonList) ...[
                       e,
                       SizedBox(height: dsfrSizes.w2),
-                    ]
+                    ],
                   ],
                 )
               : Wrap(

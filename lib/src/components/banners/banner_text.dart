@@ -43,8 +43,8 @@ class DSFRBannerText extends StatelessWidget {
               style: textStyle.copyWith(
                 decoration: TextDecoration.underline,
               ),
-            )
-          ]
+            ),
+          ],
         ],
       ),
     );

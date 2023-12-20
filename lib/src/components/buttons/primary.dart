@@ -31,7 +31,7 @@ class DSFRPrimaryButton extends DSFRGroupeableButton {
     final dsfrTypography = dsfrTheme.typography;
     final dsfrButtonStyle = dsfrTheme.buttonStyle;
 
-    final scale = MediaQuery.maybeOf(context)?.textScaleFactor ?? 1;
+    final scale = MediaQuery.textScalerOf(context).textScaleFactor;
     final double gap =
         scale <= 1 ? 8 : lerpDouble(8, 4, math.min(scale - 1, 1))!;
 

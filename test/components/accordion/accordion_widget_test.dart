@@ -19,7 +19,7 @@ void main() {
           content: Text(
             contentText1,
           ),
-        )
+        ),
       ];
 
       final accordionRobot = AccordionRobot(tester: tester);

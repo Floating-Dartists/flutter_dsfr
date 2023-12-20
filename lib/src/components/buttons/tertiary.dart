@@ -2,8 +2,8 @@ import 'dart:math' as math;
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import '../../../flutter_dsfr.dart';
 
+import '../../../flutter_dsfr.dart';
 import 'base_button.dart';
 
 /// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons#Bouton-tertiaire
@@ -33,7 +33,7 @@ class DSFRTertiaryButton extends DSFRBaseButton {
     final dsfrColors = dsfrTheme.colors;
     final dsfrTypography = dsfrTheme.typography;
 
-    final scale = MediaQuery.maybeOf(context)?.textScaleFactor ?? 1;
+    final scale = MediaQuery.textScalerOf(context).textScaleFactor;
     final double gap =
         scale <= 1 ? 8 : lerpDouble(8, 4, math.min(scale - 1, 1))!;
 
@@ -80,12 +80,12 @@ class DSFRTertiaryButton extends DSFRBaseButton {
               children: [
                 if (btnIcon != null && iconPosition == IconPosition.left) ...[
                   btnIcon,
-                  SizedBox(width: gap)
+                  SizedBox(width: gap),
                 ],
                 Flexible(child: Text(label!, textAlign: TextAlign.center)),
                 if (btnIcon != null && iconPosition == IconPosition.right) ...[
                   SizedBox(width: gap),
-                  btnIcon
+                  btnIcon,
                 ],
               ],
             ),
