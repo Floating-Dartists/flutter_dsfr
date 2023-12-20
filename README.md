@@ -16,6 +16,19 @@ The full design specifications is available here: https://www.figma.com/@gouvfr
 
 **This project is not affiliated with the french government.**
 
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [Components](#components)
+  - [Buttons](#buttons)
+  - [Alerts](#alerts)
+  - [Accordion](#accordion)
+  - [Badges](#badges)
+  - [ButtonsGroup](#buttongroup)
+  - [Banners](#banners)
+  - [Radio](#radio)
+- [Contributors](#contributors)
+
 ## Getting Started
 
 * Add the package to your `pubspec.yaml` file:
@@ -243,49 +256,6 @@ DSFRRadioGroupFormField<bool>(
 ```
 
 ![radio_group.png](https://raw.githubusercontent.com/Floating-Dartists/flutter_dsfr/main/screenshots/radio_group.png)
-
-## Roadmap
-
-Components we need to implement
-
-- [X] Accordion
-- [ ] FileUpload
-- [X] Alerts
-- [X] Badges
-- [X] Banner
-- [ ] SearchBar
-- [X] Buttons
-- [X] ButtonsGroup
-- [X] FranceConnectButton
-- [X] Radio
-- [ ] RichRadio
-- [ ] Checkbox
-- [ ] Card
-- [ ] Input
-- [ ] Quote
-- [ ] Header
-- [ ] Breadcrumb
-- [ ] ConscentBanner
-- [ ] StepIndicateur
-- [ ] ToggleSwitch
-- [ ] Links
-- [ ] SkipLinks
-- [ ] Select
-- [ ] SideMenu
-- [ ] Callout
-- [ ] Highlight
-- [ ] Modal
-- [ ] MainNavigation
-- [ ] Tabs
-- [ ] Display
-- [ ] Share
-- [ ] Footer
-- [ ] Pagination
-- [ ] Summary
-- [ ] Table
-- [ ] Tag
-- [ ] DownloadFile
-- [ ] Tile
 
 ## Contributors
 
