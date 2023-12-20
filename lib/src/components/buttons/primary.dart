@@ -39,7 +39,7 @@ class DSFRPrimaryButton extends DSFRGroupeableButton {
         ? dsfrColors.backgroundActionHighBlueFrance
         : dsfrColors.backgroundDisabledGrey;
     final foregroundColor =
-        enabled ? dsfrColors.inverted : dsfrColors.textDisabledGrey;
+        enabled ? dsfrColors.blueFrance.inverted : dsfrColors.textDisabledGrey;
 
     Widget? btnIcon = icon;
     if (btnIcon != null) {

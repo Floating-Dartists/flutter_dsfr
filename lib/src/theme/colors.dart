@@ -3,7 +3,8 @@ import 'package:flutter_dsfr/src/theme/palette.dart';
 import 'package:flutter_dsfr/src/utils/named_property.dart';
 
 @immutable
-class DSFRColors extends ThemeExtension<DSFRColors> {
+class DSFRColors extends ThemeExtension<DSFRColors>
+    with NamedPropertiesMixin<Object> {
   const DSFRColors._({
     required this.frConnectHover,
     required this.frConnectActive,
@@ -44,13 +45,7 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     required this.defaultError,
     required this.defaultSuccess,
     required this.titleGrey,
-    required this.strong,
-    required this.main,
-    required this.softest,
-    required this.light,
-    required this.lighter,
-    required this.lightest,
-    required this.inverted,
+    required this.blueFrance,
   });
 
   const DSFRColors.light()
@@ -95,13 +90,15 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           defaultError: ColorPalette.error425,
           defaultSuccess: ColorPalette.success425,
           titleGrey: ColorPalette.grey50,
-          strong: ColorPalette.blueFrance113,
-          main: ColorPalette.blueFrance525,
-          softest: ColorPalette.blueFrance850,
-          light: ColorPalette.blueFrance925,
-          lighter: ColorPalette.blueFrance950,
-          lightest: ColorPalette.blueFrance975,
-          inverted: ColorPalette.blueFrance975,
+          blueFrance: const DSFRColor(
+            strong: ColorPalette.blueFrance113,
+            main: ColorPalette.blueFrance525,
+            softest: ColorPalette.blueFrance850,
+            light: ColorPalette.blueFrance925,
+            lighter: ColorPalette.blueFrance950,
+            lightest: ColorPalette.blueFrance975,
+            inverted: ColorPalette.blueFrance975,
+          ),
         );
 
   const DSFRColors.dark()
@@ -146,13 +143,15 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
           defaultError: ColorPalette.error625,
           defaultSuccess: ColorPalette.success625,
           titleGrey: Colors.white,
-          strong: ColorPalette.blueFrance625,
-          main: ColorPalette.blueFrance525,
-          softest: ColorPalette.blueFrance200,
-          light: ColorPalette.blueFrance125,
-          lighter: ColorPalette.blueFrance100,
-          lightest: ColorPalette.blueFrance75,
-          inverted: ColorPalette.blueFrance113,
+          blueFrance: const DSFRColor(
+            strong: ColorPalette.blueFrance625,
+            main: ColorPalette.blueFrance525,
+            softest: ColorPalette.blueFrance200,
+            light: ColorPalette.blueFrance125,
+            lighter: ColorPalette.blueFrance100,
+            lightest: ColorPalette.blueFrance75,
+            inverted: ColorPalette.blueFrance113,
+          ),
         );
 
   final Color frConnectHover;
@@ -195,27 +194,9 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
   final Color defaultSuccess;
   final Color titleGrey;
 
-  /// Used for backgrounds, borders, dividers, titles, clickable text, active
-  /// text, icons and pictograms.
-  final Color strong;
+  // ===
 
-  /// Used for borders, dividers, icons and pictograms.
-  final Color main;
-
-  /// Used for borders
-  final Color softest;
-
-  /// Used for backgrounds and borders.
-  final Color light;
-
-  /// Used for backgrounds and pictograms.
-  final Color lighter;
-
-  /// Used for backgrounds.
-  final Color lightest;
-
-  /// Used for clickable text and active text.
-  final Color inverted;
+  final DSFRColor blueFrance;
 
   @override
   DSFRColors copyWith() => this;
@@ -292,129 +273,12 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
       defaultSuccess: Color.lerp(defaultSuccess, other.defaultSuccess, t)!,
       titleGrey: Color.lerp(titleGrey, other.titleGrey, t)!,
       // ===
-      strong: Color.lerp(strong, other.strong, t)!,
-      main: Color.lerp(main, other.main, t)!,
-      softest: Color.lerp(softest, other.softest, t)!,
-      light: Color.lerp(light, other.light, t)!,
-      lighter: Color.lerp(lighter, other.lighter, t)!,
-      lightest: Color.lerp(lightest, other.lightest, t)!,
-      inverted: Color.lerp(inverted, other.inverted, t)!,
+      blueFrance: DSFRColor.lerp(blueFrance, other.blueFrance, t),
     );
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is DSFRColors &&
-            runtimeType == other.runtimeType &&
-            frConnectHover == other.frConnectHover &&
-            frConnectActive == other.frConnectActive &&
-            frConnectBackground == other.frConnectBackground &&
-            backgroundActionHighBlueFrance ==
-                other.backgroundActionHighBlueFrance &&
-            backgroundActionHighBlueFranceHover ==
-                other.backgroundActionHighBlueFranceHover &&
-            backgroundActionHighBlueFranceActive ==
-                other.backgroundActionHighBlueFranceActive &&
-            activeBlueFrance == other.activeBlueFrance &&
-            borderActionHighBlueFrance == other.borderActionHighBlueFrance &&
-            blockColorHover == other.blockColorHover &&
-            blockColorActive == other.blockColorActive &&
-            defaultGrey == other.defaultGrey &&
-            backgroundDisabledGrey == other.backgroundDisabledGrey &&
-            textDisabledGrey == other.textDisabledGrey &&
-            alertsBackground == other.alertsBackground &&
-            alertsCloseButtonIcon == other.alertsCloseButtonIcon &&
-            hover == other.hover &&
-            active == other.active &&
-            splash == other.splash &&
-            text == other.text &&
-            accordionBorder == other.accordionBorder &&
-            error == other.error &&
-            success == other.success &&
-            info == other.info &&
-            warning == other.warning &&
-            news == other.news &&
-            badgeError == other.badgeError &&
-            badgeSuccess == other.badgeSuccess &&
-            badgeInfo == other.badgeInfo &&
-            badgeWarning == other.badgeWarning &&
-            badgeNews == other.badgeNews &&
-            banner == other.banner &&
-            g200 == other.g200 &&
-            g800 == other.g800 &&
-            highGrey == other.highGrey &&
-            disabledGrey == other.disabledGrey &&
-            mentionGrey == other.mentionGrey &&
-            defaultError == other.defaultError &&
-            defaultSuccess == other.defaultSuccess &&
-            titleGrey == other.titleGrey &&
-            // ===
-            strong == other.strong &&
-            main == other.main &&
-            softest == other.softest &&
-            light == other.light &&
-            lighter == other.lighter &&
-            lightest == other.lightest &&
-            inverted == other.inverted;
-  }
-
-  @override
-  int get hashCode {
-    return Object.hashAll([
-      runtimeType,
-      frConnectHover,
-      frConnectActive,
-      frConnectBackground,
-      backgroundActionHighBlueFrance,
-      backgroundActionHighBlueFranceHover,
-      backgroundActionHighBlueFranceActive,
-      activeBlueFrance,
-      borderActionHighBlueFrance,
-      blockColorHover,
-      blockColorActive,
-      defaultGrey,
-      backgroundDisabledGrey,
-      textDisabledGrey,
-      alertsBackground,
-      alertsCloseButtonIcon,
-      hover,
-      active,
-      splash,
-      text,
-      accordionBorder,
-      error,
-      success,
-      info,
-      warning,
-      news,
-      badgeError,
-      badgeSuccess,
-      badgeInfo,
-      badgeWarning,
-      badgeNews,
-      banner,
-      g200,
-      g800,
-      highGrey,
-      disabledGrey,
-      mentionGrey,
-      defaultError,
-      defaultSuccess,
-      titleGrey,
-      // ===
-      strong,
-      main,
-      softest,
-      light,
-      lighter,
-      lightest,
-      inverted,
-    ]);
-  }
-
-  @visibleForTesting
-  List<NamedProperty<Color>> get props => [
+  List<NamedProperty<Object>> get props => [
         NamedProperty('frConnectHover', frConnectHover),
         NamedProperty('frConnectActive', frConnectActive),
         NamedProperty('frConnectBackground', frConnectBackground),
@@ -464,12 +328,65 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
         NamedProperty('defaultSuccess', defaultSuccess),
         NamedProperty('titleGrey', titleGrey),
         // ===
-        NamedProperty('strong', strong),
-        NamedProperty('main', main),
-        NamedProperty('softest', softest),
-        NamedProperty('light', light),
-        NamedProperty('lighter', lighter),
-        NamedProperty('lightest', lightest),
-        NamedProperty('inverted', inverted),
+        NamedProperty('blueFrance', blueFrance),
       ];
+}
+
+class DSFRColor with NamedPropertiesMixin<Color> {
+  const DSFRColor({
+    required this.strong,
+    required this.main,
+    required this.softest,
+    required this.light,
+    required this.lighter,
+    required this.lightest,
+    required this.inverted,
+  });
+
+  factory DSFRColor.lerp(DSFRColor a, DSFRColor b, double t) {
+    return DSFRColor(
+      strong: Color.lerp(a.strong, b.strong, t)!,
+      main: Color.lerp(a.main, b.main, t)!,
+      softest: Color.lerp(a.softest, b.softest, t)!,
+      light: Color.lerp(a.light, b.light, t)!,
+      lighter: Color.lerp(a.lighter, b.lighter, t)!,
+      lightest: Color.lerp(a.lightest, b.lightest, t)!,
+      inverted: Color.lerp(a.inverted, b.inverted, t)!,
+    );
+  }
+
+  /// Used for backgrounds, borders, dividers, titles, clickable text, active
+  /// text, icons and pictograms.
+  final Color strong;
+
+  /// Used for borders, dividers, icons and pictograms.
+  final Color main;
+
+  /// Used for backgrounds and borders.
+  final Color softest;
+
+  /// Used for backgrounds and borders.
+  final Color light;
+
+  /// Used for backgrounds and pictograms.
+  final Color lighter;
+
+  /// Used for backgrounds.
+  final Color lightest;
+
+  /// Used for clickable text and active text.
+  final Color inverted;
+
+  @override
+  List<NamedProperty<Color>> get props {
+    return [
+      NamedProperty('strong', strong),
+      NamedProperty('main', main),
+      NamedProperty('softest', softest),
+      NamedProperty('light', light),
+      NamedProperty('lighter', lighter),
+      NamedProperty('lightest', lightest),
+      NamedProperty('inverted', inverted),
+    ];
+  }
 }
