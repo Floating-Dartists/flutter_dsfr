@@ -1,0 +1,3 @@
+final kSupportedLanguages = <String>{
+  'fr',
+};
