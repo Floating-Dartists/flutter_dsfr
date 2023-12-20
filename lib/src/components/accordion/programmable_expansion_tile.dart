@@ -133,7 +133,7 @@ class _ExpansionTileState extends State<ProgrammableExpansionTile>
           setState(() {});
         });
       }
-      PageStorage.of(context).writeState(context, _isExpanded);
+      PageStorage.maybeOf(context)?.writeState(context, _isExpanded);
     });
   }
 
