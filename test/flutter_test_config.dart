@@ -16,6 +16,7 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
       theme: ThemeData(
         fontFamily: 'Marianne',
         brightness: Brightness.light,
+        useMaterial3: false,
         extensions: const [
           DSFRThemeData(colors: DSFRColors.light()),
         ],
