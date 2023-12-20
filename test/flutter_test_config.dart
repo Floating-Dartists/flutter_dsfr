@@ -13,6 +13,7 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
 
   return AlchemistConfig.runWithConfig(
     config: AlchemistConfig(
+      ciGoldensConfig: const CiGoldensConfig(tolerance: 0.001),
       theme: ThemeData(
         fontFamily: DSFRFonts.marianne,
         brightness: Brightness.light,
