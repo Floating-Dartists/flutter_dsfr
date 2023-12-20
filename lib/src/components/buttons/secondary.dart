@@ -30,7 +30,7 @@ class DSFRSecondaryButton extends DSFRGroupeableButton {
     final dsfrColors = dsfrTheme.colors;
     final dsfrButtonStyle = dsfrTheme.buttonStyle;
 
-    final scale = MediaQuery.maybeOf(context)?.textScaleFactor ?? 1;
+    final scale = MediaQuery.textScalerOf(context).textScaleFactor;
     final double gap =
         scale <= 1 ? 8 : lerpDouble(8, 4, math.min(scale - 1, 1))!;
 
@@ -73,12 +73,12 @@ class DSFRSecondaryButton extends DSFRGroupeableButton {
               children: [
                 if (btnIcon != null && iconPosition == IconPosition.left) ...[
                   btnIcon,
-                  SizedBox(width: gap)
+                  SizedBox(width: gap),
                 ],
                 Flexible(child: Text(label!, textAlign: TextAlign.center)),
                 if (btnIcon != null && iconPosition == IconPosition.right) ...[
                   SizedBox(width: gap),
-                  btnIcon
+                  btnIcon,
                 ],
               ],
             ),

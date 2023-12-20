@@ -262,6 +262,103 @@ class DSFRColors extends ThemeExtension<DSFRColors> {
     );
   }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is DSFRColors &&
+            runtimeType == other.runtimeType &&
+            frConnectHover == other.frConnectHover &&
+            frConnectActive == other.frConnectActive &&
+            frConnectBackground == other.frConnectBackground &&
+            backgroundActionHighBlueFrance ==
+                other.backgroundActionHighBlueFrance &&
+            backgroundActionHighBlueFranceHover ==
+                other.backgroundActionHighBlueFranceHover &&
+            backgroundActionHighBlueFranceActive ==
+                other.backgroundActionHighBlueFranceActive &&
+            activeBlueFrance == other.activeBlueFrance &&
+            textInvertedBlueFrance == other.textInvertedBlueFrance &&
+            borderActionHighBlueFrance == other.borderActionHighBlueFrance &&
+            blockColorHover == other.blockColorHover &&
+            blockColorActive == other.blockColorActive &&
+            defaultGrey == other.defaultGrey &&
+            backgroundDisabledGrey == other.backgroundDisabledGrey &&
+            textDisabledGrey == other.textDisabledGrey &&
+            alertsBackground == other.alertsBackground &&
+            alertsCloseButtonIcon == other.alertsCloseButtonIcon &&
+            hover == other.hover &&
+            active == other.active &&
+            splash == other.splash &&
+            text == other.text &&
+            accordionBorder == other.accordionBorder &&
+            error == other.error &&
+            success == other.success &&
+            info == other.info &&
+            warning == other.warning &&
+            news == other.news &&
+            badgeError == other.badgeError &&
+            badgeSuccess == other.badgeSuccess &&
+            badgeInfo == other.badgeInfo &&
+            badgeWarning == other.badgeWarning &&
+            badgeNews == other.badgeNews &&
+            banner == other.banner &&
+            g200 == other.g200 &&
+            g800 == other.g800 &&
+            highGrey == other.highGrey &&
+            disabledGrey == other.disabledGrey &&
+            mentionGrey == other.mentionGrey &&
+            defaultError == other.defaultError &&
+            defaultSuccess == other.defaultSuccess &&
+            titleGrey == other.titleGrey;
+  }
+
+  @override
+  int get hashCode {
+    return Object.hashAll([
+      runtimeType,
+      frConnectHover,
+      frConnectActive,
+      frConnectBackground,
+      backgroundActionHighBlueFrance,
+      backgroundActionHighBlueFranceHover,
+      backgroundActionHighBlueFranceActive,
+      activeBlueFrance,
+      textInvertedBlueFrance,
+      borderActionHighBlueFrance,
+      blockColorHover,
+      blockColorActive,
+      defaultGrey,
+      backgroundDisabledGrey,
+      textDisabledGrey,
+      alertsBackground,
+      alertsCloseButtonIcon,
+      hover,
+      active,
+      splash,
+      text,
+      accordionBorder,
+      error,
+      success,
+      info,
+      warning,
+      news,
+      badgeError,
+      badgeSuccess,
+      badgeInfo,
+      badgeWarning,
+      badgeNews,
+      banner,
+      g200,
+      g800,
+      highGrey,
+      disabledGrey,
+      mentionGrey,
+      defaultError,
+      defaultSuccess,
+      titleGrey,
+    ]);
+  }
+
   @visibleForTesting
   List<NamedProperty<Color>> get props => [
         NamedProperty('frConnectHover', frConnectHover),

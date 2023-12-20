@@ -158,6 +158,50 @@ class DSFRSizes extends ThemeExtension<DSFRSizes> {
     );
   }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is DSFRSizes &&
+            runtimeType == other.runtimeType &&
+            v0_5 == other.v0_5 &&
+            v1 == other.v1 &&
+            v1_5 == other.v1_5 &&
+            w1 == other.w1 &&
+            v3 == other.v3 &&
+            w2 == other.w2 &&
+            v5 == other.v5 &&
+            w3 == other.w3 &&
+            w4 == other.w4 &&
+            w5 == other.w5 &&
+            w6 == other.w6 &&
+            w7 == other.w7 &&
+            w8 == other.w8 &&
+            w9 == other.w9 &&
+            w12 == other.w12 &&
+            w15 == other.w15;
+  }
+
+  @override
+  int get hashCode => Object.hash(
+        runtimeType,
+        v0_5,
+        v1,
+        v1_5,
+        w1,
+        v3,
+        w2,
+        v5,
+        w3,
+        w4,
+        w5,
+        w6,
+        w7,
+        w8,
+        w9,
+        w12,
+        w15,
+      );
+
   @visibleForTesting
   List<NamedProperty<double>> get props => [
         NamedProperty('v0_5', v0_5),

@@ -63,7 +63,7 @@ class DSFRAlert extends BaseAlert {
                         style: DefaultTextStyle.of(context)
                             .style
                             .copyWith(color: dsfrColors.text),
-                      )
+                      ),
                   ],
                 ),
               ),

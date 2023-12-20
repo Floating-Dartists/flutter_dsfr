@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import '../flutter_dsfr.dart';
 
 /// An application that uses the french government design system.
@@ -232,7 +233,8 @@ class _DSFRAppState extends State<DSFRApp> {
     if (useDarkTheme) {
       colors = const DSFRColors.dark();
       theme = ThemeData(
-        fontFamily: 'Marianne',
+        useMaterial3: false,
+        fontFamily: DSFRFonts.marianne,
         brightness: Brightness.dark,
         extensions: [
           DSFRThemeData(colors: colors),
@@ -241,7 +243,8 @@ class _DSFRAppState extends State<DSFRApp> {
     } else {
       colors = const DSFRColors.light();
       theme = ThemeData(
-        fontFamily: 'Marianne',
+        useMaterial3: false,
+        fontFamily: DSFRFonts.marianne,
         brightness: Brightness.light,
         extensions: [
           DSFRThemeData(colors: colors),

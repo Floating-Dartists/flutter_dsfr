@@ -63,7 +63,7 @@ class DSFRBanner extends StatelessWidget {
                   Align(
                     alignment: Alignment.topRight,
                     child: SharedCloseButton(onClose: onClose!),
-                  )
+                  ),
                 ],
               ],
             ),

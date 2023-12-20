@@ -49,4 +49,24 @@ class DSFRButtonStyle extends ThemeExtension<DSFRButtonStyle> {
       mainAxisSize: other.mainAxisSize,
     );
   }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is DSFRButtonStyle &&
+            runtimeType == other.runtimeType &&
+            shape == other.shape &&
+            elevation == other.elevation &&
+            mainAxisSize == other.mainAxisSize;
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      shape,
+      elevation,
+      mainAxisSize,
+    );
+  }
 }

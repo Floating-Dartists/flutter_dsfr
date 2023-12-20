@@ -21,6 +21,18 @@ class DSFRRadius extends ThemeExtension<DSFRRadius> {
     return DSFRRadius._(small: Radius.lerp(small, other.small, t)!);
   }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is DSFRRadius &&
+            runtimeType == other.runtimeType &&
+            small == other.small;
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, small);
+
+  @visibleForTesting
   List<NamedProperty<Radius>> get props => [
         NamedProperty('small', small),
       ];
@@ -44,4 +56,15 @@ class DSFRBorderRadius extends ThemeExtension<DSFRBorderRadius> {
     if (other is! DSFRBorderRadius) return this;
     return DSFRBorderRadius(_radius.lerp(other._radius, t));
   }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is DSFRBorderRadius &&
+            runtimeType == other.runtimeType &&
+            _radius == other._radius;
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, _radius);
 }

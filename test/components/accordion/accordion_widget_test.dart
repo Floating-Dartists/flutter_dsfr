@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dsfr/flutter_dsfr.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import '../../flutter_test_config.dart';
 import 'accordion_robot.dart';
 
 const titleText = "Amazing title";
@@ -19,7 +20,7 @@ void main() {
           content: Text(
             contentText1,
           ),
-        )
+        ),
       ];
 
       final accordionRobot = AccordionRobot(tester: tester);
@@ -31,7 +32,7 @@ void main() {
       await accordionRobot.tapOnFirstAccordionPanelWidget();
       accordionRobot.expectContentByText(contentText1);
     },
-    skip: true, // FIXME
+    skip: isRunningInCi, // FIXME
   );
 
   testWidgets(
@@ -65,7 +66,7 @@ void main() {
       accordionRobot.expectNoContentByText(contentText1);
       accordionRobot.expectContentByText(contentText2);
     },
-    skip: true, // FIXME
+    skip: isRunningInCi, // FIXME
   );
 
   testWidgets(
@@ -96,7 +97,7 @@ void main() {
       accordionRobot.expenctNAccordionPanelWidget(panels.length);
       accordionRobot.expectContentByText(contentText2);
     },
-    skip: true, // FIXME
+    skip: isRunningInCi, // FIXME
   );
 
   testWidgets(
@@ -128,6 +129,6 @@ void main() {
       accordionRobot.expectNoContentByText(contentText1);
       accordionRobot.expectContentByText(contentText2);
     },
-    skip: true, // FIXME
+    skip: isRunningInCi, // FIXME
   );
 }

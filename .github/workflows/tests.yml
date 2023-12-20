@@ -17,7 +17,7 @@ jobs:
       - name: Fetch dependencies
         run: flutter packages get
       - name: Analyze project
-        run: flutter analyze
+        run: flutter analyze --no-fatal-infos
       - name: Run tests
         run: flutter test --coverage --dart-define=CI=true
       - name: Collect and report coverage

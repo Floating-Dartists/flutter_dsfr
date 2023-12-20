@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../flutter_dsfr.dart';
 import '../utils/named_property.dart';
 
 @immutable
@@ -33,69 +34,69 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   const DSFRTypography.small()
       : this._(
           frConnectLogin: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 17.0,
             fontWeight: FontWeight.normal,
             decoration: TextDecoration.none,
           ),
           frConnectBrand: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 18.0,
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
           frConnectGroup: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 12.0,
             fontWeight: FontWeight.normal,
             decoration: TextDecoration.none,
           ),
           alertsTitle: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 20.0,
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
           defaultText: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontWeight: FontWeight.normal,
             decoration: TextDecoration.none,
           ),
           boldText: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 16.0,
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
           medium: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 14.0,
             fontWeight: FontWeight.w500,
             decoration: TextDecoration.none,
           ),
           mention: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 12.0,
             fontWeight: FontWeight.w400,
             decoration: TextDecoration.none,
           ),
           detail: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 12.0,
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
           regular: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 16.0,
             fontWeight: FontWeight.w400,
@@ -106,69 +107,69 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   const DSFRTypography.medium()
       : this._(
           frConnectLogin: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 17.0,
             fontWeight: FontWeight.normal,
             decoration: TextDecoration.none,
           ),
           frConnectBrand: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 18.0,
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
           frConnectGroup: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 12.0,
             fontWeight: FontWeight.normal,
             decoration: TextDecoration.none,
           ),
           alertsTitle: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 20.0,
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
           defaultText: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontWeight: FontWeight.normal,
             decoration: TextDecoration.none,
           ),
           boldText: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 16.0,
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
           medium: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 16.0,
             fontWeight: FontWeight.w500,
             decoration: TextDecoration.none,
           ),
           mention: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 12.0,
             fontWeight: FontWeight.w400,
             decoration: TextDecoration.none,
           ),
           detail: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 14.0,
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
           regular: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 16.0,
             fontWeight: FontWeight.w400,
@@ -179,69 +180,69 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
   const DSFRTypography.large()
       : this._(
           frConnectLogin: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 17.0,
             fontWeight: FontWeight.normal,
             decoration: TextDecoration.none,
           ),
           frConnectBrand: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 18.0,
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
           frConnectGroup: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 12.0,
             fontWeight: FontWeight.normal,
             decoration: TextDecoration.none,
           ),
           alertsTitle: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 20.0,
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
           defaultText: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontWeight: FontWeight.normal,
             decoration: TextDecoration.none,
           ),
           boldText: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 16.0,
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
           medium: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 18.0,
             fontWeight: FontWeight.w500,
             decoration: TextDecoration.none,
           ),
           mention: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 12.0,
             fontWeight: FontWeight.w400,
             decoration: TextDecoration.none,
           ),
           detail: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 14.0,
             fontWeight: FontWeight.w700,
             decoration: TextDecoration.none,
           ),
           regular: const TextStyle(
-            fontFamily: 'Marianne',
+            fontFamily: DSFRFonts.marianne,
             package: packageName,
             fontSize: 16.0,
             fontWeight: FontWeight.w400,
@@ -297,4 +298,38 @@ class DSFRTypography extends ThemeExtension<DSFRTypography> {
         NamedProperty('detail', detail),
         NamedProperty('regular', regular),
       ];
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is DSFRTypography &&
+            runtimeType == other.runtimeType &&
+            frConnectLogin == other.frConnectLogin &&
+            frConnectBrand == other.frConnectBrand &&
+            frConnectGroup == other.frConnectGroup &&
+            alertsTitle == other.alertsTitle &&
+            defaultText == other.defaultText &&
+            boldText == other.boldText &&
+            medium == other.medium &&
+            mention == other.mention &&
+            detail == other.detail &&
+            regular == other.regular;
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      frConnectLogin,
+      frConnectBrand,
+      frConnectGroup,
+      alertsTitle,
+      defaultText,
+      boldText,
+      medium,
+      mention,
+      detail,
+      regular,
+    );
+  }
 }

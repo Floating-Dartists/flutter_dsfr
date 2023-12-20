@@ -95,7 +95,7 @@ class DSFRRadioRich<T> extends DSFRBaseRadio<T> {
                     ),
                     style:
                         dsfrTypography.regular.copyWith(color: foregroundColor),
-                  )
+                  ),
                 ],
               ),
             ),

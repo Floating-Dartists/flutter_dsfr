@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+import 'package:flutter_dsfr/src/fonts.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// This loads fonts for the test runner.
@@ -7,7 +8,7 @@ Future<void> loadTestFonts() async {
 
   await _loadFamily(
     'flutter_dsfr',
-    'Marianne',
+    DSFRFonts.marianne,
     [
       'fonts/Marianne/Marianne-Thin.otf',
       'fonts/Marianne/Marianne-ThinItalic.otf',
@@ -25,7 +26,7 @@ Future<void> loadTestFonts() async {
   );
   await _loadFamily(
     'flutter_dsfr',
-    'Spectral',
+    DSFRFonts.spectral,
     [
       'fonts/Spectral/Spectral-Light.ttf',
       'fonts/Spectral/Spectral-LightItalic.ttf',

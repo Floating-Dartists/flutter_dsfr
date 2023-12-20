@@ -16,7 +16,7 @@ void main() {
           name: 'solo',
           child: const DSFRAccordion(
             panels: [
-              DSFRAccordionData(title: "DSFRAccordion", content: content)
+              DSFRAccordionData(title: "DSFRAccordion", content: content),
             ],
           ),
         ),
@@ -28,7 +28,7 @@ void main() {
                 title: "DSFRAccordion",
                 content: content,
                 isInitialyExpanded: true,
-              )
+              ),
             ],
           ),
         ),

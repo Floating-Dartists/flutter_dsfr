@@ -57,6 +57,21 @@ class DSFRSpacings extends ThemeExtension<DSFRSpacings> {
       radioSize: DSFRRadioSize.lerp(radioSize, other.radioSize, t)!,
     );
   }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is DSFRSpacings &&
+            runtimeType == other.runtimeType &&
+            badgeSize == other.badgeSize &&
+            buttonSize == other.buttonSize &&
+            radioSize == other.radioSize;
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(runtimeType, badgeSize, buttonSize, radioSize);
+  }
 }
 
 @immutable
@@ -99,6 +114,22 @@ class DSFRBadgeSize {
       iconSize: lerpDouble(a.iconSize, b.iconSize, t)!,
       spacing: lerpDouble(a.spacing, b.spacing, t)!,
     );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is DSFRBadgeSize &&
+            runtimeType == other.runtimeType &&
+            horizontal == other.horizontal &&
+            vertical == other.vertical &&
+            iconSize == other.iconSize &&
+            spacing == other.spacing;
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(runtimeType, horizontal, vertical, iconSize, spacing);
   }
 }
 
@@ -162,6 +193,30 @@ class DSFRButtonSize {
       iconSize: lerpDouble(a.iconSize, b.iconSize, t)!,
     );
   }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is DSFRButtonSize &&
+            runtimeType == other.runtimeType &&
+            vertical == other.vertical &&
+            horizontal == other.horizontal &&
+            spacing == other.spacing &&
+            iconPadding == other.iconPadding &&
+            iconSize == other.iconSize;
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(
+      runtimeType,
+      vertical,
+      horizontal,
+      spacing,
+      iconPadding,
+      iconSize,
+    );
+  }
 }
 
 @immutable
@@ -186,4 +241,16 @@ class DSFRRadioSize {
       spacing: lerpDouble(a.spacing, b.spacing, t)!,
     );
   }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is DSFRRadioSize &&
+            runtimeType == other.runtimeType &&
+            size == other.size &&
+            spacing == other.spacing;
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, size, spacing);
 }
