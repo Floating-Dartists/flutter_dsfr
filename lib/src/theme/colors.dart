@@ -46,6 +46,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     required this.defaultSuccess,
     required this.titleGrey,
     required this.blueFrance,
+    required this.redMarianne,
   });
 
   const DSFRColors.light()
@@ -98,6 +99,14 @@ class DSFRColors extends ThemeExtension<DSFRColors>
             lighter: ColorPalette.blueFrance950,
             lightest: ColorPalette.blueFrance975,
             inverted: ColorPalette.blueFrance975,
+          ),
+          redMarianne: const DSFRColor(
+            strong: ColorPalette.redMarianne425,
+            main: ColorPalette.redMarianne472,
+            softest: ColorPalette.redMarianne850,
+            light: ColorPalette.redMarianne925,
+            lighter: ColorPalette.redMarianne950,
+            lightest: ColorPalette.redMarianne975,
           ),
         );
 
@@ -152,6 +161,14 @@ class DSFRColors extends ThemeExtension<DSFRColors>
             lightest: ColorPalette.blueFrance75,
             inverted: ColorPalette.blueFrance113,
           ),
+          redMarianne: const DSFRColor(
+            strong: ColorPalette.redMarianne625,
+            main: ColorPalette.redMarianne472,
+            softest: ColorPalette.redMarianne200,
+            light: ColorPalette.redMarianne125,
+            lighter: ColorPalette.redMarianne100,
+            lightest: ColorPalette.redMarianne75,
+          ),
         );
 
   final Color frConnectHover;
@@ -197,6 +214,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
   // ===
 
   final DSFRColor blueFrance;
+  final DSFRColor redMarianne;
 
   @override
   DSFRColors copyWith() => this;
@@ -274,6 +292,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       titleGrey: Color.lerp(titleGrey, other.titleGrey, t)!,
       // ===
       blueFrance: DSFRColor.lerp(blueFrance, other.blueFrance, t),
+      redMarianne: DSFRColor.lerp(redMarianne, other.redMarianne, t),
     );
   }
 
@@ -329,6 +348,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
         NamedProperty('titleGrey', titleGrey),
         // ===
         NamedProperty('blueFrance', blueFrance),
+        NamedProperty('redMarianne', redMarianne),
       ];
 }
 
@@ -340,7 +360,7 @@ class DSFRColor with NamedPropertiesMixin<Color> {
     required this.light,
     required this.lighter,
     required this.lightest,
-    required this.inverted,
+    this.inverted = Colors.transparent,
   });
 
   factory DSFRColor.lerp(DSFRColor a, DSFRColor b, double t) {
