@@ -33,6 +33,7 @@ class DSFRTertiaryButton extends DSFRBaseButton {
     final dsfrColors = dsfrTheme.colors;
     final dsfrTypography = dsfrTheme.typography;
 
+    // ignore: deprecated_member_use
     final scale = MediaQuery.textScalerOf(context).textScaleFactor;
     final double gap =
         scale <= 1 ? 8 : lerpDouble(8, 4, math.min(scale - 1, 1))!;
