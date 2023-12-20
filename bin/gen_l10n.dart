@@ -39,16 +39,38 @@ Future<void> main() async {
     final value = e.value as Map<String, dynamic>;
     if (value.length == 1) {
       return [
-        generateLocalizationClass(
+        generateLocalizationsClass(
           locale: e.key,
           arb: value['default'] as Map<String, dynamic>,
         ),
       ];
     }
-  });
+
+    return [
+      generateLocalizationsClass(
+        locale: e.key,
+        arb: value['default'] as Map<String, dynamic>,
+      ),
+      ...value.entries.where((element) => element.key != 'default').map((e) {
+        return generateLocalizationsClass(
+          locale: e.key,
+          countryCode: e.key,
+          arb: value,
+        );
+      }),
+    ];
+  }).expand((e) => e);
+
+  await Future.wait(genOps);
+
+  await generateDefaultLocalizations(
+    (labelsByLocale['fr']['default'] as Map).cast<String, dynamic>(),
+  );
+
+  Process.runSync('dart', ['format', outDir.path]);
 }
 
-Future<void> generateLocalizationClass({
+Future<void> generateLocalizationsClass({
   required String locale,
   required Map<String, dynamic> arb,
   String? countryCode,
@@ -62,7 +84,12 @@ Future<void> generateLocalizationClass({
 
   final out = outFile.openWrite();
 
-  out.writeln("import '../default_localizations.dart';");
+  out
+    ..writeln('// coverage:ignore-file')
+    ..writeln('// GENERATED CODE - DO NOT MODIFY BY HAND')
+    ..writeln('// ignore_for_file: non_constant_identifier_names')
+    ..writeln()
+    ..writeln("import '../default_localizations.dart';");
 
   final labels = arb.entries.where(isLabelEntry).map((e) {
     final meta = arb['@${e.key}'] as Map<String, dynamic>? ?? {};
@@ -77,6 +104,53 @@ Future<void> generateLocalizationClass({
   out.writeln();
 
   final className = dartClassName(locale, countryCode);
+
+  out
+    ..writeln('class $className extends DSFRLocalizationLabels {')
+    ..writeln('  const $className();');
+
+  for (final label in labels) {
+    final escapedTranslation = label.translation.contains('"')
+        ? '"""${label.translation}"""'
+        : '"${label.translation}"';
+
+    out
+      ..writeln()
+      ..writeln('  @override')
+      ..writeln('  String get ${label.key} => $escapedTranslation;');
+  }
+
+  out.writeln('}');
+
+  await out.flush();
+  await out.close();
+}
+
+Future<void> generateDefaultLocalizations(Map<String, dynamic> arb) async {
+  final labels = arb.entries.where(isLabelEntry).map((e) {
+    final meta = arb['@${e.key}'] as Map<String, dynamic>? ?? {};
+
+    return Label(
+      key: e.key,
+      translation: e.value as String,
+      description: meta['description'] as String?,
+    );
+  }).toList()
+    ..sort((a, b) => a.key.compareTo(b.key));
+
+  final content = await getDefaultLocalizationsContent(labels);
+  final outFile = File(
+    path.join('lib', 'src', 'gen', 'default_localizations.dart'),
+  );
+
+  if (!outFile.existsSync()) {
+    outFile.createSync(recursive: true);
+  }
+
+  final out = outFile.openWrite();
+  out.write(content);
+  await out.flush();
+  await out.close();
 }
 
 String dartFilename(String locale, [String? countryCode]) {
@@ -152,16 +226,13 @@ class Label {
 }
 
 const defaultLocalizationsHeader = '''
-/*
- *  THIS FILE IS GENERATED.
- *  DO NOT MODIFY IT BY HAND UNLESS YOU KNOW WHAT YOU ARE DOING.
- * 
- *  See README.md for instructions on how to generate this file.
- */
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/material.dart';
 
-import 'lang/en.dart';
+import 'lang/fr.dart';
 
 /// An abstract class containing all labels that concrete languages should
 /// provide.
