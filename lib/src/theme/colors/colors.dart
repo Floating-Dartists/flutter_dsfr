@@ -4,6 +4,8 @@ import 'package:flutter_dsfr/src/utils/named_property.dart';
 
 part 'blue_france.dart';
 part 'error.dart';
+part 'focus.dart';
+part 'green_tilleul_verveine.dart';
 part 'grey.dart';
 part 'info.dart';
 part 'red_marianne.dart';
@@ -55,6 +57,8 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     required this.error,
     required this.grey,
     required this.info,
+    required this.focus,
+    required this.greenTilleulVerveine,
   });
 
   const DSFRColors.light()
@@ -99,6 +103,8 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           success: const SuccessColor.light(),
           warning: const WarningColor.light(),
           info: const InfoColor.light(),
+          focus: const FocusColor.light(),
+          greenTilleulVerveine: const GreenTilleulVerveine.light(),
         );
 
   const DSFRColors.dark()
@@ -143,6 +149,8 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           success: const SuccessColor.dark(),
           warning: const WarningColor.dark(),
           info: const InfoColor.dark(),
+          focus: const FocusColor.dark(),
+          greenTilleulVerveine: const GreenTilleulVerveine.dark(),
         );
 
   final Color frConnectHover;
@@ -186,6 +194,8 @@ class DSFRColors extends ThemeExtension<DSFRColors>
   final SuccessColor success;
   final WarningColor warning;
   final InfoColor info;
+  final FocusColor focus;
+  final GreenTilleulVerveine greenTilleulVerveine;
 
   @override
   DSFRColors copyWith({
@@ -232,6 +242,8 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     SuccessColor? success,
     WarningColor? warning,
     InfoColor? info,
+    FocusColor? focus,
+    GreenTilleulVerveine? greenTilleulVerveine,
   }) {
     return DSFRColors._(
       frConnectHover: frConnectHover ?? this.frConnectHover,
@@ -281,6 +293,8 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       success: success ?? this.success,
       warning: warning ?? this.warning,
       info: info ?? this.info,
+      focus: focus ?? this.focus,
+      greenTilleulVerveine: greenTilleulVerveine ?? this.greenTilleulVerveine,
     );
   }
 
@@ -353,6 +367,12 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       success: SuccessColor.lerp(success, other.success, t),
       warning: WarningColor.lerp(warning, other.warning, t),
       info: InfoColor.lerp(info, other.info, t),
+      focus: FocusColor.lerp(focus, other.focus, t),
+      greenTilleulVerveine: GreenTilleulVerveine.lerp(
+        greenTilleulVerveine,
+        other.greenTilleulVerveine,
+        t,
+      ),
     );
   }
 
@@ -406,6 +426,8 @@ class DSFRColors extends ThemeExtension<DSFRColors>
         NamedProperty('success', success),
         NamedProperty('warning', warning),
         NamedProperty('info', info),
+        NamedProperty('focus', focus),
+        NamedProperty('greenTilleulVerveine', greenTilleulVerveine),
       ];
 }
 

@@ -6,7 +6,6 @@ class ColorPalette {
   const ColorPalette._();
 
   // Blue France
-
   static const blueFrance75 = Color(0xFF1b1b35);
   static const blueFrance75Hover = Color(0xFF3a3a68);
   static const blueFrance75Active = Color(0xFF4d4d83);
@@ -52,7 +51,6 @@ class ColorPalette {
   static const blueFrance975Active = Color(0xFFcbcbfa);
 
   // Red Marianne
-
   static const redMarianne75 = Color(0xFF2b1919);
   static const redMarianne75Hover = Color(0xFF573737);
   static const redMarianne75Active = Color(0xFF704848);
@@ -98,23 +96,16 @@ class ColorPalette {
   static const redMarianne975Active = Color(0xFFfac4c4);
 
   // Grey
-
   static const grey50 = Color(0xFF161616);
   static const grey50Hover = Color(0xFF343434);
   static const grey50Active = Color(0xFF474747);
 
   static const grey75 = Color(0xFF1e1e1e);
-
   static const grey100 = Color(0xFF242424);
-
   static const grey125 = Color(0xFF2a2a2a);
-
   static const grey150 = Color(0xFF2f2f2f);
-
   static const grey175 = Color(0xFF353535);
-
   static const grey200 = Color(0xFF3a3a3a);
-
   static const grey425 = Color(0xFF666666);
 
   static const grey525 = Color(0xFF7b7b7b);
@@ -122,27 +113,24 @@ class ColorPalette {
   static const grey525Active = Color(0xFFbababa);
 
   static const grey625 = Color(0xFF929292);
-
   static const grey850 = Color(0xFFcecece);
-
   static const grey900 = Color(0xFFDDDDDD);
-
   static const grey925 = Color(0xFFe5e5e5);
-
   static const grey950 = Color(0xFFeeeeee);
-
   static const grey975 = Color(0xFFdfdfdf);
 
   static const grey1000 = Color(0xFFffffff);
   static const grey1000Hover = Color(0xFFf6f6f6);
   static const grey1000Active = Color(0xFFededed);
 
+  // Error
   static const error100 = Color(0xFF391C1C);
   static const error125 = Color(0xFF412121);
   static const error425 = Color(0xFFce0500);
   static const error625 = Color(0xFFff5655);
   static const error950 = Color(0xFFffe9e9);
 
+  // Success
   static const success100 = Color(0xFF19271D);
   static const success125 = Color(0xFF1e2e22);
   static const success425 = Color(0xFF18753c);
@@ -152,18 +140,37 @@ class ColorPalette {
   static const success950 = Color(0xFFb8fec9);
   static const success975 = Color(0xFFdffee6);
 
+  // Info
   static const info100 = Color(0xFF1d2437);
   static const info125 = Color(0xFF222a3f);
   static const info425 = Color(0xFF0063cb);
   static const info625 = Color(0xFF518fff);
   static const info950 = Color(0xFFe8edff);
 
+  // Warning
   static const warning100 = Color(0xFF3a2a1e);
   static const warning125 = Color(0xFF3e231e);
   static const warning425 = Color(0xFFb34000);
   static const warning625 = Color(0xFFff5d00);
   static const warning950 = Color(0xFFffe9e6);
 
+  // Focus
+  static const focus525 = Color(0xFF0A76F6);
+
+  // Green Tilleul Verveine
+  static const greenTilleulVerveine75 = Color(0xFF201E14);
+  static const greenTilleulVerveine100 = Color(0xFF272419);
+  static const greenTilleulVerveine125 = Color(0xFF2D2A1D);
+  static const greenTilleulVerveine200 = Color(0xFF3F3A20);
+  static const greenTilleulVerveine418 = Color(0xFF66673D);
+  static const greenTilleulVerveine707 = Color(0xFFB7A73F);
+  static const greenTilleulVerveine817 = Color(0xFFD8C634);
+  static const greenTilleulVerveine850 = Color(0xFFE2CF58);
+  static const greenTilleulVerveine925 = Color(0xFFFBE769);
+  static const greenTilleulVerveine950 = Color(0xFFFCEEAC);
+  static const greenTilleulVerveine975 = Color(0xFFFEF7DA);
+
+  // Yellow Tournesol
   static const yellowTournesol100 = Color(0xFF292416);
   static const yellowTounesolSun407 = Color(0xFF716043);
   static const yellowTournesolMoon922 = Color(0XFFffe552);
