@@ -50,7 +50,7 @@ class DSFRRadioGroupFormField<T> extends FormField<T> {
                     _FormMessage(
                       icon: DSFRIcons.checkboxCircleLine,
                       message: successMessage,
-                      color: dsfrColors.success,
+                      color: dsfrColors.success.strong,
                     ),
                 ],
               ),

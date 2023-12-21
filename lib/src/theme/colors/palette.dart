@@ -143,6 +143,7 @@ class ColorPalette {
   static const error625 = Color(0xFFff5655);
   static const error950 = Color(0xFFffe9e9);
 
+  static const success100 = Color(0xFF19271D);
   static const success125 = Color(0xFF1e2e22);
   static const success425 = Color(0xFF18753c);
   static const success525 = Color(0xFF1f8d49);

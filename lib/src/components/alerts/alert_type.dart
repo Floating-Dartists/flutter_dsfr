@@ -14,7 +14,7 @@ enum DSFRAlertType {
   final IconData icon;
 
   static Color _error(DSFRColors colors) => colors.error.strong;
-  static Color _success(DSFRColors colors) => colors.success;
+  static Color _success(DSFRColors colors) => colors.success.strong;
   static Color _info(DSFRColors colors) => colors.info.strong;
   static Color _warning(DSFRColors colors) => colors.warning.strong;
 }
