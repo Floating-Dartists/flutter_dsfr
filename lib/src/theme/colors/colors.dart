@@ -35,7 +35,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     required this.splash,
     required this.text,
     required this.accordionBorder,
-    required this.error,
     required this.success,
     required this.warning,
     required this.news,
@@ -56,6 +55,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     // ===
     required this.blueFrance,
     required this.redMarianne,
+    required this.error,
     required this.grey,
     required this.info,
   });
@@ -83,7 +83,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           splash: ColorPalette.transparent,
           text: ColorPalette.black,
           accordionBorder: ColorPalette.grey925,
-          error: ColorPalette.error425,
           success: ColorPalette.success425,
           news: ColorPalette.yellowTounesolSun407,
           badgeError: ColorPalette.error950,
@@ -103,6 +102,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           blueFrance: const BlueFrance.light(),
           redMarianne: const RedMarianne.light(),
           grey: const Grey.light(),
+          error: const ErrorColor.light(),
           warning: const WarningColor.light(),
           info: const InfoColor.light(),
         );
@@ -130,7 +130,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           splash: ColorPalette.transparent,
           text: ColorPalette.grey1000,
           accordionBorder: ColorPalette.grey125,
-          error: ColorPalette.error625,
           success: ColorPalette.success625,
           news: ColorPalette.yellowTournesolMoon922,
           badgeError: ColorPalette.error125,
@@ -150,6 +149,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           blueFrance: const BlueFrance.dark(),
           redMarianne: const RedMarianne.dark(),
           grey: const Grey.dark(),
+          error: const ErrorColor.dark(),
           warning: const WarningColor.dark(),
           info: const InfoColor.dark(),
         );
@@ -174,7 +174,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
   final Color splash;
   final Color text;
   final Color accordionBorder;
-  final Color error;
   final Color success;
   final Color news;
   final Color badgeError;
@@ -197,6 +196,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
   final BlueFrance blueFrance;
   final RedMarianne redMarianne;
   final Grey grey;
+  final ErrorColor error;
   final WarningColor warning;
   final InfoColor info;
 
@@ -222,7 +222,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     Color? splash,
     Color? text,
     Color? accordionBorder,
-    Color? error,
     Color? success,
     Color? news,
     Color? badgeError,
@@ -243,6 +242,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     BlueFrance? blueFrance,
     RedMarianne? redMarianne,
     Grey? grey,
+    ErrorColor? error,
     WarningColor? warning,
     InfoColor? info,
   }) {
@@ -275,7 +275,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       splash: splash ?? this.splash,
       text: text ?? this.text,
       accordionBorder: accordionBorder ?? this.accordionBorder,
-      error: error ?? this.error,
       success: success ?? this.success,
       news: news ?? this.news,
       badgeError: badgeError ?? this.badgeError,
@@ -296,6 +295,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       blueFrance: blueFrance ?? this.blueFrance,
       redMarianne: redMarianne ?? this.redMarianne,
       grey: grey ?? this.grey,
+      error: error ?? this.error,
       warning: warning ?? this.warning,
       info: info ?? this.info,
     );
@@ -353,7 +353,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       splash: Color.lerp(splash, other.textDisabledGrey, t)!,
       text: Color.lerp(text, other.text, t)!,
       accordionBorder: Color.lerp(accordionBorder, other.accordionBorder, t)!,
-      error: Color.lerp(error, other.error, t)!,
       success: Color.lerp(success, other.success, t)!,
       news: Color.lerp(news, other.news, t)!,
       badgeError: Color.lerp(badgeError, other.badgeError, t)!,
@@ -374,6 +373,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       blueFrance: BlueFrance.lerp(blueFrance, other.blueFrance, t),
       redMarianne: RedMarianne.lerp(redMarianne, other.redMarianne, t),
       grey: Grey.lerp(grey, other.grey, t),
+      error: ErrorColor.lerp(error, other.error, t),
       warning: WarningColor.lerp(warning, other.warning, t),
       info: InfoColor.lerp(info, other.info, t),
     );
@@ -410,7 +410,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
         NamedProperty('splash', splash),
         NamedProperty('text', text),
         NamedProperty('accordionBorder', accordionBorder),
-        NamedProperty('error', error),
         NamedProperty('success', success),
         NamedProperty('news', news),
         NamedProperty('badgeError', badgeError),
@@ -431,6 +430,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
         NamedProperty('blueFrance', blueFrance),
         NamedProperty('redMarianne', redMarianne),
         NamedProperty('grey', grey),
+        NamedProperty('error', error),
         NamedProperty('warning', warning),
         NamedProperty('info', info),
       ];

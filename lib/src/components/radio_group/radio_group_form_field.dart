@@ -44,7 +44,7 @@ class DSFRRadioGroupFormField<T> extends FormField<T> {
                     _FormMessage(
                       icon: DSFRIcons.alertLine,
                       message: state.errorText!,
-                      color: dsfrColors.error,
+                      color: dsfrColors.error.strong,
                     ),
                   if (isValid)
                     _FormMessage(

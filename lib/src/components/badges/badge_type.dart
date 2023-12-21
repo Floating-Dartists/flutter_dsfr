@@ -15,7 +15,7 @@ enum DSFRBadgeType {
   final ColorFetcher color;
   final IconData icon;
 
-  static Color _errorText(DSFRColors colors) => colors.error;
+  static Color _errorText(DSFRColors colors) => colors.error.strong;
   static Color _error(DSFRColors colors) => colors.badgeError;
 
   static Color _successText(DSFRColors colors) => colors.success;
