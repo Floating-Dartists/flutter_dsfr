@@ -7,6 +7,7 @@ part 'error.dart';
 part 'focus.dart';
 part 'green_bourgeon.dart';
 part 'green_emeraude.dart';
+part 'green_menthe.dart';
 part 'green_tilleul_verveine.dart';
 part 'grey.dart';
 part 'info.dart';
@@ -61,6 +62,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     required this.greenTilleulVerveine,
     required this.greenBourgeon,
     required this.greenEmeraude,
+    required this.greenMenthe,
   });
 
   const DSFRColors.light()
@@ -107,6 +109,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           greenTilleulVerveine: const GreenTilleulVerveine.light(),
           greenBourgeon: const GreenBourgeon.light(),
           greenEmeraude: const GreenEmeraude.light(),
+          greenMenthe: const GreenMenthe.light(),
         );
 
   const DSFRColors.dark()
@@ -153,6 +156,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           greenTilleulVerveine: const GreenTilleulVerveine.dark(),
           greenBourgeon: const GreenBourgeon.dark(),
           greenEmeraude: const GreenEmeraude.dark(),
+          greenMenthe: const GreenMenthe.dark(),
         );
 
   final Color frConnectHover;
@@ -198,6 +202,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
   final GreenTilleulVerveine greenTilleulVerveine;
   final GreenBourgeon greenBourgeon;
   final GreenEmeraude greenEmeraude;
+  final GreenMenthe greenMenthe;
 
   @override
   DSFRColors copyWith({
@@ -248,6 +253,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     GreenTilleulVerveine? greenTilleulVerveine,
     GreenBourgeon? greenBourgeon,
     GreenEmeraude? greenEmeraude,
+    GreenMenthe? greenMenthe,
   }) {
     return DSFRColors._(
       frConnectHover: frConnectHover ?? this.frConnectHover,
@@ -299,6 +305,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       greenTilleulVerveine: greenTilleulVerveine ?? this.greenTilleulVerveine,
       greenBourgeon: greenBourgeon ?? this.greenBourgeon,
       greenEmeraude: greenEmeraude ?? this.greenEmeraude,
+      greenMenthe: greenMenthe ?? this.greenMenthe,
     );
   }
 
@@ -377,6 +384,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       ),
       greenBourgeon: GreenBourgeon.lerp(greenBourgeon, other.greenBourgeon, t),
       greenEmeraude: GreenEmeraude.lerp(greenEmeraude, other.greenEmeraude, t),
+      greenMenthe: GreenMenthe.lerp(greenMenthe, other.greenMenthe, t),
     );
   }
 
@@ -432,6 +440,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
         NamedProperty('greenTilleulVerveine', greenTilleulVerveine),
         NamedProperty('greenBourgeon', greenBourgeon),
         NamedProperty('greenEmeraude', greenEmeraude),
+        NamedProperty('greenMenthe', greenMenthe),
       ];
 }
 

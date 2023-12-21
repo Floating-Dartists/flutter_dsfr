@@ -195,6 +195,19 @@ class ColorPalette {
   static const greenEmeraude950 = Color(0xFFC3FAD5);
   static const greenEmeraude975 = Color(0xFFE3FDEB);
 
+  // Green Menthe
+  static const greenMenthe75 = Color(0xFF15201E);
+  static const greenMenthe100 = Color(0xFF1A2624);
+  static const greenMenthe125 = Color(0xFF1F2D2A);
+  static const greenMenthe200 = Color(0xFF223F3A);
+  static const greenMenthe373 = Color(0xFF37635F);
+  static const greenMenthe548 = Color(0xFF009081);
+  static const greenMenthe652 = Color(0xFF21AB8E);
+  static const greenMenthe850 = Color(0xFF73E0CF);
+  static const greenMenthe925 = Color(0xFF8BF8E7);
+  static const greenMenthe950 = Color(0xFFBAFAEE);
+  static const greenMenthe975 = Color(0xFFDFFDF7);
+
   // Yellow Tournesol
   static const yellowTournesol100 = Color(0xFF292416);
   static const yellowTounesolSun407 = Color(0xFF716043);
