@@ -330,8 +330,13 @@ class DSFRColors extends ThemeExtension<DSFRColors>
 }
 
 @immutable
-sealed class DSFRColor with NamedPropertiesMixin<Color> {
-  const DSFRColor({
+abstract class DSFRColor with NamedPropertiesMixin<Color> {
+  const DSFRColor();
+}
+
+@immutable
+sealed class DSFRColorCore extends DSFRColor {
+  const DSFRColorCore({
     required this.strong,
     required this.softest,
     required this.light,
@@ -360,7 +365,7 @@ sealed class DSFRColor with NamedPropertiesMixin<Color> {
 }
 
 @immutable
-class BlueFrance extends DSFRColor {
+class BlueFrance extends DSFRColorCore {
   const BlueFrance({
     required super.strong,
     required super.softest,
@@ -419,7 +424,7 @@ class BlueFrance extends DSFRColor {
 }
 
 @immutable
-class RedMarianne extends DSFRColor {
+class RedMarianne extends DSFRColorCore {
   const RedMarianne({
     required super.strong,
     required super.softest,
@@ -472,7 +477,7 @@ class RedMarianne extends DSFRColor {
 }
 
 @immutable
-class Grey extends DSFRColor {
+class Grey extends DSFRColorCore {
   const Grey({
     required super.strong,
     required super.softest,
