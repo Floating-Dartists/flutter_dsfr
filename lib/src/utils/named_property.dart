@@ -19,6 +19,8 @@ class NamedProperty<T> {
   int get hashCode => Object.hash(runtimeType, name, property);
 }
 
+/// Utility mixin similar to `EquatableMixin` to simplify the implementation of
+/// golden tests.
 @immutable
 mixin NamedPropertiesMixin<T> {
   @visibleForTesting

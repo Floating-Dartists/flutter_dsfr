@@ -24,7 +24,7 @@ export 'src/components/radio_group/radio_group_form_field.dart';
 export 'src/dsfr_app.dart';
 export 'src/fonts.dart';
 export 'src/theme/button_style.dart';
-export 'src/theme/colors.dart' hide DSFRColor;
+export 'src/theme/colors/colors.dart' hide DSFRColor;
 export 'src/theme/icons.dart';
 export 'src/theme/radius.dart';
 export 'src/theme/sizes.dart';

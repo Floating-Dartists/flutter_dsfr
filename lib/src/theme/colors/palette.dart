@@ -137,6 +137,7 @@ class ColorPalette {
   static const grey1000Hover = Color(0xFFf6f6f6);
   static const grey1000Active = Color(0xFFededed);
 
+  static const error100 = Color(0xFF391C1C);
   static const error125 = Color(0xFF412121);
   static const error425 = Color(0xFFce0500);
   static const error625 = Color(0xFFff5655);

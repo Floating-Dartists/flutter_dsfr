@@ -1,6 +1,6 @@
 import 'package:alchemist/alchemist.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dsfr/src/theme/colors.dart';
+import 'package:flutter_dsfr/src/theme/colors/colors.dart';
 import 'package:flutter_dsfr/src/utils/named_property.dart';
 
 void main() {

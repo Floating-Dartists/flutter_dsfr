@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dsfr/src/theme/palette.dart';
+import 'package:flutter_dsfr/src/theme/colors/palette.dart';
 import 'package:flutter_dsfr/src/utils/named_property.dart';
+
+part 'blue_france.dart';
+part 'error.dart';
+part 'grey.dart';
+part 'info.dart';
+part 'red_marianne.dart';
+part 'warning.dart';
 
 typedef ColorFetcher = Color Function(DSFRColors dsfrColors);
 
@@ -96,8 +103,8 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           blueFrance: const BlueFrance.light(),
           redMarianne: const RedMarianne.light(),
           grey: const Grey.light(),
-          warning: const Warning.light(),
-          info: const Info.light(),
+          warning: const WarningColor.light(),
+          info: const InfoColor.light(),
         );
 
   const DSFRColors.dark()
@@ -143,8 +150,8 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           blueFrance: const BlueFrance.dark(),
           redMarianne: const RedMarianne.dark(),
           grey: const Grey.dark(),
-          warning: const Warning.dark(),
-          info: const Info.dark(),
+          warning: const WarningColor.dark(),
+          info: const InfoColor.dark(),
         );
 
   final Color frConnectHover;
@@ -190,11 +197,109 @@ class DSFRColors extends ThemeExtension<DSFRColors>
   final BlueFrance blueFrance;
   final RedMarianne redMarianne;
   final Grey grey;
-  final Warning warning;
-  final Info info;
+  final WarningColor warning;
+  final InfoColor info;
 
   @override
-  DSFRColors copyWith() => this;
+  DSFRColors copyWith({
+    Color? frConnectHover,
+    Color? frConnectActive,
+    Color? frConnectBackground,
+    Color? backgroundActionHighBlueFrance,
+    Color? backgroundActionHighBlueFranceHover,
+    Color? backgroundActionHighBlueFranceActive,
+    Color? activeBlueFrance,
+    Color? borderActionHighBlueFrance,
+    Color? blockColorHover,
+    Color? blockColorActive,
+    Color? defaultGrey,
+    Color? backgroundDisabledGrey,
+    Color? textDisabledGrey,
+    Color? alertsBackground,
+    Color? alertsCloseButtonIcon,
+    Color? hover,
+    Color? active,
+    Color? splash,
+    Color? text,
+    Color? accordionBorder,
+    Color? error,
+    Color? success,
+    Color? news,
+    Color? badgeError,
+    Color? badgeSuccess,
+    Color? badgeInfo,
+    Color? badgeWarning,
+    Color? badgeNews,
+    Color? banner,
+    Color? g200,
+    Color? g800,
+    Color? highGrey,
+    Color? disabledGrey,
+    Color? mentionGrey,
+    Color? defaultError,
+    Color? defaultSuccess,
+    Color? titleGrey,
+    // ===
+    BlueFrance? blueFrance,
+    RedMarianne? redMarianne,
+    Grey? grey,
+    WarningColor? warning,
+    InfoColor? info,
+  }) {
+    return DSFRColors._(
+      frConnectHover: frConnectHover ?? this.frConnectHover,
+      frConnectActive: frConnectActive ?? this.frConnectActive,
+      frConnectBackground: frConnectBackground ?? this.frConnectBackground,
+      backgroundActionHighBlueFrance:
+          backgroundActionHighBlueFrance ?? this.backgroundActionHighBlueFrance,
+      backgroundActionHighBlueFranceHover:
+          backgroundActionHighBlueFranceHover ??
+              this.backgroundActionHighBlueFranceHover,
+      backgroundActionHighBlueFranceActive:
+          backgroundActionHighBlueFranceActive ??
+              this.backgroundActionHighBlueFranceActive,
+      activeBlueFrance: activeBlueFrance ?? this.activeBlueFrance,
+      borderActionHighBlueFrance:
+          borderActionHighBlueFrance ?? this.borderActionHighBlueFrance,
+      blockColorHover: blockColorHover ?? this.blockColorHover,
+      blockColorActive: blockColorActive ?? this.blockColorActive,
+      defaultGrey: defaultGrey ?? this.defaultGrey,
+      backgroundDisabledGrey:
+          backgroundDisabledGrey ?? this.backgroundDisabledGrey,
+      textDisabledGrey: textDisabledGrey ?? this.textDisabledGrey,
+      alertsBackground: alertsBackground ?? this.alertsBackground,
+      alertsCloseButtonIcon:
+          alertsCloseButtonIcon ?? this.alertsCloseButtonIcon,
+      hover: hover ?? this.hover,
+      active: active ?? this.active,
+      splash: splash ?? this.splash,
+      text: text ?? this.text,
+      accordionBorder: accordionBorder ?? this.accordionBorder,
+      error: error ?? this.error,
+      success: success ?? this.success,
+      news: news ?? this.news,
+      badgeError: badgeError ?? this.badgeError,
+      badgeSuccess: badgeSuccess ?? this.badgeSuccess,
+      badgeInfo: badgeInfo ?? this.badgeInfo,
+      badgeWarning: badgeWarning ?? this.badgeWarning,
+      badgeNews: badgeNews ?? this.badgeNews,
+      banner: banner ?? this.banner,
+      g200: g200 ?? this.g200,
+      g800: g800 ?? this.g800,
+      highGrey: highGrey ?? this.highGrey,
+      disabledGrey: disabledGrey ?? this.disabledGrey,
+      mentionGrey: mentionGrey ?? this.mentionGrey,
+      defaultError: defaultError ?? this.defaultError,
+      defaultSuccess: defaultSuccess ?? this.defaultSuccess,
+      titleGrey: titleGrey ?? this.titleGrey,
+      // ===
+      blueFrance: blueFrance ?? this.blueFrance,
+      redMarianne: redMarianne ?? this.redMarianne,
+      grey: grey ?? this.grey,
+      warning: warning ?? this.warning,
+      info: info ?? this.info,
+    );
+  }
 
   @override
   DSFRColors lerp(ThemeExtension<DSFRColors>? other, double t) {
@@ -269,8 +374,8 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       blueFrance: BlueFrance.lerp(blueFrance, other.blueFrance, t),
       redMarianne: RedMarianne.lerp(redMarianne, other.redMarianne, t),
       grey: Grey.lerp(grey, other.grey, t),
-      warning: Warning.lerp(warning, other.warning, t),
-      info: Info.lerp(info, other.info, t),
+      warning: WarningColor.lerp(warning, other.warning, t),
+      info: InfoColor.lerp(info, other.info, t),
     );
   }
 
@@ -335,338 +440,4 @@ class DSFRColors extends ThemeExtension<DSFRColors>
 @immutable
 abstract class DSFRColor with NamedPropertiesMixin<Color> {
   const DSFRColor();
-}
-
-@immutable
-class BlueFrance extends DSFRColor {
-  const BlueFrance({
-    required this.strong,
-    required this.softest,
-    required this.light,
-    required this.lighter,
-    required this.lightest,
-    required this.main,
-    required this.inverted,
-  });
-
-  const BlueFrance.light()
-      : this(
-          strong: ColorPalette.blueFrance113,
-          main: ColorPalette.blueFrance525,
-          softest: ColorPalette.blueFrance850,
-          light: ColorPalette.blueFrance925,
-          lighter: ColorPalette.blueFrance950,
-          lightest: ColorPalette.blueFrance975,
-          inverted: ColorPalette.blueFrance975,
-        );
-
-  const BlueFrance.dark()
-      : this(
-          strong: ColorPalette.blueFrance625,
-          main: ColorPalette.blueFrance525,
-          softest: ColorPalette.blueFrance200,
-          light: ColorPalette.blueFrance125,
-          lighter: ColorPalette.blueFrance100,
-          lightest: ColorPalette.blueFrance75,
-          inverted: ColorPalette.blueFrance113,
-        );
-
-  factory BlueFrance.lerp(BlueFrance a, BlueFrance b, double t) {
-    return BlueFrance(
-      strong: Color.lerp(a.strong, b.strong, t)!,
-      main: Color.lerp(a.main, b.main, t)!,
-      softest: Color.lerp(a.softest, b.softest, t)!,
-      light: Color.lerp(a.light, b.light, t)!,
-      lighter: Color.lerp(a.lighter, b.lighter, t)!,
-      lightest: Color.lerp(a.lightest, b.lightest, t)!,
-      inverted: Color.lerp(a.inverted, b.inverted, t)!,
-    );
-  }
-
-  final Color strong;
-  final Color main;
-  final Color softest;
-  final Color light;
-  final Color lighter;
-  final Color lightest;
-  final Color inverted;
-
-  @override
-  List<NamedProperty<Color>> get props {
-    return [
-      NamedProperty('strong', strong),
-      NamedProperty('main', main),
-      NamedProperty('softest', softest),
-      NamedProperty('light', light),
-      NamedProperty('lighter', lighter),
-      NamedProperty('lightest', lightest),
-      NamedProperty('inverted', inverted),
-    ];
-  }
-}
-
-@immutable
-class RedMarianne extends DSFRColor {
-  const RedMarianne({
-    required this.strong,
-    required this.softest,
-    required this.light,
-    required this.lighter,
-    required this.lightest,
-    required this.main,
-  });
-
-  const RedMarianne.light()
-      : this(
-          strong: ColorPalette.redMarianne425,
-          main: ColorPalette.redMarianne472,
-          softest: ColorPalette.redMarianne850,
-          light: ColorPalette.redMarianne925,
-          lighter: ColorPalette.redMarianne950,
-          lightest: ColorPalette.redMarianne975,
-        );
-
-  const RedMarianne.dark()
-      : this(
-          strong: ColorPalette.redMarianne625,
-          main: ColorPalette.redMarianne472,
-          softest: ColorPalette.redMarianne200,
-          light: ColorPalette.redMarianne125,
-          lighter: ColorPalette.redMarianne100,
-          lightest: ColorPalette.redMarianne75,
-        );
-
-  factory RedMarianne.lerp(RedMarianne a, RedMarianne b, double t) {
-    return RedMarianne(
-      strong: Color.lerp(a.strong, b.strong, t)!,
-      main: Color.lerp(a.main, b.main, t)!,
-      softest: Color.lerp(a.softest, b.softest, t)!,
-      light: Color.lerp(a.light, b.light, t)!,
-      lighter: Color.lerp(a.lighter, b.lighter, t)!,
-      lightest: Color.lerp(a.lightest, b.lightest, t)!,
-    );
-  }
-
-  final Color strong;
-  final Color main;
-  final Color softest;
-  final Color light;
-  final Color lighter;
-  final Color lightest;
-
-  @override
-  List<NamedProperty<Color>> get props {
-    return [
-      NamedProperty('strong', strong),
-      NamedProperty('main', main),
-      NamedProperty('softest', softest),
-      NamedProperty('light', light),
-      NamedProperty('lighter', lighter),
-      NamedProperty('lightest', lightest),
-    ];
-  }
-}
-
-@immutable
-class Grey extends DSFRColor {
-  const Grey({
-    required this.strong,
-    required this.softest,
-    required this.light,
-    required this.lighter,
-    required this.lightest,
-    required this.black,
-    required this.strongest,
-    required this.soft,
-    required this.distinct,
-    required this.white,
-    required this.raised,
-    required this.overlap,
-    required this.lifted,
-    required this.altRaised,
-    required this.altOverlap,
-    required this.contrastRaised,
-    required this.contrastOverlap,
-  });
-
-  const Grey.light()
-      : this(
-          strong: ColorPalette.grey425,
-          softest: ColorPalette.grey850,
-          light: ColorPalette.grey925,
-          lighter: ColorPalette.grey950,
-          lightest: ColorPalette.grey975,
-          black: ColorPalette.grey50,
-          strongest: ColorPalette.grey200,
-          soft: ColorPalette.grey625,
-          distinct: ColorPalette.grey900,
-          white: ColorPalette.grey1000,
-          raised: ColorPalette.grey1000,
-          overlap: ColorPalette.grey1000,
-          lifted: ColorPalette.grey1000,
-          altRaised: ColorPalette.grey975,
-          altOverlap: ColorPalette.grey975,
-          contrastRaised: ColorPalette.grey950,
-          contrastOverlap: ColorPalette.grey950,
-        );
-
-  const Grey.dark()
-      : this(
-          strong: ColorPalette.grey625,
-          softest: ColorPalette.grey200,
-          light: ColorPalette.grey125,
-          lighter: ColorPalette.grey100,
-          lightest: ColorPalette.grey75,
-          black: ColorPalette.grey1000,
-          strongest: ColorPalette.grey850,
-          soft: ColorPalette.grey425,
-          distinct: ColorPalette.grey175,
-          white: ColorPalette.grey50,
-          raised: ColorPalette.grey75,
-          overlap: ColorPalette.grey100,
-          lifted: ColorPalette.grey75,
-          altRaised: ColorPalette.grey100,
-          altOverlap: ColorPalette.grey125,
-          contrastRaised: ColorPalette.grey125,
-          contrastOverlap: ColorPalette.grey150,
-        );
-
-  factory Grey.lerp(Grey a, Grey b, double t) {
-    return Grey(
-      strong: Color.lerp(a.strong, b.strong, t)!,
-      softest: Color.lerp(a.softest, b.softest, t)!,
-      light: Color.lerp(a.light, b.light, t)!,
-      lighter: Color.lerp(a.lighter, b.lighter, t)!,
-      lightest: Color.lerp(a.lightest, b.lightest, t)!,
-      black: Color.lerp(a.black, b.black, t)!,
-      strongest: Color.lerp(a.strongest, b.strongest, t)!,
-      soft: Color.lerp(a.soft, b.soft, t)!,
-      distinct: Color.lerp(a.distinct, b.distinct, t)!,
-      white: Color.lerp(a.white, b.white, t)!,
-      raised: Color.lerp(a.raised, b.raised, t)!,
-      overlap: Color.lerp(a.overlap, b.overlap, t)!,
-      lifted: Color.lerp(a.lifted, b.lifted, t)!,
-      altRaised: Color.lerp(a.altRaised, b.altRaised, t)!,
-      altOverlap: Color.lerp(a.altOverlap, b.altOverlap, t)!,
-      contrastRaised: Color.lerp(a.contrastRaised, b.contrastRaised, t)!,
-      contrastOverlap: Color.lerp(a.contrastOverlap, b.contrastOverlap, t)!,
-    );
-  }
-
-  final Color black;
-  final Color strongest;
-  final Color strong;
-  final Color soft;
-  final Color softest;
-  final Color distinct;
-  final Color light;
-  final Color lighter;
-  final Color lightest;
-  final Color white;
-  final Color raised;
-  final Color overlap;
-  final Color lifted;
-  final Color altRaised;
-  final Color altOverlap;
-  final Color contrastRaised;
-  final Color contrastOverlap;
-
-  @override
-  List<NamedProperty<Color>> get props {
-    return [
-      NamedProperty('black', black),
-      NamedProperty('strongest', strongest),
-      NamedProperty('strong', strong),
-      NamedProperty('soft', soft),
-      NamedProperty('softest', softest),
-      NamedProperty('distinct', distinct),
-      NamedProperty('light', light),
-      NamedProperty('lighter', lighter),
-      NamedProperty('lightest', lightest),
-      NamedProperty('white', white),
-      NamedProperty('raised', raised),
-      NamedProperty('overlap', overlap),
-      NamedProperty('lifted', lifted),
-      NamedProperty('altRaised', altRaised),
-      NamedProperty('altOverlap', altOverlap),
-      NamedProperty('contrastRaised', contrastRaised),
-      NamedProperty('contrastOverlap', contrastOverlap),
-    ];
-  }
-}
-
-@immutable
-class Warning extends DSFRColor {
-  const Warning({
-    required this.strong,
-    required this.lighter,
-  });
-
-  const Warning.light()
-      : this(
-          strong: ColorPalette.warning425,
-          lighter: ColorPalette.warning950,
-        );
-
-  const Warning.dark()
-      : this(
-          strong: ColorPalette.warning625,
-          lighter: ColorPalette.warning100,
-        );
-
-  factory Warning.lerp(Warning a, Warning b, double t) {
-    return Warning(
-      strong: Color.lerp(a.strong, b.strong, t)!,
-      lighter: Color.lerp(a.lighter, b.lighter, t)!,
-    );
-  }
-
-  final Color strong;
-  final Color lighter;
-
-  @override
-  List<NamedProperty<Color>> get props {
-    return [
-      NamedProperty('strong', strong),
-      NamedProperty('lighter', lighter),
-    ];
-  }
-}
-
-@immutable
-class Info extends DSFRColor {
-  const Info({
-    required this.strong,
-    required this.lighter,
-  });
-
-  const Info.light()
-      : this(
-          strong: ColorPalette.info425,
-          lighter: ColorPalette.info950,
-        );
-
-  const Info.dark()
-      : this(
-          strong: ColorPalette.info625,
-          lighter: ColorPalette.info100,
-        );
-
-  factory Info.lerp(Info a, Info b, double t) {
-    return Info(
-      strong: Color.lerp(a.strong, b.strong, t)!,
-      lighter: Color.lerp(a.lighter, b.lighter, t)!,
-    );
-  }
-
-  final Color strong;
-  final Color lighter;
-
-  @override
-  List<NamedProperty<Color>> get props {
-    return [
-      NamedProperty('strong', strong),
-      NamedProperty('lighter', lighter),
-    ];
-  }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_dsfr/src/theme/colors.dart';
+import 'package:flutter_dsfr/src/theme/colors/colors.dart';
 import 'package:flutter_dsfr/src/theme/icons.dart';
 
 enum DSFRAlertType {
