@@ -28,7 +28,7 @@ class DSFRRadioRich<T> extends DSFRBaseRadio<T> {
     if (disabled) {
       foregroundColor = dsfrColors.disabledGrey;
     } else if (hasError) {
-      foregroundColor = dsfrColors.defaultError;
+      foregroundColor = dsfrColors.error.strong;
     } else {
       foregroundColor = dsfrColors.highGrey;
     }

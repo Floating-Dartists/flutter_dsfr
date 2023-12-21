@@ -50,8 +50,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     required this.highGrey,
     required this.disabledGrey,
     required this.mentionGrey,
-    required this.defaultError,
-    required this.defaultSuccess,
     required this.titleGrey,
     // ===
     required this.blueFrance,
@@ -96,8 +94,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           highGrey: ColorPalette.grey50,
           disabledGrey: ColorPalette.grey925,
           mentionGrey: ColorPalette.grey425,
-          defaultError: ColorPalette.error425,
-          defaultSuccess: ColorPalette.success425,
           titleGrey: ColorPalette.grey50,
           // ===
           blueFrance: const BlueFrance.light(),
@@ -144,8 +140,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           highGrey: Colors.white,
           disabledGrey: ColorPalette.grey125,
           mentionGrey: ColorPalette.grey625,
-          defaultError: ColorPalette.error625,
-          defaultSuccess: ColorPalette.success625,
           titleGrey: Colors.white,
           // ===
           blueFrance: const BlueFrance.dark(),
@@ -189,8 +183,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
   final Color highGrey;
   final Color disabledGrey;
   final Color mentionGrey;
-  final Color defaultError;
-  final Color defaultSuccess;
   final Color titleGrey;
 
   // ===
@@ -294,8 +286,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       highGrey: highGrey ?? this.highGrey,
       disabledGrey: disabledGrey ?? this.disabledGrey,
       mentionGrey: mentionGrey ?? this.mentionGrey,
-      defaultError: defaultError ?? this.defaultError,
-      defaultSuccess: defaultSuccess ?? this.defaultSuccess,
       titleGrey: titleGrey ?? this.titleGrey,
       // ===
       blueFrance: blueFrance ?? this.blueFrance,
@@ -370,8 +360,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       highGrey: Color.lerp(highGrey, other.highGrey, t)!,
       disabledGrey: Color.lerp(disabledGrey, other.disabledGrey, t)!,
       mentionGrey: Color.lerp(mentionGrey, other.mentionGrey, t)!,
-      defaultError: Color.lerp(defaultError, other.defaultError, t)!,
-      defaultSuccess: Color.lerp(defaultSuccess, other.defaultSuccess, t)!,
       titleGrey: Color.lerp(titleGrey, other.titleGrey, t)!,
       // ===
       blueFrance: BlueFrance.lerp(blueFrance, other.blueFrance, t),
@@ -431,8 +419,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
         NamedProperty('highGrey', highGrey),
         NamedProperty('disabledGrey', disabledGrey),
         NamedProperty('mentionGrey', mentionGrey),
-        NamedProperty('defaultError', defaultError),
-        NamedProperty('defaultSuccess', defaultSuccess),
         NamedProperty('titleGrey', titleGrey),
         // ===
         NamedProperty('blueFrance', blueFrance),

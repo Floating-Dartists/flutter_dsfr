@@ -28,9 +28,9 @@ class DSFRRadioButton<T> extends DSFRBaseRadio<T> {
     if (disabled) {
       foregroundColor = dsfrColors.disabledGrey;
     } else if (hasError) {
-      foregroundColor = dsfrColors.defaultError;
+      foregroundColor = dsfrColors.error.strong;
     } else if (isValid) {
-      foregroundColor = dsfrColors.defaultSuccess;
+      foregroundColor = dsfrColors.success.strong;
     } else {
       foregroundColor = dsfrColors.highGrey;
     }
