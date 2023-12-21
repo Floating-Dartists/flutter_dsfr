@@ -19,7 +19,7 @@ class DSFRBannerText extends StatelessWidget {
     final dsfrColors = dsfrTheme.colors;
     final dsfrTypography = dsfrTheme.typography;
 
-    final textColor = dsfrColors.info;
+    final textColor = dsfrColors.info.strong;
     final textStyle = dsfrTypography.boldText.copyWith(color: textColor);
     // we assign to a new variable for type shadowing
     final bannerLink = link;

@@ -23,7 +23,7 @@ class DSFRSmallAlert extends BaseAlert {
     final dsfrTheme = DSFRThemeData.of(context);
     final dsfrColors = dsfrTheme.colors;
     final dsfrSizes = dsfrTheme.sizes;
-    final color = getColor(dsfrColors);
+    final color = type.color(dsfrColors);
 
     return DecoratedBox(
       decoration: BoxDecoration(
@@ -35,7 +35,7 @@ class DSFRSmallAlert extends BaseAlert {
           children: [
             AlertIcon(
               color: color,
-              icon: getIconData(),
+              icon: type.icon,
               padding: _getIconPadding(dsfrSizes),
               shouldCenterIcon: true,
             ),

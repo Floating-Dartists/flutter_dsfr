@@ -30,7 +30,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     required this.accordionBorder,
     required this.error,
     required this.success,
-    required this.info,
     required this.warning,
     required this.news,
     required this.badgeError,
@@ -51,6 +50,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     required this.blueFrance,
     required this.redMarianne,
     required this.grey,
+    required this.info,
   });
 
   const DSFRColors.light()
@@ -78,7 +78,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           accordionBorder: ColorPalette.grey925,
           error: ColorPalette.error425,
           success: ColorPalette.success425,
-          info: ColorPalette.info425,
           news: ColorPalette.yellowTounesolSun407,
           badgeError: ColorPalette.error950,
           badgeSuccess: ColorPalette.success950,
@@ -98,6 +97,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           redMarianne: const RedMarianne.light(),
           grey: const Grey.light(),
           warning: const Warning.light(),
+          info: const Info.light(),
         );
 
   const DSFRColors.dark()
@@ -125,7 +125,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           accordionBorder: ColorPalette.grey125,
           error: ColorPalette.error625,
           success: ColorPalette.success625,
-          info: ColorPalette.info625,
           news: ColorPalette.yellowTournesolMoon922,
           badgeError: ColorPalette.error125,
           badgeSuccess: ColorPalette.success125,
@@ -145,6 +144,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           redMarianne: const RedMarianne.dark(),
           grey: const Grey.dark(),
           warning: const Warning.dark(),
+          info: const Info.dark(),
         );
 
   final Color frConnectHover;
@@ -169,8 +169,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
   final Color accordionBorder;
   final Color error;
   final Color success;
-  final Color info;
-  // final Color warning;
   final Color news;
   final Color badgeError;
   final Color badgeSuccess;
@@ -193,6 +191,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
   final RedMarianne redMarianne;
   final Grey grey;
   final Warning warning;
+  final Info info;
 
   @override
   DSFRColors copyWith() => this;
@@ -251,8 +250,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       accordionBorder: Color.lerp(accordionBorder, other.accordionBorder, t)!,
       error: Color.lerp(error, other.error, t)!,
       success: Color.lerp(success, other.success, t)!,
-      info: Color.lerp(info, other.info, t)!,
-      // warning: Color.lerp(warning, other.warning, t)!,
       news: Color.lerp(news, other.news, t)!,
       badgeError: Color.lerp(badgeError, other.badgeError, t)!,
       badgeSuccess: Color.lerp(badgeSuccess, other.badgeSuccess, t)!,
@@ -273,6 +270,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       redMarianne: RedMarianne.lerp(redMarianne, other.redMarianne, t),
       grey: Grey.lerp(grey, other.grey, t),
       warning: Warning.lerp(warning, other.warning, t),
+      info: Info.lerp(info, other.info, t),
     );
   }
 
@@ -309,8 +307,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
         NamedProperty('accordionBorder', accordionBorder),
         NamedProperty('error', error),
         NamedProperty('success', success),
-        NamedProperty('info', info),
-        NamedProperty('warning', warning),
         NamedProperty('news', news),
         NamedProperty('badgeError', badgeError),
         NamedProperty('badgeSuccess', badgeSuccess),
@@ -329,6 +325,9 @@ class DSFRColors extends ThemeExtension<DSFRColors>
         // ===
         NamedProperty('blueFrance', blueFrance),
         NamedProperty('redMarianne', redMarianne),
+        NamedProperty('grey', grey),
+        NamedProperty('warning', warning),
+        NamedProperty('info', info),
       ];
 }
 
@@ -600,36 +599,74 @@ class Grey extends DSFRColor {
 class Warning extends DSFRColor {
   const Warning({
     required this.strong,
-    required this.light,
+    required this.lighter,
   });
 
   const Warning.light()
       : this(
           strong: ColorPalette.warning425,
-          light: ColorPalette.warning950,
+          lighter: ColorPalette.warning950,
         );
 
   const Warning.dark()
       : this(
           strong: ColorPalette.warning625,
-          light: ColorPalette.warning100,
+          lighter: ColorPalette.warning100,
         );
 
   factory Warning.lerp(Warning a, Warning b, double t) {
     return Warning(
       strong: Color.lerp(a.strong, b.strong, t)!,
-      light: Color.lerp(a.light, b.light, t)!,
+      lighter: Color.lerp(a.lighter, b.lighter, t)!,
     );
   }
 
   final Color strong;
-  final Color light;
+  final Color lighter;
 
   @override
   List<NamedProperty<Color>> get props {
     return [
       NamedProperty('strong', strong),
-      NamedProperty('light', light),
+      NamedProperty('lighter', lighter),
+    ];
+  }
+}
+
+@immutable
+class Info extends DSFRColor {
+  const Info({
+    required this.strong,
+    required this.lighter,
+  });
+
+  const Info.light()
+      : this(
+          strong: ColorPalette.info425,
+          lighter: ColorPalette.info950,
+        );
+
+  const Info.dark()
+      : this(
+          strong: ColorPalette.info625,
+          lighter: ColorPalette.info100,
+        );
+
+  factory Info.lerp(Info a, Info b, double t) {
+    return Info(
+      strong: Color.lerp(a.strong, b.strong, t)!,
+      lighter: Color.lerp(a.lighter, b.lighter, t)!,
+    );
+  }
+
+  final Color strong;
+  final Color lighter;
+
+  @override
+  List<NamedProperty<Color>> get props {
+    return [
+      NamedProperty('strong', strong),
+      NamedProperty('lighter', lighter),
     ];
   }
 }

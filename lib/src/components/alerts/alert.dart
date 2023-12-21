@@ -29,7 +29,7 @@ class DSFRAlert extends BaseAlert {
     final dsfrColors = dsfrTheme.colors;
     final dsfrTextStyles = dsfrTheme.typography;
 
-    final color = getColor(dsfrColors);
+    final color = type.color(dsfrColors);
 
     return DecoratedBox(
       decoration: BoxDecoration(
@@ -42,7 +42,7 @@ class DSFRAlert extends BaseAlert {
           children: [
             AlertIcon(
               color: color,
-              icon: getIconData(),
+              icon: type.icon,
               padding: _getIconPadding(dsfrTheme.sizes),
             ),
             Expanded(

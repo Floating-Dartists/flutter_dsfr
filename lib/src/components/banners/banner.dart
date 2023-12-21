@@ -46,7 +46,7 @@ class DSFRBanner extends StatelessWidget {
               children: [
                 Icon(
                   DSFRIcons.info,
-                  color: textColor,
+                  color: textColor.strong,
                   size: dsfrSizes.w3,
                 ),
                 SizedBox(

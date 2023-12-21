@@ -21,7 +21,7 @@ enum DSFRBadgeType {
   static Color _successText(DSFRColors colors) => colors.success;
   static Color _success(DSFRColors colors) => colors.badgeSuccess;
 
-  static Color _infoText(DSFRColors colors) => colors.info;
+  static Color _infoText(DSFRColors colors) => colors.info.strong;
   static Color _info(DSFRColors colors) => colors.badgeInfo;
 
   static Color _warningText(DSFRColors colors) => colors.warning.strong;
