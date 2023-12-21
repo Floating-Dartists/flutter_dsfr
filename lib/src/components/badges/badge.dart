@@ -18,57 +18,12 @@ class DSFRBadge extends StatelessWidget {
   final DSFRBadgeSize? size;
   final bool showIcon;
 
-  Color _getTextColor(DSFRColors dsfrColors) {
-    switch (type) {
-      case DSFRBadgeType.error:
-        return dsfrColors.error;
-      case DSFRBadgeType.success:
-        return dsfrColors.success;
-      case DSFRBadgeType.info:
-        return dsfrColors.info;
-      case DSFRBadgeType.warning:
-        return dsfrColors.warning;
-      case DSFRBadgeType.news:
-        return dsfrColors.news;
-    }
-  }
-
-  Color _getColor(DSFRColors dsfrColors) {
-    switch (type) {
-      case DSFRBadgeType.error:
-        return dsfrColors.badgeError;
-      case DSFRBadgeType.success:
-        return dsfrColors.badgeSuccess;
-      case DSFRBadgeType.info:
-        return dsfrColors.badgeInfo;
-      case DSFRBadgeType.warning:
-        return dsfrColors.badgeWarning;
-      case DSFRBadgeType.news:
-        return dsfrColors.badgeNews;
-    }
-  }
-
-  IconData _getIconData() {
-    switch (type) {
-      case DSFRBadgeType.error:
-        return DSFRIcons.errorWarningFill;
-      case DSFRBadgeType.success:
-        return DSFRIcons.checkboxCircleFill;
-      case DSFRBadgeType.info:
-        return DSFRIcons.info;
-      case DSFRBadgeType.warning:
-        return DSFRIcons.alertFill;
-      case DSFRBadgeType.news:
-        return DSFRIcons.flashLightFill;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final dsfrTheme = DSFRThemeData.of(context);
     final dsfrColors = dsfrTheme.colors;
     final dsfrTypography = dsfrTheme.typography;
-    final textColor = _getTextColor(dsfrColors);
+    final textColor = type.textColor(dsfrColors);
     final badgeSize = size ?? dsfrTheme.spacings.badgeSize;
     final borderRadius = dsfrTheme.borderRadius;
 
@@ -78,7 +33,7 @@ class DSFRBadge extends StatelessWidget {
         vertical: badgeSize.vertical,
       ),
       decoration: BoxDecoration(
-        color: _getColor(dsfrColors),
+        color: type.color(dsfrColors),
         borderRadius: borderRadius.small,
       ),
       child: Row(
@@ -86,7 +41,7 @@ class DSFRBadge extends StatelessWidget {
         children: [
           if (showIcon) ...[
             Icon(
-              _getIconData(),
+              type.icon,
               color: textColor,
               size: badgeSize.iconSize,
             ),

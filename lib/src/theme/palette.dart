@@ -156,6 +156,7 @@ class ColorPalette {
   static const info625 = Color(0xFF518fff);
   static const info950 = Color(0xFFe8edff);
 
+  static const warning100 = Color(0xFF3a2a1e);
   static const warning125 = Color(0xFF3e231e);
   static const warning425 = Color(0xFFb34000);
   static const warning625 = Color(0xFFff5d00);

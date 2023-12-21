@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dsfr/src/theme/palette.dart';
 import 'package:flutter_dsfr/src/utils/named_property.dart';
-import 'package:meta/meta.dart';
+
+typedef ColorFetcher = Color Function(DSFRColors dsfrColors);
 
 @immutable
 class DSFRColors extends ThemeExtension<DSFRColors>
@@ -78,7 +79,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           error: ColorPalette.error425,
           success: ColorPalette.success425,
           info: ColorPalette.info425,
-          warning: ColorPalette.warning425,
           news: ColorPalette.yellowTounesolSun407,
           badgeError: ColorPalette.error950,
           badgeSuccess: ColorPalette.success950,
@@ -97,6 +97,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           blueFrance: const BlueFrance.light(),
           redMarianne: const RedMarianne.light(),
           grey: const Grey.light(),
+          warning: const Warning.light(),
         );
 
   const DSFRColors.dark()
@@ -125,7 +126,6 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           error: ColorPalette.error625,
           success: ColorPalette.success625,
           info: ColorPalette.info625,
-          warning: ColorPalette.warning625,
           news: ColorPalette.yellowTournesolMoon922,
           badgeError: ColorPalette.error125,
           badgeSuccess: ColorPalette.success125,
@@ -144,6 +144,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           blueFrance: const BlueFrance.dark(),
           redMarianne: const RedMarianne.dark(),
           grey: const Grey.dark(),
+          warning: const Warning.dark(),
         );
 
   final Color frConnectHover;
@@ -169,7 +170,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
   final Color error;
   final Color success;
   final Color info;
-  final Color warning;
+  // final Color warning;
   final Color news;
   final Color badgeError;
   final Color badgeSuccess;
@@ -191,6 +192,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
   final BlueFrance blueFrance;
   final RedMarianne redMarianne;
   final Grey grey;
+  final Warning warning;
 
   @override
   DSFRColors copyWith() => this;
@@ -250,7 +252,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       error: Color.lerp(error, other.error, t)!,
       success: Color.lerp(success, other.success, t)!,
       info: Color.lerp(info, other.info, t)!,
-      warning: Color.lerp(warning, other.warning, t)!,
+      // warning: Color.lerp(warning, other.warning, t)!,
       news: Color.lerp(news, other.news, t)!,
       badgeError: Color.lerp(badgeError, other.badgeError, t)!,
       badgeSuccess: Color.lerp(badgeSuccess, other.badgeSuccess, t)!,
@@ -270,6 +272,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       blueFrance: BlueFrance.lerp(blueFrance, other.blueFrance, t),
       redMarianne: RedMarianne.lerp(redMarianne, other.redMarianne, t),
       grey: Grey.lerp(grey, other.grey, t),
+      warning: Warning.lerp(warning, other.warning, t),
     );
   }
 
@@ -329,49 +332,20 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       ];
 }
 
+@visibleForTesting
 @immutable
 abstract class DSFRColor with NamedPropertiesMixin<Color> {
   const DSFRColor();
 }
 
 @immutable
-sealed class DSFRColorCore extends DSFRColor {
-  const DSFRColorCore({
+class BlueFrance extends DSFRColor {
+  const BlueFrance({
     required this.strong,
     required this.softest,
     required this.light,
     required this.lighter,
     required this.lightest,
-  });
-
-  final Color strong;
-  final Color softest;
-  final Color light;
-  final Color lighter;
-  final Color lightest;
-
-  @override
-  @mustBeOverridden
-  @mustCallSuper
-  List<NamedProperty<Color>> get props {
-    return [
-      NamedProperty('strong', strong),
-      NamedProperty('softest', softest),
-      NamedProperty('light', light),
-      NamedProperty('lighter', lighter),
-      NamedProperty('lightest', lightest),
-    ];
-  }
-}
-
-@immutable
-class BlueFrance extends DSFRColorCore {
-  const BlueFrance({
-    required super.strong,
-    required super.softest,
-    required super.light,
-    required super.lighter,
-    required super.lightest,
     required this.main,
     required this.inverted,
   });
@@ -410,27 +384,36 @@ class BlueFrance extends DSFRColorCore {
     );
   }
 
+  final Color strong;
   final Color main;
+  final Color softest;
+  final Color light;
+  final Color lighter;
+  final Color lightest;
   final Color inverted;
 
   @override
   List<NamedProperty<Color>> get props {
     return [
-      ...super.props,
+      NamedProperty('strong', strong),
       NamedProperty('main', main),
+      NamedProperty('softest', softest),
+      NamedProperty('light', light),
+      NamedProperty('lighter', lighter),
+      NamedProperty('lightest', lightest),
       NamedProperty('inverted', inverted),
     ];
   }
 }
 
 @immutable
-class RedMarianne extends DSFRColorCore {
+class RedMarianne extends DSFRColor {
   const RedMarianne({
-    required super.strong,
-    required super.softest,
-    required super.light,
-    required super.lighter,
-    required super.lightest,
+    required this.strong,
+    required this.softest,
+    required this.light,
+    required this.lighter,
+    required this.lightest,
     required this.main,
   });
 
@@ -465,25 +448,34 @@ class RedMarianne extends DSFRColorCore {
     );
   }
 
+  final Color strong;
   final Color main;
+  final Color softest;
+  final Color light;
+  final Color lighter;
+  final Color lightest;
 
   @override
   List<NamedProperty<Color>> get props {
     return [
-      ...super.props,
+      NamedProperty('strong', strong),
       NamedProperty('main', main),
+      NamedProperty('softest', softest),
+      NamedProperty('light', light),
+      NamedProperty('lighter', lighter),
+      NamedProperty('lightest', lightest),
     ];
   }
 }
 
 @immutable
-class Grey extends DSFRColorCore {
+class Grey extends DSFRColor {
   const Grey({
-    required super.strong,
-    required super.softest,
-    required super.light,
-    required super.lighter,
-    required super.lightest,
+    required this.strong,
+    required this.softest,
+    required this.light,
+    required this.lighter,
+    required this.lightest,
     required this.black,
     required this.strongest,
     required this.soft,
@@ -564,8 +556,13 @@ class Grey extends DSFRColorCore {
 
   final Color black;
   final Color strongest;
+  final Color strong;
   final Color soft;
+  final Color softest;
   final Color distinct;
+  final Color light;
+  final Color lighter;
+  final Color lightest;
   final Color white;
   final Color raised;
   final Color overlap;
@@ -578,11 +575,15 @@ class Grey extends DSFRColorCore {
   @override
   List<NamedProperty<Color>> get props {
     return [
-      ...super.props,
       NamedProperty('black', black),
       NamedProperty('strongest', strongest),
+      NamedProperty('strong', strong),
       NamedProperty('soft', soft),
+      NamedProperty('softest', softest),
       NamedProperty('distinct', distinct),
+      NamedProperty('light', light),
+      NamedProperty('lighter', lighter),
+      NamedProperty('lightest', lightest),
       NamedProperty('white', white),
       NamedProperty('raised', raised),
       NamedProperty('overlap', overlap),
@@ -591,6 +592,44 @@ class Grey extends DSFRColorCore {
       NamedProperty('altOverlap', altOverlap),
       NamedProperty('contrastRaised', contrastRaised),
       NamedProperty('contrastOverlap', contrastOverlap),
+    ];
+  }
+}
+
+@immutable
+class Warning extends DSFRColor {
+  const Warning({
+    required this.strong,
+    required this.light,
+  });
+
+  const Warning.light()
+      : this(
+          strong: ColorPalette.warning425,
+          light: ColorPalette.warning950,
+        );
+
+  const Warning.dark()
+      : this(
+          strong: ColorPalette.warning625,
+          light: ColorPalette.warning100,
+        );
+
+  factory Warning.lerp(Warning a, Warning b, double t) {
+    return Warning(
+      strong: Color.lerp(a.strong, b.strong, t)!,
+      light: Color.lerp(a.light, b.light, t)!,
+    );
+  }
+
+  final Color strong;
+  final Color light;
+
+  @override
+  List<NamedProperty<Color>> get props {
+    return [
+      NamedProperty('strong', strong),
+      NamedProperty('light', light),
     ];
   }
 }
