@@ -182,6 +182,19 @@ class ColorPalette {
   static const greenBourgeon950 = Color(0xFFC9FCAC);
   static const greenBourgeon975 = Color(0xFFE6FEDA);
 
+  // Green Emeraude
+  static const greenEmeraude75 = Color(0xFF142018);
+  static const greenEmeraude100 = Color(0xFF19271E);
+  static const greenEmeraude125 = Color(0xFF1E2E23);
+  static const greenEmeraude200 = Color(0xFF21402C);
+  static const greenEmeraude425 = Color(0xFF297254);
+  static const greenEmeraude632 = Color(0xFF00A95F);
+  static const greenEmeraude753 = Color(0xFF34CB6A);
+  static const greenEmeraude850 = Color(0xFF6FE49D);
+  static const greenEmeraude925 = Color(0xFF9EF9BE);
+  static const greenEmeraude950 = Color(0xFFC3FAD5);
+  static const greenEmeraude975 = Color(0xFFE3FDEB);
+
   // Yellow Tournesol
   static const yellowTournesol100 = Color(0xFF292416);
   static const yellowTounesolSun407 = Color(0xFF716043);

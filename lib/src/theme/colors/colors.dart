@@ -6,6 +6,7 @@ part 'blue_france.dart';
 part 'error.dart';
 part 'focus.dart';
 part 'green_bourgeon.dart';
+part 'green_emeraude.dart';
 part 'green_tilleul_verveine.dart';
 part 'grey.dart';
 part 'info.dart';
@@ -61,6 +62,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     required this.focus,
     required this.greenTilleulVerveine,
     required this.greenBourgeon,
+    required this.greenEmeraude,
   });
 
   const DSFRColors.light()
@@ -108,6 +110,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           focus: const FocusColor.light(),
           greenTilleulVerveine: const GreenTilleulVerveine.light(),
           greenBourgeon: const GreenBourgeon.light(),
+          greenEmeraude: const GreenEmeraude.light(),
         );
 
   const DSFRColors.dark()
@@ -155,6 +158,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           focus: const FocusColor.dark(),
           greenTilleulVerveine: const GreenTilleulVerveine.dark(),
           greenBourgeon: const GreenBourgeon.dark(),
+          greenEmeraude: const GreenEmeraude.dark(),
         );
 
   final Color frConnectHover;
@@ -201,6 +205,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
   final FocusColor focus;
   final GreenTilleulVerveine greenTilleulVerveine;
   final GreenBourgeon greenBourgeon;
+  final GreenEmeraude greenEmeraude;
 
   @override
   DSFRColors copyWith({
@@ -250,6 +255,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     FocusColor? focus,
     GreenTilleulVerveine? greenTilleulVerveine,
     GreenBourgeon? greenBourgeon,
+    GreenEmeraude? greenEmeraude,
   }) {
     return DSFRColors._(
       frConnectHover: frConnectHover ?? this.frConnectHover,
@@ -302,6 +308,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       focus: focus ?? this.focus,
       greenTilleulVerveine: greenTilleulVerveine ?? this.greenTilleulVerveine,
       greenBourgeon: greenBourgeon ?? this.greenBourgeon,
+      greenEmeraude: greenEmeraude ?? this.greenEmeraude,
     );
   }
 
@@ -381,6 +388,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
         t,
       ),
       greenBourgeon: GreenBourgeon.lerp(greenBourgeon, other.greenBourgeon, t),
+      greenEmeraude: GreenEmeraude.lerp(greenEmeraude, other.greenEmeraude, t),
     );
   }
 
@@ -437,6 +445,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
         NamedProperty('focus', focus),
         NamedProperty('greenTilleulVerveine', greenTilleulVerveine),
         NamedProperty('greenBourgeon', greenBourgeon),
+        NamedProperty('greenEmeraude', greenEmeraude),
       ];
 }
 
