@@ -5,6 +5,7 @@ import 'package:flutter_dsfr/src/utils/named_property.dart';
 part 'blue_france.dart';
 part 'error.dart';
 part 'focus.dart';
+part 'green_bourgeon.dart';
 part 'green_tilleul_verveine.dart';
 part 'grey.dart';
 part 'info.dart';
@@ -59,6 +60,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     required this.info,
     required this.focus,
     required this.greenTilleulVerveine,
+    required this.greenBourgeon,
   });
 
   const DSFRColors.light()
@@ -105,6 +107,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           info: const InfoColor.light(),
           focus: const FocusColor.light(),
           greenTilleulVerveine: const GreenTilleulVerveine.light(),
+          greenBourgeon: const GreenBourgeon.light(),
         );
 
   const DSFRColors.dark()
@@ -151,6 +154,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
           info: const InfoColor.dark(),
           focus: const FocusColor.dark(),
           greenTilleulVerveine: const GreenTilleulVerveine.dark(),
+          greenBourgeon: const GreenBourgeon.dark(),
         );
 
   final Color frConnectHover;
@@ -196,6 +200,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
   final InfoColor info;
   final FocusColor focus;
   final GreenTilleulVerveine greenTilleulVerveine;
+  final GreenBourgeon greenBourgeon;
 
   @override
   DSFRColors copyWith({
@@ -244,6 +249,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
     InfoColor? info,
     FocusColor? focus,
     GreenTilleulVerveine? greenTilleulVerveine,
+    GreenBourgeon? greenBourgeon,
   }) {
     return DSFRColors._(
       frConnectHover: frConnectHover ?? this.frConnectHover,
@@ -295,6 +301,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
       info: info ?? this.info,
       focus: focus ?? this.focus,
       greenTilleulVerveine: greenTilleulVerveine ?? this.greenTilleulVerveine,
+      greenBourgeon: greenBourgeon ?? this.greenBourgeon,
     );
   }
 
@@ -373,6 +380,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
         other.greenTilleulVerveine,
         t,
       ),
+      greenBourgeon: GreenBourgeon.lerp(greenBourgeon, other.greenBourgeon, t),
     );
   }
 
@@ -428,6 +436,7 @@ class DSFRColors extends ThemeExtension<DSFRColors>
         NamedProperty('info', info),
         NamedProperty('focus', focus),
         NamedProperty('greenTilleulVerveine', greenTilleulVerveine),
+        NamedProperty('greenBourgeon', greenBourgeon),
       ];
 }
 

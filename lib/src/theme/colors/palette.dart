@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Specs: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217186370/Couleurs+-+palette+-+Color#Couleurs-primaires
 @immutable
 class ColorPalette {
   const ColorPalette._();
@@ -169,6 +168,19 @@ class ColorPalette {
   static const greenTilleulVerveine925 = Color(0xFFFBE769);
   static const greenTilleulVerveine950 = Color(0xFFFCEEAC);
   static const greenTilleulVerveine975 = Color(0xFFFEF7DA);
+
+  // Green Bourgeon
+  static const greenBourgeon75 = Color(0xFF182014);
+  static const greenBourgeon100 = Color(0xFF1E2719);
+  static const greenBourgeon125 = Color(0xFF232D1D);
+  static const greenBourgeon200 = Color(0xFF2A401A);
+  static const greenBourgeon425 = Color(0xFF447049);
+  static const greenBourgeon640 = Color(0xFF68A532);
+  static const greenBourgeon759 = Color(0xFF99C221);
+  static const greenBourgeon850 = Color(0xFF95E257);
+  static const greenBourgeon925 = Color(0xFFA9FB68);
+  static const greenBourgeon950 = Color(0xFFC9FCAC);
+  static const greenBourgeon975 = Color(0xFFE6FEDA);
 
   // Yellow Tournesol
   static const yellowTournesol100 = Color(0xFF292416);
