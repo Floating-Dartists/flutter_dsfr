@@ -17,7 +17,7 @@
 - [ ] blue-cumulus
 - [ ] purple-glycine
 - [ ] pink-macaron
-- [-] yellow-tournesol
+- [ ] yellow-tournesol (ongoing)
 - [ ] yellow-moutarde
 - [ ] orange-terre-battue
 - [ ] brown-cafe-creme
